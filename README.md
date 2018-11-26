@@ -1,3 +1,7 @@
+# requirements 
+- docker for mac
+
+
 # local dev setup
 
 - run `docker-compose build`
