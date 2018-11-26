@@ -6,5 +6,7 @@
 - run `docker-compose stop`
 - run `docker-compose down` (cleanup)
 
+# !!!
+Current project-name is "Sandstorm/360grad". Search and replace 360grad with own project-name.
 
 
