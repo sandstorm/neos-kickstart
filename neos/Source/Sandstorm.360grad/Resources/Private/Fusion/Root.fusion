@@ -2,31 +2,4 @@
  * Root Fusion for the 360grad site
  */
 
-prototype(Sandstorm.360grad:DefaultPage) < prototype(Neos.Neos:Page) {
-    head {
-        stylesheets.site = Neos.Fusion:Template {
-            templatePath = 'resource://Sandstorm.360grad/Private/Templates/Page/Default.html'
-            sectionName = 'stylesheets'
-        }
-
-        javascripts.site = Neos.Fusion:Template {
-            templatePath = 'resource://Sandstorm.360grad/Private/Templates/Page/Default.html'
-            sectionName = 'headScripts'
-        }
-    }
-
-    body {
-        templatePath = 'resource://Sandstorm.360grad/Private/Templates/Page/Default.html'
-        sectionName = 'body'
-        parts {
-            menu = Neos.Neos:Menu
-        }
-
-        javascripts.site = Neos.Fusion:Template {
-            templatePath = 'resource://Sandstorm.360grad/Private/Templates/Page/Default.html'
-            sectionName = 'bodyScripts'
-        }
-    }
-}
-
-include: NodeTypes/**/*
+include: **/*

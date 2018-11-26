@@ -1,0 +1,22 @@
+{
+    "presets": [
+        [
+            "@babel/env",
+            {
+                "targets": {
+                    "browsers": [
+                        "> 1%",
+                        "last 2 versions",
+                        "IE 11",
+                        "Safari >= 10",
+                        "not IE < 11",
+                        "not ExplorerMobile < 11"
+                    ]
+                },
+                "modules": false
+            }
+        ]
+    ],
+    "plugins": [
+    ]
+}

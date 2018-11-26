@@ -35,7 +35,7 @@ services:
     ports:
       - 8081:8081
     networks:
-      - atomic-fusion-demo
+      - 360-grad
   #####
   # assets build (watcher)
   neos-assets:
@@ -44,7 +44,7 @@ services:
       dockerfile: ./local-dev/neos-assets/Dockerfile
     volumes:
       # everything is readonly except the "Public" folder (which contains the build results);
-      - ./neos/Source/Sandstorm.360grad/Resources/Private:/app/src/Private:ro,cached
+      - ./neos/Source/Sandstorm.360grad/Resources/Private:/app/src/Private:cached
       - ./neos/Source/Sandstorm.360grad/Resources/Public:/app/src/Public/:cached
       # The node modules folder is an extra (writable) volume to not be part of the outer volume.
       # This is an optimization to NOT include the huge node_modules in the synchronization between host and guest
@@ -61,12 +61,12 @@ services:
     ports:
       - 25432:5432
     networks:
-      - atomic-fusion-demo
+      - 360-grad
 
 volumes:
   neos-assets-node-modules:
 
 networks:
   # we need to use a custom network here to ensure that all services see each other; and that during prerendering, we can connect to this network (to reach the service facade)
-  atomic-fusion-demo:
-    name: atomic-fusion-demo
+  360-grad:
+    name: 360-grad
