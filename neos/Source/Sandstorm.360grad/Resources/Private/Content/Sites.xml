@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <site name="360grad" state="1" siteResourcesPackageKey="Sandstorm.360grad" siteNodeName="sandstorm-360grad">
+  <nodes formatVersion="2.0">
+   <node nodeName="sandstorm-360grad">
+    <variant workspace="live" nodeType="Sandstorm.360grad:Page" sortingIndex="100" version="1" removed="" hidden="" hiddenInIndex="">
+     <dimensions>
+     
+      <language>en_US</language>
+     
+     </dimensions>
+     <accessRoles __type="array"/>
+     <properties>
+      <title __type="string">Home</title>
+      <uriPathSegment __type="string">home</uriPathSegment>
+     </properties>
+    </variant>
+    <node nodeName="main">
+     <variant workspace="live" nodeType="Neos.Neos:ContentCollection" sortingIndex="100" version="1" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+      
+       <language>en_US</language>
+      
+      </dimensions>
+      <accessRoles __type="array"/>
+     </variant>
+    </node>
+   </node>
+  </nodes>
+ </site>
+</root>

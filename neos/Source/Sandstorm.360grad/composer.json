@@ -1,0 +1,22 @@
+{
+    "description": "",
+    "type": "neos-site",
+    "require": {
+        "neos/neos": "*",
+        "neos/nodetypes": "*"
+    },
+    "suggest": {
+        "neos/seo": "*"
+    },
+    "name": "sandstorm/360grad",
+    "autoload": {
+        "psr-4": {
+            "Sandstorm\\360grad\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Sandstorm.360grad"
+        }
+    }
+}

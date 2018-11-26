@@ -1,0 +1,72 @@
+##################################################
+##### DEVELOPMENT ENVIRONMENT           ##########
+##################################################
+
+# Public ports:
+#  - 8081 -> Neos
+#  - 25432 -> postgres DB (used for Neos)
+
+version: '3.5'
+services:
+  #####
+  # Neos CMS
+  neos:
+    build:
+      context: .
+      dockerfile: ./local-dev/neos/Dockerfile
+    environment:
+      FLOW_CONTEXT: 'Development/Docker'
+      COMPOSER_CACHE_DIR: '/composer_cache'
+      # postgres DB connection
+      DB_NEOS_HOST: 'postgres-db'
+      DB_NEOS_PORT: 5432
+      DB_NEOS_PASSWORD: ''
+      DB_NEOS_USER: 'neos'
+      DB_NEOS_DATABASE: 'neos'
+    volumes:
+      - ./neos/composer.json:/app/composer.json:ro,cached
+      - ./neos/composer.lock:/app/composer.lock:cached
+      - ./neos/Source/:/app/Source/:ro,cached
+      # Content is writable to enable content dumps from inside the container
+      - ./neos/Source/Sandstorm.360grad/Resources/Private/Content:/app/Source/Sandstorm.360grad/Resources/Private/Content/:cached
+      - ./neos/Configuration/Development/Docker/:/app/Configuration/Development/Docker/:ro,cached
+      # Explcitly set up Composer cache for faster fetching of packages
+      - ./tmp/composer_cache:/composer_cache:cached
+    ports:
+      - 8081:8081
+    networks:
+      - atomic-fusion-demo
+  #####
+  # access shop assets build (watcher)
+  neos-assets:
+    build:
+      context: .
+      dockerfile: ./local-dev/neos-assets/Dockerfile
+    volumes:
+      # everything is readonly except the "Public" folder (which contains the build results);
+      - ./neos/Source/Sandstorm.360grad/Resources/Private:/app/src/Private:ro,cached
+      - ./neos/Source/Sandstorm.360grad/Resources/Public:/app/src/Public/:cached
+      # The node modules folder is an extra (writable) volume to not be part of the outer volume.
+      # This is an optimization to NOT include the huge node_modules in the synchronization between host and guest
+      # NOTE: for this to work, the node_modules folder as mount target must EXIST when being mounted; so it is checked into git (with an empty placeholder file)
+      - neos-assets-node-modules:/app/src/Private/node_modules
+      # Explicitly set up Yarn cache for faster fetching of packages
+      - ./tmp/.yarn-cache/:/app/.yarn-cache/:cached
+  #####
+  # Postgres DB
+  postgres-db:
+    image: postgres
+    volumes:
+      - ./local-dev/postgres-db/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:cached
+    ports:
+      - 25432:5432
+    networks:
+      - atomic-fusion-demo
+
+volumes:
+  neos-assets-node-modules:
+
+networks:
+  # we need to use a custom network here to ensure that all services see each other; and that during prerendering, we can connect to this network (to reach the service facade)
+  atomic-fusion-demo:
+    name: atomic-fusion-demo
