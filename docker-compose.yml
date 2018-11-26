@@ -37,7 +37,7 @@ services:
     networks:
       - atomic-fusion-demo
   #####
-  # access shop assets build (watcher)
+  # assets build (watcher)
   neos-assets:
     build:
       context: .
