@@ -4,6 +4,7 @@
 
 # local dev setup
 
+- run `composer install` in `/neos`
 - run `docker-compose build`
 - run `docker-compose up -d`
 - run `docker-compose logs -f`
