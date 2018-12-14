@@ -1,7 +1,0 @@
-prototype(Sandstorm.360grad:Resources.SiteBundleJs) < prototype(Neos.Fusion:Tag) {
-    tagName = 'script'
-    attributes.type = 'text/javascript'
-    attributes.src = Neos.Fusion:ResourceUri {
-        path = 'resource://Sandstorm.360grad/Public/bundle.js'
-    }
-}

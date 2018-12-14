@@ -24,12 +24,12 @@ services:
       DB_NEOS_USER: 'neos'
       DB_NEOS_DATABASE: 'neos'
     volumes:
-      - ./neos/composer.json:/app/composer.json:ro,cached
-      - ./neos/composer.lock:/app/composer.lock:cached
-      - ./neos/Source/:/app/Source/:ro,cached
+      - ./app/composer.json:/app/composer.json:ro,cached
+      - ./app/composer.lock:/app/composer.lock:cached
+      - ./app/Source/:/app/Source/:ro,cached
       # Content is writable to enable content dumps from inside the container
-      - ./neos/Source/Sandstorm.360grad/Resources/Private/Content:/app/Source/Sandstorm.360grad/Resources/Private/Content/:cached
-      - ./neos/Configuration/Development/Docker/:/app/Configuration/Development/Docker/:ro,cached
+      - ./app/Source/Sandstorm.360grad/Resources/Private/Content:/app/Source/Sandstorm.360grad/Resources/Private/Content/:cached
+      - ./app/Configuration/Development/Docker/:/app/Configuration/Development/Docker/:ro,cached
       # Explcitly set up Composer cache for faster fetching of packages
       - ./tmp/composer_cache:/composer_cache:cached
     ports:
@@ -44,8 +44,8 @@ services:
       dockerfile: ./local-dev/neos-assets/Dockerfile
     volumes:
       # everything is readonly except the "Public" folder (which contains the build results);
-      - ./neos/Source/Sandstorm.360grad/Resources/Private:/app/src/Private:cached
-      - ./neos/Source/Sandstorm.360grad/Resources/Public:/app/src/Public/:cached
+      - ./app/Source/Sandstorm.360grad/Resources/Private:/app/src/Private:cached
+      - ./app/Source/Sandstorm.360grad/Resources/Public:/app/src/Public/:cached
       # The node modules folder is an extra (writable) volume to not be part of the outer volume.
       # This is an optimization to NOT include the huge node_modules in the synchronization between host and guest
       # NOTE: for this to work, the node_modules folder as mount target must EXIST when being mounted; so it is checked into git (with an empty placeholder file)

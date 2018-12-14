@@ -1,5 +1,0 @@
-/**
- * Root Fusion for the 360grad site
- */
-
-include: **/*

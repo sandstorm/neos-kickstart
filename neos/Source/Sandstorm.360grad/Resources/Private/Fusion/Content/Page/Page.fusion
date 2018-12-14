@@ -1,7 +1,0 @@
-prototype(Sandstorm.360grad:Page) < prototype(Neos.Neos:Page) {
-    head {
-        javascripts.site = Sandstorm.360grad:Resources.Scripts
-    }
-
-    body = 'Hallo Neos!'
-}

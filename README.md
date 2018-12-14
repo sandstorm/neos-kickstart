@@ -4,7 +4,7 @@
 
 # local dev setup
 
-- run `composer install` in `/neos`
+- run `composer install` in `/app`
 - run `docker-compose build`
 - run `docker-compose up -d`
 - run `docker-compose logs -f`
@@ -13,5 +13,6 @@
 
 # !!!
 Current project-name is "Sandstorm/360grad". Search and replace 360grad with own project-name.
+Also in the Sites.xml
 
 
