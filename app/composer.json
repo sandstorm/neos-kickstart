@@ -37,7 +37,7 @@
 
         "packagefactory/atomicfusion-afx": "^5.0",
         "sitegeist/monocle": "^4.4",
-        "sandstorm/360grad": "@dev"
+        "sandstorm/ProjectX": "@dev"
     },
     "require-dev": {
         "neos/buildessentials": "^5.0",

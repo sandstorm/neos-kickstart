@@ -1,0 +1,22 @@
+{
+    "description": "",
+    "type": "neos-site",
+    "require": {
+        "neos/neos": "*",
+        "neos/nodetypes": "*"
+    },
+    "suggest": {
+        "neos/seo": "*"
+    },
+    "name": "sandstorm/ProjectX",
+    "autoload": {
+        "psr-4": {
+            "Sandstorm\\ProjectX\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Sandstorm.ProjectX"
+        }
+    }
+}

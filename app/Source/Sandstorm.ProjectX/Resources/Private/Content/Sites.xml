@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <site name="ProjectX" state="1" siteResourcesPackageKey="Sandstorm.ProjectX" siteNodeName="sandstorm-ProjectX">
+  <nodes formatVersion="2.0">
+   <node nodeName="sandstorm-ProjectX">
+    <variant workspace="live" nodeType="Sandstorm.ProjectX:Page" sortingIndex="100" version="1" removed="" hidden="" hiddenInIndex="">
+     <dimensions>
+     
+      <language>en_US</language>
+     
+     </dimensions>
+     <accessRoles __type="array"/>
+     <properties>
+      <title __type="string">Home</title>
+      <uriPathSegment __type="string">home</uriPathSegment>
+     </properties>
+    </variant>
+    <node nodeName="main">
+     <variant workspace="live" nodeType="Neos.Neos:ContentCollection" sortingIndex="100" version="1" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+      
+       <language>en_US</language>
+      
+      </dimensions>
+      <accessRoles __type="array"/>
+     </variant>
+    </node>
+   </node>
+  </nodes>
+ </site>
+</root>

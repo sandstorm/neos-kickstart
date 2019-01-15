@@ -12,7 +12,7 @@
 - run `docker-compose down` (cleanup)
 
 # !!!
-Current project-name is "Sandstorm/360grad". Search and replace 360grad with own project-name.
+Current project-name is "Sandstorm/ProjectX". Search and replace ProjectX with own project-name.
 Also in the Sites.xml
 
 

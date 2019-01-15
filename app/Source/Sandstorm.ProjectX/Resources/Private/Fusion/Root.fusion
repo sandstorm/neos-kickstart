@@ -1,0 +1,5 @@
+/**
+ * Root Fusion for the ProjectX site
+ */
+
+include: **/*
