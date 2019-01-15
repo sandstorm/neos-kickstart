@@ -4,7 +4,7 @@
 
 # Public ports:
 #  - 8081 -> Neos
-#  - 25432 -> postgres DB (used for Neos)
+#  - 13306 -> maria db (used for Neos)
 
 version: '3.5'
 services:
@@ -17,10 +17,10 @@ services:
     environment:
       FLOW_CONTEXT: 'Development/Docker'
       COMPOSER_CACHE_DIR: '/composer_cache'
-      # postgres DB connection
-      DB_NEOS_HOST: 'postgres-db'
-      DB_NEOS_PORT: 5432
-      DB_NEOS_PASSWORD: ''
+      # DB connection
+      DB_NEOS_HOST: 'maria-db'
+      DB_NEOS_PORT: 3306
+      DB_NEOS_PASSWORD: 'neos'
       DB_NEOS_USER: 'neos'
       DB_NEOS_DATABASE: 'neos'
     volumes:
@@ -53,15 +53,19 @@ services:
       # Explicitly set up Yarn cache for faster fetching of packages
       - ./tmp/.yarn-cache/:/app/.yarn-cache/:cached
   #####
-  # Postgres DB
-  postgres-db:
-    image: postgres
-    volumes:
-      - ./local-dev/postgres-db/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/:cached
+  # Maria DB
+  maria-db:
+    image: mariadb
     ports:
-      - 25432:5432
+      - 13306:3306
     networks:
       - project-x
+    environment:
+      MYSQL_ROOT_PASSWORD: neos
+      MYSQL_DATABASE: neos
+      MYSQL_USER: neos
+      MYSQL_PASSWORD: neos
+
 
 volumes:
   neos-assets-node-modules:
