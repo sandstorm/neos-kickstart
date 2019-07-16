@@ -1,10 +1,12 @@
 #!/bin/sh
+set -ex
 
 composer install
 
 ./flow doctrine:migrate
-./flow site:import --package-key Sandstorm.ProjectX
-./flow user:create --roles Administrator admin password LocalDev Admin
+./flow site:import --package-key $SITE_IMPORT_PACKAGE_KEY
+./flow user:create --roles Administrator $ADMIN_USERNAME $ADMIN_PASSWORD LocalDev Admin
 ./flow resource:publish
 
-./flow server:run --host=0.0.0.0
+# run command
+exec "$@"

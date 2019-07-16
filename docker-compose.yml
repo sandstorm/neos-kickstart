@@ -9,7 +9,7 @@
 version: '3.5'
 services:
   #####
-  # Neos CMS
+  # Neos CMS (php-fpm)
   neos:
     build:
       context: .
@@ -23,8 +23,13 @@ services:
       DB_NEOS_PASSWORD: 'neos'
       DB_NEOS_USER: 'neos'
       DB_NEOS_DATABASE: 'neos'
+      # auto site import
+      SITE_IMPORT_PACKAGE_KEY: 'Sandstorm.ProjectX'
+      # auto creation of admin user for Neos backend
+      ADMIN_USERNAME: 'admin'
+      ADMIN_PASSWORD: 'password'
     volumes:
-      - ./app/composer.json:/app/composer.json:ro,cached
+      - ./app/composer.json:/app/composer.json:cached
       - ./app/composer.lock:/app/composer.lock:cached
       - ./app/Source/:/app/Source/:ro,cached
       # Content is writable to enable content dumps from inside the container
@@ -32,10 +37,25 @@ services:
       - ./app/Configuration/Development/Docker/:/app/Configuration/Development/Docker/:ro,cached
       # Explcitly set up Composer cache for faster fetching of packages
       - ./tmp/composer_cache:/composer_cache:cached
-    ports:
-      - 8081:8081
+      - neos-resources:/app/Web/_Resources
+      - php-fpm-socket:/tmp/socket/
     networks:
       - project-x
+
+  nginx:
+    image: nginx
+    volumes:
+      - ./local-dev/nginx/nginx.template.conf:/etc/nginx/conf.d/nginx.template:ro,cached
+      - neos-resources:/app/Web/_Resources
+      - php-fpm-socket:/tmp/socket/
+    ports:
+      - 8081:8081
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=8081
+    command: /bin/bash -c "envsubst < /etc/nginx/conf.d/nginx.template > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"
+    depends_on:
+      - neos
   #####
   # assets build (watcher)
   neos-assets:
@@ -69,6 +89,8 @@ services:
 
 volumes:
   neos-assets-node-modules:
+  neos-resources:
+  php-fpm-socket:
 
 networks:
   # we need to use a custom network here to ensure that all services see each other; and that during prerendering, we can connect to this network (to reach the service facade)

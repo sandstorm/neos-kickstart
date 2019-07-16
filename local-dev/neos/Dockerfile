@@ -1,5 +1,5 @@
 # NOTE: this file is executed from the ROOT DIRECTORY of the project, i.e. "../"
-FROM php:7.2-cli
+FROM php:7.1-fpm-stretch
 
 RUN apt-get update
 
@@ -26,6 +26,7 @@ RUN mv composer.phar /usr/local/bin/composer
 RUN composer config --global cache-dir /composer_cache
 ADD local-dev/neos/entrypoint.sh /
 ADD local-dev/neos/memory-limit-php.ini /usr/local/etc/php/conf.d/memory-limit-php.ini
+ADD local-dev/neos/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 WORKDIR /app
 
@@ -33,3 +34,4 @@ EXPOSE 8081
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 
+CMD "/usr/local/sbin/php-fpm"
