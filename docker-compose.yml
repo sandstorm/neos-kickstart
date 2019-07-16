@@ -38,7 +38,6 @@ services:
       # Explcitly set up Composer cache for faster fetching of packages
       - ./tmp/composer_cache:/composer_cache:cached
       - neos-resources:/app/Web/_Resources
-      - php-fpm-socket:/tmp/socket/
     networks:
       - project-x
 
@@ -47,13 +46,15 @@ services:
     volumes:
       - ./local-dev/nginx/nginx.template.conf:/etc/nginx/conf.d/nginx.template:ro,cached
       - neos-resources:/app/Web/_Resources
-      - php-fpm-socket:/tmp/socket/
     ports:
       - 8081:8081
+    networks:
+      - project-x
     environment:
-      - NGINX_HOST=localhost
-      - NGINX_PORT=8081
-    command: /bin/bash -c "envsubst < /etc/nginx/conf.d/nginx.template > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"
+      NGINX_HOST: 'localhost'
+      NGINX_PORT: 8081
+      NEOS_HOST: 'neos'
+    command: /bin/bash -c "envsubst '$$NGINX_HOST $$NGINX_PORT $$NEOS_HOST' < /etc/nginx/conf.d/nginx.template > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"
     depends_on:
       - neos
   #####
@@ -86,11 +87,9 @@ services:
       MYSQL_USER: neos
       MYSQL_PASSWORD: neos
 
-
 volumes:
   neos-assets-node-modules:
   neos-resources:
-  php-fpm-socket:
 
 networks:
   # we need to use a custom network here to ensure that all services see each other; and that during prerendering, we can connect to this network (to reach the service facade)

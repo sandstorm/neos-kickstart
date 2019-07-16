@@ -30,7 +30,6 @@
         "neos/neos-ui-compiled": "^3.7.0",
 
         "neos/seo": "~3.0.4",
-        "yoast/yoast-seo-for-neos": "~1.0.0",
         "neos/redirecthandler-neosadapter": "~3.0.1",
         "neos/redirecthandler-databasestorage": "~3.0.0",
         "neos/redirecthandler-ui": "~1.2.0",

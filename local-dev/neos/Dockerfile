@@ -26,11 +26,12 @@ RUN mv composer.phar /usr/local/bin/composer
 RUN composer config --global cache-dir /composer_cache
 ADD local-dev/neos/entrypoint.sh /
 ADD local-dev/neos/memory-limit-php.ini /usr/local/etc/php/conf.d/memory-limit-php.ini
+RUN rm -Rf /usr/local/etc/php-fpm.*
 ADD local-dev/neos/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 WORKDIR /app
 
-EXPOSE 8081
+EXPOSE 9000
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 
