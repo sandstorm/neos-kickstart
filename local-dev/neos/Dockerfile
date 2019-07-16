@@ -21,18 +21,29 @@ RUN docker-php-ext-install bcmath
 RUN apt-get install -y \
         --no-install-recommends git unzip
 
+# install composer
 RUN curl --silent --show-error https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 RUN composer config --global cache-dir /composer_cache
+
+# application entrypoint
 ADD local-dev/neos/entrypoint.sh /
 ADD local-dev/neos/memory-limit-php.ini /usr/local/etc/php/conf.d/memory-limit-php.ini
 RUN rm -Rf /usr/local/etc/php-fpm.*
 ADD local-dev/neos/php-fpm.conf /usr/local/etc/php-fpm.conf
 
+# install nginx
+RUN apt-get install -y nginx-light gettext-base
+
+ADD local-dev/neos/nginx.template.conf /etc/nginx/nginx.template
+RUN mkdir -p /var/lib/nginx /usr/local/var/log/ & \
+    chown -R www-data /var/lib/nginx /usr/local/var/log/ /etc/nginx/
+
+# cleanup & chown
+RUN mkdir -p /app/Data/Persistent /app/Configuration/Development/Docker /composer_cache && \
+    chown -R www-data /app /composer_cache
+
 WORKDIR /app
 
-EXPOSE 9000
-
+USER www-data
 ENTRYPOINT [ "/entrypoint.sh" ]
-
-CMD "/usr/local/sbin/php-fpm"

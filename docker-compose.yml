@@ -28,6 +28,8 @@ services:
       # auto creation of admin user for Neos backend
       ADMIN_USERNAME: 'admin'
       ADMIN_PASSWORD: 'password'
+      NGINX_HOST: 'localhost'
+      NGINX_PORT: 8081
     volumes:
       - ./app/composer.json:/app/composer.json:cached
       - ./app/composer.lock:/app/composer.lock:cached
@@ -37,26 +39,13 @@ services:
       - ./app/Configuration/Development/Docker/:/app/Configuration/Development/Docker/:ro,cached
       # Explcitly set up Composer cache for faster fetching of packages
       - ./tmp/composer_cache:/composer_cache:cached
-      - neos-resources:/app/Web/_Resources
     networks:
       - project-x
-
-  nginx:
-    image: nginx
-    volumes:
-      - ./local-dev/nginx/nginx.template.conf:/etc/nginx/conf.d/nginx.template:ro,cached
-      - neos-resources:/app/Web/_Resources
     ports:
       - 8081:8081
-    networks:
-      - project-x
-    environment:
-      NGINX_HOST: 'localhost'
-      NGINX_PORT: 8081
-      NEOS_HOST: 'neos'
-    command: /bin/bash -c "envsubst '$$NGINX_HOST $$NGINX_PORT $$NEOS_HOST' < /etc/nginx/conf.d/nginx.template > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"
     depends_on:
-      - neos
+      - maria-db
+
   #####
   # assets build (watcher)
   neos-assets:
@@ -89,7 +78,6 @@ services:
 
 volumes:
   neos-assets-node-modules:
-  neos-resources:
 
 networks:
   # we need to use a custom network here to ensure that all services see each other; and that during prerendering, we can connect to this network (to reach the service facade)
