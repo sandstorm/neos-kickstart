@@ -1,0 +1,43 @@
+
+$relativePublicPath: '/_Resources/Static/Packages/Sandstorm.ProjectX/';
+
+$theme__color__white: #fff;
+$theme__color__black: #000;
+// Add more colors here
+
+$theme__content__boxShadow: 0 5px 5px 0 transparentize($theme__color__black, 0.8);
+
+$theme__heading__fontWeight: 300;
+$theme__default__fontWeight: 400;
+
+$theme__font__openSans: 'Open Sans', Arial, Helvetica, sans-serif;
+
+$theme__default__fontStack: $theme__font__openSans;
+
+$base__fontSize: 16px;
+$base__fontSize--larger: 18px;
+$base__fontSize--smaller: 14px;
+$base__fontSize--tiny: 12px;
+$base__lineHeight: 1.6;
+
+$h1__fontSize: 2.2rem;
+$h2__fontSize: 1.8rem;
+$h3__fontSize: 1.5rem;
+
+$button__height: 40px;
+$button__height--large: 50px;
+$button__height--larger: 60px;
+
+$header__height: 100px;
+$header__height--small: 80px;
+
+$fa-font-path: $relativePublicPath + "Fonts";
+
+$breakpoints: (
+    xxsmall: "(max-width: 374px) , (max-height: 450px)",
+    xsmall: "(max-width: 500px) , (max-height: 500px)",
+    small: "(max-width: 768px), (max-height: 550px)",
+    medium: "(max-width: 996px), (max-height: 650px)",
+    large: "(max-width: 1400px)",
+    xlarge: "(max-width: 1800px)"
+);

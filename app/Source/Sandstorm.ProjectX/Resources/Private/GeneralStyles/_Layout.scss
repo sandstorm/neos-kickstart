@@ -1,0 +1,16 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+// neos backend
+.neos-backend span.neos-inline-editable {
+    display: inline-block;
+    min-width: 20px;
+}

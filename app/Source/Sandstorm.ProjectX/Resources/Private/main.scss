@@ -1,1 +1,12 @@
-@import "./Fusion/**/*.scss";
+@import "GeneralStyles/Variables";
+@import "GeneralStyles/Functions";
+@import "GeneralStyles/Mixins";
+@import "GeneralStyles/Layout";
+@import "GeneralStyles/FontAwesome/fontawesome";
+@import "GeneralStyles/FontAwesome/solid";
+@import "GeneralStyles/FontAwesome/brands";
+@import "GeneralStyles/FontAwesome/regular";
+
+
+// Components
+@import "./Fusion/Components/Atoms/Headline/Headline";
