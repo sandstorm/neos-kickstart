@@ -9,4 +9,9 @@
 
 
 // Components
-@import "./Fusion/Components/Atoms/Headline/Headline";
+@import "./Fusion/Presentation/Components/Columns/Columns";
+@import "./Fusion/Presentation/Components/Container/Container";
+@import "./Fusion/Presentation/Components/Image/Image";
+
+// Composites
+@import "./Fusion/Presentation/Composite/Download/Download";

@@ -1,0 +1,19 @@
+'Sandstorm.ProjectX:Content.FiveColumn':
+  superTypes:
+    'Sandstorm.ProjectX:Content.AbstractContent': true
+    'Sandstorm.ProjectX:Mixin.Column': true
+  ui:
+    label: 'Fünfspalter'
+    icon: icon-columns
+    position: 205
+  childNodes:
+    column0:
+      type: 'Sandstorm.ProjectX:ContentCollection.Column'
+    column1:
+      type: 'Sandstorm.ProjectX:ContentCollection.Column'
+    column2:
+      type: 'Sandstorm.ProjectX:ContentCollection.Column'
+    column3:
+      type: 'Sandstorm.ProjectX:ContentCollection.Column'
+    column4:
+      type: 'Sandstorm.ProjectX:ContentCollection.Column'

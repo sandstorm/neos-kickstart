@@ -3,7 +3,7 @@
  <site name="ProjectX" state="1" siteResourcesPackageKey="Sandstorm.ProjectX" siteNodeName="sandstorm-projectx">
   <nodes formatVersion="2.0">
    <node nodeName="sandstorm-projectx">
-    <variant workspace="live" nodeType="Sandstorm.ProjectX:Page" sortingIndex="100" version="1" removed="" hidden="" hiddenInIndex="">
+    <variant workspace="live" nodeType="Sandstorm.ProjectX:Document.Page" sortingIndex="100" version="1" removed="" hidden="" hiddenInIndex="">
      <dimensions>
      
       <language>en_US</language>

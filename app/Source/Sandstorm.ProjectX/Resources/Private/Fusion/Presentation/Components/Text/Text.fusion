@@ -1,0 +1,5 @@
+prototype(Sandstorm.ProjectX:Component.Text) < prototype(Neos.Fusion:Component) {
+    renderer = afx`
+        <div>{props.text}</div>
+    `
+}

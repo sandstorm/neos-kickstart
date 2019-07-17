@@ -1,0 +1,15 @@
+'Sandstorm.ProjectX:Content.ThreeColumn':
+  superTypes:
+    'Sandstorm.ProjectX:Content.AbstractContent': true
+    'Sandstorm.ProjectX:Mixin.Column': true
+  ui:
+    label: 'Dreispalter'
+    icon: icon-columns
+    position: 203
+  childNodes:
+    column0:
+      type: 'Sandstorm.ProjectX:ContentCollection.Column'
+    column1:
+      type: 'Sandstorm.ProjectX:ContentCollection.Column'
+    column2:
+      type: 'Sandstorm.ProjectX:ContentCollection.Column'

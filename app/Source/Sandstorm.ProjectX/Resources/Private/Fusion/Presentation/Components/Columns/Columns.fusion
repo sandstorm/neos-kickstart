@@ -1,0 +1,15 @@
+prototype(Sandstorm.ProjectX:Component.Columns) < prototype(Neos.Fusion:Component) {
+    columns = null
+
+    renderer = afx`
+        <div class="columns">
+            <div class="grid-x grid-margin-x">
+                <Neos.Fusion:Collection collection={props.columns} @children="itemRenderer">
+                    <div class={'cell large-' + item.size}>
+                        {item.content}
+                    </div>
+                </Neos.Fusion:Collection>
+            </div>
+        </div>
+    `
+}

@@ -1,0 +1,20 @@
+'Sandstorm.ProjectX:Mixin.Headline':
+  abstract: true
+  properties:
+    title:
+      type: string
+      defaultValue: '<h2>Bitte eine Überschrift eingeben</h2>'
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Bitte eine Überschrift eingeben'
+            linking:
+              anchor: true
+              title: true
+              relNofollow: true
+              targetBlank: true
+            formatting:
+              h2: true
+              h3: true
+              h4: true

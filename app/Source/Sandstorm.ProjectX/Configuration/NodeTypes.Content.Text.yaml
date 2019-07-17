@@ -1,0 +1,16 @@
+'Sandstorm.ProjectX:Content.Text':
+  superTypes:
+    'Sandstorm.ProjectX:Content.AbstractContent': true
+    'Sandstorm.ProjectX:Mixin.Text': true
+  ui:
+    label: Text
+    icon: icon-file-text
+    position: 200
+    inlineEditable: true
+  properties:
+    text:
+      ui:
+        aloha:
+          placeholder: '<p>Enter text here...</p>'
+      options:
+        silhouette: 'text.free'

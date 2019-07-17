@@ -2,4 +2,4 @@
  * Root Fusion for the ProjectX site
  */
 
-include: **/*
+include: **/*.fusion

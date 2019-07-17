@@ -1,0 +1,17 @@
+prototype(Sandstorm.ProjectX:Composite.Download) < prototype(Neos.Fusion:Component) {
+    fileUrl = ""
+    text = ""
+    imgSrc = ""
+
+    inBackend = ${node.context.inBackend}
+
+    renderer = Neos.Fusion:Tag {
+        tagName = ${props.inBackend ? 'div' : 'a'}
+        attributes.class = 'download'
+        attributes.target = '_blank'
+        attributes.href = ${props.fileUrl}
+        content = afx`
+            <img alt="icon" class="download__icon" src={props.imgSrc}/>{props.text}
+        `
+    }
+}

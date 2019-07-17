@@ -1,0 +1,33 @@
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+.image:before {
+    content: '' !important;
+}
+
+.image--text-wrap-right {
+    float: left;
+    width: auto;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.image--text-wrap-left {
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.image--icon-sized {
+    width: 60px;
+}
+
+.image--33-sized {
+    width: 33.333%;
+}
+
+.image--50-sized {
+    width: 50%;
+}

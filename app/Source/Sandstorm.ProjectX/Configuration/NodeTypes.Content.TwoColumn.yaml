@@ -1,0 +1,12 @@
+'Sandstorm.ProjectX:Content.TwoColumn':
+  superTypes:
+    'Sandstorm.ProjectX:Content.AbstractContent': true
+    'Sandstorm.ProjectX:Mixin.Column': true
+  ui:
+    label: 'Zweispalter'
+    position: 202
+  childNodes:
+    column0:
+      type: 'Sandstorm.ProjectX:ContentCollection.Column'
+    column1:
+      type: 'Sandstorm.ProjectX:ContentCollection.Column'

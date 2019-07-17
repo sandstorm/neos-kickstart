@@ -1,7 +1,0 @@
-prototype(Sandstorm.ProjectX:Page) < prototype(Neos.Neos:Page) {
-    head {
-        javascripts.site = Sandstorm.ProjectX:Resources.Scripts
-    }
-
-    body = 'Hallo Neos!'
-}

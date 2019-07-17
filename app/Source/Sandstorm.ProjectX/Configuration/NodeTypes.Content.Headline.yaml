@@ -1,0 +1,8 @@
+'Sandstorm.ProjectX:Content.Headline':
+  superTypes:
+    'Sandstorm.ProjectX:Content.AbstractContent': true
+    'Sandstorm.ProjectX:Mixin.Headline': true
+  ui:
+    label: Überschrift
+    icon: icon-header
+    position: 100

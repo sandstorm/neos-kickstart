@@ -1,0 +1,8 @@
+prototype(Sandstorm.ProjectX:Content.Anchor) < prototype(Neos.Neos:ContentComponent) {
+    renderer = Sandstorm.ProjectX:Component.Anchor {
+        id = Neos.Neos:Editable {
+            property = 'id'
+            block = false
+        }
+    }
+}

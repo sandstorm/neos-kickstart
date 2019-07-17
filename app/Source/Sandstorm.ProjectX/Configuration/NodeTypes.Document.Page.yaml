@@ -1,19 +1,11 @@
-# This is a custom document node type which has been auto-generated for your site package
-# by Neos. It works exactly the same as the generic "Neos.NodeTypes:Page". You can customize this
-# to your needs or remove it if you do not need a custom page type.
-'Sandstorm.ProjectX:Page':
+'Sandstorm.ProjectX:Document.Page':
   superTypes:
-    'Neos.Neos:Document': true
+    'Sandstorm.ProjectX:Document.AbstractPage': true
+    'Sandstorm.ProjectX:Mixin.Teaser.Title': true
+    'Sandstorm.ProjectX:Mixin.Teaser.Text': true
   ui:
     icon: 'icon-file'
-    label: 'Sandstorm.ProjectX Custom Page'
-  childNodes:
-    main:
-      type: 'Neos.Neos:ContentCollection'
-
-# If you need more than just the "main" content area you can uncomment the snippet below. It will add a "sidebar" area
-# to your pages. You can add as many areas as you like, still only those that are rendered in your Fusion code and
-# template are visible on your page.
-
-#    'sidebar':
-#      type: 'Neos.Neos:ContentCollection'
+    label: 'Sandstorm.ProjectX Page'
+  constraints:
+    nodeTypes:
+      'Sandstorm.ProjectX:Document.Page': true

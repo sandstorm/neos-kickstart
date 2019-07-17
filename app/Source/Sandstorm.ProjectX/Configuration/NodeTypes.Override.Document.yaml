@@ -1,0 +1,7 @@
+'Neos.Neos:Document':
+  constraints:
+    nodeTypes:
+      '*': ~
+      'Neos.Neos:Document': ~
+
+

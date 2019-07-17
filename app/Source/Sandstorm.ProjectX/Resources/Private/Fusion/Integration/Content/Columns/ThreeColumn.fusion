@@ -1,0 +1,24 @@
+prototype(Sandstorm.ProjectX:Content.ThreeColumn) < prototype(Neos.Neos:ContentComponent) {
+    renderer = Sandstorm.ProjectX:Component.Columns {
+        columns = Neos.Fusion:RawArray {
+            1 = Neos.Fusion:RawArray {
+                size = 4
+                content = Neos.Neos:ContentCollection {
+                    nodePath = 'column0'
+                }
+            }
+            2 = Neos.Fusion:RawArray {
+                size = 4
+                content = Neos.Neos:ContentCollection {
+                    nodePath = 'column1'
+                }
+            }
+            3 = Neos.Fusion:RawArray {
+                size = 4
+                content = Neos.Neos:ContentCollection {
+                    nodePath = 'column2'
+                }
+            }
+        }
+    }
+}

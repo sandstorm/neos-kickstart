@@ -1,0 +1,11 @@
+prototype(Sandstorm.ProjectX:Content.Image) < prototype(Neos.Neos:ContentComponent) {
+    renderer = Sandstorm.ProjectX:Component.Image {
+        alternativeText = ${node.properties.alternativeText}
+        src = Neos.Neos:ImageUri {
+            asset = ${q(node).property('image')}
+            maximumWidth = 900
+        }
+        width =  ${q(node).property('width')}
+        textWrap = ${q(node).property('textWrap')}
+    }
+}

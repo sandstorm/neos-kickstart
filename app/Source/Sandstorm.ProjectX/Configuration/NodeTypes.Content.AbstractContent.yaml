@@ -1,0 +1,4 @@
+'Sandstorm.ProjectX:Content.AbstractContent':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Sandstorm.ProjectX:Mixin.InspectorGeneral': true

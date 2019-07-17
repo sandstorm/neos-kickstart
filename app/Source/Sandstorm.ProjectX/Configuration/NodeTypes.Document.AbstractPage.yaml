@@ -1,0 +1,11 @@
+'Sandstorm.ProjectX:Document.AbstractPage':
+  abstract: true
+  superTypes:
+    'Neos.Neos:Document': true
+    'Sandstorm.ProjectX:Mixin.InspectorGeneral': true
+  childNodes:
+    main:
+      type: 'Sandstorm.ProjectX:ContentCollection.Default'
+  constraints:
+    nodeTypes:
+      '*': ~

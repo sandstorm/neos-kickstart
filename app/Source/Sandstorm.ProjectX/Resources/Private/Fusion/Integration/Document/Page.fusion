@@ -1,0 +1,15 @@
+prototype(Sandstorm.ProjectX:Document.Page) < prototype(Sandstorm.ProjectX:Document.AbstractPage) {
+    body = Sandstorm.ProjectX:Layout.Default {
+        teaserTitle = Sandstorm.ProjectX:Helper.DocumentEditableProperty {
+            property = 'teaserTitle'
+        }
+
+        teaserText = Sandstorm.ProjectX:Helper.DocumentEditableProperty {
+            property = 'teaserText'
+        }
+
+        content = Neos.Neos:ContentCollection {
+            nodePath = 'main'
+        }
+    }
+}

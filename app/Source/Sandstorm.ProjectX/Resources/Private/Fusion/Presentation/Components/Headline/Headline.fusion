@@ -1,0 +1,7 @@
+prototype(Sandstorm.ProjectX:Component.Headline) < prototype(Neos.Fusion:Component) {
+    title = ""
+
+    renderer = afx`
+        <div class="headline">{props.title}</div>
+    `
+}

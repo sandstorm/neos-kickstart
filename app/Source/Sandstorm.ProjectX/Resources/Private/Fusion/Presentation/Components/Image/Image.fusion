@@ -1,0 +1,13 @@
+prototype(Sandstorm.ProjectX:Component.Image) < prototype(Neos.Fusion:Component) {
+    alternativeText = ''
+    src = ''
+    width = ''
+    width.@process.wrapClass = ${value ? 'image--' + value + '-sized': ''}
+
+    textWrap = ''
+    textWrap.@process.wrapClass = ${value ? 'image--text-wrap-' + value : ''}
+
+    renderer = afx`
+        <img src={props.src} alt={props.alternativeText} class={AtomicFusion.classNames('image', props.textWrap, props.width)}/>
+    `
+}

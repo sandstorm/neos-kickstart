@@ -1,0 +1,10 @@
+prototype(Sandstorm.ProjectX:Component.Anchor) < prototype(Neos.Fusion:Component) {
+    id = ""
+    inBackend = ${node.context.inBackend}
+
+    renderer = afx`
+        <div id={props.id} class="backend-only">
+            <div @if.inBackend={props.inBackend}>Sprungmarke: {props.id}</div>
+        </div>
+    `
+}

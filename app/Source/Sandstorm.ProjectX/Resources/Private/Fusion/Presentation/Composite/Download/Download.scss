@@ -1,0 +1,14 @@
+.download {
+    display: flex;
+    align-items: start;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.download__icon {
+    width: 18px;
+    margin-right: 10px;
+    margin-top: 4px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
