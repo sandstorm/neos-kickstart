@@ -23,7 +23,7 @@ run_tests:
   cache:
     key: sandstorm.projectx__composer
     paths:
-      - .composer-cache
+      - app/.composer-cache
 
 # TODO: npm cache!
 build_sass:
@@ -52,7 +52,7 @@ package_app:
   cache:
     key: sandstorm.projectx__composer
     paths:
-      - .composer-cache
+      - app/.composer-cache
   script:
     - cd app
     - COMPOSER_CACHE_DIR=.composer-cache composer install --no-dev --ignore-platform-reqs
