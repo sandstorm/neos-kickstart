@@ -27,15 +27,15 @@ RUN mv composer.phar /usr/local/bin/composer
 RUN composer config --global cache-dir /composer_cache
 
 # application entrypoint
-ADD ./entrypoint.sh /
-ADD ./memory-limit-php.ini /usr/local/etc/php/conf.d/memory-limit-php.ini
+ADD deployment/local-dev/neos/entrypoint.sh /
+ADD deployment/local-dev/neos/memory-limit-php.ini /usr/local/etc/php/conf.d/memory-limit-php.ini
 RUN rm -Rf /usr/local/etc/php-fpm.*
-ADD ./php-fpm.conf /usr/local/etc/php-fpm.conf
+ADD deployment/local-dev/neos/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 # install nginx
 RUN apt-get install -y nginx-light gettext-base
 
-ADD ./nginx.template.conf /etc/nginx/nginx.template
+ADD deployment/local-dev/neos/nginx.template.conf /etc/nginx/nginx.template
 RUN mkdir -p /var/lib/nginx /usr/local/var/log/ & \
     chown -R www-data /var/lib/nginx /usr/local/var/log/ /etc/nginx/
 
