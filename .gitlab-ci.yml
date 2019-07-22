@@ -20,10 +20,11 @@ run_tests:
     MYSQL_USER: neos
     MYSQL_PASSWORD: neos
   cache:
-    key: de.neosfunding__composer
+    key: sandstorm.projectx__composer
     paths:
       - .composer-cache
 
+# TODO: npm cache!
 build_sass:
   stage: compile_resources
   image: docker-hub.sandstorm.de/docker-infrastructure/node-sass:latest
@@ -31,25 +32,24 @@ build_sass:
     - docker
     - privileged
   script:
-    - cd Packages/Sites/Sandstorm.NeosFundingWebsite
+    - cd app/Source/Sandstorm.ProjectX/Resources/Private
     - npm install
-    - npm run build:sass
+    - npm run build
   artifacts:
     expire_in: 4 weeks
     paths:
-      - Packages/Sites/Sandstorm.NeosFundingWebsite/Resources/Public/css/main.css
+      - app/Source/Sandstorm.ProjectX/Resources/Public/bundle.js
 
 package_app:
   stage: package
   image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.1-v1
   only:
     - master
-    - kubernetes
   tags:
     - docker
     - privileged
   cache:
-    key: de.neosfunding__composer
+    key: sandstorm.projectx__composer
     paths:
       - .composer-cache
   script:
