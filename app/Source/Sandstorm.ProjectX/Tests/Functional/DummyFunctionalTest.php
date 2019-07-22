@@ -1,6 +1,6 @@
 <?php
 
-namespace Sandstorm\ProjectX\Tests\Unit;
+namespace Sandstorm\ProjectX\Tests\Functional;
 
 use Neos\Flow\Tests\FunctionalTestCase;
 
