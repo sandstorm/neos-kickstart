@@ -13,7 +13,7 @@ services:
   neos:
     build:
       context: .
-      dockerfile: ./local-dev/neos/Dockerfile
+      dockerfile: ./deployment/local-dev/neos/Dockerfile
     environment:
       FLOW_CONTEXT: 'Development/Docker'
       COMPOSER_CACHE_DIR: '/composer_cache'
@@ -51,7 +51,7 @@ services:
   neos-assets:
     build:
       context: .
-      dockerfile: ./local-dev/neos-assets/Dockerfile
+      dockerfile: ./deployment/local-dev/neos-assets/Dockerfile
     volumes:
       # everything is readonly except the "Public" folder (which contains the build results);
       - ./app/Source/Sandstorm.ProjectX/Resources/Private:/app/src/Private:cached
