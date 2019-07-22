@@ -16,3 +16,10 @@ Current project-name is "Sandstorm/ProjectX". Search and replace ProjectX with o
 Also in the Sites.xml
 
 
+# running Tests
+Docker environment for tests currently missing, run tests local (run `composer install` in `/app`)
+
+```
+./bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Unit
+./bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Functional
+```

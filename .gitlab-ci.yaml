@@ -1,0 +1,78 @@
+stages:
+  - test
+  - compile_resources
+  - package
+  - deploy
+
+run_tests:
+  stage: test
+  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.1-v1
+  services:
+    - mariadb
+  script:
+    - COMPOSER_CACHE_DIR=.composer-cache composer install --ignore-platform-reqs
+    - ./bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Unit
+    - ./bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Functional
+  variables:
+    FLOW_CONTEXT: 'Testing/GitLabCI'
+    MYSQL_ROOT_PASSWORD: neos
+    MYSQL_DATABASE: neos
+    MYSQL_USER: neos
+    MYSQL_PASSWORD: neos
+  cache:
+    key: de.neosfunding__composer
+    paths:
+      - .composer-cache
+
+build_sass:
+  stage: compile_resources
+  image: docker-hub.sandstorm.de/docker-infrastructure/node-sass:latest
+  tags:
+    - docker
+    - privileged
+  script:
+    - cd Packages/Sites/Sandstorm.NeosFundingWebsite
+    - npm install
+    - npm run build:sass
+  artifacts:
+    expire_in: 4 weeks
+    paths:
+      - Packages/Sites/Sandstorm.NeosFundingWebsite/Resources/Public/css/main.css
+
+package_app:
+  stage: package
+  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.1-v1
+  only:
+    - master
+    - kubernetes
+  tags:
+    - docker
+    - privileged
+  cache:
+    key: de.neosfunding__composer
+    paths:
+      - .composer-cache
+  script:
+    - COMPOSER_CACHE_DIR=.composer-cache composer install --no-dev --ignore-platform-reqs
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG .
+    - docker push $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG
+
+deploy_production:
+  stage: deploy
+  image: devth/helm:2.7.2
+  only:
+    - master
+    - kubernetes
+  script:
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.sandstorm.de/infrastructure/kubernetes.git kubernetes
+    - cd kubernetes/charts
+    - echo "$PRODUCTION_HELM_CHART_VALUES" | helm upgrade $CI_ENVIRONMENT_SLUG-$APP_NAME $HELM_CHART --install --namespace $CI_ENVIRONMENT_SLUG-$APP_NAME
+      --set appName=$APP_NAME
+      --set ciPipelineId=p_$CI_PIPELINE_ID
+      --set image.name=$CI_REGISTRY_IMAGE
+      --set image.tag=$CI_BUILD_REF_SLUG
+      --values -
+  environment:
+    name: production
+    url: $PRODUCTION_ENV_URL
