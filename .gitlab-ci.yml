@@ -56,6 +56,7 @@ package_app:
   script:
     - cd app
     - COMPOSER_CACHE_DIR=.composer-cache composer install --no-dev --ignore-platform-reqs
+    - cd ..
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG deployment/production/Dockerfile
     - docker push $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG
