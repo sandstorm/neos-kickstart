@@ -3,10 +3,16 @@
 /Build/BuildEssentials
 /Build/Reports
 /Build/Resources
-/Configuration/
+
+/Configuration/*
 !/Configuration/Development/
 /Configuration/Development/*
 !/Configuration/Development/Docker
+
+!/Configuration/Testing/
+/Configuration/Testing/*
+!/Configuration/Testing/GitLabCI
+
 /Data/
 /Packages/
 /Web/
