@@ -1,11 +1,11 @@
 apiVersion: charts.helm.k8s.io/v1alpha1
 kind: OneContainerOnePort
 metadata:
-  namespace: neos-on-docker-kickstart
+  namespace: projectx
   name: app
 spec:
-  appName: neos-on-docker-kickstart
-  description: 'Sample Neos Deployment in the Rancher Cluster'
+  appName: projectx
+  description: 'Sample Neos Deployment in the Rancher Cluster.'
 
   hostNames:
     neos-kickstart.cloud.sandstorm.de: []
