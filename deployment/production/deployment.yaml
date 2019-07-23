@@ -13,9 +13,12 @@ spec:
   worker: worker1
   image: docker-hub.sandstorm.de/infrastructure/neos-on-docker-kickstart:master
 
-  port: 8080
+  port: 80
   stagingCertificates: false
 
+  env:
+    NGINX_PORT: 80
+    NGINX_HOST: '0.0.0.0'
   envFromConfigMaps:
     - db
   envFromSecrets:
