@@ -13,13 +13,9 @@ spec:
   worker: worker1
   image: docker-hub.sandstorm.de/infrastructure/neos-on-docker-kickstart:master
 
-  port: 8080
+  port: 80
+  stagingCertificates: false
 
-  stagingCertificates: true
-
-  env:
-    PORT: 8080
-    MESSAGE: "Hello Sandstormer!"
   envFromConfigMaps:
     - db
   envFromSecrets:
