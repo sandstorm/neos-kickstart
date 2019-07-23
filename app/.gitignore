@@ -9,6 +9,10 @@
 /Configuration/Development/*
 !/Configuration/Development/Docker
 
+!/Configuration/Production/
+/Configuration/Production/*
+!/Configuration/Production/Kubernetes
+
 !/Configuration/Testing/
 /Configuration/Testing/*
 !/Configuration/Testing/GitLabCI

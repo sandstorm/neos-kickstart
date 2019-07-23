@@ -1,0 +1,8 @@
+Neos:
+  Flow:
+    persistence:
+      backendOptions:
+        host: '%env:DB_HOST%'
+        dbname: '%env:DB_NAME%'
+        user: '%env:DB_USER%'
+        password: '%env:DB_PASSWORD%'
