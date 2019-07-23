@@ -1,4 +1,4 @@
-FROM sandstormmedia/neos-base:1.0.2
+FROM sandstormmedia/neos-base:1.0.3
 
 ADD --chown=www-data:www-data /app/. /app
 
