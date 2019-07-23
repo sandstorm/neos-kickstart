@@ -27,7 +27,7 @@ spec:
 
   # not used by the app, just as an example
   volumes:
-    - name: persistentResources
+    - name: persistent
       mountPath: /app/Data/Persistent
 
   sso:
