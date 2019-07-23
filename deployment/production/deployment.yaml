@@ -8,11 +8,15 @@ spec:
   description: 'Sample Neos Deployment in the Rancher Cluster'
 
   hostNames:
-    neos-on-docker.cloud.sandstorm.de: []
-  stagingCertificates: true
+    neos-kickstart.cloud.sandstorm.de: []
+
   worker: worker1
   image: docker-hub.sandstorm.de/infrastructure/neos-on-docker-kickstart:master
+
   port: 8080
+
+  stagingCertificates: true
+
   env:
     PORT: 8080
     MESSAGE: "Hello Sandstormer!"
