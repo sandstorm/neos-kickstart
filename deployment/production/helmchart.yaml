@@ -1,0 +1,32 @@
+apiVersion: charts.helm.k8s.io/v1alpha1
+kind: OneContainerOnePort
+metadata:
+  namespace: neos-on-docker-kickstart
+  name: app
+spec:
+  appName: neos-on-docker-kickstart
+  description: 'Sample Neos Deployment in the Rancher Cluster'
+
+  hostNames:
+    neos-on-docker.cloud.sandstorm.de: []
+  stagingCertificates: true
+  worker: worker1
+  image: docker-hub.sandstorm.de/infrastructure/neos-on-docker-kickstart:master
+  port: 8080
+  env:
+    PORT: 8080
+    MESSAGE: "Hello Sandstormer!"
+  envFromConfigMaps:
+    - db
+  envFromSecrets:
+    - db
+
+  # not used by the app, just as an example
+  volumes:
+    - name: persistentResources
+      mountPath: /app/Data/Persistent
+
+  sso:
+    enabled: false
+
+  stopped: false

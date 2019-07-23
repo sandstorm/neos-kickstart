@@ -68,14 +68,7 @@ deploy_production:
     - master
     - kubernetes
   script:
-    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.sandstorm.de/infrastructure/kubernetes.git kubernetes
-    - cd kubernetes/charts
-    - echo "$PRODUCTION_HELM_CHART_VALUES" | helm upgrade $CI_ENVIRONMENT_SLUG-$APP_NAME $HELM_CHART --install --namespace $CI_ENVIRONMENT_SLUG-$APP_NAME
-      --set appName=$APP_NAME
-      --set ciPipelineId=p_$CI_PIPELINE_ID
-      --set image.name=$CI_REGISTRY_IMAGE
-      --set image.tag=$CI_BUILD_REF_SLUG
-      --values -
+    - kubectl get namespace neos-on-docker-kickstart && kubectl apply -f deployment/production/database.yaml && kubectl apply -f deployment/production/helmchart.yaml
   environment:
     name: production
     url: $PRODUCTION_ENV_URL

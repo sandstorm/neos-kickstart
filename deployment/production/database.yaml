@@ -1,0 +1,8 @@
+apiVersion: k8s.sandstorm.de/v1alpha1
+kind: Database
+metadata:
+  name: db
+  namespace: neos-on-docker-kickstart
+spec:
+  # adjust the database server below.
+  databaseServer: mariadb1
