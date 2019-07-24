@@ -10,7 +10,7 @@ spec:
   hostNames:
     neos-kickstart.cloud.sandstorm.de: []
 
-  worker: worker1
+  node: worker1
   image: docker-hub.sandstorm.de/infrastructure/neos-on-docker-kickstart:master
 
   port: 80
