@@ -23,7 +23,7 @@ RUN mv composer.phar /usr/local/bin/composer
 RUN composer config --global cache-dir /composer_cache
 
 # application entrypoint
-ADD /deployment/local-dev/production/entrypoint.sh /
+ADD /deployment/production/entrypoint.sh /
 ADD /deployment/config-files/memory-limit-php.ini /usr/local/etc/php/conf.d/memory-limit-php.ini
 RUN rm -Rf /usr/local/etc/php-fpm.*
 ADD deployment/config-files/php-fpm.conf /usr/local/etc/php-fpm.conf
