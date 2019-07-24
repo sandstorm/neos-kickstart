@@ -40,9 +40,10 @@ RUN mkdir -p /app/Data/Persistent /app/Configuration/Development/Docker /compose
     chown -R www-data /app /composer_cache && \
     apt-get clean
 
-ADD /app/. /app/
-
 WORKDIR /app
 USER www-data
+
+# add the App files as www-data. For high security environments, you would try remove permissions from the app files.
+ADD /app/. /app/
 
 ENTRYPOINT [ "/entrypoint.sh" ]
