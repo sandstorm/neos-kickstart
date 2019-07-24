@@ -4,5 +4,4 @@ metadata:
   name: db
   namespace: projectx
 spec:
-  # adjust the database server below.
   databaseServer: mariadb1

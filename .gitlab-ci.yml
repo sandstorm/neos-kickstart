@@ -68,7 +68,9 @@ deploy_production:
     - master
     - kubernetes
   script:
-    - kubectl get namespace projectx && kubectl apply -f deployment/production/database.yaml && kubectl apply -f deployment/production/deployment.yaml
+    - kubectl get namespace projectx
+    - kubectl apply -f deployment/production/database.yaml
+    - kubectl apply -f deployment/production/deployment.yaml
   environment:
     name: production
     url: $PRODUCTION_ENV_URL

@@ -1,4 +1,4 @@
-apiVersion: charts.helm.k8s.io/v1alpha1
+apiVersion: k8s.sandstorm.de/v1alpha1
 kind: OneContainerOnePort
 metadata:
   namespace: projectx
@@ -24,7 +24,6 @@ spec:
   envFromSecrets:
     - db
 
-  # not used by the app, just as an example
   volumes:
     - name: persistent
       mountPath: /app/Data/Persistent
