@@ -40,7 +40,7 @@ RUN mkdir -p /app/Data/Persistent /app/Configuration/Development/Docker /compose
     chown -R www-data /app /composer_cache && \
     apt-get clean
 
-ADD deployment/local-dev/neos/entrypoint.sh /entrypoint.sh
+ADD /app/. /app/
 
 WORKDIR /app
 USER www-data
