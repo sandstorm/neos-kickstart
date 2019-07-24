@@ -74,7 +74,7 @@ deploy_production:
     - kubectl apply -f deployment/production/database.yaml
     - kubectl apply -f deployment/production/deployment.yaml
     # enforce a redeploy by changing the release identifier
-    - 'kubectl patch OneContainerOnePort app -p "{\"spec\":{\"releaseIdentifier\": \"$CI_JOB_ID\"}}"'
+    - 'kubectl -n projectx patch OneContainerOnePort app -p "{\"spec\":{\"releaseIdentifier\": \"$CI_JOB_ID\"}}"'
   environment:
     name: production
     url: $PRODUCTION_ENV_URL
