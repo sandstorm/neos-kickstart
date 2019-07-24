@@ -65,7 +65,7 @@ services:
   #####
   # Maria DB
   maria-db:
-    image: mariadb
+    image: mariadb:10.3
     ports:
       - 13306:3306
     networks:
