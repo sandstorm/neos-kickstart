@@ -63,7 +63,9 @@ package_app:
 
 deploy_production:
   stage: deploy
-  image: devth/helm:2.7.2
+  image:
+    name: bitnami/kubectl:1.15.0
+    entrypoint: [""]
   only:
     - master
     - kubernetes
