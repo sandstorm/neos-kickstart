@@ -19,6 +19,7 @@ spec:
   env:
     NGINX_PORT: 8080
     NGINX_HOST: '0.0.0.0'
+    FLOW_CONTEXT: 'Production/Kubernetes'
   envFromConfigMaps:
     - db
   envFromSecrets:
