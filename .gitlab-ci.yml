@@ -74,6 +74,6 @@ deploy_production:
   script:
     - kubectl get namespace projectx
     - kubectl apply -f deployment/production/database.yaml
-    - kubectl apply -f deployment/production/deployment.yaml
+    - kubectl apply -f deployment/production/app.yaml
     # enforce a redeploy by changing the release identifier
     - 'kubectl -n projectx patch --type merge OneContainerOnePort app -p "{\"spec\":{\"releaseIdentifier\": \"$CI_JOB_ID\"}}"'
