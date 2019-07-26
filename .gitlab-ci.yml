@@ -75,6 +75,3 @@ deploy_production:
     - kubectl apply -f deployment/production/deployment.yaml
     # enforce a redeploy by changing the release identifier
     - 'kubectl -n projectx patch --type merge OneContainerOnePort app -p "{\"spec\":{\"releaseIdentifier\": \"$CI_JOB_ID\"}}"'
-  environment:
-    name: production
-    url: $PRODUCTION_ENV_URL
