@@ -75,6 +75,8 @@ services:
       MYSQL_DATABASE: neos
       MYSQL_USER: neos
       MYSQL_PASSWORD: neos
+    # use Unicode encoding as default!
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
 
 volumes:
   neos-assets-node-modules:
