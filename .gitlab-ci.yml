@@ -39,6 +39,7 @@ build_sass:
   artifacts:
     expire_in: 4 weeks
     paths:
+      - app/Source/Sandstorm.ProjectX/Resources/Public/bundle.css
       - app/Source/Sandstorm.ProjectX/Resources/Public/bundle.js
 
 package_app:

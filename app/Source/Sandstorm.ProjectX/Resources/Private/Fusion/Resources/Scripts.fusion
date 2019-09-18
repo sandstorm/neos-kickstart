@@ -1,3 +1,0 @@
-prototype(Sandstorm.ProjectX:Resources.Scripts) < prototype(Neos.Fusion:Array) {
-    bundleJs = Sandstorm.ProjectX:Resources.SiteBundleJs
-}

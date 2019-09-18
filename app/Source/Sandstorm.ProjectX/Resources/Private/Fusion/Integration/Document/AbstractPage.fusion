@@ -1,6 +1,6 @@
 prototype(Sandstorm.ProjectX:Document.AbstractPage) < prototype(Neos.Neos:Page) {
     head {
-        javascripts.site = Sandstorm.ProjectX:Resources.Scripts
+        javascripts.site = Sandstorm.ProjectX:Resources.HeaderAssets
     }
 
     body = Sandstorm.ProjectX:Layout.Default {

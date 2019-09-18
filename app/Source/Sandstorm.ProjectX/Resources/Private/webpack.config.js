@@ -1,13 +1,28 @@
 var path = require("path");
-const globImporter = require('node-sass-glob-importer');
+var webpack = require('webpack');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    entry: "./main.js",
+    node: {
+        fs: 'empty'
+    },
+    entry: ["./main.js", "./main.scss"],
     output: {
         path: path.resolve(__dirname, "../Public"),
         filename: "bundle.js",
         publicPath: "/"
     },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jquery: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        }),
+        new MiniCssExtractPlugin({
+            filename: "bundle.css",
+        })
+    ],
     module: {
         rules: [
             {
@@ -19,20 +34,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [
-                    {
-                        loader: "style-loader" // creates style nodes from JS strings
-                    },
-                    {
-                        loader: "css-loader?url=false" // translates CSS into CommonJS
-                    },
-                    {
-                        loader: "sass-loader", // compiles Sass to CSS
-                        options: {
-                            importer: globImporter()
-                        }
-                    }
-                ]
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
             }
         ]
     }
