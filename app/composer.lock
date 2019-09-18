@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2dc592d1f085bdc88407c4a3e01246c6",
+    "content-hash": "68b57575187266709d8fc17990228ffa",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -995,6 +995,42 @@
                 "reflection"
             ],
             "time": "2018-06-14T14:45:07+00:00"
+        },
+        {
+            "name": "flowpack/cachebuster",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Flowpack/Flowpack.CacheBuster.git",
+                "reference": "d0838f7d6d19057a1effbaf831104af3c330cfe3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Flowpack/Flowpack.CacheBuster/zipball/d0838f7d6d19057a1effbaf831104af3c330cfe3",
+                "reference": "d0838f7d6d19057a1effbaf831104af3c330cfe3",
+                "shasum": ""
+            },
+            "require": {
+                "neos/flow": "^4.0 || ^5.0 || ^6.0"
+            },
+            "type": "neos-package",
+            "autoload": {
+                "psr-4": {
+                    "Flowpack\\CacheBuster\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Helzle",
+                    "email": "sebastian@helzle.it"
+                }
+            ],
+            "description": "Cache buster for static resources in Neos",
+            "time": "2019-09-16T10:48:03+00:00"
         },
         {
             "name": "gedmo/doctrine-extensions",

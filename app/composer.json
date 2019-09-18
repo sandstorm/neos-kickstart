@@ -37,7 +37,8 @@
         "packagefactory/atomicfusion-afx": "^5.0",
         "sitegeist/monocle": "^6.1.0",
         "sandstorm/ProjectX": "@dev",
-        "php": "~7.1.0"
+        "php": "~7.1.0",
+        "flowpack/cachebuster": "^1.0"
     },
     "require-dev": {
         "neos/buildessentials": "^5.0",
