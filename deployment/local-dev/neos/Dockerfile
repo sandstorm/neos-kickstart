@@ -1,21 +1,15 @@
 # NOTE: this file is executed from the ROOT DIRECTORY of the project, i.e. "../"
-FROM php:7.1-fpm-stretch
+FROM php:7.3.10-fpm-buster
 
-RUN apt-get update
-
-# Install PDO mysql PHP extension
-RUN docker-php-ext-install pdo pdo_mysql mysqli
-
-# Install gd PHP extension
-RUN apt-get install -y --no-install-recommends \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
-        libpng-dev \
-        git unzip \
-        nginx-light gettext-base \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd \
-    && docker-php-ext-install bcmath
+# Install intl, bcmath, pdo, pdo_mysql, mysqli, libvips
+RUN apt-get update -y && \
+    apt-get install --no-install-recommends -y libicu-dev libxslt1-dev nginx-light libvips42 libvips-dev supervisor procps && \
+    mkdir -p /var/log/supervisor && \
+    rm -rf /var/lib/apt/lists/* && \
+    docker-php-ext-install intl bcmath pdo pdo_mysql mysqli xsl && \
+    pecl install vips && \
+    echo "extension=vips.so" > /usr/local/etc/php/conf.d/vips.ini && \
+    pecl install redis && docker-php-ext-enable redis
 
 # install composer
 RUN curl --silent --show-error https://getcomposer.org/installer | php
