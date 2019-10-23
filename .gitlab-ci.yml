@@ -13,7 +13,7 @@ run_tests:
     - cd app
     - COMPOSER_CACHE_DIR=.composer-cache composer install --ignore-platform-reqs
     - ./bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Unit
-    - php -d memory_limit=1024M bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Functional
+    - bin/phpunit -d memory_limit=1024M -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Functional
   variables:
     FLOW_CONTEXT: 'Testing/GitLabCI'
     MYSQL_ROOT_PASSWORD: neos
