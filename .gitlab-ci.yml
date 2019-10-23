@@ -6,7 +6,7 @@ stages:
 
 run_tests:
   stage: test
-  image: composer:1.9.0
+  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.3-v1
   services:
     - mariadb
   script:
@@ -33,14 +33,14 @@ build_sass:
     - docker
     - privileged
   script:
-    - cd app/Source/Sandstorm.ProjectX/Resources/Private
+    - cd app/DistributionPackages/Sandstorm.ProjectX/Resources/Private
     - npm install
     - npm run build
   artifacts:
     expire_in: 4 weeks
     paths:
-      - app/Source/Sandstorm.ProjectX/Resources/Public/bundle.css
-      - app/Source/Sandstorm.ProjectX/Resources/Public/bundle.js
+      - app/DistributionPackages/Sandstorm.ProjectX/Resources/Public/bundle.css
+      - app/DistributionPackages/Sandstorm.ProjectX/Resources/Public/bundle.js
 
 package_app:
   stage: package
