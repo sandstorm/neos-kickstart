@@ -17,7 +17,7 @@ prototype(Sandstorm.ProjectX:Resources.HeaderAssets) < prototype(Neos.Fusion:Arr
     bundleCSS = Neos.Fusion:Tag {
         tagName = 'link'
         attributes.rel = 'stylesheet'
-        attributes.src = Neos.Fusion:ResourceUri {
+        attributes.href = Neos.Fusion:ResourceUri {
             path = 'resource://Sandstorm.ProjectX/Public/bundle.css'
         }
     }
