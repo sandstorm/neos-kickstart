@@ -11,6 +11,11 @@ RUN apt-get update -y && \
     echo "extension=vips.so" > /usr/local/etc/php/conf.d/vips.ini && \
     pecl install redis && docker-php-ext-enable redis
 
+# install git and unzip for Composer
+RUN apt-get update -y && \
+    apt-get install --no-install-recommends -y unzip git && \
+    rm -rf /var/lib/apt/lists/*
+
 # install composer
 RUN curl --silent --show-error https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
