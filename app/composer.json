@@ -15,7 +15,7 @@
         "vendor-dir": "Packages/Libraries",
         "bin-dir": "bin",
         "platform": {
-            "php": "7.3.10"
+            "php": "7.4.0"
         }
     },
     "repositories": [

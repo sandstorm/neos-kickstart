@@ -1,5 +1,5 @@
 # NOTE: this file is executed from the ROOT DIRECTORY of the project, i.e. "../"
-FROM php:7.3.10-fpm-buster
+FROM php:7.4.0-fpm-buster
 
 # Install intl, bcmath, pdo, pdo_mysql, mysqli, libvips
 RUN apt-get update -y && \
