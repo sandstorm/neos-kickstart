@@ -66,6 +66,7 @@ Docker environment for tests currently missing, run tests local (run `composer i
 ## deployment
 
 First you need to create a new namespace in the rancher ui, then create a new dns entry for your project.
+Visit this guide to help you setup: https://gitlab.sandstorm.de/infrastructure/k8s/blob/master/user-guides/deploy-neos.md
 
 You really need to make sure the namespace is configured the right way in `/deployment/production/database.yaml`
 and `/deployment/production/deployment.yaml`.
