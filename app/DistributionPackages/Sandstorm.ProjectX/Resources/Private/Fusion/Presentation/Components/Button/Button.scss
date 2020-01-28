@@ -1,0 +1,78 @@
+.button__outer {
+  width: 100%;
+}
+
+.button, input.button {
+  display: inline-block;
+  height: $button__height;
+  padding: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+  margin-bottom: 40px;
+
+  color: $theme__color__white;
+  font-size: $base__fontSize;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+  line-height: $button__height;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+
+  border: 1px solid $theme__color__black;
+  border-radius: 0;
+  -webkit-appearance: none;
+  background: none;
+  background-color: $theme__color__black;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  @include transition(all .3s);
+
+  &:hover, &:active, &:focus {
+    background-color: $theme__color__white;
+    color: $theme__color__black;
+  }
+
+  &--secondary {
+    background-color: $theme__color__white;
+    border-color: $theme__color__black;
+
+
+    color: $theme__color__black;
+
+    &:hover, &:active, &:focus {
+      background-color: $theme__color__black;
+      color: $theme__color__white;
+    }
+  }
+
+  &--square {
+    width: $button__height;
+    padding: 0;
+    text-align: center;
+  }
+
+  &--text {
+    background-color: transparent;
+    border: none;
+    color: $theme__color__white;
+
+    &:hover {
+      background-color: transparent;
+      color: $theme__color__white;
+    }
+  }
+
+  &--block {
+    width: 100%;
+  }
+
+  &--large {
+    height: $button__height * 1.2;
+    line-height: $button__height * 1.2;
+  }
+}

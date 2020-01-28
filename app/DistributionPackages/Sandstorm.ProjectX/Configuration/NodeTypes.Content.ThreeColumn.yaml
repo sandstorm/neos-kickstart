@@ -13,3 +13,85 @@
       type: 'Sandstorm.ProjectX:ContentCollection.Column'
     column2:
       type: 'Sandstorm.ProjectX:ContentCollection.Column'
+  properties:
+    sizeColumn1:
+      type: string
+      defaultValue: size-33
+      ui:
+        label: 'Größe der ersten Spalte'
+        reloadIfChanged: true
+        inspector:
+          group: 'properties'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              size-20:
+                label: '20%'
+              size-25:
+                label: '25%'
+              size-33:
+                label: '33%'
+              size-40:
+                label: '40%'
+              size-50:
+                label: '50%'
+              size-60:
+                label: '60%'
+              size-66:
+                label: '66%'
+              size-80:
+                label: '80%'
+    sizeColumn2:
+      type: string
+      defaultValue: size-33
+      ui:
+        label: 'Größe der zweiten Spalte'
+        reloadIfChanged: true
+        inspector:
+          group: 'properties'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              size-20:
+                label: '20%'
+              size-25:
+                label: '25%'
+              size-33:
+                label: '33%'
+              size-40:
+                label: '40%'
+              size-50:
+                label: '50%'
+              size-60:
+                label: '60%'
+              size-66:
+                label: '66%'
+              size-80:
+                label: '80%'
+    sizeColumn3:
+      type: string
+      defaultValue: size-33
+      ui:
+        label: 'Größe der dritten Spalte'
+        reloadIfChanged: true
+        inspector:
+          group: 'properties'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              size-20:
+                label: '20%'
+              size-25:
+                label: '25%'
+              size-33:
+                label: '33%'
+              size-40:
+                label: '40%'
+              size-50:
+                label: '50%'
+              size-60:
+                label: '60%'
+              size-66:
+                label: '66%'
+              size-80:
+                label: '80%'

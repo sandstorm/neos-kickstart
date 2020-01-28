@@ -1,6 +1,7 @@
 'Sandstorm.ProjectX:Content.Button':
   superTypes:
     'Sandstorm.ProjectX:Content.AbstractContent': true
+    'Sandstorm.ProjectX:Mixin.Link': true
   ui:
     label: 'Button'
     icon: icon-box
@@ -10,17 +11,21 @@
       type: string
       defaultValue: 'Button'
       ui:
-        label: 'Text'
-        inlineEditable: true
-    link:
-      type: string
-      ui:
-        label: 'Link'
+        label: 'Button Title'
+        reloadIfChanged: true
         inspector:
           group: properties
+    isBlockButton:
+      type: boolean
+      ui:
+        reloadIfChanged: true
+        label: '100% width?'
+        inspector:
+          group: properties
+          position: 60
     type:
       type: string
-      defaultValue: 'secondary'
+      defaultValue: 'primary'
       ui:
         label: 'Typ'
         reloadIfChanged: true
@@ -29,13 +34,7 @@
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
+              primary:
+                label: 'Primary'
               secondary:
                 label: 'Secondary'
-              callToAction:
-                label: 'Call to action'
-              action:
-                label: 'Action'
-              teaser:
-                label: 'Teaser'
-              back:
-                label: 'Zurück'

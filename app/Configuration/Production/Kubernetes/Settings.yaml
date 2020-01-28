@@ -6,3 +6,16 @@ Neos:
         dbname: '%env:DB_NAME%'
         user: '%env:DB_USER%'
         password: '%env:DB_PASSWORD%'
+
+  Imagine:
+    driver: 'Vips'
+    enabledDrivers:
+      Vips: true
+      Gd: true
+      Imagick: true
+
+  Media:
+    image:
+      defaultOptions:
+        # The Vips driver does not support interlace
+        interlace: ~

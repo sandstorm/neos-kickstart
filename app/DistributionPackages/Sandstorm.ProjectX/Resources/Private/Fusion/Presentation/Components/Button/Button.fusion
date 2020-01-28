@@ -1,21 +1,20 @@
 prototype(Sandstorm.ProjectX:Component.Button) < prototype(Neos.Fusion:Component) {
     text = ''
     link = ''
+    link.@process.convert = Neos.Neos:ConvertUris
     styleClasses = ''
-    iconName = ''
-    hasLeftIcon = false
+    isBlockButton = false
+    isBlockButton.@process.blockButtonClass = ${value ? 'button--block' : ''}
 
     node = ${node}
 
     renderer = Neos.Fusion:Tag {
         tagName = ${(props.link && !props.node.context.inBackend) ? 'a' : 'div'}
-        attributes.class = ${AtomicFusion.classNames('button', {'button-leading-icon': props.hasLeftIcon }, props.styleClasses)}
+        attributes.class = ${'button ' + props.styleClasses + ' ' + props.isBlockButton}
         attributes.href = ${props.link ? props.link : ''}
 
         content = afx`
-            <i class={AtomicFusion.classNames('icon', 'icon-' + props.iconName)} @if.hasIcon={props.iconName && props.hasLeftIcon}></i>
             {props.text}
-            <i class={AtomicFusion.classNames('icon', 'icon-' + props.iconName)} @if.hasIcon={props.iconName && !props.hasLeftIcon}></i>
         `
     }
 }

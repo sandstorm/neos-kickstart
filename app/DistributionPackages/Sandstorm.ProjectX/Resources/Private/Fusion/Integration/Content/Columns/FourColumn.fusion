@@ -1,26 +1,26 @@
 prototype(Sandstorm.ProjectX:Content.FourColumn) < prototype(Neos.Neos:ContentComponent) {
     renderer = Sandstorm.ProjectX:Component.Columns {
         columns = Neos.Fusion:RawArray {
-            1 = Neos.Fusion:RawArray {
-                size = 3
+            one = Neos.Fusion:RawArray {
+                sizeClass = ${q(node).property('sizeColumn1')}
                 content = Neos.Neos:ContentCollection {
                     nodePath = 'column0'
                 }
             }
-            2 = Neos.Fusion:RawArray {
-                size = 3
+            two = Neos.Fusion:RawArray {
+                sizeClass = ${q(node).property('sizeColumn2')}
                 content = Neos.Neos:ContentCollection {
                     nodePath = 'column1'
                 }
             }
-            3 = Neos.Fusion:RawArray {
-                size = 3
+            three = Neos.Fusion:RawArray {
+                sizeClass = ${q(node).property('sizeColumn3')}
                 content = Neos.Neos:ContentCollection {
                     nodePath = 'column2'
                 }
             }
-            4 = Neos.Fusion:RawArray {
-                size = 3
+            four = Neos.Fusion:RawArray {
+                sizeClass = ${q(node).property('sizeColumn4')}
                 content = Neos.Neos:ContentCollection {
                     nodePath = 'column3'
                 }

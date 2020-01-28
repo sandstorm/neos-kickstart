@@ -1,81 +1,31 @@
 prototype(Sandstorm.ProjectX:Content.Button) < prototype(Neos.Neos:ContentComponent) {
     renderer = Neos.Fusion:Case {
-            callToAction {
-                condition =  ${q(node).property('type') == 'callToAction'}
-                renderer = Sandstorm.ProjectX:Component.Button {
-                    text = Neos.Neos:Editable {
-                        property = 'text'
-                        block = false
-                    }
-
-                    link = ${q(node).property('link')}
-
-                    styleClasses = 'button-red'
+        primary {
+            condition = ${q(node).property('type') == 'primary'}
+            renderer = Sandstorm.ProjectX:Component.Button {
+                text = Neos.Neos:Editable {
+                    property = 'text'
+                    block = false
                 }
+
+                link = ${q(node).property('link')}
+                isBlockButton = ${q(node).property('isBlockButton')}
             }
+        }
 
-            action {
-                condition =  ${q(node).property('type') == 'action'}
-                renderer = Sandstorm.ProjectX:Component.Button {
-                    text = Neos.Neos:Editable {
-                        property = 'text'
-                        block = false
-                    }
-
-                    link = ${q(node).property('link')}
+        default {
+            condition = ${true}
+            renderer = Sandstorm.ProjectX:Component.Button {
+                text = Neos.Neos:Editable {
+                    property = 'text'
+                    block = false
                 }
 
-                styleClasses = 'button-bordered button-grey'
-            }
-
-            teaser {
-                condition =  ${q(node).property('type') == 'teaser'}
-                renderer = Sandstorm.ProjectX:Component.Button {
-                    text = Neos.Neos:Editable {
-                        property = 'text'
-                        block = false
-                    }
-
-                    link = ${q(node).property('link')}
-
-                    styleClasses = 'button-bordered button-teaser'
-                    iconName = 'arrow'
-                }
-            }
-
-            back {
-                condition =  ${q(node).property('type') == 'back'}
-                renderer = Sandstorm.ProjectX:Component.Button {
-                    text = Neos.Neos:Editable {
-                        property = 'text'
-                        block = false
-                    }
-
-                    link = ${q(node).property('link')}
-
-                    styleClasses = Neos.Fusion:Array {
-                        1 = 'button-grey '
-                        2 = 'button-leading-icon '
-                    }
-                    color = 'grey'
-                    iconName = 'back'
-                    hasLeftIcon = true
-                }
-            }
-
-            default {
-                condition =  ${true}
-                renderer = Sandstorm.ProjectX:Component.Button {
-                    text = Neos.Neos:Editable {
-                        property = 'text'
-                        block = false
-                    }
-
-                    link = ${q(node).property('link')}
-
-                    styleClasses = 'button-grey'
-                }
+                link = ${q(node).property('link')}
+                isBlockButton = ${q(node).property('isBlockButton')}
+                styleClasses = 'button--secondary'
             }
         }
     }
+}
 

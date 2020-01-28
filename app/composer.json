@@ -27,7 +27,6 @@
     "require": {
         "neos/neos": "~5.0.0",
         "neos/nodetypes": "~5.0.0",
-        "neos/site-kickstarter": "~5.0.0",
 
         "neos/neos-ui": "~5.0",
         "neos/seo": "~3.0",

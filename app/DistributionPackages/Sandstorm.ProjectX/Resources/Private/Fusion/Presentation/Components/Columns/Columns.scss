@@ -1,4 +1,80 @@
 .columns {
-    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: -20px;
+    margin-right: -20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.columns__cell {
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-bottom: 20px;
+
+    flex-basis: 100%;
+    width: 100%;
+
+    &--size-20 {
+        width: 20%;
+        flex-basis: 20%;
+    }
+
+    &--size-25 {
+        width: 25%;
+        flex-basis: 25%;
+    }
+
+    &--size-33 {
+        width: 33%;
+        flex-basis: 33%;
+    }
+
+    &--size-40 {
+        width: 40%;
+        flex-basis: 40%;
+    }
+
+    &--size-50 {
+        width: 50%;
+        flex-basis: 50%;
+    }
+
+    &--size-60 {
+        width: 60%;
+        flex-basis: 60%;
+    }
+
+    &--size-66 {
+        width: 66%;
+        flex-basis: 66%;
+    }
+
+    &--size-75 {
+        width: 75%;
+        flex-basis: 75%;
+    }
+
+    &--size-80 {
+        width: 80%;
+        flex-basis: 80%;
+    }
+
+    @include mq(small) {
+        flex-basis: 100% !important;
+        width: 100% !important;
+
+        margin-bottom: 40px;
+    }
+}
+
+.columns.slider__slides {
+    display: block;
+
+    .columns__cell{
+        @include mq(small) {
+            margin-bottom: 20px;
+        }
+    }
 }
