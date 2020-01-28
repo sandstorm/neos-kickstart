@@ -5,7 +5,7 @@
 # found here: https://github.com/neos/neos-development-collection/pull/2374
 #
 error {
-    @context.notfoundDocument = ${q(site).children('[instanceof Sandstorm.ProjectX:Document.ErrorPage]').filter('[uriPathSegment="notfound"]').get(0)}
+    @context.notfoundDocument = ${q(site).children('[instanceof Sandstorm.ProjectX:Document.ErrorPage]').filter('[uriPathSegment="404"]').get(0)}
     4xx {
         @position = 'start'
         condition = ${statusCode >= 400 && statusCode < 500 && notfoundDocument}
