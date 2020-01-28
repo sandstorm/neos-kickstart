@@ -1,0 +1,10 @@
+'Sandstorm.ProjectX:Document.ErrorPage':
+  superTypes:
+    'Sandstorm.ProjectX:Document.AbstractPage': true
+  ui:
+    icon: 'icon-bomb'
+    label: '404 Seite'
+  options:
+    template:
+      properties:
+        _hiddenInIndex: true

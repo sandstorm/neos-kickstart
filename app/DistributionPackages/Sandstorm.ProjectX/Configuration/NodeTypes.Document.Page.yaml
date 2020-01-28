@@ -9,3 +9,4 @@
   constraints:
     nodeTypes:
       'Sandstorm.ProjectX:Document.Page': true
+      'Sandstorm.ProjectX:Document.ErrorPage': true

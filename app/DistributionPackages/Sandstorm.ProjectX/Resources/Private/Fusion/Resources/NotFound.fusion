@@ -1,0 +1,21 @@
+#
+# Extend error matcher to render the document with uriPathSegment `notfound`
+# for exceptions with 4xx status code
+#
+# found here: https://github.com/neos/neos-development-collection/pull/2374
+#
+error {
+    @context.notfoundDocument = ${q(site).children('[instanceof Sandstorm.ProjectX:Document.ErrorPage]').filter('[uriPathSegment="notfound"]').get(0)}
+    4xx {
+        @position = 'start'
+        condition = ${statusCode >= 400 && statusCode < 500 && notfoundDocument}
+        renderer = Neos.Fusion:Renderer {
+            @context {
+                site = ${notfoundDocument.context.currentSiteNode}
+                documentNode = ${notfoundDocument}
+                node = ${notfoundDocument}
+            }
+            renderPath = '/root'
+        }
+    }
+}

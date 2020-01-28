@@ -7,9 +7,5 @@ prototype(Sandstorm.ProjectX:Document.Page) < prototype(Sandstorm.ProjectX:Docum
         teaserText = Sandstorm.ProjectX:Helper.DocumentEditableProperty {
             property = 'teaserText'
         }
-
-        content = Neos.Neos:ContentCollection {
-            nodePath = 'main'
-        }
     }
 }

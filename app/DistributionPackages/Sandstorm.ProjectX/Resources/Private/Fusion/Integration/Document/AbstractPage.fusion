@@ -4,6 +4,8 @@ prototype(Sandstorm.ProjectX:Document.AbstractPage) < prototype(Neos.Neos:Page) 
     }
 
     body = Sandstorm.ProjectX:Layout.Default {
-        content = ''
+        content = Neos.Neos:ContentCollection {
+            nodePath = 'main'
+        }
     }
 }
