@@ -74,3 +74,11 @@ and `/deployment/production/deployment.yaml`.
 Just push and it should work.
 
 Site import and creating an user in production/staging is only possible via command line.
+
+## Packages we recommend for certain use-cases
+
+1. `sitegeist/monocle` for prototyping components
+2. `yoast/yoast-seo-for-neos` for a real good SEO experience 
+3. `flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -> helps with the editor experience
+4. `neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful static form node-types
+5. `flowpack/listable` to get pagination for lists of node-types (blog posts for example)
