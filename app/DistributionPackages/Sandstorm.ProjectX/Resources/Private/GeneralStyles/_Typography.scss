@@ -1,0 +1,55 @@
+html, body {
+    font-size: $base__fontSize;
+    font-family: $theme__default__fontStack;
+    font-weight: $theme__default__fontWeight;
+    line-height: $base__lineHeight;
+    color: $theme__color__black;
+}
+
+h1 {
+    font-size: $h1__fontSize;
+    font-weight: 400;
+    line-height: $base__lineHeight;
+}
+
+h2 {
+    font-size: $h2__fontSize;
+    font-weight: 400;
+    line-height: $base__lineHeight;
+}
+
+h3 {
+    font-size: $h3__fontSize;
+    font-weight: 400;
+    line-height: $base__lineHeight;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: $base__lineHeight;
+}
+
+h5 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: $base__lineHeight;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: $base__lineHeight;
+}
+
+.text-align--center {
+    text-align: center;
+}
+
+.text-align--left {
+    text-align: left;
+}
+
+.text-align--right {
+    text-align: right;
+}

@@ -31,3 +31,12 @@
 .image--50-sized {
     width: 50%;
 }
+
+.image__placeholder {
+    height: 200px;
+
+    border: 1px dashed $theme__color__black;
+
+    line-height: 200px;
+    vertical-align: middle;
+}

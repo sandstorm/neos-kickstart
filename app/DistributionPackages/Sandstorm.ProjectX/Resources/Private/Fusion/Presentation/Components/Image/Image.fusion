@@ -7,7 +7,10 @@ prototype(Sandstorm.ProjectX:Component.Image) < prototype(Neos.Fusion:Component)
     textWrap = ''
     textWrap.@process.wrapClass = ${value ? 'image--text-wrap-' + value : ''}
 
+    inBackend = ${node.context.inBackend}
+
     renderer = afx`
-        <img src={props.src} alt={props.alternativeText} class={AtomicFusion.classNames('image', props.textWrap, props.width)}/>
+        <div class="image__placeholder text-align--center" @if.hasNoImage={props.inBackend && !props.src}><h5><i class="fas fa-image"></i> Bitte Bild im Inspector auswählen</h5></div>
+        <img src={props.src} alt={props.alternativeText} class={'image ' + props.textWrap + ' ' + props.width}/>
     `
 }

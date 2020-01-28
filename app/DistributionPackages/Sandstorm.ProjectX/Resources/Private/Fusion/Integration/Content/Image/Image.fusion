@@ -1,6 +1,8 @@
 prototype(Sandstorm.ProjectX:Content.Image) < prototype(Neos.Neos:ContentComponent) {
     renderer = Sandstorm.ProjectX:Component.Image {
-        alternativeText = ${node.properties.alternativeText}
+        alternativeText = Sandstorm.ProjectX:Helper.ImageAltText {
+            image = ${q(node).property('image')}
+        }
         src = Neos.Neos:ImageUri {
             asset = ${q(node).property('image')}
             maximumWidth = 900
