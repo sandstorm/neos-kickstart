@@ -25,3 +25,10 @@ Neos:
       defaultOptions:
         # The Vips driver does not support interlace
         interlace: ~
+
+# The propType-validation is enabled via settings.
+# By default this setting is enabled for Development and Testing context but not enabled for Production.
+PackageFactory:
+  AtomicFusion:
+    PropTypes:
+      enable: true

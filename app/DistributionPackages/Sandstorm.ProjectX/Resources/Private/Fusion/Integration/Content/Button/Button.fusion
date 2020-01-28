@@ -10,6 +10,7 @@ prototype(Sandstorm.ProjectX:Content.Button) < prototype(Neos.Neos:ContentCompon
 
                 link = ${q(node).property('link')}
                 isBlockButton = ${q(node).property('isBlockButton')}
+                isExternalLink = ${q(node).property('isExternalLink')}
             }
         }
 
@@ -23,6 +24,7 @@ prototype(Sandstorm.ProjectX:Content.Button) < prototype(Neos.Neos:ContentCompon
 
                 link = ${q(node).property('link')}
                 isBlockButton = ${q(node).property('isBlockButton')}
+                isExternalLink = ${q(node).property('isExternalLink')}
                 styleClasses = 'button--secondary'
             }
         }

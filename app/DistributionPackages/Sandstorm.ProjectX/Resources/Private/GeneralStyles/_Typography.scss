@@ -53,3 +53,9 @@ h6 {
 .text-align--right {
     text-align: right;
 }
+
+pre {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: normal;
+}

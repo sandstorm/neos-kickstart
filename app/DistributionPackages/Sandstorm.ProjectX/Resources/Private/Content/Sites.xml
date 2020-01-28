@@ -15,16 +15,17 @@
       <uriPathSegment __type="string">home</uriPathSegment>
      </properties>
     </variant>
-    <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.ProjectX:Document.Page" version="2" removed="" hidden="" hiddenInIndex="">
+    <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.ProjectX:Document.Page" version="3" removed="" hidden="" hiddenInIndex="">
      <dimensions/>
      <accessRoles __type="array"/>
      <creationDateTime __type="object" __classname="DateTime">2020-01-28T13:36:57+00:00</creationDateTime>
-     <lastModificationDateTime __type="object" __classname="DateTime">2020-01-28T13:36:59+00:00</lastModificationDateTime>
-     <lastPublicationDateTime __type="object" __classname="DateTime">2020-01-28T13:36:59+00:00</lastPublicationDateTime>
+     <lastModificationDateTime __type="object" __classname="DateTime">2020-01-28T14:26:24+00:00</lastModificationDateTime>
+     <lastPublicationDateTime __type="object" __classname="DateTime">2020-01-28T14:26:23+00:00</lastPublicationDateTime>
      <properties>
       <title __type="string">Home</title>
       <uriPathSegment __type="string">home</uriPathSegment>
       <teaserTitle __type="string">Neos Kickstart Package</teaserTitle>
+      <teaserText __type="string">Basic Neos package to get you really fast up and running to create awesome neos pages...</teaserText>
      </properties>
     </variant>
     <node identifier="4d0ece5f-1097-414f-be26-737adb8d32e7" nodeName="main">
@@ -37,6 +38,33 @@
       <lastModificationDateTime __type="object" __classname="DateTime">2020-01-28T13:35:34+00:00</lastModificationDateTime>
       <properties/>
      </variant>
+     <node identifier="5a7b00e4-6ecd-4160-9f23-680fece94250" nodeName="node-u4q50tr7geefa">
+      <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.ProjectX:Content.Text" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2020-01-28T14:00:09+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2020-01-28T14:03:47+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2020-01-28T14:03:47+00:00</lastPublicationDateTime>
+       <properties>
+        <text __type="string">&lt;pre&gt;&lt;i&gt;## Packages we recommend for certain use-cases&lt;/i&gt;&lt;br&gt;&lt;br&gt;1. `sitegeist/monocle` for prototyping components&lt;br&gt;2. `yoast/yoast-seo-for-neos` for a real good SEO experience &lt;br&gt;3. `flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -&amp;gt; helps with the editor experience&lt;br&gt;4. `neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful static form node-types&lt;br&gt;5. `flowpack/listable` to get pagination for lists of node-types (blog posts for example)&lt;br&gt;&amp;nbsp;&lt;/pre&gt;</text>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="27c6dc5f-61b8-4c85-85ed-d42bd598b98c" nodeName="node-xqwkczo5l60nd">
+      <variant sortingIndex="150" workspace="live" nodeType="Sandstorm.ProjectX:Content.Image" version="11" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2020-01-28T14:00:32+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2020-01-28T14:22:26+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2020-01-28T14:22:26+00:00</lastPublicationDateTime>
+       <properties>
+        <textWrap __type="string"></textWrap>
+        <width __type="string">50</width>
+        <image __type="object" __identifier="23da093f-35a8-4f68-b675-b4e1328af252" __classname="Neos\Media\Domain\Model\Image" __encoding="json">{&quot;__identity&quot;:&quot;23da093f-35a8-4f68-b675-b4e1328af252&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Image&quot;,&quot;title&quot;:&quot;&quot;,&quot;copyrightNotice&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;cat.jpg&quot;,&quot;collectionName&quot;:&quot;persistent&quot;,&quot;relativePublicationPath&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;image\/jpeg&quot;,&quot;sha1&quot;:&quot;e9938854b65a995d158afe726bcb4d31266b590f&quot;,&quot;hash&quot;:&quot;e9938854b65a995d158afe726bcb4d31266b590f&quot;,&quot;__identity&quot;:&quot;a565bc20-8fb4-4748-a148-6349861c4b87&quot;}}</image>
+        <alternativeText __type="string"></alternativeText>
+       </properties>
+      </variant>
+     </node>
     </node>
     <node identifier="76a81095-e0bd-4797-b1e8-8b8221cadb66" nodeName="node-2p79n9cwe5ka9">
      <variant sortingIndex="200" workspace="live" nodeType="Sandstorm.ProjectX:Document.ErrorPage" version="3" removed="" hidden="" hiddenInIndex="1">

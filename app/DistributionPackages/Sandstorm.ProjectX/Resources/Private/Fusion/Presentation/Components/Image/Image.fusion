@@ -9,6 +9,14 @@ prototype(Sandstorm.ProjectX:Component.Image) < prototype(Neos.Fusion:Component)
 
     inBackend = ${node.context.inBackend}
 
+    @propTypes {
+        # validation rules for props
+        alternativeText = ${PropTypes.string}
+        src = ${PropTypes.string}
+        width = ${PropTypes.string}
+        textWrap = ${PropTypes.string}
+    }
+
     renderer = afx`
         <div class="image__placeholder text-align--center" @if.hasNoImage={props.inBackend && !props.src}><h5><i class="fas fa-image"></i> Bitte Bild im Inspector auswählen</h5></div>
         <img src={props.src} alt={props.alternativeText} class={'image ' + props.textWrap + ' ' + props.width}/>

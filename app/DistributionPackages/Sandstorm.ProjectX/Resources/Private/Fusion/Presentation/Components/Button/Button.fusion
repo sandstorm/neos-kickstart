@@ -5,13 +5,26 @@ prototype(Sandstorm.ProjectX:Component.Button) < prototype(Neos.Fusion:Component
     styleClasses = ''
     isBlockButton = false
     isBlockButton.@process.blockButtonClass = ${value ? 'button--block' : ''}
+    isExternalLink = false
 
     node = ${node}
+
+    @propTypes {
+        # validation rules for props
+        text = ${PropTypes.string}
+        link = ${PropTypes.string}
+        styleClasses = ${PropTypes.string}
+        isBlockButton = ${PropTypes.string}
+        isExternalLink = ${PropTypes.boolean}
+    }
+
+    target = ${this.isExternalLink ? '_blank' : ''}
 
     renderer = Neos.Fusion:Tag {
         tagName = ${(props.link && !props.node.context.inBackend) ? 'a' : 'div'}
         attributes.class = ${'button ' + props.styleClasses + ' ' + props.isBlockButton}
         attributes.href = ${props.link ? props.link : ''}
+        attributes.target = ${props.target}
 
         content = afx`
             {props.text}

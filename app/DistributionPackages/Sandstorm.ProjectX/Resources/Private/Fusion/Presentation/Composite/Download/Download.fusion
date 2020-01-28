@@ -5,6 +5,13 @@ prototype(Sandstorm.ProjectX:Composite.Download) < prototype(Neos.Fusion:Compone
 
     inBackend = ${node.context.inBackend}
 
+    @propTypes {
+        # validation rules for props
+        fileUrl = ${PropTypes.string}
+        text = ${PropTypes.string}
+        imgSrc = ${PropTypes.string}
+    }
+
     renderer = Neos.Fusion:Tag {
         tagName = ${props.inBackend ? 'div' : 'a'}
         attributes.class = 'download'

@@ -6,7 +6,6 @@ prototype(Sandstorm.ProjectX:Content.Download) < prototype(Neos.Neos:ContentComp
         fileUrl = Neos.Fusion:ResourceUri {
             resource = ${q(node).property('file').resource}
         }
-
         imgSrc = Neos.Neos:ImageUri {
             asset = ${q(node).property('file')}
         }
