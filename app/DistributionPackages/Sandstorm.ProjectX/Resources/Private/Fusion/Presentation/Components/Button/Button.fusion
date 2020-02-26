@@ -4,7 +4,6 @@ prototype(Sandstorm.ProjectX:Component.Button) < prototype(Neos.Fusion:Component
     link.@process.convert = Neos.Neos:ConvertUris
     styleClasses = ''
     isBlockButton = false
-    isBlockButton.@process.blockButtonClass = ${value ? 'button--block' : ''}
     isExternalLink = false
 
     node = ${node}
@@ -14,11 +13,12 @@ prototype(Sandstorm.ProjectX:Component.Button) < prototype(Neos.Fusion:Component
         text = ${PropTypes.string}
         link = ${PropTypes.string}
         styleClasses = ${PropTypes.string}
-        isBlockButton = ${PropTypes.string}
+        isBlockButton = ${PropTypes.boolean}
         isExternalLink = ${PropTypes.boolean}
     }
 
     target = ${this.isExternalLink ? '_blank' : ''}
+    blockButtonClass = ${this.isBlockButton ? 'button--block' : ''}
 
     renderer = Neos.Fusion:Tag {
         tagName = ${(props.link && !props.node.context.inBackend) ? 'a' : 'div'}
