@@ -3,7 +3,7 @@
     'Sandstorm.ProjectX:Document.AbstractPage': true
   ui:
     icon: 'icon-bomb'
-    label: '404 Seite'
+    label: '404 Page'
   options:
     template:
       properties:

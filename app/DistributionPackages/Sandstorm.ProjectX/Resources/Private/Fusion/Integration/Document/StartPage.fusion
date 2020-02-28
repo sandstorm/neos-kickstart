@@ -1,0 +1,11 @@
+prototype(Sandstorm.ProjectX:Document.StartPage) < prototype(Sandstorm.ProjectX:Document.AbstractPage) {
+    body = Sandstorm.ProjectX:Layout.Default {
+        teaserTitle = Sandstorm.ProjectX:Helper.DocumentEditableProperty {
+            property = 'teaserTitle'
+        }
+
+        teaserText = Sandstorm.ProjectX:Helper.DocumentEditableProperty {
+            property = 'teaserText'
+        }
+    }
+}
