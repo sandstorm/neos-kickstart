@@ -34,13 +34,11 @@
         "neos/redirecthandler-neosadapter": "~4.0",
         "neos/redirecthandler-databasestorage": "~4.0",
         "neos/redirecthandler-ui": "~2.0",
-
-        "sitegeist/monocle": "^7.0.0",
         "sandstorm/ProjectX": "@dev",
         "flowpack/cachebuster": "^1.0",
         "rokka/imagine-vips": "0.*",
-        "yoast/yoast-seo-for-neos": "^1.1",
-        "packagefactory/atomicfusion-proptypes": "^2.0"
+        "packagefactory/atomicfusion-proptypes": "^2.0",
+        "sitegeist/kaleidoscope": "^5.1"
     },
     "require-dev": {
         "neos/buildessentials": "^6.0",

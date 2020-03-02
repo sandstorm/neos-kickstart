@@ -1,6 +1,7 @@
 prototype(Sandstorm.ProjectX:Component.Image) < prototype(Neos.Fusion:Component) {
     alternativeText = ''
     src = ''
+    imageSource = ''
     width = ''
     width.@process.wrapClass = ${value ? 'image--' + value + '-sized': ''}
 
@@ -18,7 +19,12 @@ prototype(Sandstorm.ProjectX:Component.Image) < prototype(Neos.Fusion:Component)
     }
 
     renderer = afx`
+        <img class={'image ' + props.textWrap + ' ' + props.width}
+            alt={props.alternativeText}
+            src={props.imageSource}
+            srcset={props.imageSource.srcset('320w, 600w, 1200w, 1600w')}
+            sizes="(min-width: 800px) 1000px, (min-width: 480px) 800px, (min-width: 320px) 440px, 100vw"
+        />
         <div class="image__placeholder text-align--center" @if.hasNoImage={props.inBackend && !props.src}><h5><i class="fas fa-image"></i> Bitte Bild im Inspector auswählen</h5></div>
-        <img src={props.src} alt={props.alternativeText} class={'image ' + props.textWrap + ' ' + props.width}/>
     `
 }
