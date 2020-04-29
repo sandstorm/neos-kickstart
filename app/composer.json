@@ -25,10 +25,10 @@
         }
     ],
     "require": {
-        "neos/neos": "~5.0.0",
-        "neos/nodetypes": "~5.0.0",
+        "neos/neos": "~5.1.0",
+        "neos/nodetypes": "~5.1.0",
 
-        "neos/neos-ui": "~5.0",
+        "neos/neos-ui": "~5.1",
         "neos/seo": "~3.0",
         "neos/fusion-afx": "~1.3",
         "neos/redirecthandler-neosadapter": "~4.0",
@@ -39,7 +39,7 @@
         "rokka/imagine-vips": "0.*",
         "packagefactory/atomicfusion-proptypes": "^2.0",
         "sitegeist/kaleidoscope": "^5.1",
-        "sandstorm/neos-cookieconsent": "^0.1.8"
+        "sandstorm/neos-cookieconsent": "^0.2.0"
     },
     "require-dev": {
         "neos/buildessentials": "^6.0",
