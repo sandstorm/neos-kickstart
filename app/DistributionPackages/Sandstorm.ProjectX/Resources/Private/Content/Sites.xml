@@ -3,39 +3,62 @@
  <site name="ProjectX" state="1" siteResourcesPackageKey="Sandstorm.ProjectX" siteNodeName="sandstorm-projectx">
   <nodes formatVersion="2.0">
    <node identifier="1b8bbb0a-024a-4e37-8e03-aa2c9ddfba5f" nodeName="sandstorm-projectx">
-    <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.ProjectX:Document.Page" version="1" removed="" hidden="" hiddenInIndex="">
-     <dimensions>
-      <language>en_US</language>
-     </dimensions>
-     <accessRoles __type="array"/>
-     <creationDateTime __type="object" __classname="DateTime">2020-01-28T13:35:34+00:00</creationDateTime>
-     <lastModificationDateTime __type="object" __classname="DateTime">2020-01-28T13:35:34+00:00</lastModificationDateTime>
-     <properties>
-      <title __type="string">Home</title>
-      <uriPathSegment __type="string">home</uriPathSegment>
-     </properties>
-    </variant>
-    <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.ProjectX:Document.Page" version="3" removed="" hidden="" hiddenInIndex="">
+    <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.ProjectX:Document.StartPage" version="5" removed="" hidden="" hiddenInIndex="">
      <dimensions/>
      <accessRoles __type="array"/>
      <creationDateTime __type="object" __classname="DateTime">2020-01-28T13:36:57+00:00</creationDateTime>
-     <lastModificationDateTime __type="object" __classname="DateTime">2020-01-28T14:26:24+00:00</lastModificationDateTime>
-     <lastPublicationDateTime __type="object" __classname="DateTime">2020-01-28T14:26:23+00:00</lastPublicationDateTime>
+     <lastModificationDateTime __type="object" __classname="DateTime">2020-02-26T15:19:48+00:00</lastModificationDateTime>
+     <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:33+00:00</lastPublicationDateTime>
      <properties>
       <title __type="string">Home</title>
       <uriPathSegment __type="string">home</uriPathSegment>
       <teaserTitle __type="string">Neos Kickstart Package</teaserTitle>
       <teaserText __type="string">Basic Neos package to get you really fast up and running to create awesome neos pages...</teaserText>
+      <isCornerstone __type="boolean"></isCornerstone>
      </properties>
     </variant>
-    <node identifier="4d0ece5f-1097-414f-be26-737adb8d32e7" nodeName="main">
-     <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="1" removed="" hidden="" hiddenInIndex="">
-      <dimensions>
-       <language>en_US</language>
-      </dimensions>
+    <node identifier="7a9df134-122a-ce24-7dc6-05d780757c74" nodeName="cookie-consent">
+     <variant sortingIndex="300" workspace="live" nodeType="Sandstorm.ProjectX:Content.CookieConsent" version="3" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
       <accessRoles __type="array"/>
-      <creationDateTime __type="object" __classname="DateTime">2020-01-28T13:35:34+00:00</creationDateTime>
-      <lastModificationDateTime __type="object" __classname="DateTime">2020-01-28T13:35:34+00:00</lastModificationDateTime>
+      <creationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:31+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2020-02-28T12:16:35+00:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-28T12:16:34+00:00</lastPublicationDateTime>
+      <properties>
+       <privacyPolicyHref __type="string">node://2e10a7d0-c2cf-49f9-9dfd-5e247dbfe403</privacyPolicyHref>
+      </properties>
+     </variant>
+     <node identifier="94ca3093-7aad-d207-063c-da8763aa67b5" nodeName="apps">
+      <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:31+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:33+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:33+00:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+      <node identifier="d09beab7-4cec-4b71-b8a7-221fc7e98d59" nodeName="node-ifxbq6iv1aai8">
+       <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.CookieConsent:App.YouTube" version="2" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2020-02-28T12:16:40+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2020-02-28T12:16:47+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-28T12:16:46+00:00</lastPublicationDateTime>
+        <properties>
+         <title __type="string">Youtube</title>
+         <description __type="string">Erlaubt die Einbindung von Youtube-Videos.</description>
+        </properties>
+       </variant>
+      </node>
+     </node>
+    </node>
+    <node identifier="b90fae81-e1d3-45e9-38f2-116e6432add9" nodeName="main">
+     <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:31+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:33+00:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:33+00:00</lastPublicationDateTime>
       <properties/>
      </variant>
      <node identifier="01c34530-66fc-4fdf-b28f-948bec925ade" nodeName="node-ia3pl7ies7qst">
@@ -67,10 +90,7 @@
          <lastModificationDateTime __type="object" __classname="DateTime">2020-01-28T14:38:00+00:00</lastModificationDateTime>
          <lastPublicationDateTime __type="object" __classname="DateTime">2020-01-28T14:38:00+00:00</lastPublicationDateTime>
          <properties>
-          <textWrap __type="string"></textWrap>
-          <width __type="string"></width>
           <image __type="object" __identifier="23da093f-35a8-4f68-b675-b4e1328af252" __classname="Neos\Media\Domain\Model\Image" __encoding="json">{&quot;__identity&quot;:&quot;23da093f-35a8-4f68-b675-b4e1328af252&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Image&quot;,&quot;title&quot;:&quot;&quot;,&quot;copyrightNotice&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;cat.jpg&quot;,&quot;collectionName&quot;:&quot;persistent&quot;,&quot;relativePublicationPath&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;image\/jpeg&quot;,&quot;sha1&quot;:&quot;e9938854b65a995d158afe726bcb4d31266b590f&quot;,&quot;hash&quot;:&quot;e9938854b65a995d158afe726bcb4d31266b590f&quot;,&quot;__identity&quot;:&quot;a565bc20-8fb4-4748-a148-6349861c4b87&quot;}}</image>
-          <alternativeText __type="string"></alternativeText>
          </properties>
         </variant>
        </node>
@@ -123,7 +143,6 @@
       <lastPublicationDateTime __type="object" __classname="DateTime">2020-01-28T13:40:13+00:00</lastPublicationDateTime>
       <properties>
        <uriPathSegment __type="string">404</uriPathSegment>
-       <isCornerstone __type="boolean"></isCornerstone>
        <title __type="string">404</title>
       </properties>
      </variant>
@@ -148,6 +167,31 @@
         </properties>
        </variant>
       </node>
+     </node>
+    </node>
+    <node identifier="2e10a7d0-c2cf-49f9-9dfd-5e247dbfe403" nodeName="node-h3iel7lm1zs76">
+     <variant sortingIndex="400" workspace="live" nodeType="Sandstorm.ProjectX:Document.Page" version="3" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2020-02-26T15:14:47+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2020-02-26T15:15:00+00:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-26T15:14:59+00:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">privacy-policy</uriPathSegment>
+       <isCornerstone __type="boolean"></isCornerstone>
+       <title __type="string">Privacy Policy</title>
+       <teaserTitle __type="string">Privacy Policy&amp;nbsp;</teaserTitle>
+      </properties>
+     </variant>
+     <node identifier="fe4f59c0-a38a-a03c-146c-15af30c912f3" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.ProjectX:ContentCollection.Default" version="2" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2020-02-26T15:14:47+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2020-02-26T15:14:51+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-26T15:14:50+00:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
      </node>
     </node>
    </node>

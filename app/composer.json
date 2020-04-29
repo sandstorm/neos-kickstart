@@ -38,7 +38,8 @@
         "flowpack/cachebuster": "^1.0",
         "rokka/imagine-vips": "0.*",
         "packagefactory/atomicfusion-proptypes": "^2.0",
-        "sitegeist/kaleidoscope": "^5.1"
+        "sitegeist/kaleidoscope": "^5.1",
+        "sandstorm/neos-cookieconsent": "^0.1.8"
     },
     "require-dev": {
         "neos/buildessentials": "^6.0",

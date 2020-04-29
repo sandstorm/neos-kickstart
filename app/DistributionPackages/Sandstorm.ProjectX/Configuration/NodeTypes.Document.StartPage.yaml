@@ -1,12 +1,17 @@
-'Sandstorm.ProjectX:Document.Page':
+'Sandstorm.ProjectX:Document.StartPage':
   superTypes:
     'Sandstorm.ProjectX:Document.AbstractPage': true
     'Sandstorm.ProjectX:Mixin.Teaser.Title': true
     'Sandstorm.ProjectX:Mixin.Teaser.Text': true
   ui:
-    icon: 'icon-file'
-    label: 'Page'
+    icon: 'icon-home'
+    label: 'Start Page'
   constraints:
     nodeTypes:
       'Sandstorm.ProjectX:Document.Page': true
       'Sandstorm.ProjectX:Document.ErrorPage': true
+  childNodes:
+    cookie-consent:
+      type: 'Sandstorm.ProjectX:Content.CookieConsent'
+      ui:
+        label: Cookie Consent

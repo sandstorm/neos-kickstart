@@ -9,3 +9,5 @@
       'Sandstorm.ProjectX:Content.Button': true
       'Sandstorm.ProjectX:Content.Anchor': true
       'Sandstorm.ProjectX:Content.Download': true
+      'Schnellecke.Site:Content.CookieConsent': true
+      'Sandstorm.CookieConsent:OpenCookieManagerButton': true

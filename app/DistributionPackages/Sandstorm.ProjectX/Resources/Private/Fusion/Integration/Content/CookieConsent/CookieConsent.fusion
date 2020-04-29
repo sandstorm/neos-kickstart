@@ -1,0 +1,55 @@
+prototype(Sandstorm.ProjectX:Content.CookieConsent) < prototype(Neos.Fusion:Component) {
+    _privacyPolicyHref = ${q(site).find('cookie-consent').get(0).properties.privacyPolicyHref}
+    _privacyPolicyHref.@process.convert = Neos.Neos:ConvertUris
+
+    _language = 'en'
+    // ${Array.first(site.context.dimensions.language)}''
+    _apps = ${q(site).find('cookie-consent/apps').children().get()}
+
+    @context._cookieConsentProps = ${q(site).find('cookie-consent').get(0).properties}
+    _cookieModalTranslations = Neos.Fusion:DataStructure {
+        ok = ${_cookieConsentProps.ok}
+        decline = ${_cookieConsentProps.decline}
+        consentNotice = Neos.Fusion:DataStructure {
+            description = ${_cookieConsentProps.consentNoticeDescription}
+            learnMore = ${_cookieConsentProps.consentNoticeLearnMore}
+        }
+        consentModal = Neos.Fusion:DataStructure {
+            title = ${_cookieConsentProps.consentModalTitle}
+            description = ${_cookieConsentProps.consentModalDescription}
+            privacyPolicy = Neos.Fusion:DataStructure {
+                name = ${_cookieConsentProps.consentModalPrivacyPolicyName}
+                text = ${_cookieConsentProps.consentModalPrivacyPolicyText}
+            }
+        }
+        # Static labels, will not be translated. Hopefully generic enough to be used in any language
+        purposes = Neos.Fusion:DataStructure {
+            livechat = 'Live Chat'
+            styling = 'Styling'
+            tracking = 'Tracking'
+        }
+    }
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier {
+            node = ${node}
+            site = ${site}
+            salt = 'Sandstorm.ProjectX:Content.CookieConsent'
+        }
+        entryTags {
+            1 = ${Neos.Caching.nodeTag(node)}
+            2 = ${Neos.Caching.descendantOfTag(node)}
+            3 = ${Neos.Caching.nodeTypeTag('Sandstorm.ProjectX:Content.CookieConsent', node)}
+            4 = ${Neos.Caching.nodeTypeTag('Sandstorm.CookieConsent:App', node)}
+        }
+    }
+
+    renderer = Sandstorm.CookieConsent:Component.CookieConsent {
+        privacyPolicyHref = ${props._privacyPolicyHref}
+        cookieModalTranslations = ${props._cookieModalTranslations}
+        language = ${props._language}
+        apps = ${props._apps}
+        includeLibraryCss = true
+    }
+}
