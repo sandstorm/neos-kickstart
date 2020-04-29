@@ -14,21 +14,28 @@
       <uriPathSegment __type="string">home</uriPathSegment>
       <teaserTitle __type="string">Neos Kickstart Package</teaserTitle>
       <teaserText __type="string">Basic Neos package to get you really fast up and running to create awesome neos pages...</teaserText>
-      <isCornerstone __type="boolean"></isCornerstone>
      </properties>
     </variant>
     <node identifier="7a9df134-122a-ce24-7dc6-05d780757c74" nodeName="cookie-consent">
-     <variant sortingIndex="300" workspace="live" nodeType="Sandstorm.ProjectX:Content.CookieConsent" version="3" removed="" hidden="" hiddenInIndex="">
+     <variant sortingIndex="300" workspace="live" nodeType="Sandstorm.ProjectX:Content.CookieConsent" version="5" removed="" hidden="" hiddenInIndex="">
       <dimensions/>
       <accessRoles __type="array"/>
       <creationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:31+00:00</creationDateTime>
-      <lastModificationDateTime __type="object" __classname="DateTime">2020-02-28T12:16:35+00:00</lastModificationDateTime>
-      <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-28T12:16:34+00:00</lastPublicationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2020-04-29T08:47:15+00:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2020-04-29T08:47:15+00:00</lastPublicationDateTime>
       <properties>
        <privacyPolicyHref __type="string">node://2e10a7d0-c2cf-49f9-9dfd-5e247dbfe403</privacyPolicyHref>
+       <consentNoticeDescription __type="string">Liebe Leut', ihr helft uns sehr, wenn ihr Cookies zulasst und uns somit erlaubt, Daten für unser Marketing zu sammeln. Da wir eure Privatsphäre sehr wertschätzen, habt ihr in Übereinstimmung mit der EU-Richtlinie 2009/136/EG (E-Privacy) die Möglichkeit genau einzustellen, an welche Dienstleister ihr Daten weitergebt.</consentNoticeDescription>
+       <ok __type="string">Alle Cookies zulassen</ok>
+       <decline __type="string">Nur notwendige Cookies zulassen</decline>
+       <consentNoticeLearnMore __type="string">Cookieeinstellungen</consentNoticeLearnMore>
+       <consentModalTitle __type="string">Unsere Cookies</consentModalTitle>
+       <consentModalDescription __type="string">Die folgenden Einstellungen regeln, welche Cookies auf dieser Seite eingebunden werden.</consentModalDescription>
+       <consentModalPrivacyPolicyName __type="string">Datenschutzerklärung</consentModalPrivacyPolicyName>
+       <consentModalPrivacyPolicyText __type="string">In unserer {privacyPolicy} könnt ihr nachlesen, was wir uns dabei gedacht haben.</consentModalPrivacyPolicyText>
       </properties>
      </variant>
-     <node identifier="94ca3093-7aad-d207-063c-da8763aa67b5" nodeName="apps">
+     <node identifier="ac52c3b7-7633-b38d-479d-aed4d5665e3c" nodeName="apps">
       <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
        <dimensions/>
        <accessRoles __type="array"/>
@@ -53,11 +60,11 @@
      </node>
     </node>
     <node identifier="b90fae81-e1d3-45e9-38f2-116e6432add9" nodeName="main">
-     <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
+     <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.ProjectX:ContentCollection.Default" version="3" removed="" hidden="" hiddenInIndex="">
       <dimensions/>
       <accessRoles __type="array"/>
       <creationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:31+00:00</creationDateTime>
-      <lastModificationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:33+00:00</lastModificationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2020-04-29T08:46:54+00:00</lastModificationDateTime>
       <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:33+00:00</lastPublicationDateTime>
       <properties/>
      </variant>
@@ -83,14 +90,16 @@
         <properties/>
        </variant>
        <node identifier="27c6dc5f-61b8-4c85-85ed-d42bd598b98c" nodeName="node-xqwkczo5l60nd">
-        <variant sortingIndex="250" workspace="live" nodeType="Sandstorm.ProjectX:Content.Image" version="13" removed="" hidden="" hiddenInIndex="">
+        <variant sortingIndex="250" workspace="live" nodeType="Sandstorm.ProjectX:Content.Image" version="14" removed="" hidden="" hiddenInIndex="">
          <dimensions/>
          <accessRoles __type="array"/>
          <creationDateTime __type="object" __classname="DateTime">2020-01-28T14:00:32+00:00</creationDateTime>
-         <lastModificationDateTime __type="object" __classname="DateTime">2020-01-28T14:38:00+00:00</lastModificationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2020-04-29T08:46:54+00:00</lastModificationDateTime>
          <lastPublicationDateTime __type="object" __classname="DateTime">2020-01-28T14:38:00+00:00</lastPublicationDateTime>
          <properties>
           <image __type="object" __identifier="23da093f-35a8-4f68-b675-b4e1328af252" __classname="Neos\Media\Domain\Model\Image" __encoding="json">{&quot;__identity&quot;:&quot;23da093f-35a8-4f68-b675-b4e1328af252&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Image&quot;,&quot;title&quot;:&quot;&quot;,&quot;copyrightNotice&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;cat.jpg&quot;,&quot;collectionName&quot;:&quot;persistent&quot;,&quot;relativePublicationPath&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;image\/jpeg&quot;,&quot;sha1&quot;:&quot;e9938854b65a995d158afe726bcb4d31266b590f&quot;,&quot;hash&quot;:&quot;e9938854b65a995d158afe726bcb4d31266b590f&quot;,&quot;__identity&quot;:&quot;a565bc20-8fb4-4748-a148-6349861c4b87&quot;}}</image>
+          <textWrap __type="string"></textWrap>
+          <width __type="string"></width>
          </properties>
         </variant>
        </node>
@@ -178,7 +187,6 @@
       <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-26T15:14:59+00:00</lastPublicationDateTime>
       <properties>
        <uriPathSegment __type="string">privacy-policy</uriPathSegment>
-       <isCornerstone __type="boolean"></isCornerstone>
        <title __type="string">Privacy Policy</title>
        <teaserTitle __type="string">Privacy Policy&amp;nbsp;</teaserTitle>
       </properties>
@@ -192,6 +200,18 @@
        <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-26T15:14:50+00:00</lastPublicationDateTime>
        <properties/>
       </variant>
+      <node identifier="8670520b-754f-4b92-8637-38180f083936" nodeName="node-cozwhm6vvjvnk">
+       <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.CookieConsent:OpenCookieManagerButton" version="2" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2020-04-29T08:46:26+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2020-04-29T08:46:33+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2020-04-29T08:46:33+00:00</lastPublicationDateTime>
+        <properties>
+         <text __type="string">Cookie-Einstellungen</text>
+        </properties>
+       </variant>
+      </node>
      </node>
     </node>
    </node>
