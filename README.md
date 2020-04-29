@@ -1,13 +1,24 @@
 # Sandstorm Neos on Docker Kickstart
 
-## !!! Rename the project after copying this folder!
+Table of contents:
+- [requirements](#requirements)
+- [rename the project after copying this folder!](#rename-the-project-after-copying-this-folder-)
+- [local development setup](#local-development-setup)
+- [running tests](#running-tests)
+- [packages we recommend for certain use-cases](#packages-we-recommend-for-certain-use-cases)
+
+## requirements
+- docker for mac
+
+
+## rename the project after copying this folder!
 Current project-name is "Sandstorm/ProjectX". Search and replace ProjectX with own project-name, by running the script lines below:
 
 ```
 # Adjust to your desired package name and composer package name here
 
-export NEOS_PACKAGE_NAME="AktionZivilcourage.Site"
-export COMPOSER_PACKAGE_NAME="aktionzivilcourage\/site"
+export NEOS_PACKAGE_NAME="Company.Site"
+export COMPOSER_PACKAGE_NAME="company\/site"
 
 cd app
 # rename site package folder
@@ -42,20 +53,17 @@ NOTE: The find is quite sophisticated:
 - skips binary files (`-exec grep -Iq . {} \; -print`) [Explanation here](https://stackoverflow.com/a/13659891/4921449)
 
 
-## requirements
-- docker for mac
+## local development setup
 
-
-## local dev setup
-
-- run `composer install` in `/app` for autocompletion
 - run `docker-compose build`
 - run `docker-compose up -d`
 - run `docker-compose logs -f`
 - run `docker-compose stop`
 - run `docker-compose down` (cleanup)
+- run `composer install` in `/app` for autocompletion
 
-## running Tests
+
+## running tests
 Docker environment for tests currently missing, run tests local (run `composer install` in `/app`)
 
 ```
@@ -63,19 +71,7 @@ Docker environment for tests currently missing, run tests local (run `composer i
 ./bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Functional
 ```
 
-## deployment
-
-First you need to create a new namespace in the rancher ui, then create a new dns entry for your project.
-Visit this guide to help you setup: https://gitlab.sandstorm.de/infrastructure/k8s/blob/master/user-guides/deploy-neos.md
-
-You really need to make sure the namespace is configured the right way in `/deployment/production/database.yaml`
-and `/deployment/production/deployment.yaml`.
-
-Just push and it should work.
-
-Site import and creating an user in production/staging is only possible via command line.
-
-## Packages we recommend for certain use-cases
+## packages we recommend for certain use-cases
 
 1. `sitegeist/monocle` for prototyping components
 2. `yoast/yoast-seo-for-neos` for a real good SEO experience 
