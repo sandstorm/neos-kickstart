@@ -5,6 +5,7 @@ namespace Sandstorm\ProjectX\Domain\Service;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Persistence\Exception\IllegalObjectTypeException;
 use Neos\Media\Domain\Model\AssetInterface;
+use Neos\Media\Domain\Model\ImageVariant;
 use Neos\Media\Domain\Repository\AssetRepository;
 
 class AssetTitleManager
@@ -22,6 +23,9 @@ class AssetTitleManager
      */
     public function addTitleToImportedAsset(AssetInterface $asset)
     {
+        if ($asset instanceof ImageVariant) {
+            return;
+        }
         $currentTitle = $asset->getTitle();
         if(strlen($currentTitle) == 0) {
             $fileName = $asset->getResource()->getFilename();
