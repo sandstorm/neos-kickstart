@@ -5376,16 +5376,16 @@
         },
         {
             "name": "sandstorm/optimizedrediscachebackend",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sandstorm/OptimizedRedisCacheBackend.git",
-                "reference": "cacbe984a22ef48a4cc65b1115e23bc7ce5cf3de"
+                "reference": "ef987247c687952fd68cd81913aff902a9ec3547"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sandstorm/OptimizedRedisCacheBackend/zipball/cacbe984a22ef48a4cc65b1115e23bc7ce5cf3de",
-                "reference": "cacbe984a22ef48a4cc65b1115e23bc7ce5cf3de",
+                "url": "https://api.github.com/repos/sandstorm/OptimizedRedisCacheBackend/zipball/ef987247c687952fd68cd81913aff902a9ec3547",
+                "reference": "ef987247c687952fd68cd81913aff902a9ec3547",
                 "shasum": ""
             },
             "require": {
@@ -5406,7 +5406,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2020-04-21T12:30:34+00:00"
+            "time": "2020-10-24T18:47:34+00:00"
         },
         {
             "name": "seld/jsonlint",
