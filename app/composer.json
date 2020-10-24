@@ -27,7 +27,6 @@
     ],
     "require": {
         "neos/neos": "~5.3.0",
-        "neos/nodetypes": "~5.3.0",
 
         "neos/neos-ui": "~5.3.0",
         "neos/seo": "~3.1.0",
