@@ -26,6 +26,8 @@ spec:
   envFromSecrets:
     - db
 
+  redis: transient
+
   volumes:
     - name: persistent
       mountPath: /app/Data/Persistent
