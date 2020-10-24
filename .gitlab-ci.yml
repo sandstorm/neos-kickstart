@@ -6,7 +6,7 @@ stages:
 
 run_tests:
   stage: test
-  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.3-v1
+  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.4-v1
   services:
     - mariadb
   script:
@@ -44,7 +44,7 @@ build_sass:
 
 package_app:
   stage: package
-  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.3-v1
+  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.4-v1
   only:
     - master
   tags:
