@@ -36,6 +36,7 @@ services:
       - ./app/DistributionPackages/:/app/DistributionPackages/:ro,cached
       # Content is writable to enable content dumps from inside the container
       - ./app/DistributionPackages/Sandstorm.ProjectX/Resources/Private/Content:/app/DistributionPackages/Sandstorm.ProjectX/Resources/Private/Content/:cached
+      - ./app/DistributionPackages/Sandstorm.ProjectX/Migrations/:/app/DistributionPackages/Sandstorm.ProjectX/Migrations/:cached
       - ./app/Configuration/Development/Docker/:/app/Configuration/Development/Docker/:ro,cached
       # Explcitly set up Composer cache for faster fetching of packages
       - ./tmp/composer_cache:/composer_cache:cached
