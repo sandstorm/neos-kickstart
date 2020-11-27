@@ -25,7 +25,6 @@ run_tests:
     paths:
       - app/.composer-cache
 
-# TODO: npm cache!
 build_sass:
   stage: compile_resources
   image: docker-hub.sandstorm.de/docker-infrastructure/node-sass:latest
@@ -34,8 +33,14 @@ build_sass:
     - privileged
   script:
     - cd app/DistributionPackages/Sandstorm.ProjectX/Resources/Private
-    - npm install
-    - npm run build
+    - mkdir .yarn
+    - yarn config set cache-folder .yarn
+    - yarn
+    - yarn build
+  cache:
+    paths:
+      - app/DistributionPackages/Sandstorm.ProjectX/Resources/Private/node_modules/
+      - app/DistributionPackages/Sandstorm.ProjectX/Resources/Private/.yarn
   artifacts:
     expire_in: 4 weeks
     paths:
