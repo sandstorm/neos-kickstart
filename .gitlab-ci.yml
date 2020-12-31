@@ -75,6 +75,7 @@ deploy_production:
   environment:
     name: production
   script:
+    - export KUBECONFIG=$KUBECONFIG_2019
     - kubectl get namespace projectx
     - kubectl apply -f deployment/production/database.yaml
     - kubectl apply -f deployment/production/app.yaml
