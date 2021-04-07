@@ -26,16 +26,15 @@
         }
     ],
     "require": {
-        "neos/neos": "~5.3.0",
+        "neos/neos": "~7.0",
 
-        "neos/neos-ui": "~5.3.0",
-        "neos/seo": "~3.1.0",
-        "neos/fusion-afx": "~1.4.0",
-        "neos/redirecthandler-neosadapter": "~4.1.0",
-        "neos/redirecthandler-databasestorage": "~4.1.0",
-        "neos/redirecthandler-ui": "~2.3.0",
-        "sandstorm/ProjectX": "@dev",
-        "flowpack/cachebuster": "~1.0.0",
+        "neos/neos-ui": "~7.0",
+        "neos/seo": "~3.2.0",
+        "neos/redirecthandler-neosadapter": "~4.3.0",
+        "neos/redirecthandler-databasestorage": "~5.0.0",
+        "neos/redirecthandler-ui": "~2.4.1",
+        "tierheimbautzen/site": "@dev",
+        "flowpack/cachebuster": "~1.1.0",
         "rokka/imagine-vips": "0.*",
         "packagefactory/atomicfusion-proptypes": "~2.0.0",
         "sitegeist/kaleidoscope": "~6.0.0",
@@ -45,7 +44,7 @@
     "require-dev": {
         "neos/buildessentials": "~6.3.0",
         "mikey179/vfsstream": "^1.6",
-        "phpunit/phpunit": "^8.1",
+        "phpunit/phpunit": "^9.5",
         "symfony/css-selector": "~2.0",
         "neos/behat": "@dev"
     },
