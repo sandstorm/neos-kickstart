@@ -16,49 +16,6 @@
       <teaserText __type="string">Basic Neos package to get you really fast up and running to create awesome neos pages...</teaserText>
      </properties>
     </variant>
-    <node identifier="7a9df134-122a-ce24-7dc6-05d780757c74" nodeName="cookie-consent">
-     <variant sortingIndex="300" workspace="live" nodeType="Sandstorm.ProjectX:Content.CookieConsent" version="5" removed="" hidden="" hiddenInIndex="">
-      <dimensions/>
-      <accessRoles __type="array"/>
-      <creationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:31+00:00</creationDateTime>
-      <lastModificationDateTime __type="object" __classname="DateTime">2020-04-29T08:47:15+00:00</lastModificationDateTime>
-      <lastPublicationDateTime __type="object" __classname="DateTime">2020-04-29T08:47:15+00:00</lastPublicationDateTime>
-      <properties>
-       <privacyPolicyHref __type="string">node://2e10a7d0-c2cf-49f9-9dfd-5e247dbfe403</privacyPolicyHref>
-       <consentNoticeDescription __type="string">Liebe Leut', ihr helft uns sehr, wenn ihr Cookies zulasst und uns somit erlaubt, Daten für unser Marketing zu sammeln. Da wir eure Privatsphäre sehr wertschätzen, habt ihr in Übereinstimmung mit der EU-Richtlinie 2009/136/EG (E-Privacy) die Möglichkeit genau einzustellen, an welche Dienstleister ihr Daten weitergebt.</consentNoticeDescription>
-       <ok __type="string">Alle Cookies zulassen</ok>
-       <decline __type="string">Nur notwendige Cookies zulassen</decline>
-       <consentNoticeLearnMore __type="string">Cookieeinstellungen</consentNoticeLearnMore>
-       <consentModalTitle __type="string">Unsere Cookies</consentModalTitle>
-       <consentModalDescription __type="string">Die folgenden Einstellungen regeln, welche Cookies auf dieser Seite eingebunden werden.</consentModalDescription>
-       <consentModalPrivacyPolicyName __type="string">Datenschutzerklärung</consentModalPrivacyPolicyName>
-       <consentModalPrivacyPolicyText __type="string">In unserer {privacyPolicy} könnt ihr nachlesen, was wir uns dabei gedacht haben.</consentModalPrivacyPolicyText>
-      </properties>
-     </variant>
-     <node identifier="ac52c3b7-7633-b38d-479d-aed4d5665e3c" nodeName="apps">
-      <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
-       <dimensions/>
-       <accessRoles __type="array"/>
-       <creationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:31+00:00</creationDateTime>
-       <lastModificationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:33+00:00</lastModificationDateTime>
-       <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:33+00:00</lastPublicationDateTime>
-       <properties/>
-      </variant>
-      <node identifier="d09beab7-4cec-4b71-b8a7-221fc7e98d59" nodeName="node-ifxbq6iv1aai8">
-       <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.CookieConsent:App.YouTube" version="2" removed="" hidden="" hiddenInIndex="">
-        <dimensions/>
-        <accessRoles __type="array"/>
-        <creationDateTime __type="object" __classname="DateTime">2020-02-28T12:16:40+00:00</creationDateTime>
-        <lastModificationDateTime __type="object" __classname="DateTime">2020-02-28T12:16:47+00:00</lastModificationDateTime>
-        <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-28T12:16:46+00:00</lastPublicationDateTime>
-        <properties>
-         <title __type="string">Youtube</title>
-         <description __type="string">Erlaubt die Einbindung von Youtube-Videos.</description>
-        </properties>
-       </variant>
-      </node>
-     </node>
-    </node>
     <node identifier="b90fae81-e1d3-45e9-38f2-116e6432add9" nodeName="main">
      <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.ProjectX:ContentCollection.Default" version="3" removed="" hidden="" hiddenInIndex="">
       <dimensions/>
@@ -97,9 +54,7 @@
          <lastModificationDateTime __type="object" __classname="DateTime">2020-04-29T08:46:54+00:00</lastModificationDateTime>
          <lastPublicationDateTime __type="object" __classname="DateTime">2020-01-28T14:38:00+00:00</lastPublicationDateTime>
          <properties>
-          <image __type="object" __identifier="23da093f-35a8-4f68-b675-b4e1328af252" __classname="Neos\Media\Domain\Model\Image" __encoding="json">{&quot;__identity&quot;:&quot;23da093f-35a8-4f68-b675-b4e1328af252&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Image&quot;,&quot;title&quot;:&quot;&quot;,&quot;copyrightNotice&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;cat.jpg&quot;,&quot;collectionName&quot;:&quot;persistent&quot;,&quot;relativePublicationPath&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;image\/jpeg&quot;,&quot;sha1&quot;:&quot;e9938854b65a995d158afe726bcb4d31266b590f&quot;,&quot;hash&quot;:&quot;e9938854b65a995d158afe726bcb4d31266b590f&quot;,&quot;__identity&quot;:&quot;a565bc20-8fb4-4748-a148-6349861c4b87&quot;}}</image>
-          <textWrap __type="string"></textWrap>
-          <width __type="string"></width>
+          <image __type="object" __identifier="23da093f-35a8-4f68-b675-b4e1328af252" __classname="Neos\Media\Domain\Model\Image" __encoding="json">{&quot;__identity&quot;:&quot;23da093f-35a8-4f68-b675-b4e1328af252&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Image&quot;,&quot;title&quot;:&quot;&quot;,&quot;copyrightNotice&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;cat.jpg&quot;,&quot;collectionName&quot;:&quot;persistent&quot;,&quot;relativePublicationPath&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;image\/jpeg&quot;,&quot;sha1&quot;:&quot;e9938854b65a995d158afe726bcb4d31266b590f&quot;,&quot;hash&quot;:&quot;e9938854b65a995d158afe726bcb4d31266b590f&quot;,&quot;__identity&quot;:&quot;a565bc20-8fb4-4748-a148-6349861c4b87&quot;},&quot;tags&quot;:[],&quot;assetCollections&quot;:[]}</image>
          </properties>
         </variant>
        </node>
@@ -173,42 +128,6 @@
         <lastPublicationDateTime __type="object" __classname="DateTime">2020-01-28T13:39:56+00:00</lastPublicationDateTime>
         <properties>
          <title __type="string">&lt;h2&gt;404 - unbekannte URLs leiten auf diese Seite um&lt;/h2&gt;</title>
-        </properties>
-       </variant>
-      </node>
-     </node>
-    </node>
-    <node identifier="2e10a7d0-c2cf-49f9-9dfd-5e247dbfe403" nodeName="node-h3iel7lm1zs76">
-     <variant sortingIndex="400" workspace="live" nodeType="Sandstorm.ProjectX:Document.Page" version="3" removed="" hidden="" hiddenInIndex="">
-      <dimensions/>
-      <accessRoles __type="array"/>
-      <creationDateTime __type="object" __classname="DateTime">2020-02-26T15:14:47+00:00</creationDateTime>
-      <lastModificationDateTime __type="object" __classname="DateTime">2020-02-26T15:15:00+00:00</lastModificationDateTime>
-      <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-26T15:14:59+00:00</lastPublicationDateTime>
-      <properties>
-       <uriPathSegment __type="string">privacy-policy</uriPathSegment>
-       <title __type="string">Privacy Policy</title>
-       <teaserTitle __type="string">Privacy Policy&amp;nbsp;</teaserTitle>
-      </properties>
-     </variant>
-     <node identifier="fe4f59c0-a38a-a03c-146c-15af30c912f3" nodeName="main">
-      <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.ProjectX:ContentCollection.Default" version="2" removed="" hidden="" hiddenInIndex="">
-       <dimensions/>
-       <accessRoles __type="array"/>
-       <creationDateTime __type="object" __classname="DateTime">2020-02-26T15:14:47+00:00</creationDateTime>
-       <lastModificationDateTime __type="object" __classname="DateTime">2020-02-26T15:14:51+00:00</lastModificationDateTime>
-       <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-26T15:14:50+00:00</lastPublicationDateTime>
-       <properties/>
-      </variant>
-      <node identifier="8670520b-754f-4b92-8637-38180f083936" nodeName="node-cozwhm6vvjvnk">
-       <variant sortingIndex="100" workspace="live" nodeType="Sandstorm.CookieConsent:OpenCookieManagerButton" version="2" removed="" hidden="" hiddenInIndex="">
-        <dimensions/>
-        <accessRoles __type="array"/>
-        <creationDateTime __type="object" __classname="DateTime">2020-04-29T08:46:26+00:00</creationDateTime>
-        <lastModificationDateTime __type="object" __classname="DateTime">2020-04-29T08:46:33+00:00</lastModificationDateTime>
-        <lastPublicationDateTime __type="object" __classname="DateTime">2020-04-29T08:46:33+00:00</lastPublicationDateTime>
-        <properties>
-         <text __type="string">Cookie-Einstellungen</text>
         </properties>
        </variant>
       </node>

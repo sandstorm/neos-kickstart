@@ -7,8 +7,5 @@ prototype(Sandstorm.ProjectX:Document.AbstractPage) < prototype(Neos.Neos:Page) 
         content = Neos.Neos:ContentCollection {
             nodePath = 'main'
         }
-        cookieConsent = Sandstorm.ProjectX:Content.CookieConsent {
-
-        }
     }
 }

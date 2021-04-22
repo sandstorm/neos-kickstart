@@ -10,8 +10,3 @@
     nodeTypes:
       'Sandstorm.ProjectX:Document.Page': true
       'Sandstorm.ProjectX:Document.ErrorPage': true
-  childNodes:
-    cookie-consent:
-      type: 'Sandstorm.ProjectX:Content.CookieConsent'
-      ui:
-        label: Cookie Consent

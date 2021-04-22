@@ -33,12 +33,11 @@
         "neos/redirecthandler-neosadapter": "~4.3.0",
         "neos/redirecthandler-databasestorage": "~5.0.0",
         "neos/redirecthandler-ui": "~2.4.1",
-        "tierheimbautzen/site": "@dev",
+        "sandstorm/projectx": "@dev",
         "flowpack/cachebuster": "~1.1.0",
         "rokka/imagine-vips": "0.*",
         "packagefactory/atomicfusion-proptypes": "~2.0.0",
         "sitegeist/kaleidoscope": "~6.0.0",
-        "sandstorm/neos-cookieconsent": "~0.2.0",
         "sandstorm/optimizedrediscachebackend": "^1.1"
     },
     "require-dev": {
