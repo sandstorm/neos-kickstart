@@ -25,6 +25,19 @@
       <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:33+00:00</lastPublicationDateTime>
       <properties/>
      </variant>
+     <node identifier="2d39096a-063a-4005-b933-96b6cb5b0cfc" nodeName="node-az20seawuqp90">
+      <variant sortingIndex="475" workspace="live" nodeType="Neos.NodeTypes.Html:Html" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-04-22T13:17:54+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-04-22T13:18:32+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-04-22T13:18:32+00:00</lastPublicationDateTime>
+       <properties>
+        <source __type="string">            &lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/wxyQ06_blF8&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</source>
+       </properties>
+      </variant>
+     </node>
      <node identifier="01c34530-66fc-4fdf-b28f-948bec925ade" nodeName="node-ia3pl7ies7qst">
       <variant sortingIndex="125" workspace="live" nodeType="Sandstorm.ProjectX:Content.TwoColumn" version="5" removed="" hidden="" hiddenInIndex="">
        <dimensions/>
@@ -96,6 +109,30 @@
         </variant>
        </node>
       </node>
+     </node>
+     <node identifier="71693b30-696a-40f7-9c78-7317914347b8" nodeName="node-jxfiuog938gy7">
+      <variant sortingIndex="225" workspace="live" nodeType="Sandstorm.ProjectX:Content.Headline" version="8" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-04-22T12:19:45+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-04-22T12:20:31+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-04-22T12:20:31+00:00</lastPublicationDateTime>
+       <properties>
+        <title __type="string">&lt;h2&gt;Blocked content via Sandstorm.CookiePunsh package&lt;/h2&gt;</title>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="5dbd5aaf-d0cc-4ad9-a75a-06e20f1ce95a" nodeName="node-n38nddevxjbv0">
+      <variant sortingIndex="275" workspace="live" nodeType="Sandstorm.ProjectX:Content.Text" version="7" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-04-22T12:20:16+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-04-22T13:18:32+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-04-22T13:18:32+00:00</lastPublicationDateTime>
+       <properties>
+        <text __type="string">&lt;p&gt;&lt;a href=&quot;https://github.com/sandstorm/Sandstorm.CookiePunch&quot;&gt;https://github.com/sandstorm/Sandstorm.CookiePunch&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The following Video will not play if cookies are not accepted.&lt;/p&gt;</text>
+       </properties>
+      </variant>
      </node>
     </node>
     <node identifier="76a81095-e0bd-4797-b1e8-8b8221cadb66" nodeName="node-2p79n9cwe5ka9">

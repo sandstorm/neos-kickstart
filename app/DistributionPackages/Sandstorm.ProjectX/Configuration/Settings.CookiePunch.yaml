@@ -1,0 +1,16 @@
+Sandstorm:
+  CookiePunch:
+    purposes:
+      mediaembeds: Media Embeds
+    groups:
+      media:
+        title: YouTube Videos
+        purposes:
+          - mediaembeds
+        description: Cookies used by YouTube
+    elements:
+      patterns:
+        "https://www.youtube.com/embed/":
+          type: iframe
+          block: true
+          group: media

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47be81a78b0f772c36db920caae692fa",
+    "content-hash": "58a173df81cee62bc815083749ec1586",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -102,6 +102,195 @@
                 }
             ],
             "time": "2021-01-20T22:51:39+00:00"
+        },
+        {
+            "name": "carbon/eel",
+            "version": "1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CarbonPackages/Carbon.Eel.git",
+                "reference": "2219267e39909f1effe430ad71874dae98100b12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CarbonPackages/Carbon.Eel/zipball/2219267e39909f1effe430ad71874dae98100b12",
+                "reference": "2219267e39909f1effe430ad71874dae98100b12",
+                "shasum": ""
+            },
+            "require": {
+                "behat/transliterator": "^1.2",
+                "neos/flow": "~4.0 || ~5.0 || ~6.0 || ~7.0"
+            },
+            "type": "neos-carbon",
+            "extra": {
+                "marketplace-account": "me@jonnitto.ch",
+                "installer-name": "Carbon.Eel",
+                "neos": {
+                    "package-key": "Carbon.Eel"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Carbon\\Eel\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch",
+                    "homepage": "https://jonnitto.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Some nice Eel helper for Neos.io",
+            "keywords": [
+                "FUSION",
+                "Neos",
+                "carbon",
+                "eel",
+                "helper"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/Jonnitto/20eur",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/jonnitto",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-02-27T01:28:56+00:00"
+        },
+        {
+            "name": "carbon/includeassets",
+            "version": "5.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CarbonPackages/Carbon.IncludeAssets.git",
+                "reference": "361971042bfe5295809996ea400bb761ea93ce8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CarbonPackages/Carbon.IncludeAssets/zipball/361971042bfe5295809996ea400bb761ea93ce8c",
+                "reference": "361971042bfe5295809996ea400bb761ea93ce8c",
+                "shasum": ""
+            },
+            "require": {
+                "carbon/eel": "^1.7 || dev-master",
+                "neos/fusion-afx": "^1.0 || ^7.0 || dev-master",
+                "neos/neos": "^4.3 || ^5.0 || ^7.0 || dev-master"
+            },
+            "type": "neos-carbon",
+            "extra": {
+                "marketplace-account": "me@jonnitto.ch",
+                "installer-name": "Carbon.IncludeAssets",
+                "neos": {
+                    "package-key": "Carbon.IncludeAssets"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Carbon\\IncludeAssets\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch",
+                    "homepage": "https://jonnitto.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Include your assets (css, js) in an easy way into Neos",
+            "keywords": [
+                "FUSION",
+                "Neos",
+                "carbon",
+                "flow",
+                "helper"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/Jonnitto/20eur",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/jonnitto",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-04-13T12:37:54+00:00"
+        },
+        {
+            "name": "carbon/notification",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CarbonPackages/Carbon.Notification.git",
+                "reference": "355cf02e9722949897f9ac283f7b39b09551fcbe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CarbonPackages/Carbon.Notification/zipball/355cf02e9722949897f9ac283f7b39b09551fcbe",
+                "reference": "355cf02e9722949897f9ac283f7b39b09551fcbe",
+                "shasum": ""
+            },
+            "require": {
+                "neos/fusion": "^4.2 || ^5.0 || ^7.0"
+            },
+            "type": "neos-carbon",
+            "extra": {
+                "marketplace-account": "me@jonnitto.ch",
+                "installer-name": "Carbon.Notification",
+                "neos": {
+                    "package-key": "Carbon.Notification"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Carbon\\Notification\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch",
+                    "homepage": "https://jonnitto.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This package provides a tiny fusion helper for notifications.",
+            "keywords": [
+                "FUSION",
+                "Neos",
+                "carbon",
+                "flow",
+                "helper"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/Jonnitto/20eur",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/jonnitto",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-02-17T22:44:36+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -2157,6 +2346,198 @@
             "time": "2020-08-29T13:10:03+00:00"
         },
         {
+            "name": "jonnitto/prettyembedhelper",
+            "version": "2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonnitto/Jonnitto.PrettyEmbedHelper.git",
+                "reference": "a5982fa06e63d94a492de06085f60330c64d10af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonnitto/Jonnitto.PrettyEmbedHelper/zipball/a5982fa06e63d94a492de06085f60330c64d10af",
+                "reference": "a5982fa06e63d94a492de06085f60330c64d10af",
+                "shasum": ""
+            },
+            "require": {
+                "carbon/eel": "^1.10",
+                "carbon/includeassets": "^3.5 || ^4.0 || ^5.0",
+                "carbon/notification": "^1.3.1 || ^2.2",
+                "neos/fusion-afx": "^1.2 || ^7.0",
+                "neos/neos": "^4.2 || ^5.0 || ^7.0",
+                "php": "^7.1"
+            },
+            "type": "neos-plugin",
+            "extra": {
+                "marketplace-account": "me@jonnitto.ch",
+                "installer-name": "Jonnitto.PrettyEmbedHelper",
+                "neos": {
+                    "package-key": "Jonnitto.PrettyEmbedHelper"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jonnitto\\PrettyEmbedHelper\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch",
+                    "homepage": "https://twitter.com/jonnitto",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Helper mixins, prototypes and frontend resources for the PrettyEmbed Series",
+            "homepage": "https://github.com/jonnitto/Jonnitto.PrettyEmbedHelper",
+            "keywords": [
+                "Neos",
+                "contentelement",
+                "flow",
+                "video"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/Jonnitto/20eur",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/jonnitto",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-03-17T20:12:28+00:00"
+        },
+        {
+            "name": "jonnitto/prettyembedvideo",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo.git",
+                "reference": "0e084eb2aa329b0e79f0316c8affc71a35d5ff75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonnitto/Jonnitto.PrettyEmbedVideo/zipball/0e084eb2aa329b0e79f0316c8affc71a35d5ff75",
+                "reference": "0e084eb2aa329b0e79f0316c8affc71a35d5ff75",
+                "shasum": ""
+            },
+            "require": {
+                "jonnitto/prettyembedhelper": "^2.6.3"
+            },
+            "type": "neos-plugin",
+            "extra": {
+                "marketplace-account": "me@jonnitto.ch",
+                "installer-name": "Jonnitto.PrettyEmbedVideo",
+                "neos": {
+                    "package-key": "Jonnitto.PrettyEmbedVideo"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jonnitto\\PrettyEmbedVideo\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch",
+                    "homepage": "https://twitter.com/jonnitto",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Prettier embeds for your native videos in Neos CMS - with nice options like high-res preview images, lightbox feature, captions and advanced customization of embed options.",
+            "homepage": "https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo",
+            "keywords": [
+                "Neos",
+                "contentelement",
+                "flow",
+                "video"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/Jonnitto/20eur",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/jonnitto",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-02-17T22:50:53+00:00"
+        },
+        {
+            "name": "jonnitto/prettyembedyoutube",
+            "version": "7.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube.git",
+                "reference": "60da34fdbc395c4faaa3999ad49f9bdb45f7a145"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonnitto/Jonnitto.PrettyEmbedYoutube/zipball/60da34fdbc395c4faaa3999ad49f9bdb45f7a145",
+                "reference": "60da34fdbc395c4faaa3999ad49f9bdb45f7a145",
+                "shasum": ""
+            },
+            "require": {
+                "jonnitto/prettyembedhelper": "^2.6.3"
+            },
+            "type": "neos-plugin",
+            "extra": {
+                "marketplace-account": "me@jonnitto.ch",
+                "installer-name": "Jonnitto.PrettyEmbedYoutube",
+                "neos": {
+                    "package-key": "Jonnitto.PrettyEmbedYoutube"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jonnitto\\PrettyEmbedYoutube\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch",
+                    "homepage": "https://twitter.com/jonnitto",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Prettier embeds for your YouTube videos and playlists in Neos CMS - with nice options like high-res preview images, lightbox feature and advanced customization of embed options.",
+            "homepage": "https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube",
+            "keywords": [
+                "Neos",
+                "contentelement",
+                "flow",
+                "video",
+                "youtube"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/Jonnitto/20eur",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/jonnitto",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-02-17T22:51:05+00:00"
+        },
+        {
             "name": "justinrainbow/json-schema",
             "version": "5.2.10",
             "source": {
@@ -4018,6 +4399,249 @@
                 }
             ],
             "time": "2021-04-19T07:21:57+00:00"
+        },
+        {
+            "name": "neos/nodetypes-basemixins",
+            "version": "7.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/neos/nodetypes-basemixins.git",
+                "reference": "94b424d989a962ff36f66b5373b16d0031e08a18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/neos/nodetypes-basemixins/zipball/94b424d989a962ff36f66b5373b16d0031e08a18",
+                "reference": "94b424d989a962ff36f66b5373b16d0031e08a18",
+                "shasum": ""
+            },
+            "require": {
+                "neos/neos": "*"
+            },
+            "type": "neos-package",
+            "extra": {
+                "applied-flow-migrations": [
+                    "TYPO3.TYPO3CR-20150510103823",
+                    "TYPO3.FLOW3-201201261636",
+                    "TYPO3.Fluid-201205031303",
+                    "TYPO3.FLOW3-201205292145",
+                    "TYPO3.FLOW3-201206271128",
+                    "TYPO3.Flow-201211151101",
+                    "TYPO3.Neos.NodeTypes-130516220640",
+                    "TYPO3.TypoScript-130516234520",
+                    "TYPO3.TypoScript-130516235550",
+                    "TYPO3.TYPO3CR-130523180140",
+                    "TYPO3.Neos.NodeTypes-201309111655",
+                    "TYPO3.Neos-201310021548",
+                    "TYPO3.Flow-201310031523",
+                    "TYPO3.Flow-201405111147",
+                    "TYPO3.Neos-201409071922",
+                    "TYPO3.TYPO3CR-140911160326",
+                    "TYPO3.Neos-201410010000",
+                    "TYPO3.TYPO3CR-141101082142",
+                    "TYPO3.Neos-20141113115300",
+                    "TYPO3.Fluid-20141121091700",
+                    "TYPO3.Neos-20141218134700",
+                    "TYPO3.Fluid-20150214130800",
+                    "TYPO3.Neos-201407061038",
+                    "TYPO3.Flow-201212051340",
+                    "TYPO3.Fluid-20141113120800",
+                    "TYPO3.Flow-20141113121400",
+                    "Typo3.Neos.NodeTypes-201309111655",
+                    "TYPO3.TYPO3CR-20140911160326",
+                    "TYPO3.Flow-201209251426",
+                    "TYPO3.FLOW3-201209201112",
+                    "TYPO3.Neos-20150303231600",
+                    "TYPO3.Flow-20151113161300",
+                    "TYPO3.Form-20160601101500",
+                    "TYPO3.Flow-20161115140400",
+                    "TYPO3.Flow-20161115140430",
+                    "Neos.Flow-20161124204700",
+                    "Neos.Flow-20161124204701",
+                    "Neos.Twitter.Bootstrap-20161124204912",
+                    "Neos.Form-20161124205254",
+                    "Neos.Flow-20161124224015",
+                    "Neos.Party-20161124225257",
+                    "Neos.Eel-20161124230101",
+                    "Neos.Kickstart-20161124230102",
+                    "Neos.Setup-20161124230842",
+                    "Neos.Imagine-20161124231742",
+                    "Neos.Media-20161124233100",
+                    "Neos.NodeTypes-20161125002300",
+                    "Neos.SiteKickstarter-20161125002311",
+                    "Neos.Neos-20161125002322",
+                    "Neos.ContentRepository-20161125012000",
+                    "Neos.Fusion-20161125013710",
+                    "Neos.Setup-20161125014759",
+                    "Neos.SiteKickstarter-20161125095901",
+                    "Neos.Fusion-20161125104701",
+                    "Neos.NodeTypes-20161125104800",
+                    "Neos.Neos-20161125104802",
+                    "Neos.Kickstarter-20161125110814",
+                    "Neos.Flow-20161125124112",
+                    "Neos.Neos-20161125122412",
+                    "TYPO3.FluidAdaptor-20161130112935",
+                    "Neos.Fusion-20161201202543",
+                    "Neos.Neos-20161201222211",
+                    "Neos.Fusion-20161202215034",
+                    "Neos.Fusion-20161219092345",
+                    "Neos.ContentRepository-20161219093512",
+                    "Neos.Media-20161219094126",
+                    "Neos.Neos-20161219094403",
+                    "Neos.Neos-20161219122512",
+                    "Neos.Fusion-20161219130100",
+                    "Neos.Neos-20161220163741",
+                    "Neos.Fusion-20170120013047",
+                    "Neos.Neos-20170115114620",
+                    "Neos.Flow-20170125103800",
+                    "Neos.Seo-20170127154600",
+                    "Neos.Flow-20170127183102",
+                    "Neos.Fusion-20180211175500",
+                    "Neos.Fusion-20180211184832",
+                    "Neos.Flow-20180415105700",
+                    "Neos.Neos-20180907103800",
+                    "Neos.Neos.Ui-20190319094900",
+                    "Neos.Flow-20190515215000"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "Neos\\NodeTypes\\BaseMixins\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "Base mixins which are useful across projects.",
+            "funding": [
+                {
+                    "url": "https://neosfunding.sandstorm.de/en",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-02-22T20:00:10+00:00"
+        },
+        {
+            "name": "neos/nodetypes-html",
+            "version": "7.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/neos/nodetypes-html.git",
+                "reference": "04a17ac51a0dc34199010450f4f4646895bed731"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/neos/nodetypes-html/zipball/04a17ac51a0dc34199010450f4f4646895bed731",
+                "reference": "04a17ac51a0dc34199010450f4f4646895bed731",
+                "shasum": ""
+            },
+            "require": {
+                "neos/neos": "*",
+                "neos/nodetypes-basemixins": "*"
+            },
+            "type": "neos-package",
+            "extra": {
+                "applied-flow-migrations": [
+                    "TYPO3.TYPO3CR-20150510103823",
+                    "TYPO3.FLOW3-201201261636",
+                    "TYPO3.Fluid-201205031303",
+                    "TYPO3.FLOW3-201205292145",
+                    "TYPO3.FLOW3-201206271128",
+                    "TYPO3.Flow-201211151101",
+                    "TYPO3.Neos.NodeTypes-130516220640",
+                    "TYPO3.TypoScript-130516234520",
+                    "TYPO3.TypoScript-130516235550",
+                    "TYPO3.TYPO3CR-130523180140",
+                    "TYPO3.Neos.NodeTypes-201309111655",
+                    "TYPO3.Neos-201310021548",
+                    "TYPO3.Flow-201310031523",
+                    "TYPO3.Flow-201405111147",
+                    "TYPO3.Neos-201409071922",
+                    "TYPO3.TYPO3CR-140911160326",
+                    "TYPO3.Neos-201410010000",
+                    "TYPO3.TYPO3CR-141101082142",
+                    "TYPO3.Neos-20141113115300",
+                    "TYPO3.Fluid-20141121091700",
+                    "TYPO3.Neos-20141218134700",
+                    "TYPO3.Fluid-20150214130800",
+                    "TYPO3.Neos-201407061038",
+                    "TYPO3.Flow-201212051340",
+                    "TYPO3.Fluid-20141113120800",
+                    "TYPO3.Flow-20141113121400",
+                    "Typo3.Neos.NodeTypes-201309111655",
+                    "TYPO3.TYPO3CR-20140911160326",
+                    "TYPO3.Flow-201209251426",
+                    "TYPO3.FLOW3-201209201112",
+                    "TYPO3.Neos-20150303231600",
+                    "TYPO3.Flow-20151113161300",
+                    "TYPO3.Form-20160601101500",
+                    "TYPO3.Flow-20161115140400",
+                    "TYPO3.Flow-20161115140430",
+                    "Neos.Flow-20161124204700",
+                    "Neos.Flow-20161124204701",
+                    "Neos.Twitter.Bootstrap-20161124204912",
+                    "Neos.Form-20161124205254",
+                    "Neos.Flow-20161124224015",
+                    "Neos.Party-20161124225257",
+                    "Neos.Eel-20161124230101",
+                    "Neos.Kickstart-20161124230102",
+                    "Neos.Setup-20161124230842",
+                    "Neos.Imagine-20161124231742",
+                    "Neos.Media-20161124233100",
+                    "Neos.NodeTypes-20161125002300",
+                    "Neos.SiteKickstarter-20161125002311",
+                    "Neos.Neos-20161125002322",
+                    "Neos.ContentRepository-20161125012000",
+                    "Neos.Fusion-20161125013710",
+                    "Neos.Setup-20161125014759",
+                    "Neos.SiteKickstarter-20161125095901",
+                    "Neos.Fusion-20161125104701",
+                    "Neos.NodeTypes-20161125104800",
+                    "Neos.Neos-20161125104802",
+                    "Neos.Kickstarter-20161125110814",
+                    "Neos.Flow-20161125124112",
+                    "Neos.Neos-20161125122412",
+                    "TYPO3.FluidAdaptor-20161130112935",
+                    "Neos.Fusion-20161201202543",
+                    "Neos.Neos-20161201222211",
+                    "Neos.Fusion-20161202215034",
+                    "Neos.Fusion-20161219092345",
+                    "Neos.ContentRepository-20161219093512",
+                    "Neos.Media-20161219094126",
+                    "Neos.Neos-20161219094403",
+                    "Neos.Neos-20161219122512",
+                    "Neos.Fusion-20161219130100",
+                    "Neos.Neos-20161220163741",
+                    "Neos.Fusion-20170120013047",
+                    "Neos.Neos-20170115114620",
+                    "Neos.Flow-20170125103800",
+                    "Neos.Seo-20170127154600",
+                    "Neos.Flow-20170127183102",
+                    "Neos.Fusion-20180211175500",
+                    "Neos.Fusion-20180211184832",
+                    "Neos.Flow-20180415105700",
+                    "Neos.Neos-20180907103800",
+                    "Neos.Neos.Ui-20190319094900",
+                    "Neos.Flow-20190515215000"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "Neos\\NodeTypes\\Html\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "A simple html node type.",
+            "funding": [
+                {
+                    "url": "https://neosfunding.sandstorm.de/en",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-02-22T19:59:09+00:00"
         },
         {
             "name": "neos/party",
@@ -5942,33 +6566,49 @@
             "time": "2021-02-22T14:45:38+00:00"
         },
         {
-            "name": "sandstorm/ProjectX",
-            "version": "dev-master",
+            "name": "sandstorm/cookiepunch",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sandstorm/Sandstorm.CookiePunch.git",
+                "reference": "141caf186a97a0de468dae875b090943f11f8c58"
+            },
             "dist": {
-                "type": "path",
-                "url": "./DistributionPackages/Sandstorm.ProjectX",
-                "reference": "c4704fdbd5aac75a9e1c1fc710c47688f847e947"
+                "type": "zip",
+                "url": "https://api.github.com/repos/sandstorm/Sandstorm.CookiePunch/zipball/141caf186a97a0de468dae875b090943f11f8c58",
+                "reference": "141caf186a97a0de468dae875b090943f11f8c58",
+                "shasum": ""
             },
             "require": {
-                "neos/neos": "*"
+                "neos/neos": "^5.0 || ^7.0 || dev-master"
             },
-            "suggest": {
-                "neos/seo": "*"
-            },
-            "type": "neos-site",
-            "extra": {
-                "neos": {
-                    "package-key": "Sandstorm.ProjectX"
-                }
-            },
+            "type": "neos-package",
             "autoload": {
                 "psr-4": {
-                    "Sandstorm\\ProjectX\\": "Classes/"
+                    "Sandstorm\\CookiePunch\\": "Classes"
                 }
             },
-            "transport-options": {
-                "relative": true
-            }
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florian Heinze",
+                    "homepage": "https://www.sandstorm.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Block elements like iframes and scripts before the markup reaches the browser and provide a dialog in the browser to enable them again.",
+            "homepage": "https://github.com/sandstorm/Sandstorm.CookiePunch",
+            "keywords": [
+                "Neos",
+                "consent",
+                "cookie",
+                "flow",
+                "privacy"
+            ],
+            "time": "2021-01-28T09:42:43+00:00"
         },
         {
             "name": "sandstorm/optimizedrediscachebackend",
@@ -6003,6 +6643,38 @@
                 "MIT"
             ],
             "time": "2021-01-03T19:17:45+00:00"
+        },
+        {
+            "name": "sandstorm/projectx",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./DistributionPackages/Sandstorm.ProjectX",
+                "reference": "2f53f34fedf46fe3cee4fb867ab6e1da3d22c9d5"
+            },
+            "require": {
+                "jonnitto/prettyembedvideo": "^3.0",
+                "jonnitto/prettyembedyoutube": "^7.0",
+                "neos/neos": "*",
+                "neos/nodetypes-html": "^7.0"
+            },
+            "suggest": {
+                "neos/seo": "*"
+            },
+            "type": "neos-site",
+            "extra": {
+                "neos": {
+                    "package-key": "Sandstorm.ProjectX"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sandstorm\\ProjectX\\": "Classes/"
+                }
+            },
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "seld/jsonlint",

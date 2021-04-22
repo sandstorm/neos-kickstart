@@ -3,9 +3,12 @@
   constraints:
     nodeTypes:
       '*': ~
+      'Neos.NodeTypes.Html:Html': true
       'Sandstorm.ProjectX:Content.Text': true
       'Sandstorm.ProjectX:Content.Headline': true
       'Sandstorm.ProjectX:Content.Image': true
       'Sandstorm.ProjectX:Content.Button': true
       'Sandstorm.ProjectX:Content.Anchor': true
       'Sandstorm.ProjectX:Content.Download': true
+      'Jonnitto.PrettyEmbedVideo:Content.Video': true
+      'Jonnitto.PrettyEmbedYoutube:Content.Youtube': true

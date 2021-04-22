@@ -2,4 +2,13 @@
  * Root Fusion for the ProjectX site
  */
 
+prototype(Neos.Neos:Page) {
+    // This adds the javascript and css needed for the cookie-consent
+    head.javascripts.cookiePunchConsent = Sandstorm.CookiePunch:Consent
+
+    // This will block all iframes & script tags
+    @process.blockIframes = ${CookiePunch.blockIframes(value, !node.context.inBackend)}
+    @process.blockScripts = ${CookiePunch.blockScripts(value, !node.context.inBackend)}
+}
+
 include: **/*.fusion
