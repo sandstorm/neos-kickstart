@@ -1,13 +1,11 @@
 prototype(Sandstorm.ProjectX:Layout.Default) < prototype(Neos.Fusion:Component) {
     content = ''
-    cookieConsent = ''
     teaserTitle = ''
     teaserText = ''
 
     @propTypes {
         # validation rules for props
         content = ${PropTypes.any}
-        cookieConsent = ${PropTypes.any}
         teaserTitle = ${PropTypes.string}
         teaserText = ${PropTypes.string}
     }
@@ -19,7 +17,6 @@ prototype(Sandstorm.ProjectX:Layout.Default) < prototype(Neos.Fusion:Component) 
             <p>{props.teaserText}</p>
             {props.content}
         </div>
-        {props.cookieConsent}
     </main>
     `
 }
