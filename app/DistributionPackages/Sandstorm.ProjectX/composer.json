@@ -2,12 +2,15 @@
     "description": "",
     "type": "neos-site",
     "require": {
-        "neos/neos": "*"
+        "neos/neos": "*",
+        "jonnitto/prettyembedvideo": "^3.0",
+        "jonnitto/prettyembedyoutube": "^7.0",
+        "neos/nodetypes-html": "^7.0"
     },
     "suggest": {
         "neos/seo": "*"
     },
-    "name": "sandstorm/ProjectX",
+    "name": "sandstorm/projectx",
     "autoload": {
         "psr-4": {
             "Sandstorm\\ProjectX\\": "Classes/"

@@ -28,5 +28,6 @@ prototype(Sandstorm.ProjectX:Resources.HeaderAssets) < prototype(Neos.Fusion:Arr
         attributes.src = Neos.Fusion:ResourceUri {
             path = 'resource://Sandstorm.ProjectX/Public/bundle.js'
         }
+        @process.neverBlock = ${CookiePunch.neverBlockScripts(value)}
     }
 }

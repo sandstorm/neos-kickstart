@@ -38,7 +38,8 @@
         "rokka/imagine-vips": "0.*",
         "packagefactory/atomicfusion-proptypes": "~2.0.0",
         "sitegeist/kaleidoscope": "~6.0.0",
-        "sandstorm/optimizedrediscachebackend": "^1.1"
+        "sandstorm/optimizedrediscachebackend": "^1.1",
+        "sandstorm/cookiepunch": "^1.2"
     },
     "require-dev": {
         "neos/buildessentials": "~6.3.0",
