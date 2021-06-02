@@ -10,3 +10,4 @@
     nodeTypes:
       'Sandstorm.ProjectX:Document.Page': true
       'Sandstorm.ProjectX:Document.ErrorPage': true
+      'Sandstorm.ProjectX:Document.DataPrivacyPage': true

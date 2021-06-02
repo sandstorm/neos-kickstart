@@ -1,13 +1,24 @@
 Sandstorm:
   CookiePunch:
+    consent:
+      storageMethod: cookie
+      cookieName: cookie_punch
+      cookieExpiresAfterDays: 120
+      mustConsent: true
+      acceptAll: true
+      hideDeclineAll: false
+      default: false
     purposes:
-      mediaembeds: Media Embeds
+      mediaembeds: Sandstorm.ProjectX:CookiePunch:purposes.mediaembeds
     groups:
+      default:
+        title: Sandstorm.ProjectX:CookiePunch:groups.default.title
+        description: Sandstorm.ProjectX:CookiePunch:groups.default.description
       media:
-        title: YouTube Videos
+        title: Sandstorm.ProjectX:CookiePunch:groups.media.title
         purposes:
           - mediaembeds
-        description: Cookies used by YouTube
+        description: Sandstorm.ProjectX:CookiePunch:groups.media.description
     elements:
       patterns:
         "https://www.youtube.com/embed/":

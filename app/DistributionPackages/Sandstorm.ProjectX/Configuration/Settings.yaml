@@ -1,5 +1,16 @@
-
 Neos:
+  ContentRepository:
+    contentDimensions:
+      language:
+        label: 'Language'
+        icon: 'icon-language'
+        default: 'de'
+        defaultPreset: 'de'
+        presets:
+          'de':
+            label: 'de'
+            values: [ 'de' ]
+            uriSegment: 'de'
   Flow:
     mvc:
       routes:
