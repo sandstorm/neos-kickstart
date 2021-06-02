@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Sandstorm.ProjectX" source-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="purposes.mediaembeds">
+                <source>Einbindung von Medien</source>
+            </trans-unit>
+            <trans-unit id="groups.media.title">
+                <source>YouTube Videos</source>
+            </trans-unit>
+            <trans-unit id="groups.media.description">
+                <source>Von YouTube genutzte Cookies</source>
+            </trans-unit>
+            <trans-unit id="groups.default.title">
+                <source>Website</source>
+            </trans-unit>
+            <trans-unit id="groups.default.description">
+                <source>Notwendige Cookies für die Funktionalität der Website</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

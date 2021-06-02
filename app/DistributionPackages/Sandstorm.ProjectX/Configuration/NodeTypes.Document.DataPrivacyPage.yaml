@@ -1,0 +1,6 @@
+'Sandstorm.ProjectX:Document.DataPrivacyPage':
+  superTypes:
+    'Sandstorm.ProjectX:Document.Page': true
+  ui:
+    icon: 'icon-user-secret'
+    label: 'Data Privacy Page'
