@@ -1,14 +1,14 @@
 apiVersion: k8s.sandstorm.de/v1alpha1
 kind: OneContainerOnePort
 metadata:
-  namespace: projectx
-  name: app
+  namespace: myvendor-awesomeneosproject-staging
+  name: AwesomeNeosProject
 spec:
-  appName: projectx
+  appName: AwesomeNeosProject
   description: 'Sample Neos Deployment in the Rancher Cluster.'
 
   hostNames:
-    neos-kickstart.cloud.sandstorm.de: []
+    myvendor-awesomeneosproject-staging.cloud.sandstorm.de: []
 
   node: worker1
   image: docker-hub.sandstorm.de/infrastructure/neos-on-docker-kickstart:master

@@ -1,0 +1,24 @@
+'MyVendor.AwesomeNeosProject:Mixin.Teaser.Title':
+  abstract: true
+  properties:
+    teaserTitle:
+      type: string
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Bitte eine Hauptüberschrift eingeben'
+'MyVendor.AwesomeNeosProject:Mixin.Teaser.Text':
+  abstract: true
+  properties:
+    teaserText:
+      type: string
+      ui:
+        label: 'Teaser Text'
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Bitte eine Beschreibung eingeben (optional)'
+
+
+

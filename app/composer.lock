@@ -6715,11 +6715,11 @@
             "time": "2021-01-03T19:17:45+00:00"
         },
         {
-            "name": "sandstorm/projectx",
+            "name": "myvendor/awesomeneosproject",
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "./DistributionPackages/Sandstorm.ProjectX",
+                "url": "./DistributionPackages/MyVendor.AwesomeNeosProject",
                 "reference": "2f53f34fedf46fe3cee4fb867ab6e1da3d22c9d5"
             },
             "require": {
@@ -6734,12 +6734,12 @@
             "type": "neos-site",
             "extra": {
                 "neos": {
-                    "package-key": "Sandstorm.ProjectX"
+                    "package-key": "MyVendor.AwesomeNeosProject"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Sandstorm\\ProjectX\\": "Classes/"
+                    "MyVendor\\AwesomeNeosProject\\": "Classes/"
                 }
             },
             "transport-options": {
@@ -10043,7 +10043,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "sandstorm/projectx": 20,
+        "myvendor/awesomeneosproject": 20,
         "neos/behat": 20
     },
     "prefer-stable": false,

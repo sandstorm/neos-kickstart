@@ -1,5 +1,0 @@
-'Sandstorm.ProjectX:Mixin.Column':
-  abstract: true
-  ui:
-    icon: icon-columns
-    group: structure

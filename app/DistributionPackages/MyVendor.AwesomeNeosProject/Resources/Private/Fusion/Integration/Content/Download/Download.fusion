@@ -1,0 +1,13 @@
+prototype(MyVendor.AwesomeNeosProject:Content.Download) < prototype(Neos.Neos:ContentComponent) {
+    renderer = MyVendor.AwesomeNeosProject:Composite.Download {
+        text = Neos.Neos:Editable {
+            property = 'text'
+        }
+        fileUrl = Neos.Fusion:ResourceUri {
+            resource = ${q(node).property('file').resource}
+        }
+        imgSrc = Neos.Neos:ImageUri {
+            asset = ${q(node).property('file')}
+        }
+    }
+}

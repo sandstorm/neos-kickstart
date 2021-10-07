@@ -1,0 +1,11 @@
+prototype(MyVendor.AwesomeNeosProject:Document.AbstractPage) < prototype(Neos.Neos:Page) {
+    head {
+        javascripts.site = MyVendor.AwesomeNeosProject:Resources.HeaderAssets
+    }
+
+    body = MyVendor.AwesomeNeosProject:Layout.Default {
+        content = Neos.Neos:ContentCollection {
+            nodePath = 'main'
+        }
+    }
+}

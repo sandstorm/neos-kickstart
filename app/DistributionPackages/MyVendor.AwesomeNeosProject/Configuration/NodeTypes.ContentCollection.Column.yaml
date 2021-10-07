@@ -1,0 +1,5 @@
+'MyVendor.AwesomeNeosProject:ContentCollection.Column':
+  superTypes:
+    'Neos.Neos:ContentCollection': true
+    'MyVendor.AwesomeNeosProject:Constraints.Base': true
+

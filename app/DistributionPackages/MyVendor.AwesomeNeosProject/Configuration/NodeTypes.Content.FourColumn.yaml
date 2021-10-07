@@ -1,0 +1,94 @@
+'MyVendor.AwesomeNeosProject:Content.FourColumn':
+  superTypes:
+    'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
+    'MyVendor.AwesomeNeosProject:Mixin.Column': true
+  ui:
+    label: 'Vierspalter'
+    icon: icon-columns
+    position: 204
+  childNodes:
+    column0:
+      type: 'MyVendor.AwesomeNeosProject:ContentCollection.Column'
+    column1:
+      type: 'MyVendor.AwesomeNeosProject:ContentCollection.Column'
+    column2:
+      type: 'MyVendor.AwesomeNeosProject:ContentCollection.Column'
+    column3:
+      type: 'MyVendor.AwesomeNeosProject:ContentCollection.Column'
+  properties:
+    sizeColumn1:
+      type: string
+      defaultValue: size-25
+      ui:
+        label: 'Größe der ersten Spalte'
+        reloadIfChanged: true
+        inspector:
+          group: 'properties'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              size-20:
+                label: '20%'
+              size-25:
+                label: '25%'
+              size-40:
+                label: '40%'
+              size-50:
+                label: '50%'
+    sizeColumn2:
+      type: string
+      defaultValue: size-25
+      ui:
+        label: 'Größe der zweiten Spalte'
+        reloadIfChanged: true
+        inspector:
+          group: 'properties'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              size-20:
+                label: '20%'
+              size-25:
+                label: '25%'
+              size-40:
+                label: '40%'
+              size-50:
+                label: '50%'
+    sizeColumn3:
+      type: string
+      defaultValue: size-25
+      ui:
+        label: 'Größe der dritten Spalte'
+        reloadIfChanged: true
+        inspector:
+          group: 'properties'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              size-20:
+                label: '20%'
+              size-25:
+                label: '25%'
+              size-40:
+                label: '40%'
+              size-50:
+                label: '50%'
+    sizeColumn4:
+      type: string
+      defaultValue: size-25
+      ui:
+        label: 'Größe der vierten Spalte'
+        reloadIfChanged: true
+        inspector:
+          group: 'properties'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              size-20:
+                label: '20%'
+              size-25:
+                label: '25%'
+              size-40:
+                label: '40%'
+              size-50:
+                label: '50%'

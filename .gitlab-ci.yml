@@ -12,8 +12,8 @@ run_tests:
   script:
     - cd app
     - COMPOSER_CACHE_DIR=.composer-cache composer install --ignore-platform-reqs
-    - ./bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Unit
-    - bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Functional
+    - ./bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Unit
+    - bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Functional
   variables:
     FLOW_CONTEXT: 'Testing/GitLabCI'
     MYSQL_ROOT_PASSWORD: neos
@@ -21,7 +21,7 @@ run_tests:
     MYSQL_USER: neos
     MYSQL_PASSWORD: neos
   cache:
-    key: sandstorm.projectx__composer
+    key: myvendor.awesomeneosproject__composer
     paths:
       - app/.composer-cache
 
@@ -32,28 +32,28 @@ build_sass:
     - docker
     - privileged
   script:
-    - cd app/DistributionPackages/Sandstorm.ProjectX/Resources/Private
+    - cd app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private
     - yarn
     - yarn build
   cache:
     paths:
-      - app/DistributionPackages/Sandstorm.ProjectX/Resources/Private/node_modules/
+      - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/node_modules/
   artifacts:
     expire_in: 4 weeks
     paths:
-      - app/DistributionPackages/Sandstorm.ProjectX/Resources/Public/bundle.css
-      - app/DistributionPackages/Sandstorm.ProjectX/Resources/Public/bundle.js
+      - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Public/bundle.css
+      - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Public/bundle.js
 
 package_app:
   stage: package
   image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.4-v1
   only:
-    - master
+    - main
   tags:
     - docker
     - privileged
   cache:
-    key: sandstorm.projectx__composer
+    key: myvendor.awesomeneosproject__composer
     paths:
       - app/.composer-cache
   script:
@@ -64,20 +64,19 @@ package_app:
     - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG -f deployment/production/Dockerfile .
     - docker push $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG
 
-deploy_production:
+deploy_staging:
   stage: deploy
   image:
     name: bitnami/kubectl:1.15.0
     entrypoint: [""]
   only:
-    - master
-    - kubernetes
+    - main
   environment:
-    name: production
+    name: staging
   script:
-    - export KUBECONFIG=$KUBECONFIG_2019
-    - kubectl get namespace projectx
+    - export KUBECONFIG=$KUBECONFIG_K3S2021
+    - kubectl get namespace myvendor-awesomeneosproject-staging
     - kubectl apply -f deployment/production/database.yaml
     - kubectl apply -f deployment/production/app.yaml
     # enforce a redeploy by changing the release identifier
-    - 'kubectl -n projectx patch --type merge OneContainerOnePort app -p "{\"spec\":{\"releaseIdentifier\": \"$CI_JOB_ID\"}}"'
+    - 'kubectl -n myvendor-awesomeneosproject-staging patch --type merge OneContainerOnePort app -p "{\"spec\":{\"releaseIdentifier\": \"$CI_JOB_ID\"}}"'

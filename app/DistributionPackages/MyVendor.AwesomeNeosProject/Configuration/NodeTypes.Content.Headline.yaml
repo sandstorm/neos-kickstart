@@ -1,0 +1,8 @@
+'MyVendor.AwesomeNeosProject:Content.Headline':
+  superTypes:
+    'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
+    'MyVendor.AwesomeNeosProject:Mixin.Headline': true
+  ui:
+    label: Überschrift
+    icon: icon-header
+    position: 100
