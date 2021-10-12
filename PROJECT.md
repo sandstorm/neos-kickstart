@@ -1,8 +1,9 @@
-# Sandstorm Neos on Docker Kickstart
+# MyVendor.AwesomeNeosProject Documentation
+
+TODO: improve README
 
 Table of contents:
 - [requirements](#requirements)
-- [rename the project after copying this folder!](#rename-the-project-after-copying-this-folder-)
 - [local development setup](#local-development-setup)
 - [running tests](#running-tests)
 - [packages we recommend for certain use-cases](#packages-we-recommend-for-certain-use-cases)

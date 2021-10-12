@@ -9,9 +9,9 @@ we provided examples and configuration that helps us to quickly provide a kickst
 
 ## Running Kickstart
 
-`./kickstart.sh`
+Run `./kickstart.sh` an follow the instructions.
 
-## packages we recommend for certain use-cases
+## Packages we recommend for certain use-cases
 
 1. `sitegeist/monocle` for prototyping components
 2. `yoast/yoast-seo-for-neos` for a real good SEO experience
@@ -21,5 +21,6 @@ we provided examples and configuration that helps us to quickly provide a kickst
 
 ## Development
 
-As the script will change the git remote and remove some files development becomes hard ;)
-Run `./kickstart.sh --dev` to restore the old git remote and to not remove files you might want to commit.
+As the script can be used to change the git remote and remove files development becomes hard ;)
+Run `./kickstart.sh --dev` to not remove certain files e.g. `./kickstart.sh`. 
+Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstart.sh`
