@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$1" = "--dev" ] && [ -d ".git_back" ]
+if [ "$1" = "--restore-git" ] && [ -d ".git_back" ]
   then
     rm -rf .git
     mv .git_back .git
@@ -33,9 +33,17 @@ defaultPackageName="AwesomeNeosProject"
 defaultVendorNameLowerCase=$(echo $defaultVendorName | tr '[:upper:]' '[:lower:]')
 defaultPackageNameLowerCase=$(echo $defaultPackageName | tr '[:upper:]' '[:lower:]')
 
-green_echo "Making the project your own ;)"
-yellow_echo "Please provide the following information to update the namespace <Vendor>.<Package>"
-
+echo
+green_echo "Before we start"
+echo
+yellow_echo "Things you should do/have ready before starting to make the kickstart run smoothly ;)"
+echo "  * think about your vendor and package name for the project"
+echo "  * an empty git repo you want to push the project '${packageName}' to"
+echo "  * a namespace ${vendorNameLowerCase}-${packageNameLowerCase}-staging already created in kubernetes"
+echo "    (only relevant in the sandstorm context)"
+echo
+yellow_echo "Hit RETURN to provide your vendor and package name"
+read -p ""
 read -p "Vendor (default='$defaultVendorName'): " vendorName
 vendorName=${vendorName:-$defaultVendorName}
 
@@ -44,6 +52,21 @@ packageName=${packageName:-$defaultPackageName}
 
 vendorNameLowerCase=$(echo $vendorName | tr '[:upper:]' '[:lower:]')
 packageNameLowerCase=$(echo $packageName | tr '[:upper:]' '[:lower:]')
+echo
+
+yellow_echo "This is what we will do next"
+echo "  * we do a search replace on vendor und package names"
+echo "     * e.g. Flow packages names will be renamed to '${vendorName}.${packageName}'"
+echo "     * e.g. the composer packageName will be renamed to '${vendorNameLowerCase}/${packageNameLowerCase}'"
+echo "     * ..."
+echo "  * we will switch around READMEs to provide you with a good default"
+echo "    for documenting your project"
+echo "  * we remove some kickstarter files"
+echo "  * you will later be asked if you want to init a new .git with a new remote"
+echo
+
+yellow_echo "Hit RETURN to start replacing, or CTRL+C to exit"
+read -p ""
 
 # rename distribution package
 mv ./app/DistributionPackages/${defaultVendorName}.${defaultPackageName} ./app/DistributionPackages/${vendorName}.${packageName} 2> /dev/null
@@ -58,14 +81,24 @@ find ./ -type f ${findExcludePaths} -exec grep -Iq . {} \; -print | xargs sed -i
 find ./ -type f ${findExcludePaths} -exec grep -Iq . {} \; -print | xargs sed -i '' "s/${defaultVendorNameLowerCase}/${vendorNameLowerCase}/g"
 find ./ -type f ${findExcludePaths} -exec grep -Iq . {} \; -print | xargs sed -i '' "s/${defaultPackageNameLowerCase}/${packageNameLowerCase}/g"
 
-yellow_echo "Moving Project README ..."
+yellow_echo "Moving README files ..."
 mv ./README.md ./KICKSTART.md
 
-yellow_echo "Should we init a new git repository for you?"
-red_echo "IMPORTANT: we will remove the .git folder and run 'git init'"
-read -p "Init new repo 'yes/no' (default=$initNewGitRepo):" initNewGitRepo
+yellow_echo "Removing Kickstart files ..."
 
-if [ $initNewGitRepo = "yes" ]
+if [ "$1" != "--dev" ]
+  then
+    rm ./kickstart.sh
+fi
+echo
+yellow_echo "The kickstart has finished. Should we init a new git repository for you?"
+red_echo "This will remove the .git folder and run 'git init'!!!"
+red_echo "If you are unsure you can do it later manually."
+read -p "Init new repo 'yes/no' (default=$initNewGitRepo): " initNewGitRepo
+initNewGitRepo=${initNewGitRepo:-"no"}
+echo
+
+if [ "$initNewGitRepo" = "yes" ]
   then
     yellow_echo "Backing up .git"
     mv .git .git_back
@@ -75,7 +108,7 @@ if [ $initNewGitRepo = "yes" ]
     git add .
     git commit -m "TASK: Neos Kickstart"
 
-    read -p "Repo Url:" repoUrl
+    read -p "Repo Url: " repoUrl
 
     if [ $repoUrl ]
       then
@@ -94,11 +127,9 @@ if [ $initNewGitRepo = "yes" ]
         git commit -m "TASK: Fixed possible README conflict"
         git push
     fi
+  else
+    yellow_echo "NO git repository was initialized."
 fi
+echo
+green_echo "DONE"
 
-yellow_echo "Removing Kickstart files ..."
-
-if [ "$1" != "--dev" ]
-  then
-    rm ./kickstart.sh
-fi
