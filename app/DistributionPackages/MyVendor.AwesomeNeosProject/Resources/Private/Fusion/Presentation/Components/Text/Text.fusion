@@ -1,0 +1,12 @@
+prototype(MyVendor.AwesomeNeosProject:Component.Text) < prototype(Neos.Fusion:Component) {
+    text = ''
+
+    @propTypes {
+        # validation rules for props
+        text = ${PropTypes.string}
+    }
+
+    renderer = afx`
+        <div>{props.text}</div>
+    `
+}

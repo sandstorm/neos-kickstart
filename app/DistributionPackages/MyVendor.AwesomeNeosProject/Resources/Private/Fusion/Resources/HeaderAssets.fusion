@@ -1,0 +1,33 @@
+prototype(MyVendor.AwesomeNeosProject:Resources.HeaderAssets) < prototype(Neos.Fusion:Array) {
+    responsive = Neos.Fusion:Tag {
+        tagName = 'meta'
+        attributes.name = 'viewport'
+        attributes.content = 'width=device-width, initial-scale=1'
+    }
+
+    favicon = Neos.Fusion:Tag {
+        tagName = 'link'
+        attributes.rel = 'icon'
+        attributes.type = 'image/png'
+        attributes.href = Neos.Fusion:ResourceUri {
+            path = 'resource://MyVendor.AwesomeNeosProject/Public/Images/favicon.png'
+        }
+    }
+
+    bundleCSS = Neos.Fusion:Tag {
+        tagName = 'link'
+        attributes.rel = 'stylesheet'
+        attributes.href = Neos.Fusion:ResourceUri {
+            path = 'resource://MyVendor.AwesomeNeosProject/Public/bundle.css'
+        }
+    }
+
+    bundleJS = Neos.Fusion:Tag {
+        tagName = 'script'
+        attributes.type = 'text/javascript'
+        attributes.src = Neos.Fusion:ResourceUri {
+            path = 'resource://MyVendor.AwesomeNeosProject/Public/bundle.js'
+        }
+        @process.neverBlock = ${CookiePunch.neverBlockScripts(value)}
+    }
+}

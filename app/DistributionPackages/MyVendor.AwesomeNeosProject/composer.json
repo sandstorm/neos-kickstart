@@ -1,0 +1,24 @@
+{
+    "description": "",
+    "type": "neos-site",
+    "require": {
+        "neos/neos": "*",
+        "jonnitto/prettyembedvideo": "^3.0",
+        "jonnitto/prettyembedyoutube": "^7.0",
+        "neos/nodetypes-html": "^7.0"
+    },
+    "suggest": {
+        "neos/seo": "*"
+    },
+    "name": "myvendor/awesomeneosproject",
+    "autoload": {
+        "psr-4": {
+            "MyVendor\\AwesomeNeosProject\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "MyVendor.AwesomeNeosProject"
+        }
+    }
+}

@@ -1,0 +1,3 @@
+prototype(MyVendor.AwesomeNeosProject:Document.ErrorPage) < prototype(MyVendor.AwesomeNeosProject:Document.AbstractPage) {
+
+}
