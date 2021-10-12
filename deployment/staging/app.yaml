@@ -2,9 +2,9 @@ apiVersion: k8s.sandstorm.de/v1alpha1
 kind: OneContainerOnePort
 metadata:
   namespace: myvendor-awesomeneosproject-staging
-  name: AwesomeNeosProject
+  name: app
 spec:
-  appName: AwesomeNeosProject
+  appName: myvendor-awesomeneosproject-staging
   description: 'Sample Neos Deployment in the Rancher Cluster.'
 
   hostNames:
