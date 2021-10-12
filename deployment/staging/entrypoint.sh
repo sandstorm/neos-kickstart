@@ -2,6 +2,9 @@
 set -ex
 
 ./flow doctrine:migrate
+
+./flow site:import --package-key $SITE_IMPORT_PACKAGE_KEY
+
 ./flow resource:publish
 
 ./flow flow:cache:flush

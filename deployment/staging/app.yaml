@@ -21,6 +21,7 @@ spec:
     NGINX_PORT: 8080
     NGINX_HOST: '0.0.0.0'
     FLOW_CONTEXT: 'Production/Kubernetes'
+    SITE_IMPORT_PACKAGE_KEY: 'MyVendor.AwesomeNeosProject'
   envFromConfigMaps:
     - db
   envFromSecrets:
