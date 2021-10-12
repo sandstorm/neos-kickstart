@@ -11,7 +11,7 @@ spec:
     myvendor-awesomeneosproject-staging.cloud.sandstorm.de: []
 
   node: worker1
-  image: docker-hub.sandstorm.de/infrastructure/neos-on-docker-kickstart:master
+  image: docker-hub.sandstorm.de/infrastructure/neos-on-docker-kickstart:main
 
   port: 8080
   # Set to false when a real DNS entry for staging/staging exists
