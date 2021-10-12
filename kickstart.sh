@@ -42,6 +42,17 @@ defaultPackageNameLowerCase=$(echo $defaultPackageName | tr '[:upper:]' '[:lower
 
 defaultDockerHubPath="infrastructure/neos-on-docker-kickstart"
 
+green_echo "Please Provide the following information"
+echo
+read -p "Vendor (default='$defaultVendorName'): " vendorName
+vendorName=${vendorName:-$defaultVendorName}
+
+read -p "Package (default='$defaultPackageName'): " packageName
+packageName=${packageName:-$defaultPackageName}
+
+vendorNameLowerCase=$(echo $vendorName | tr '[:upper:]' '[:lower:]')
+packageNameLowerCase=$(echo $packageName | tr '[:upper:]' '[:lower:]')
+
 echo
 green_echo "Before we start"
 echo
@@ -51,17 +62,8 @@ echo "  * an empty git repo you want to push the project '${packageName}' to"
 echo "  * a namespace ${vendorNameLowerCase}-${packageNameLowerCase}-staging already created in kubernetes"
 echo "    (only relevant in the sandstorm context)"
 echo
-yellow_echo "Hit RETURN to provide your vendor and package name"
+yellow_echo "Hit RETURN to continue, or CTRL+C to exit"
 read -p ""
-read -p "Vendor (default='$defaultVendorName'): " vendorName
-vendorName=${vendorName:-$defaultVendorName}
-
-read -p "Package (default='$defaultPackageName'): " packageName
-packageName=${packageName:-$defaultPackageName}
-
-vendorNameLowerCase=$(echo $vendorName | tr '[:upper:]' '[:lower:]')
-packageNameLowerCase=$(echo $packageName | tr '[:upper:]' '[:lower:]')
-echo
 
 yellow_echo "This is what we will do next"
 echo "  * we do a search replace on vendor und package names"
