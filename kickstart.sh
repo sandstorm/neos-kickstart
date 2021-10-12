@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-if [ "$1" = "--restore-git" ] && [ -d ".git_back" ]
-  then
-    rm -rf .git
-    mv .git_back .git
-fi
-
 green_echo() {
   printf "\033[0;32m%s\033[0m\n" "${1}"
 }
@@ -18,6 +12,19 @@ red_echo() {
 grey_echo() {
   printf "\033[0;37m%s\033[0m\n" "${1}"
 }
+
+if [ "$1" = "--restore-git" ]
+  then
+    if [ -d ".git_back" ]
+      then
+        yellow_echo "Found folder .git_back, restoring ..."
+        rm -rf .git
+        mv .git_back .git
+      else
+        red_echo "No folder .git_back present, nothing to restore."
+    fi
+    exit 0
+fi
 
 initNewGitRepo="no"
 
