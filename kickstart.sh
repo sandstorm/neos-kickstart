@@ -107,8 +107,6 @@ if [ "$initNewGitRepo" = "yes" ]
     rm -rf .git
 
     git init -b main
-    git add .
-    git commit -m "TASK: Neos Kickstart"
 
     read -p "Repo Url: " repoUrl
 
@@ -120,6 +118,9 @@ if [ "$initNewGitRepo" = "yes" ]
           yellow_echo "Replacing path to dockerhub in app.yaml with $repoPath"
           sed -i '' "s;${defaultDockerHubPath};${repoPath};g" deployment/staging/app.yaml
         fi
+
+        git add .
+        git commit -m "TASK: Neos Kickstart"
 
         git remote add origin $repoUrl
         echo "Touch your YubiKey"
