@@ -43,7 +43,6 @@ defaultPackageNameLowerCase=$(echo $defaultPackageName | tr '[:upper:]' '[:lower
 defaultDockerHubPath="infrastructure/neos-on-docker-kickstart"
 
 green_echo "Please Provide the following information"
-echo
 read -p "Vendor (default='$defaultVendorName'): " vendorName
 vendorName=${vendorName:-$defaultVendorName}
 
@@ -56,17 +55,16 @@ packageNameLowerCase=$(echo $packageName | tr '[:upper:]' '[:lower:]')
 echo
 green_echo "Before we start"
 echo
-yellow_echo "Things you should do/have ready before starting to make the kickstart run smoothly ;)"
-echo "  * think about your vendor and package name for the project"
+yellow_echo "Things you should have already set up to make the kickstart run smoothly ;)"
 echo "  * an empty git repo you want to push the project '${packageName}' to"
-echo "  * a namespace ${vendorNameLowerCase}-${packageNameLowerCase}-staging already created in kubernetes"
+echo "  * the namespace '${vendorNameLowerCase}-${packageNameLowerCase}-staging' already created in kubernetes"
 echo "    (only relevant in the sandstorm context)"
 echo
 yellow_echo "Hit RETURN to continue, or CTRL+C to exit"
 read -p ""
 
 yellow_echo "This is what we will do next"
-echo "  * we do a search replace on vendor und package names"
+echo "  * we do a search replace on vendor and package names"
 echo "     * e.g. Flow packages names will be renamed to '${vendorName}.${packageName}'"
 echo "     * e.g. the composer packageName will be renamed to '${vendorNameLowerCase}/${packageNameLowerCase}'"
 echo "     * ..."
