@@ -12,7 +12,7 @@
      <properties>
       <title __type="string">Home</title>
       <uriPathSegment __type="string">home</uriPathSegment>
-      <teaserTitle __type="string">Neos Kickstart Package</teaserTitle>
+      <teaserTitle __type="string">Neos Kickstart of your AwesomeNeosProject</teaserTitle>
       <teaserText __type="string">Basic Neos package to get you really fast up and running to create awesome neos pages...</teaserText>
      </properties>
     </variant>
