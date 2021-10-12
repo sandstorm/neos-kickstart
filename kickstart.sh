@@ -33,6 +33,8 @@ defaultPackageName="AwesomeNeosProject"
 defaultVendorNameLowerCase=$(echo $defaultVendorName | tr '[:upper:]' '[:lower:]')
 defaultPackageNameLowerCase=$(echo $defaultPackageName | tr '[:upper:]' '[:lower:]')
 
+defaultDockerHubPath="infrastructure/neos-on-docker-kickstart"
+
 echo
 green_echo "Before we start"
 echo
@@ -112,6 +114,13 @@ if [ "$initNewGitRepo" = "yes" ]
 
     if [ $repoUrl ]
       then
+        if [[ $repoUrl == *"gitlab.sandstorm.de"* ]]; then
+          yellow_echo "Sandstorm Gitlab repo detected ;)"
+          repoPath=$(echo $repoUrl | sed -e 's;ssh://git@gitlab.sandstorm.de:29418/;;g' -e 's;.git;;g')
+          yellow_echo "Replacing path to dockerhub in app.yaml with $repoPath"
+          find ./ -type f ${findExcludePaths} -exec grep -Iq . {} \; -print | xargs sed -i '' "s;${defaultDockerHubPath};${repoPath};g"
+        fi
+
         git remote add origin $repoUrl
         git fetch
         git branch --set-upstream-to=origin/main main
