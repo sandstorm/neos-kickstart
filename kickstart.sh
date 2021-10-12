@@ -122,6 +122,7 @@ if [ "$initNewGitRepo" = "yes" ]
         fi
 
         git remote add origin $repoUrl
+        echo "Touch your YubiKey"
         git fetch
         git branch --set-upstream-to=origin/main main
         git pull --rebase
