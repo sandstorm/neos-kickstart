@@ -118,7 +118,7 @@ if [ "$initNewGitRepo" = "yes" ]
           yellow_echo "Sandstorm Gitlab repo detected ;)"
           repoPath=$(echo $repoUrl | sed -e 's;ssh://git@gitlab.sandstorm.de:29418/;;g' -e 's;.git;;g')
           yellow_echo "Replacing path to dockerhub in app.yaml with $repoPath"
-          find ./ -type f ${findExcludePaths} -exec grep -Iq . {} \; -print | xargs sed -i '' "s;${defaultDockerHubPath};${repoPath};g"
+          sed -i '' "s;${defaultDockerHubPath};${repoPath};g" deployment/staging/app.yaml
         fi
 
         git remote add origin $repoUrl
