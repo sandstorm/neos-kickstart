@@ -61,7 +61,7 @@ package_app:
     - COMPOSER_CACHE_DIR=.composer-cache composer install --no-dev --ignore-platform-reqs
     - cd ..
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG -f deployment/production/Dockerfile .
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG -f deployment/staging/Dockerfile .
     - docker push $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG
 
 deploy_staging:
@@ -76,7 +76,7 @@ deploy_staging:
   script:
     - export KUBECONFIG=$KUBECONFIG_K3S2021
     - kubectl get namespace myvendor-awesomeneosproject-staging
-    - kubectl apply -f deployment/production/database.yaml
-    - kubectl apply -f deployment/production/app.yaml
+    - kubectl apply -f deployment/staging/database.yaml
+    - kubectl apply -f deployment/staging/app.yaml
     # enforce a redeploy by changing the release identifier
     - 'kubectl -n myvendor-awesomeneosproject-staging patch --type merge OneContainerOnePort app -p "{\"spec\":{\"releaseIdentifier\": \"$CI_JOB_ID\"}}"'

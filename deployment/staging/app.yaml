@@ -14,7 +14,7 @@ spec:
   image: docker-hub.sandstorm.de/infrastructure/neos-on-docker-kickstart:master
 
   port: 8080
-  # Set to false when a real DNS entry for staging/production exists
+  # Set to false when a real DNS entry for staging/staging exists
   stagingCertificates: false
 
   env:
