@@ -8,6 +8,15 @@ Table of contents:
 - [running tests](#running-tests)
 - [packages we recommend for certain use-cases](#packages-we-recommend-for-certain-use-cases)
 
+## Features
+- Neos 7.2
+- PHP 8.0
+- MariaDB 10.3
+- Vips (instead of imagic)
+- Supercronic
+  - TODO: small crontab example + link to supercronic docs
+- Bash-Highlighting (dev, staging, production)
+
 ## setting up IntelliJ
 - recommended plugins:
   - Neos Support

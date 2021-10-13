@@ -30,9 +30,7 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 
 ### Prio 1
 
-* Makefile 
 * Projekt README
-* Neos Update - -> Klaus
 * CookieConsent aktualisieren -> Klaus
   * Datenschutzseite + Impressum + Button um den Consent zu öffnen + Möglichkeit den Text im Consent durch den Editor zu ändern
 * Supercronic installiert als per default -> Klaus
