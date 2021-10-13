@@ -17,6 +17,8 @@ Table of contents:
   - PHP Toolbox
   - Prettier
   - Docker
+- check, if autocompletion works for .yaml-files
+- check, if it's possible to jump to Fusion Prototypes via cmd + click
 
 
 ## requirements
