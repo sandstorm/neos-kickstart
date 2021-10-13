@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6e3f4bebfc817ed6e78d37de655b672",
+    "content-hash": "f872981c4bdcd103ec3a1e6b6e4633fc",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2493,16 +2493,16 @@
         },
         {
             "name": "jonnitto/prettyembedhelper",
-            "version": "3.1.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonnitto/Jonnitto.PrettyEmbedHelper.git",
-                "reference": "6c167c17fc45f230661dddfe0eee468432538c5a"
+                "reference": "386cbcd05a0e4c5b85d8ec57ce7d009e334b1845"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonnitto/Jonnitto.PrettyEmbedHelper/zipball/6c167c17fc45f230661dddfe0eee468432538c5a",
-                "reference": "6c167c17fc45f230661dddfe0eee468432538c5a",
+                "url": "https://api.github.com/repos/jonnitto/Jonnitto.PrettyEmbedHelper/zipball/386cbcd05a0e4c5b85d8ec57ce7d009e334b1845",
+                "reference": "386cbcd05a0e4c5b85d8ec57ce7d009e334b1845",
                 "shasum": ""
             },
             "require": {
@@ -2513,11 +2513,12 @@
                 "ext-json": "*",
                 "neos/fusion-afx": "^1.2 || ^7.0",
                 "neos/neos": "^5.3 || ^7.0",
-                "php": "^7.3"
+                "php": "^7.3 || ^8.0"
             },
             "suggest": {
                 "james-heinrich/getid3": "Get duration of internal audio and video files. You need to install the 2.0-beta version"
             },
+            "default-branch": true,
             "type": "neos-plugin",
             "extra": {
                 "installer-name": "Jonnitto.PrettyEmbedHelper",
@@ -2564,11 +2565,11 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-03T19:06:09+00:00"
+            "time": "2021-10-07T14:10:32+00:00"
         },
         {
             "name": "jonnitto/prettyembedvideo",
-            "version": "3.3.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo.git",
@@ -2583,6 +2584,7 @@
             "require": {
                 "jonnitto/prettyembedhelper": "^2.8 || ^3.0 || dev-master"
             },
+            "default-branch": true,
             "type": "neos-plugin",
             "extra": {
                 "installer-name": "Jonnitto.PrettyEmbedVideo",
@@ -2633,7 +2635,7 @@
         },
         {
             "name": "jonnitto/prettyembedyoutube",
-            "version": "7.3.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube.git",
@@ -2648,6 +2650,7 @@
             "require": {
                 "jonnitto/prettyembedhelper": "^2.8 || ^3.0 || dev-master"
             },
+            "default-branch": true,
             "type": "neos-plugin",
             "extra": {
                 "installer-name": "Jonnitto.PrettyEmbedYoutube",
@@ -2924,13 +2927,13 @@
             "dist": {
                 "type": "path",
                 "url": "./DistributionPackages/MyVendor.AwesomeNeosProject",
-                "reference": "9434ffb27537de3b68eb7b1c9703bedc4178dcaf"
+                "reference": "cbf432aed96eba5eedf043725fde2c2241f9865b"
             },
             "require": {
-                "jonnitto/prettyembedvideo": "^3.0",
-                "jonnitto/prettyembedyoutube": "^7.0",
+                "jonnitto/prettyembedvideo": "*",
+                "jonnitto/prettyembedyoutube": "*",
                 "neos/neos": "*",
-                "neos/nodetypes-html": "^7.0"
+                "neos/nodetypes-html": "^7.2.0"
             },
             "suggest": {
                 "neos/seo": "*"
@@ -10765,6 +10768,9 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "myvendor/awesomeneosproject": 20,
+        "jonnitto/prettyembedvideo": 20,
+        "jonnitto/prettyembedyoutube": 20,
+        "jonnitto/prettyembedhelper": 20,
         "neos/behat": 20
     },
     "prefer-stable": false,
@@ -10772,7 +10778,7 @@
     "platform": [],
     "platform-dev": [],
     "platform-overrides": {
-        "php": "7.4.0",
+        "php": "8.0.6",
         "ext-vips": "1.0.8"
     },
     "plugin-api-version": "2.1.0"

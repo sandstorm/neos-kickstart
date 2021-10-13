@@ -15,7 +15,7 @@
         "vendor-dir": "Packages/Libraries",
         "bin-dir": "bin",
         "platform": {
-            "php": "7.4.0",
+            "php": "8.0.6",
             "ext-vips": "1.0.8"
         }
     },
@@ -39,7 +39,10 @@
         "packagefactory/atomicfusion-proptypes": "~2.0.1",
         "sitegeist/kaleidoscope": "~6.0.3",
         "sandstorm/optimizedrediscachebackend": "^1.1.3",
-        "sandstorm/cookiepunch": "^1.2"
+        "sandstorm/cookiepunch": "^1.2",
+        "jonnitto/prettyembedvideo": "dev-master",
+        "jonnitto/prettyembedyoutube": "dev-master",
+        "jonnitto/prettyembedhelper": "dev-master"
     },
     "require-dev": {
         "neos/buildessentials": "~7.2.0",

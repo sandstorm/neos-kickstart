@@ -7,7 +7,8 @@ start:
 	@docker compose up -d
 	@sleep 5
 	@make open
-
+build:
+	@docker compose build
 stop:
 	@docker compose stop
 

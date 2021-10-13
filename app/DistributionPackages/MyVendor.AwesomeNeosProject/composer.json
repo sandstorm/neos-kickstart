@@ -3,9 +3,9 @@
     "type": "neos-site",
     "require": {
         "neos/neos": "*",
-        "jonnitto/prettyembedvideo": "^3.0",
-        "jonnitto/prettyembedyoutube": "^7.0",
-        "neos/nodetypes-html": "^7.0"
+        "jonnitto/prettyembedvideo": "*",
+        "jonnitto/prettyembedyoutube": "*",
+        "neos/nodetypes-html": "^7.2.0"
     },
     "suggest": {
         "neos/seo": "*"
