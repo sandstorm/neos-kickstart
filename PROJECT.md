@@ -25,14 +25,9 @@ Table of contents:
 - docker for mac
 
 ## local development setup
-
-- run `docker-compose build`
-- run `docker-compose up -d`
-- run `docker-compose logs -f`
-- run `docker-compose stop`
-- run `docker-compose down` (cleanup)
 - run `composer install` in `/app` for autocompletion
-
+- run `make start` to start the project, this will also open the url in the browser
+- run `make help` to see all available commands
 
 ## running tests
 Docker environment for tests currently missing, run tests local (run `composer install` in `/app`)
