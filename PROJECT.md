@@ -8,6 +8,17 @@ Table of contents:
 - [running tests](#running-tests)
 - [packages we recommend for certain use-cases](#packages-we-recommend-for-certain-use-cases)
 
+## setting up IntelliJ
+- recommended plugins:
+  - Neos Support
+  - Makefile language
+  - PHP
+  - PHP Annotations
+  - PHP Toolbox
+  - Prettier
+  - Docker
+
+
 ## requirements
 - docker for mac
 
