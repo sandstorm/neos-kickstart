@@ -14,6 +14,7 @@ Table of contents:
 - MariaDB 10.3
 - Vips (instead of imagic)
 - Supercronic
+  - TODO: small crontab example + link to supercronic docs
 - Bash-Highlighting (dev, staging, production)
 
 ## setting up IntelliJ
