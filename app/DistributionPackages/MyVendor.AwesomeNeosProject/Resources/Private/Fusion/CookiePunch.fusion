@@ -3,18 +3,6 @@ prototype(Neos.Neos:Page) {
     # Block Global
     @process.blockIframes = ${CookiePunch.blockIframes(value, !node.context.inBackend)}
     @process.blockScripts = ${CookiePunch.blockScripts(value, !node.context.inBackend)}
-
-
-    renderer = Neos.Fusion:Tag {
-        tagName = "script"
-        attrbutes.src = "resource://Vendor.Example/Public/JavaScript/index.js"
-        @process.neverBlock = ${CookiePunch.neverBlockScripts(value)}
-    }
-
-
-renderer = afx`
-    <script src={props.src} type="application/javascript" @process.neverBlock={CookiePunch.neverBlockScripts(value)}></script>
-`
 }
 
 
