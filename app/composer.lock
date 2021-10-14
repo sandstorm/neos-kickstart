@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f872981c4bdcd103ec3a1e6b6e4633fc",
+    "content-hash": "e5368236d67ca0633b183ca3c667229a",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -6852,16 +6852,16 @@
         },
         {
             "name": "sandstorm/cookiepunch",
-            "version": "1.2.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sandstorm/Sandstorm.CookiePunch.git",
-                "reference": "141caf186a97a0de468dae875b090943f11f8c58"
+                "reference": "cad6ce41f7ec2da3dd135dcfc8789ebdca65e146"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sandstorm/Sandstorm.CookiePunch/zipball/141caf186a97a0de468dae875b090943f11f8c58",
-                "reference": "141caf186a97a0de468dae875b090943f11f8c58",
+                "url": "https://api.github.com/repos/sandstorm/Sandstorm.CookiePunch/zipball/cad6ce41f7ec2da3dd135dcfc8789ebdca65e146",
+                "reference": "cad6ce41f7ec2da3dd135dcfc8789ebdca65e146",
                 "shasum": ""
             },
             "require": {
@@ -6891,13 +6891,14 @@
                 "consent",
                 "cookie",
                 "flow",
+                "klaro.js",
                 "privacy"
             ],
             "support": {
                 "issues": "https://github.com/sandstorm/Sandstorm.CookiePunch/issues",
                 "source": "https://github.com/sandstorm/Sandstorm.CookiePunch"
             },
-            "time": "2021-01-28T09:42:43+00:00"
+            "time": "2021-08-17T10:22:36+00:00"
         },
         {
             "name": "sandstorm/optimizedrediscachebackend",

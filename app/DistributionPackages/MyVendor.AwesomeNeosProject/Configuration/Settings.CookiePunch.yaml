@@ -1,27 +1,21 @@
 Sandstorm:
   CookiePunch:
     consent:
-      storageMethod: cookie
-      cookieName: cookie_punch
-      cookieExpiresAfterDays: 120
-      mustConsent: true
-      acceptAll: true
-      hideDeclineAll: false
-      default: false
-    purposes:
-      mediaembeds: MyVendor.AwesomeNeosProject:CookiePunch:purposes.mediaembeds
-    groups:
-      default:
-        title: MyVendor.AwesomeNeosProject:CookiePunch:groups.default.title
-        description: MyVendor.AwesomeNeosProject:CookiePunch:groups.default.description
-      media:
-        title: MyVendor.AwesomeNeosProject:CookiePunch:groups.media.title
-        purposes:
-          - mediaembeds
-        description: MyVendor.AwesomeNeosProject:CookiePunch:groups.media.description
-    elements:
-      patterns:
-        "https://www.youtube.com/embed/":
-          type: iframe
-          block: true
-          group: media
+      purposes:
+        mediaembeds:
+          title: Media Embeds
+          description: Some Description
+      services:
+        youtube:
+          title: Youtube
+          description: Video Player
+          purposes:
+            - mediaembeds
+    blocking:
+      tagPatterns:
+        script:
+          "Packages/Neos.Neos":
+            block: false
+        iframe:
+          "https://www.youtube.com":
+            service: youtube
