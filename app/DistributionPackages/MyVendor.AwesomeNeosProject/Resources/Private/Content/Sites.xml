@@ -16,6 +16,22 @@
       <teaserText __type="string">Basic Neos package to get you really fast up and running to create awesome neos pages...</teaserText>
      </properties>
     </variant>
+    <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Document.StartPage" version="3" removed="" hidden="" hiddenInIndex="">
+     <dimensions>
+      <language>de</language>
+     </dimensions>
+     <accessRoles __type="array"/>
+     <creationDateTime __type="object" __classname="DateTime">2021-10-14T13:28:34+00:00</creationDateTime>
+     <lastModificationDateTime __type="object" __classname="DateTime">2021-10-14T13:40:35+00:00</lastModificationDateTime>
+     <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-14T13:40:35+00:00</lastPublicationDateTime>
+     <properties>
+      <title __type="string">Home</title>
+      <uriPathSegment __type="string">home</uriPathSegment>
+      <teaserTitle __type="string">Neos Kickstart of your AwesomeNeosProject</teaserTitle>
+      <teaserText __type="string">Basic Neos package to get you really fast up and running to create awesome neos pages...</teaserText>
+      <privacyPage __type="string">c3e2343f-b5c4-4586-83cb-2d922a75eb25</privacyPage>
+     </properties>
+    </variant>
     <node identifier="b90fae81-e1d3-45e9-38f2-116e6432add9" nodeName="main">
      <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:ContentCollection.Default" version="3" removed="" hidden="" hiddenInIndex="">
       <dimensions/>
@@ -23,6 +39,16 @@
       <creationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:31+00:00</creationDateTime>
       <lastModificationDateTime __type="object" __classname="DateTime">2020-04-29T08:46:54+00:00</lastModificationDateTime>
       <lastPublicationDateTime __type="object" __classname="DateTime">2020-02-26T15:11:33+00:00</lastPublicationDateTime>
+      <properties/>
+     </variant>
+     <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:ContentCollection.Default" version="2" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+       <language>de</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2021-10-14T13:28:34+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2021-10-14T13:28:38+00:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-14T13:28:37+00:00</lastPublicationDateTime>
       <properties/>
      </variant>
      <node identifier="2d39096a-063a-4005-b933-96b6cb5b0cfc" nodeName="node-az20seawuqp90">
@@ -207,6 +233,53 @@
         <lastPublicationDateTime __type="object" __classname="DateTime">2021-06-02T10:11:15+00:00</lastPublicationDateTime>
         <properties>
          <text __type="string">&lt;p&gt;...&lt;/p&gt;</text>
+        </properties>
+       </variant>
+      </node>
+     </node>
+    </node>
+    <node identifier="c3e2343f-b5c4-4586-83cb-2d922a75eb25" nodeName="node-if4oag09eerms">
+     <variant sortingIndex="400" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Document.Page" version="5" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+       <language>de</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2021-10-14T13:40:18+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2021-10-14T14:03:59+00:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-14T14:03:59+00:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">privacy</uriPathSegment>
+       <title __type="string">Privacy Statement</title>
+       <teaserTitle __type="string">Privacy Statement</teaserTitle>
+      </properties>
+     </variant>
+     <node identifier="bfe85172-9ffe-339d-bb7a-59baa3955ae0" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:ContentCollection.Default" version="2" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-14T13:40:18+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-14T13:40:35+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-14T13:40:35+00:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+      <node identifier="53c5dc48-8b89-4684-8d34-99cc45fad981" nodeName="node-c04riuydyehyj">
+       <variant sortingIndex="150" workspace="live" nodeType="Neos.NodeTypes.Html:Html" version="5" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>de</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2021-10-14T13:49:33+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2021-10-14T14:04:20+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-14T14:04:20+00:00</lastPublicationDateTime>
+        <properties>
+         <source __type="string">&lt;a
+  href=&quot;&quot;
+  onclick=&quot;(function(e){e.preventDefault();klaro.show()})(arguments[0])&quot;
+  &gt;Open Cookie Settings&lt;/a
+&gt;
+</source>
         </properties>
        </variant>
       </node>
