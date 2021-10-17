@@ -31,10 +31,6 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 ### Prio 1
 
 * Projekt README
-* CookieConsent aktualisieren -> Klaus --config Prüfen--
-  * Datenschutzinhaltseite vorbereiten mit lorem ipsum
-    * link zum erneuten öffnen der Cookie consents 
-  * Impressum Seite vorbereiten
   * -> neuer Site export -> Sites.xml
 * Custom Data Provider -> Klaus
 * Custen Eel Helper -> Klaus
