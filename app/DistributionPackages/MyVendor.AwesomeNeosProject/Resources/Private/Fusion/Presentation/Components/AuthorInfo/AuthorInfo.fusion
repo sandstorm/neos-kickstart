@@ -1,0 +1,11 @@
+prototype(MyVendor.AwesomeNeosProject:Component.AuthorInfo) < prototype(Neos.Neos:ContentComponent) {
+
+    label = 'Please Choose a User in the Inspector'
+
+
+
+    renderer = afx`
+            <div>{props.label}</div>
+
+    `
+}
