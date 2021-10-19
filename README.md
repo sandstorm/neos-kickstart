@@ -30,6 +30,7 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 
 ### Prio 1
 
+* NodeTypes in /NodeTypes folder -> Klaus
 * Projekt README
   * -> neuer Site export -> Sites.xml
 * Custom Data Provider -> Klaus
@@ -50,6 +51,7 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 * Caching Config prüfen -> was geht noch mit nginx/evtl. anpassen
 * Datenschutz welche Daten speichert Neos -> z.B. in Logs -> evtl. Config anpassen -> Docker Container 
 * Beispiel für Suche -> evtl. von Anfang an mit aktiviert (brauchen wir in fast jeder Seite), Paginierung -> überlegen
+* remove Content Dimensions
 
 
 ### Backlog
