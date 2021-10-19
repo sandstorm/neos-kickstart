@@ -1,0 +1,16 @@
+'MyVendor.AwesomeNeosProject:Content.TruncatedText':
+  superTypes:
+    'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
+    'MyVendor.AwesomeNeosProject:Mixin.Text': true
+  ui:
+    label: TruncatedText
+    icon: icon-file-text
+    position: 200
+    inlineEditable: true
+  properties:
+    text:
+      ui:
+        aloha:
+          placeholder: '<p>Enter text here...</p>'
+      options:
+        silhouette: 'text.free'
