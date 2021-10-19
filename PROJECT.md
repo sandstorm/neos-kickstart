@@ -35,6 +35,7 @@ Table of contents:
 
 ## local development setup
 - run `composer install` in `/app` for autocompletion
+- run `make setup` only the first time to setup folders and build
 - run `make start` to start the project, this will also open the url in the browser
 - run `make help` to see all available commands
 
