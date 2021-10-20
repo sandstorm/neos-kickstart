@@ -31,7 +31,6 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 ### Prio 1
 
 * node:16.11 update
-* NodeTypes in /NodeTypes folder -> Klaus
 * Projekt README
   * -> neuer Site export -> Sites.xml
 * Custom Data Provider -> Klaus
