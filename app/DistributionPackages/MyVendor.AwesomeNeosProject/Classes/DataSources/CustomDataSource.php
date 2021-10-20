@@ -36,11 +36,7 @@ class CustomDataSource extends AbstractDataSource
     {
         $options = [];
         foreach ($this->userService->getUsers() as $user) {
-/*            $options[$this->persistenceManager->getIdentifierByObject($user)] = [
-                'label' => $user->getLabel()
-            ];*/
-            $options[$this->userService->getUsername($user)] = $user;
-
+            $options[$user->getLabel()] = $user;
         }
         return $options;
     }
