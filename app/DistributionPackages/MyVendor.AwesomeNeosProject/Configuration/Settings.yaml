@@ -1,4 +1,7 @@
 Neos:
+  Fusion:
+    defaultContext:
+      "MyVendor.AwesomeNeosProject.Example": 'MyVendor\AwesomeNeosProject\Eel\Helper\TruncateHelper'
   ContentRepository:
     contentDimensions:
       language:

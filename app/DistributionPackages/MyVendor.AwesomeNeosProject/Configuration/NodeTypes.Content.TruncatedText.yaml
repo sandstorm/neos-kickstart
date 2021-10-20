@@ -2,15 +2,38 @@
   superTypes:
     'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
     'MyVendor.AwesomeNeosProject:Mixin.Text': true
+    'MyVendor.AwesomeNeosProject:Mixin.Column': true
   ui:
+    group: general
     label: Truncated Text
     icon: icon-file-text
     position: 200
     inlineEditable: true
   properties:
     text:
+      reloadIfChanged: true
       ui:
         aloha:
           placeholder: '<p>Enter text here...</p>'
       options:
         silhouette: 'text.free'
+    truncatedText:
+      type: string
+    size:
+      type: string
+      ui:
+        label: 'Länge der Zeichenkette'
+        reloadIfChanged: true
+        inspector:
+          group: 'general'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              length-20:
+                label: '20 Zeichen'
+              length-40:
+                label: '40 Zeichen'
+              length-60:
+                label: '60 Zeichen'
+              length-80:
+                label: '80 Zeichen'

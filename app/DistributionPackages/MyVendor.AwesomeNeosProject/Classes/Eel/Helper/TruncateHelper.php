@@ -11,12 +11,24 @@ class TruncateHelper implements ProtectedContextAwareInterface {
      * Truncate the given string to max 100 characters
      *
      * @param $text string
+     * @param $size string
      * @return string
      *
      */
-
-    public function truncateOneHundred($text) {
-        return substr($text, 0, 100);
+    public function customTruncate($text, $size)
+    {
+        $stringLength = match ($size) {
+            'length-20' => 20,
+            'length-40' => 40,
+            'length-60' => 60,
+            'length-80' => 80,
+            default => 80,
+        };
+        if(!$text) {
+            return 'Bitte geben Sie einen Text ein';
+        } else {
+            return substr($text, 0, $stringLength);
+        }
     }
 
     /**

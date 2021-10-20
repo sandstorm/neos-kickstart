@@ -4,6 +4,6 @@ prototype(MyVendor.AwesomeNeosProject:Content.TruncatedText) < prototype(Neos.Ne
         text = Neos.Neos:Editable {
             property = 'text'
         }
+        size = ${q(node).property('size')}
     }
-
 }
