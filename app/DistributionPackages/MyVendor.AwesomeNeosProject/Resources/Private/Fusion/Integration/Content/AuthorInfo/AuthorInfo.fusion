@@ -1,15 +1,5 @@
 prototype(MyVendor.AwesomeNeosProject:Content.AuthorInfo) < prototype(Neos.Neos:ContentComponent) {
-
-
     renderer = MyVendor.AwesomeNeosProject:Component.AuthorInfo {
-
         label = ${q(node).property('authors')}
-        label.@process.foo = ${'the selected user is: ' + value}
-/*        label.exists = Neos.Fusion:Case {
-            labelExists {
-                condition = ${q(node).property('authors')}
-            }
-        }*/
-
     }
 }

@@ -1,11 +1,10 @@
 prototype(MyVendor.AwesomeNeosProject:Component.AuthorInfo) < prototype(Neos.Neos:ContentComponent) {
-
-    label = 'Please Choose a User in the Inspector'
-
-
-
+    label = ''
     renderer = afx`
-            <div>{props.label}</div>
+        <div @if.is={props.label}>{props.label}</div>
+        `
 
-    `
+    @process.debug = Neos.Fusion:Debug.Console {
+        value = ${node}
+    }
 }

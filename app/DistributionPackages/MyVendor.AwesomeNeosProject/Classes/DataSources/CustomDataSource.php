@@ -39,7 +39,7 @@ class CustomDataSource extends AbstractDataSource
 /*            $options[$this->persistenceManager->getIdentifierByObject($user)] = [
                 'label' => $user->getLabel()
             ];*/
-            $options[$user->getLabel()] = $user;
+            $options[$this->userService->getUsername($user)] = $user;
 
         }
         return $options;
