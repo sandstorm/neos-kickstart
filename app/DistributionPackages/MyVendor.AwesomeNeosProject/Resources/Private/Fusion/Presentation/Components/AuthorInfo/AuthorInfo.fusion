@@ -4,8 +4,4 @@ prototype(MyVendor.AwesomeNeosProject:Component.AuthorInfo) < prototype(Neos.Neo
         <div @if.is={!props.label}>Bitte Nutzer im Inspector auswählen</div>
         <div @if.is={props.label}>Ausgewählter Nutzer: {props.label}</div>
         `
-
-    /*  @process.debug = Neos.Fusion:Debug.Console {
-         value = ${node}
-    } */
 }
