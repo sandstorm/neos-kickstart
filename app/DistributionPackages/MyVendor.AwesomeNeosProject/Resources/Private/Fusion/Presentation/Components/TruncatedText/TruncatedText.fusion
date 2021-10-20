@@ -1,8 +1,6 @@
-prototype(MyVendor.AwesomeNeosProject:Content.TruncatedText) < prototype(Neos.Neos:ContentComponent) {
+prototype(MyVendor.AwesomeNeosProject:Component.TruncatedText) < prototype(Neos.Fusion:Component) {
 
     text = ''
-
-
 
     renderer = afx`
         <div style="min-height:100px">{props.text}</div>
