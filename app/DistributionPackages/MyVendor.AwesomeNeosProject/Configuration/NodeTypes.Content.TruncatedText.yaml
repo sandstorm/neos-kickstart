@@ -12,6 +12,7 @@
   properties:
     text:
       reloadIfChanged: true
+      defaultValue: 'The following text will be shortened to the selected amount of characters in the inspector'
       ui:
         aloha:
           placeholder: '<p>Enter text here...</p>'
