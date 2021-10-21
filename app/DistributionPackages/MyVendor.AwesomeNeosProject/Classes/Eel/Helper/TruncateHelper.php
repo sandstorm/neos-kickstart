@@ -15,15 +15,25 @@ class TruncateHelper implements ProtectedContextAwareInterface {
      * @return string
      *
      */
-    public function customTruncate($text, $size)
-    {
-        $stringLength = match ($size) {
-            'length-20' => 20,
-            'length-40' => 40,
-            'length-60' => 60,
-            'length-80' => 80,
-            default => 80,
-        };
+    public function customTruncate($text, $size) {
+
+        switch($size) {
+            case 'length-20':
+                $stringLength = 20;
+                break;
+            case 'length-40':
+                $stringLength = 40;
+                break;
+            case 'length-60':
+                $stringLength = 60;
+                break;
+            case 'length-80':
+                $stringLength = 80;
+                break;
+            default:
+                $stringLength = 40;
+        }
+
         if(!$text) {
             return 'Bitte geben Sie einen Text ein';
         } else {
