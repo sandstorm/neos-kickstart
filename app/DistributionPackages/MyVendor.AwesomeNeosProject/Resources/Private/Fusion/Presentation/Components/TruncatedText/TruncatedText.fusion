@@ -5,8 +5,10 @@ prototype(MyVendor.AwesomeNeosProject:Component.TruncatedText) < prototype(Neos.
     truncatedText = ${MyVendor.AwesomeNeosProject.Example.customTruncate(q(node).property('text'), q(node).property('size'))}
 
     renderer = afx`
-        <div style="min-height:100px">{props.text}</div>
-        <div>Truncated Text: {props.truncatedText} ...</div>
+    <div style="min-height:100px; width:33%; padding: 10px; border: 1px solid black; margin-top: 20px;">
+        <div style="padding: 5px;">{props.text}</div>
+        <div style="padding:5px; margin: 0; background-color: teal; color: white;">Truncated Text: {props.truncatedText} ...</div>
+    </div>
     `
 
 }
