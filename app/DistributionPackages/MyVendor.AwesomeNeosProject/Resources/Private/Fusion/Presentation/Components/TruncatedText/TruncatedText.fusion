@@ -7,7 +7,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.TruncatedText) < prototype(Neos.
     renderer = afx`
     <div style="min-height:100px; width:33%; padding: 10px; border: 1px solid black; margin-top: 20px;">
         <div style="padding: 5px;">{props.text}</div>
-        <div style="padding:5px; margin: 0; background-color: teal; color: white;">Truncated Text: {props.truncatedText} ...</div>
+        <div style="padding:5px; margin: 0; background-color: #3a3a3a; color: white;">Truncated Text: {props.truncatedText} ...</div>
     </div>
     `
 
