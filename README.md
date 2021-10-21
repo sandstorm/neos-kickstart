@@ -31,12 +31,7 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 ### Prio 1
 
 * Projekt README
-* CookieConsent aktualisieren -> Klaus
   * Datenschutzseite + Impressum + Button um den Consent zu öffnen + Möglichkeit den Text im Consent durch den Editor zu ändern
-* Supercronic installiert als per default -> Klaus
-* Custom Data Provider -> Klaus
-* Typescript / SCSS / move node up
-* webpack ersetzten mit esbuild
 * Ts Struktur
 * Doku erweitern
     * IDE einrichten, JSON Schema -> Klauss
