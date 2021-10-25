@@ -1,0 +1,23 @@
+'MyVendor.AwesomeNeosProject:Content.AuthorInfo':
+  superTypes:
+    'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
+    'MyVendor.AwesomeNeosProject:Mixin.Text': true
+  ui:
+    label: 'Author Info'
+    icon: icon-file-text
+    position: 210
+    inlineEditable: true
+  properties:
+    authors:
+      type: string
+      ui:
+        label: 'Author(s)'
+        reloadIfChanged: true
+        inspector:
+          group: 'general'
+          position: '200'
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: Choose
+            dataSourceIdentifier: vendor-site-authors
+
