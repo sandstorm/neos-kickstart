@@ -1,7 +1,7 @@
 prototype(MyVendor.AwesomeNeosProject:Component.AuthorInfo) < prototype(Neos.Neos:ContentComponent) {
     label = ''
     renderer = afx`
-        <div @if.is={!props.label}>Bitte Nutzer im Inspector auswählen</div>
-        <div @if.is={props.label}>Ausgewählter Nutzer: {props.label}</div>
+        <div @if.is={!props.label}>Please choose a user in the inspector</div>
+        <div @if.is={props.label}>You chose: {props.label}</div>
         `
 }

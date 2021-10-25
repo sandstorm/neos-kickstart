@@ -23,7 +23,7 @@
     size:
       type: string
       ui:
-        label: 'Länge der Zeichenkette'
+        label: 'Length to truncate at'
         reloadIfChanged: true
         inspector:
           group: 'general'
@@ -31,10 +31,10 @@
           editorOptions:
             values:
               length-20:
-                label: '20 Zeichen'
+                label: '20 Chars'
               length-40:
-                label: '40 Zeichen'
+                label: '40 Chars'
               length-60:
-                label: '60 Zeichen'
+                label: '60 Chars'
               length-80:
-                label: '80 Zeichen'
+                label: '80 Chars'
