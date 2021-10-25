@@ -31,22 +31,10 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 ### Prio 1
 
 * Das Ding von Sebastian einbauen
-* node:16.11 update
-* Projekt README
-  * Datenschutzseite + Impressum + Button um den Consent zu öffnen + Möglichkeit den Text im Consent durch den Editor zu ändern
-  * -> neuer Site export -> Sites.xml
-* webpack ersetzten mit esbuild
-* Ts Struktur
-* Doku erweitern
-    * IDE einrichten, JSON Schema -> Klaus
-        * VSC Code datei
-        * InteliJ -> Plugin Datei
 * Monocle ausbauen
 * Bilder
   * Bildvarianten Beispiel -> src-set, picture, fusion context
   * Vips Bildoptimierung anschauen -> Beispielkonfig tunen -> https://gitlab.sandstorm.de/sebastian/revoband/-/tree/master/app/DistributionPackages/Sandstorm.DynamicImage
-
-
 
 ### Backlog
 
