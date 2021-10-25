@@ -3,6 +3,11 @@ help:
 nuke:
 	@docker compose down --rmi all --volumes --remove-orphans
 
+setup:
+	@mkdir -p ./tmp/composer_cache
+	@mkdir -p ./tmp/.yarn-cache
+	@make build
+
 start:
 	@docker compose up -d
 	@sleep 5

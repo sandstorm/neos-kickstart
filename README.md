@@ -30,11 +30,9 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 
 ### Prio 1
 
+* node:16.11 update
+* NodeTypes in /NodeTypes folder -> Klaus
 * Projekt README
-* CookieConsent aktualisieren -> Klaus --config Prüfen--
-  * Datenschutzinhaltseite vorbereiten mit lorem ipsum
-    * link zum erneuten öffnen der Cookie consents 
-  * Impressum Seite vorbereiten
   * -> neuer Site export -> Sites.xml
 * Custom Data Provider -> Klaus
 * Custen Eel Helper -> Klaus
@@ -54,6 +52,7 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 * Caching Config prüfen -> was geht noch mit nginx/evtl. anpassen
 * Datenschutz welche Daten speichert Neos -> z.B. in Logs -> evtl. Config anpassen -> Docker Container 
 * Beispiel für Suche -> evtl. von Anfang an mit aktiviert (brauchen wir in fast jeder Seite), Paginierung -> überlegen
+* remove Content Dimensions
 
 
 ### Backlog
