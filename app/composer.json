@@ -42,14 +42,13 @@
         "sandstorm/cookiepunch": "^3.0.1",
         "jonnitto/prettyembedvideo": "dev-master",
         "jonnitto/prettyembedyoutube": "dev-master",
-        "jonnitto/prettyembedhelper": "dev-master"
+        "jonnitto/prettyembedhelper": "dev-master",
+        "sandstorm/e2etesttools": "@dev"
     },
     "require-dev": {
         "neos/buildessentials": "~7.2.0",
         "mikey179/vfsstream": "^1.6",
-        "phpunit/phpunit": "^9.5",
-        "symfony/css-selector": "~2.0",
-        "neos/behat": "@dev"
+        "phpunit/phpunit": "^9.5"
     },
     "suggest": {
         "ext-pdo_sqlite": "For running functional tests out-of-the-box this is required"

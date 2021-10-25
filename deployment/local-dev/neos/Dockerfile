@@ -71,12 +71,14 @@ ADD /deployment/config-files/upload-limit-php.ini /usr/local/etc/php/conf.d/uplo
 RUN rm -Rf /usr/local/etc/php-fpm.*
 ADD deployment/config-files/php-fpm.conf /usr/local/etc/php-fpm.conf
 
-ADD /deployment/config-files/nginx.template.conf /etc/nginx/nginx.template
-RUN mkdir -p /var/lib/nginx /usr/local/var/log/ & \
-    chown -R www-data /var/lib/nginx /usr/local/var/log/ /etc/nginx/
+ADD /deployment/config-files/nginx.conf /deployment/config-files/nginx-e2etest-server-dev.conf /etc/nginx/
+
+RUN mkdir -p /var/lib/nginx /usr/local/var/log/ && \
+    chown -R www-data /var/lib/nginx /usr/local/var/log/ /etc/nginx/ && \
+    ln -s /etc/nginx/nginx-e2etest-server-dev.conf /etc/nginx/conf.d/nginx-e2etest-server-dev.conf
 
 # cleanup & chown
-RUN mkdir -p /app/Data/Persistent /app/Configuration/Development/Docker /composer_cache && \
+RUN mkdir -p /app/Data/Persistent /app/Configuration/Development/Docker /app/Build/Behat /composer_cache && \
     chown -R www-data /app /composer_cache && \
     apt-get clean
 

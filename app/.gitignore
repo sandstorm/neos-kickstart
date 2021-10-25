@@ -1,4 +1,4 @@
-/Build/Behat/*
+/Build/Behat/vendor/
 /Build/PhpCodesniffer/*
 /Build/BuildEssentials
 /Build/Reports

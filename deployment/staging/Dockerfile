@@ -69,7 +69,7 @@ ADD /deployment/config-files/upload-limit-php.ini /usr/local/etc/php/conf.d/uplo
 RUN rm -Rf /usr/local/etc/php-fpm.*
 ADD deployment/config-files/php-fpm.conf /usr/local/etc/php-fpm.conf
 
-ADD /deployment/config-files/nginx.template.conf /etc/nginx/nginx.template
+ADD /deployment/config-files/nginx.conf /etc/nginx/nginx.template
 RUN mkdir -p /var/lib/nginx /usr/local/var/log/ & \
     chown -R www-data /var/lib/nginx /usr/local/var/log/ /etc/nginx/
 
