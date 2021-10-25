@@ -1,0 +1,9 @@
+prototype(MyVendor.AwesomeNeosProject:Content.TruncatedText) < prototype(Neos.Neos:ContentComponent) {
+
+    renderer = MyVendor.AwesomeNeosProject:Component.TruncatedText {
+        text = Neos.Neos:Editable {
+            property = 'text'
+        }
+        size = ${q(node).property('size')}
+    }
+}

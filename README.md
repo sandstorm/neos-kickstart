@@ -32,6 +32,7 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 
 * node:16.11 update
 * Projekt README
+  * Datenschutzseite + Impressum + Button um den Consent zu öffnen + Möglichkeit den Text im Consent durch den Editor zu ändern
   * -> neuer Site export -> Sites.xml
 * Custom Data Provider -> Klaus
 * Custen Eel Helper -> Klaus

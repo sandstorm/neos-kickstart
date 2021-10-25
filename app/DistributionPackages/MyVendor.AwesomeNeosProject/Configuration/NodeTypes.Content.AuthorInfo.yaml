@@ -20,4 +20,5 @@
           editorOptions:
             placeholder: Choose
             dataSourceIdentifier: vendor-site-authors
+            allowEmpty: true
 

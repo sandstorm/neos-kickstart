@@ -51,6 +51,34 @@
       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-14T13:28:37+00:00</lastPublicationDateTime>
       <properties/>
      </variant>
+     <node identifier="2706b282-43fc-4974-a76b-f03e3664c295" nodeName="node-6g9qp63uypsa7">
+      <variant sortingIndex="625" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.AuthorInfo" version="5" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-25T08:06:29+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-25T08:25:42+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-25T08:25:42+00:00</lastPublicationDateTime>
+       <properties>
+        <authors __type="string">LocalDev Admin</authors>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="7bcb01fe-1603-48bf-b336-d730062f8d10" nodeName="node-782xa5ifc8mic">
+      <variant sortingIndex="675" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Headline" version="12" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-25T08:25:10+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-25T08:25:42+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-25T08:25:42+00:00</lastPublicationDateTime>
+       <properties>
+        <title __type="string">&lt;h2&gt;Custom Eel-Helper&lt;/h2&gt;</title>
+       </properties>
+      </variant>
+     </node>
      <node identifier="2d39096a-063a-4005-b933-96b6cb5b0cfc" nodeName="node-az20seawuqp90">
       <variant sortingIndex="475" workspace="live" nodeType="Neos.NodeTypes.Html:Html" version="3" removed="" hidden="" hiddenInIndex="">
        <dimensions/>
@@ -61,6 +89,20 @@
        <properties>
         <source __type="string">            &lt;iframe width=&quot;100%&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/wxyQ06_blF8&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
 </source>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="5f9ba65e-5f3a-4997-8e16-f3bf40358a79" nodeName="node-en085ydhlhc7y">
+      <variant sortingIndex="525" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Headline" version="9" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-25T08:05:34+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-25T08:09:16+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-25T08:09:16+00:00</lastPublicationDateTime>
+       <properties>
+        <title __type="string">&lt;h2&gt;Custom Data Datasource for the inspector&lt;/h2&gt;</title>
        </properties>
       </variant>
      </node>
@@ -157,6 +199,20 @@
        <lastPublicationDateTime __type="object" __classname="DateTime">2021-04-22T13:18:32+00:00</lastPublicationDateTime>
        <properties>
         <text __type="string">&lt;p&gt;&lt;a href=&quot;https://github.com/sandstorm/Sandstorm.CookiePunch&quot;&gt;https://github.com/sandstorm/Sandstorm.CookiePunch&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The following Video will not play if cookies are not accepted.&lt;/p&gt;</text>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="aa519821-fad0-4e25-8889-c7d8fb5fa535" nodeName="node-xcil67f0nralm">
+      <variant sortingIndex="725" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.TruncatedText" version="5" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-25T08:25:33+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-25T08:26:36+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-25T08:26:36+00:00</lastPublicationDateTime>
+       <properties>
+        <text __type="string">&lt;p&gt;The following text will be shortened to the selected amount of characters in the inspector&lt;/p&gt;</text>
        </properties>
       </variant>
      </node>
