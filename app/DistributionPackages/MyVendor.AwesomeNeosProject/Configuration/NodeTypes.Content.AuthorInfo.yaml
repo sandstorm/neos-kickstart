@@ -3,7 +3,7 @@
     'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
     'MyVendor.AwesomeNeosProject:Mixin.Text': true
   ui:
-    label: 'AuthorInfo'
+    label: 'Author Info'
     icon: icon-file-text
     position: 210
     inlineEditable: true
@@ -19,5 +19,5 @@
           editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: Choose
-            dataSourceIdentifier: vendor-site-editors
+            dataSourceIdentifier: vendor-site-authors
 
