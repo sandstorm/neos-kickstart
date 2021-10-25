@@ -1,0 +1,8 @@
+prototype(Neos.Neos:Page) {
+    head.javascripts.cookiepunchConsent = Sandstorm.CookiePunch:Consent
+    # Block Global
+    @process.blockIframes = ${CookiePunch.blockIframes(value, !node.context.inBackend)}
+    @process.blockScripts = ${CookiePunch.blockScripts(value, !node.context.inBackend)}
+}
+
+

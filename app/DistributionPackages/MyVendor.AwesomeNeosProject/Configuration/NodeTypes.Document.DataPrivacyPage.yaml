@@ -1,6 +1,0 @@
-'MyVendor.AwesomeNeosProject:Document.DataPrivacyPage':
-  superTypes:
-    'MyVendor.AwesomeNeosProject:Document.Page': true
-  ui:
-    icon: 'icon-user-secret'
-    label: 'Data Privacy Page'

@@ -30,11 +30,17 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 
 ### Prio 1
 
+* node:16.11 update
 * Projekt README
   * Datenschutzseite + Impressum + Button um den Consent zu öffnen + Möglichkeit den Text im Consent durch den Editor zu ändern
+  * -> neuer Site export -> Sites.xml
+* Custom Data Provider -> Klaus
+* Custen Eel Helper -> Klaus
+* Typescript / SCSS / move node up
+* webpack ersetzten mit esbuild
 * Ts Struktur
 * Doku erweitern
-    * IDE einrichten, JSON Schema -> Klauss
+    * IDE einrichten, JSON Schema -> Klaus
         * VSC Code datei
         * InteliJ -> Plugin Datei
 * Monocle ausbauen
@@ -46,6 +52,7 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 * Caching Config prüfen -> was geht noch mit nginx/evtl. anpassen
 * Datenschutz welche Daten speichert Neos -> z.B. in Logs -> evtl. Config anpassen -> Docker Container 
 * Beispiel für Suche -> evtl. von Anfang an mit aktiviert (brauchen wir in fast jeder Seite), Paginierung -> überlegen
+* remove Content Dimensions
 
 
 ### Backlog
