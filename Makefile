@@ -10,8 +10,7 @@ setup:
 
 start:
 	@docker compose up -d
-	@sleep 5
-	@make open
+
 build:
 	@docker compose build
 stop:
@@ -25,6 +24,9 @@ enter-db:
 
 enter-assets:
 	@docker compose exec neos-assets /bin/bash
+
+watch-assets:
+	@docker compose logs -f neos-assets
 
 logs:
 	@docker compose logs -f

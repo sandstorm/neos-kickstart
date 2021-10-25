@@ -1,28 +1,23 @@
 {
-    "name": "AwesomeNeosProject-assets",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "watch:dev": "webpack -d --watch",
-        "build": "webpack -p"
-    },
-    "author": "mberhorst",
-    "license": "ISC",
-    "devDependencies": {
-        "@babel/core": "^7.1.6",
-        "@babel/preset-env": "^7.1.6",
-        "babel-loader": "^8.0.4",
-        "css-loader": "^1.0.1",
-        "mini-css-extract-plugin": "^0.8.0",
-        "node-sass": "^4.10.0",
-        "node-sass-glob-importer": "^5.2.0",
-        "sass-loader": "^7.1.0",
-        "style-loader": "^0.23.1",
-        "webpack": "^4.26.1",
-        "webpack-cli": "^3.1.2"
-    },
     "dependencies": {
-        "jquery": "^3.4.1"
+        "@hotwired/stimulus": "^3.0.1",
+        "esbuild": "^0.12.26",
+        "prettier": "^2.4.0"
+    },
+    "scripts": {
+        "typecheck": "tsc -noEmit",
+        "build:css": "sass ./main.scss ../Public/bundle.css",
+        "build:js": "esbuild ./main.ts --bundle --minify --sourcemap --outfile=../Public/bundle.js",
+        "build": "yarn run typecheck && yarn run build:css && yarn run build:js",
+        "watch:css": "nodemon -e scss -x \"yarn run build:css\"",
+        "watch:typecheck": "nodemon -e ts -x \"yarn run typecheck || echo '!!!!!!!!!!!!!!!!!!!!!! TypeScript Errors, Please fix !!!!!!!!!!!!!!!!!!!!!!'\"",
+        "watch:js": "esbuild ./main.ts --bundle --sourcemap --outfile=../Public/bundle.js --watch",
+        "watch": "concurrently \"yarn run watch:css\" \"yarn run watch:js\" \"yarn run watch:typecheck\""
+    },
+    "devDependencies": {
+        "concurrently": "^6.3.0",
+        "nodemon": "^2.0.12",
+        "sass": "^1.43.2",
+        "typescript": "^4.4.4"
     }
 }

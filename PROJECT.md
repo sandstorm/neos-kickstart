@@ -17,7 +17,7 @@ Table of contents:
   - TODO: small crontab example + link to supercronic docs
 - Bash-Highlighting (dev, staging, production)
 
-## setting up IntelliJ
+## Setting up IntelliJ
 - recommended plugins:
   - Neos Support
   - Makefile language
@@ -30,13 +30,24 @@ Table of contents:
 - check, if it's possible to jump to Fusion Prototypes via cmd + click
 
 
-## requirements
+## Requirements
 - docker for mac
 
-## local development setup
+## Local Development Setup
+
+This should only be needed when runing the project for the first time.
+
 - run `composer install` in `/app` for autocompletion
 - run `make setup` only the first time to setup folders and build
-- run `make start` to start the project, this will also open the url in the browser
+
+## Local Development
+
+- run `make start` to start all needed container of the project (see `docker-compose.yml` for details)
+- run `make watch-assets` to see the logs of scss being compiled to css and ts being compiled to js
+  - alternatively you can install node dependencies and run the watcher locally
+  - `cd app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/`
+  - `yarn && yarn run watch`
+  - see `package.json` for more scripts
 - run `make help` to see all available commands
 
 ## running tests

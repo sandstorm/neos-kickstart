@@ -92,6 +92,20 @@
        </properties>
       </variant>
      </node>
+     <node identifier="a88beeb9-73a7-47c0-b5e1-eccab330a5c6" nodeName="node-cm2dn7409gb16">
+      <variant sortingIndex="775" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Headline" version="11" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-25T08:47:20+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-25T09:05:58+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-25T09:05:58+00:00</lastPublicationDateTime>
+       <properties>
+        <title __type="string">&lt;h2&gt;Content Component with Js developed using Stimulus&lt;/h2&gt;</title>
+       </properties>
+      </variant>
+     </node>
      <node identifier="5f9ba65e-5f3a-4997-8e16-f3bf40358a79" nodeName="node-en085ydhlhc7y">
       <variant sortingIndex="525" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Headline" version="9" removed="" hidden="" hiddenInIndex="">
        <dimensions>
@@ -202,17 +216,47 @@
        </properties>
       </variant>
      </node>
+     <node identifier="4128ec11-c63d-49bb-9bf3-56a0f038842b" nodeName="node-q0oisl1n2b19n">
+      <variant sortingIndex="800" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Text" version="17" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-25T09:04:58+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-25T09:06:59+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-25T09:06:59+00:00</lastPublicationDateTime>
+       <properties>
+        <text __type="string">&lt;p&gt;We decided to use https://stimulus.hotwired.dev/ to write Js code as it provides a great way to structure and develop js components. The following component is progressively enhanced using Js and will appear on scrolling down.&lt;/p&gt;</text>
+       </properties>
+      </variant>
+     </node>
      <node identifier="aa519821-fad0-4e25-8889-c7d8fb5fa535" nodeName="node-xcil67f0nralm">
-      <variant sortingIndex="725" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.TruncatedText" version="5" removed="" hidden="" hiddenInIndex="">
+      <variant sortingIndex="725" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.TruncatedText" version="6" removed="" hidden="" hiddenInIndex="">
        <dimensions>
         <language>de</language>
        </dimensions>
        <accessRoles __type="array"/>
        <creationDateTime __type="object" __classname="DateTime">2021-10-25T08:25:33+00:00</creationDateTime>
-       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-25T08:26:36+00:00</lastModificationDateTime>
-       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-25T08:26:36+00:00</lastPublicationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-25T08:47:06+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-25T08:47:06+00:00</lastPublicationDateTime>
        <properties>
         <text __type="string">&lt;p&gt;The following text will be shortened to the selected amount of characters in the inspector&lt;/p&gt;</text>
+        <size __type="string">length-20</size>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="1d64de52-cfff-4840-83f2-eb946978bcd0" nodeName="node-ylpovk4e5ntih">
+      <variant sortingIndex="825" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Button" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-25T08:47:48+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-25T08:48:19+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-25T08:48:19+00:00</lastPublicationDateTime>
+       <properties>
+        <text __type="string">I will show up on entering the viewport</text>
+        <type __type="string">primary</type>
        </properties>
       </variant>
      </node>

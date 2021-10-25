@@ -25,6 +25,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:
         attributes.class = ${'button ' + props.styleClasses + ' ' + props.isBlockButton}
         attributes.href = ${props.link ? props.link : ''}
         attributes.target = ${props.target}
+        attributes.data-controller = 'ScrollTransition'
 
         content = afx`
             {props.text}

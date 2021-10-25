@@ -3,3 +3,5 @@ Resources/Private/*.log
 # this file is compiled
 Resources/Public/bundle.js
 Resources/Public/bundle.css
+Resources/Public/bundle.js.map
+Resources/Public/bundle.css.map
