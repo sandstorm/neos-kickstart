@@ -48,7 +48,7 @@ open-styleguide:
 	@open http://127.0.0.1:8081/styleguide
 
 
-tests:
+e2e-tests:
 	@cd ./e2e-testrunner && node index.js &
 	@sleep 2
 	@docker compose exec maria-db "/createTestingDB.sh"
@@ -57,4 +57,10 @@ tests:
 	@echo
 	@echo "   The STYLEGUIDE can ACTUALLY be found at http://127.0.0.1:9090/styleguide/"
 	@echo
+
+unit-tests:
+	@docker compose exec neos bash -c "./bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Unit"
+
+functional-tests:
+	@docker compose exec neos bash -c "./bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Functional"
 

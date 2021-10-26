@@ -34,20 +34,25 @@ Table of contents:
   - PHP Annotations
   - PHP Toolbox
   - Prettier
+    - make sure Prettier is activated for the correct extensions
   - Docker
+  - Behat Support
 - check, if autocompletion works for .yaml-files
 - check, if it's possible to jump to Fusion Prototypes via cmd + click
 
 
 ## Requirements
 - docker for mac
+- node -> to run Playwright Tests or for local development (without docker) of your sites JavaScript
 
-## Local Development Setup
+## Local Development Setup (only required once)
 
 This should only be needed when runing the project for the first time.
 
 - run `composer install` in `/app` for autocompletion
 - run `make setup` only the first time to setup folders and build
+- run `cd ./e2e-testrunner && nvm use && npm install` as we do not want to use a docker container to be able
+  to debug Playwright test more easily. TODO: maybe run in `make tests` but nvm is currently giving us a headache here.
 
 ## Local Development
 
@@ -60,9 +65,7 @@ This should only be needed when runing the project for the first time.
 - run `make help` to see all available commands
 
 ## running tests
-Docker environment for tests currently missing, run tests local (run `composer install` in `/app`)
 
-```
-./bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Unit
-./bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Functional
-```
+- `make e2e-tests` to run behavioural tests
+- `unit-tests` to run unit tests 
+- `functional-tests` to run functional tests
