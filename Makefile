@@ -47,7 +47,10 @@ open-local-db:
 open-styleguide:
 	@open http://127.0.0.1:8081/styleguide
 
+
 tests:
+	@cd ./e2e-testrunner && node index.js &
+	@sleep 2
 	@docker compose exec maria-db "/createTestingDB.sh"
 	@docker compose exec neos bash -c "FLOW_CONTEXT=Development/Docker/Behat ./flow doctrine:migrate"
 	@docker compose exec neos bin/behat -c Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Behavior/behat.yml.dist -vvv

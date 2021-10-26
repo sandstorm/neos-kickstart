@@ -15,7 +15,7 @@
 
 !/Configuration/Testing/
 /Configuration/Testing/*
-!/Configuration/Testing/GitLabCI
+!/Configuration/Testing/Behat
 
 /Data/
 /Packages/

@@ -10,9 +10,6 @@ set -ex
 ./flow flow:cache:flush
 ./flow cache:warmup
 
-# configure nginx
-envsubst '\$NGINX_HOST \$NGINX_PORT' < /etc/nginx/nginx.template > /etc/nginx/nginx.conf
-
 # start nginx
 nginx &
 

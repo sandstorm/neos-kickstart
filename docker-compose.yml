@@ -66,6 +66,7 @@ services:
       - neos-assets-node-modules:/app/src/Private/node_modules
       # Explicitly set up Yarn cache for faster fetching of packages
       - ./tmp/.yarn-cache/:/app/.yarn-cache/:cached
+
   #####
   # Maria DB
   maria-db:

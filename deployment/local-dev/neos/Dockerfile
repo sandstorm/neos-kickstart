@@ -61,20 +61,18 @@ RUN curl -fsSLO "$SUPERCRONIC_URL" \
  && mv "$SUPERCRONIC" "/usr/local/bin/${SUPERCRONIC}" \
  && ln -s "/usr/local/bin/${SUPERCRONIC}" /usr/local/bin/supercronic
 
-
-
 # application entrypoint
 ADD /deployment/local-dev/neos/entrypoint.sh /
 ADD /deployment/config-files/memory-limit-php.ini /usr/local/etc/php/conf.d/memory-limit-php.ini
 ADD /deployment/config-files/upload-limit-php.ini /usr/local/etc/php/conf.d/upload-limit-php.ini
 
-RUN rm -Rf /usr/local/etc/php-fpm.*
+RUN rm -Rf /usr/local/etc/php-fpm.* && rm -Rf /etc/nginx/conf.d/*
 ADD deployment/config-files/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 ADD /deployment/config-files/nginx.conf /deployment/config-files/nginx-e2etest-server-dev.conf /etc/nginx/
 
 RUN mkdir -p /var/lib/nginx /usr/local/var/log/ && \
-    chown -R www-data /var/lib/nginx /usr/local/var/log/ /etc/nginx/ && \
+    chown -R www-data /var/lib/nginx /usr/local/var/log/ /etc/nginx/ &&\
     ln -s /etc/nginx/nginx-e2etest-server-dev.conf /etc/nginx/conf.d/nginx-e2etest-server-dev.conf
 
 # cleanup & chown
