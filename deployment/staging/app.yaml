@@ -13,13 +13,11 @@ spec:
   node: worker1
   image: docker-hub.sandstorm.de/infrastructure/neos-on-docker-kickstart:main
 
-  port: 8080
+  port: 8081
   # Set to false when a real DNS entry for staging/staging exists
   stagingCertificates: false
 
   env:
-    NGINX_PORT: 8080
-    NGINX_HOST: '0.0.0.0'
     FLOW_CONTEXT: 'Production/Kubernetes'
     SITE_IMPORT_PACKAGE_KEY: 'MyVendor.AwesomeNeosProject'
   envFromConfigMaps:

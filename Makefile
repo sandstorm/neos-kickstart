@@ -34,11 +34,27 @@ logs:
 ps:
 	@docker compose ps
 
-open:
+open-site:
 	@open http://127.0.0.1:8081
 
-enter-production-neos:
-	@echo 'TODO'
+open-site-e2e:
+	@open http://127.0.0.1:9090
 
-open-production-db:
-	@echo 'TODO'
+open-local-db:
+	@open "mysql://neos:neos@localhost:13306/neos"
+	@open "mysql://neos:neos@localhost:13306/neos_e2etest"
+
+open-styleguide:
+	@open http://127.0.0.1:8081/styleguide
+
+
+tests:
+	@cd ./e2e-testrunner && node index.js &
+	@sleep 2
+	@docker compose exec maria-db "/createTestingDB.sh"
+	@docker compose exec neos bash -c "FLOW_CONTEXT=Development/Docker/Behat ./flow doctrine:migrate"
+	@docker compose exec neos bin/behat -c Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Behavior/behat.yml.dist -vvv
+	@echo
+	@echo "   The STYLEGUIDE can ACTUALLY be found at http://127.0.0.1:9090/styleguide/"
+	@echo
+

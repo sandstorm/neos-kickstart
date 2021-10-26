@@ -3,3 +3,4 @@
 !.idea/runConfigurations
 *.iml
 /tmp
+.DS_Store

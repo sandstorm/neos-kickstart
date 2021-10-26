@@ -23,27 +23,30 @@ services:
       DB_NEOS_PASSWORD: 'neos'
       DB_NEOS_USER: 'neos'
       DB_NEOS_DATABASE: 'neos'
+      DB_NEOS_DATABASE_E2ETEST: 'neos_e2etest'
       # auto site import
       SITE_IMPORT_PACKAGE_KEY: 'MyVendor.AwesomeNeosProject'
       # auto creation of admin user for Neos backend
       ADMIN_USERNAME: 'admin'
       ADMIN_PASSWORD: 'password'
-      NGINX_HOST: 'localhost'
-      NGINX_PORT: 8081
+      PLAYWRIGHT_API_URL: 'http://host.docker.internal:3000'
+      SYSTEM_UNDER_TEST_URL_FOR_PLAYWRIGHT: 'http://127.0.0.1:9090'
     volumes:
       - ./app/composer.json:/app/composer.json:cached
       - ./app/composer.lock:/app/composer.lock:cached
-      - ./app/DistributionPackages/:/app/DistributionPackages/:ro,cached
+      - ./app/DistributionPackages/:/app/DistributionPackages/:cached
+      - ./app/Build/Behat/:/app/Build/Behat/:cached
       # Content is writable to enable content dumps from inside the container
       - ./app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/Content:/app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/Content/:cached
       - ./app/DistributionPackages/MyVendor.AwesomeNeosProject/Migrations/:/app/DistributionPackages/MyVendor.AwesomeNeosProject/Migrations/:cached
-      - ./app/Configuration/Development/Docker/:/app/Configuration/Development/Docker/:ro,cached
+      - ./app/Configuration/:/app/Configuration/:cached
       # Explcitly set up Composer cache for faster fetching of packages
       - ./tmp/composer_cache:/composer_cache:cached
     networks:
       - awesomeneosproject
     ports:
       - 8081:8081
+      - 9090:9090
     depends_on:
       - maria-db
 
@@ -55,7 +58,7 @@ services:
       dockerfile: ./deployment/local-dev/neos-assets/Dockerfile
     volumes:
       # everything is readonly except the "Public" folder (which contains the build results);
-      - ./app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private:/app/src/Private:cached
+      - ./app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private:/app/src/Private/:cached
       - ./app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Public:/app/src/Public/:cached
       # The node modules folder is an extra (writable) volume to not be part of the outer volume.
       # This is an optimization to NOT include the huge node_modules in the synchronization between host and guest
@@ -63,6 +66,7 @@ services:
       - neos-assets-node-modules:/app/src/Private/node_modules
       # Explicitly set up Yarn cache for faster fetching of packages
       - ./tmp/.yarn-cache/:/app/.yarn-cache/:cached
+
   #####
   # Maria DB
   maria-db:
@@ -76,7 +80,10 @@ services:
       MYSQL_DATABASE: neos
       MYSQL_USER: neos
       MYSQL_PASSWORD: neos
+      DATABASE_E2ETEST: neos_e2etest
     # use Unicode encoding as default!
+    volumes:
+      - ./deployment/local-dev/maria-db/createTestingDB.sh:/createTestingDB.sh:cached
     command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
 
 volumes:

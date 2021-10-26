@@ -1,0 +1,11 @@
+{
+	"require": {
+		"behat/behat": "^3.5"
+	},
+	"config": {
+		"bin-dir": "../../bin/",
+        "platform": {
+            "php": "8.0.6"
+      }
+	}
+}

@@ -17,8 +17,9 @@ fi
 ./flow flow:cache:flush
 ./flow cache:warmup
 
-# configure nginx
-envsubst '\$NGINX_HOST \$NGINX_PORT' < /etc/nginx/nginx.template > /etc/nginx/nginx.conf
+# e2e test
+./flow behat:setup
+rm bin/selenium-server.jar # we do not need this
 
 # start nginx in background
 nginx &

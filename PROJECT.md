@@ -12,10 +12,19 @@ Table of contents:
 - Neos 7.2
 - PHP 8.0
 - MariaDB 10.3
-- Vips (instead of imagic)
+- Vips (instead of ImageMagick)
 - Supercronic
-  - TODO: small crontab example + link to supercronic docs
 - Bash-Highlighting (dev, staging, production)
+- Gitlab-CI Pipeline Config
+  - Kubernetes Deployment
+  - E2E Tests
+  - Functional Tests
+  - Unit Tests
+- Testsetup
+  - Functional and Unit
+  - Behavioural Tests
+    - Playwright Integration
+  - Playwright Testrunner
 
 ## Setting up IntelliJ
 - recommended plugins:
