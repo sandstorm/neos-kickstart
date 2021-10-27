@@ -318,16 +318,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.2.11",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "0b072d51c5a9c6f3412f7ea3ab043d6603cb2582"
+                "reference": "679333688725c7dd043ff35c547100ccf512f051"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/0b072d51c5a9c6f3412f7ea3ab043d6603cb2582",
-                "reference": "0b072d51c5a9c6f3412f7ea3ab043d6603cb2582",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/679333688725c7dd043ff35c547100ccf512f051",
+                "reference": "679333688725c7dd043ff35c547100ccf512f051",
                 "shasum": ""
             },
             "require": {
@@ -374,7 +374,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.2.11"
+                "source": "https://github.com/composer/ca-bundle/tree/1.3.0"
             },
             "funding": [
                 {
@@ -390,7 +390,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-25T20:32:43+00:00"
+            "time": "2021-10-27T07:42:23+00:00"
         },
         {
             "name": "composer/composer",
@@ -634,16 +634,16 @@
         },
         {
             "name": "composer/semver",
-            "version": "3.2.5",
+            "version": "3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "31f3ea725711245195f62e54ffa402d8ef2fdba9"
+                "reference": "83e511e247de329283478496f7a1e114c9517506"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/31f3ea725711245195f62e54ffa402d8ef2fdba9",
-                "reference": "31f3ea725711245195f62e54ffa402d8ef2fdba9",
+                "url": "https://api.github.com/repos/composer/semver/zipball/83e511e247de329283478496f7a1e114c9517506",
+                "reference": "83e511e247de329283478496f7a1e114c9517506",
                 "shasum": ""
             },
             "require": {
@@ -695,7 +695,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/3.2.5"
+                "source": "https://github.com/composer/semver/tree/3.2.6"
             },
             "funding": [
                 {
@@ -711,7 +711,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-24T12:41:47+00:00"
+            "time": "2021-10-25T11:34:17+00:00"
         },
         {
             "name": "composer/spdx-licenses",
@@ -6924,16 +6924,16 @@
         },
         {
             "name": "sandstorm/cookiepunch",
-            "version": "3.0.1",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sandstorm/Sandstorm.CookiePunch.git",
-                "reference": "cad6ce41f7ec2da3dd135dcfc8789ebdca65e146"
+                "reference": "6bfa75242be30b9585ee40e8df19b3bbc1f42711"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sandstorm/Sandstorm.CookiePunch/zipball/cad6ce41f7ec2da3dd135dcfc8789ebdca65e146",
-                "reference": "cad6ce41f7ec2da3dd135dcfc8789ebdca65e146",
+                "url": "https://api.github.com/repos/sandstorm/Sandstorm.CookiePunch/zipball/6bfa75242be30b9585ee40e8df19b3bbc1f42711",
+                "reference": "6bfa75242be30b9585ee40e8df19b3bbc1f42711",
                 "shasum": ""
             },
             "require": {
@@ -6970,7 +6970,7 @@
                 "issues": "https://github.com/sandstorm/Sandstorm.CookiePunch/issues",
                 "source": "https://github.com/sandstorm/Sandstorm.CookiePunch"
             },
-            "time": "2021-08-17T10:22:36+00:00"
+            "time": "2021-10-27T09:40:19+00:00"
         },
         {
             "name": "sandstorm/e2etesttools",
@@ -7165,16 +7165,16 @@
         },
         {
             "name": "sitegeist/kaleidoscope",
-            "version": "v6.0.3",
+            "version": "v6.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sitegeist/Sitegeist.Kaleidoscope.git",
-                "reference": "b74ba4188c94fa298221824746ace5c339eac8c3"
+                "reference": "14497925ec9b8e7cbc1b45dabf7451e007aab58b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sitegeist/Sitegeist.Kaleidoscope/zipball/b74ba4188c94fa298221824746ace5c339eac8c3",
-                "reference": "b74ba4188c94fa298221824746ace5c339eac8c3",
+                "url": "https://api.github.com/repos/sitegeist/Sitegeist.Kaleidoscope/zipball/14497925ec9b8e7cbc1b45dabf7451e007aab58b",
+                "reference": "14497925ec9b8e7cbc1b45dabf7451e007aab58b",
                 "shasum": ""
             },
             "require": {
@@ -7201,9 +7201,9 @@
             "description": "Responsive-images for Neos",
             "support": {
                 "issues": "https://github.com/sitegeist/Sitegeist.Kaleidoscope/issues",
-                "source": "https://github.com/sitegeist/Sitegeist.Kaleidoscope/tree/v6.0.3"
+                "source": "https://github.com/sitegeist/Sitegeist.Kaleidoscope/tree/v6.0.4"
             },
-            "time": "2021-05-23T18:13:16+00:00"
+            "time": "2021-10-25T20:09:24+00:00"
         },
         {
             "name": "symfony/console",
