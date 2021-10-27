@@ -69,7 +69,7 @@ This should only be needed when runing the project for the first time.
 Make sure the application is up and running `make start`
 
 - for E2E Test
-  - in a new console run `cd ./e2e-testrunner && nvm use && node index.js` to start the e2e-testrunner
+  - in a new console run `cd ./e2e-testrunner && nvm use && npm install && node index.js` to start the e2e-testrunner
   - in a new console run `make e2e-tests` to run the actual tests
 - for Unit Tests run `unit-tests` 
 - for Functional Tests run `functional-tests` 

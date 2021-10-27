@@ -92,6 +92,8 @@ find ./ -type f ${findExcludePaths} -exec grep -Iq . {} \; -print | xargs sed -i
 
 yellow_echo "Moving README files ..."
 mv ./README.md ./KICKSTART.md
+mv ./PROJECT.md ./README.md
+
 
 yellow_echo "Removing Kickstart files ..."
 
@@ -118,6 +120,9 @@ if [ "$initNewGitRepo" = "yes" ]
     read -p "Repo Url: " repoUrl
 
     if [ $repoUrl ]
+      # we have move the README to prevent conflicts with an initialized git repo
+      # which usually has an empty README
+      mv ./README.md ./README_PROJECT.md
       then
         if [[ $repoUrl == *"gitlab.sandstorm.de"* ]]; then
           yellow_echo "Sandstorm Gitlab repo detected ;)"
@@ -137,10 +142,9 @@ if [ "$initNewGitRepo" = "yes" ]
         if [ -f "README.md" ]
           then
             mv README.md README_CONFLICT.md
-            mv PROJECT.md README.md
-          else
-            mv PROJECT.md README.md
         fi
+        # move back project documentation README template provided with the kickstarter package ;)
+        mv README_PROJECT.md README.md
         git add .
         git commit -m "TASK: Fixed possible README conflict"
         git push
