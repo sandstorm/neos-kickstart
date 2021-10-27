@@ -3,6 +3,7 @@
   constraints:
     nodeTypes:
       '*': ~
+      'Neos.NodeTypes.Html:Html': true
       'MyVendor.AwesomeNeosProject:Content.Text': true
       'MyVendor.AwesomeNeosProject:Content.TruncatedText': true
       'MyVendor.AwesomeNeosProject:Content.AuthorInfo': true

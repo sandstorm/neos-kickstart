@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <site name="AwesomeNeosProject" state="1" siteResourcesPackageKey="MyVendor.AwesomeNeosProject" siteNodeName="awesomeneosproject">
+  <nodes formatVersion="2.0">
+   <node identifier="9f3c8992-4317-45af-b426-2ab6076849c0" nodeName="awesomeneosproject">
+    <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Document.StartPage" version="3" removed="" hidden="" hiddenInIndex="">
+     <dimensions/>
+     <accessRoles __type="array"/>
+     <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:51:31+00:00</creationDateTime>
+     <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:59:59+00:00</lastModificationDateTime>
+     <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:59:59+00:00</lastPublicationDateTime>
+     <properties>
+      <uriPathSegment __type="string">awesomeneosproject</uriPathSegment>
+      <title __type="string">AwesomeNeosProject</title>
+      <teaserTitle __type="string">Neos Kickstart of your AwesomeNeosProject</teaserTitle>
+      <teaserText __type="string">Basic Neos package to get you really fast up and running to create awesome neos pages...</teaserText>
+      <privacyPage __type="string">b9d32958-9bc0-4502-bdd2-274b54f1777e</privacyPage>
+     </properties>
+    </variant>
+    <node identifier="ba05de2c-3736-aa85-7bc9-d51936bb01df" nodeName="main">
+     <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:ContentCollection.Default" version="1" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:51:31+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:51:31+00:00</lastModificationDateTime>
+      <properties/>
+     </variant>
+     <node identifier="341c896a-9d05-4619-952c-c007e5d3f4aa" nodeName="node-007v1y6flf6m7">
+      <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.TwoColumn" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:52:00+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastPublicationDateTime>
+       <properties>
+        <sizeColumn1 __type="string">size-33</sizeColumn1>
+        <sizeColumn2 __type="string">size-66</sizeColumn2>
+       </properties>
+      </variant>
+      <node identifier="e8945df1-e347-4077-ea70-265b62316c93" nodeName="column0">
+       <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:ContentCollection.Column" version="2" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:52:01+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastPublicationDateTime>
+        <properties/>
+       </variant>
+       <node identifier="eca1d5ce-7714-48f9-885c-d29a047723b3" nodeName="node-u41izoyel821h">
+        <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Image" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:52:14+00:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastPublicationDateTime>
+         <properties>
+          <textWrap __type="string"></textWrap>
+          <width __type="string"></width>
+          <image __type="object" __identifier="476b757e-4e69-4d58-9a07-a4a8f642eec2" __classname="Neos\Media\Domain\Model\Image" __encoding="json">{&quot;__identity&quot;:&quot;476b757e-4e69-4d58-9a07-a4a8f642eec2&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Image&quot;,&quot;title&quot;:&quot;Photo 1514888286974 6c03e2ca1dba&quot;,&quot;copyrightNotice&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;photo-1514888286974-6c03e2ca1dba.jpeg&quot;,&quot;collectionName&quot;:&quot;persistent&quot;,&quot;relativePublicationPath&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;image\/jpeg&quot;,&quot;sha1&quot;:&quot;38a92dfaad5546816102d0d013e0dc2485e8725f&quot;,&quot;hash&quot;:&quot;38a92dfaad5546816102d0d013e0dc2485e8725f&quot;,&quot;__identity&quot;:&quot;a753fadd-bd3f-402d-a491-91b03c023983&quot;},&quot;tags&quot;:[],&quot;assetCollections&quot;:[]}</image>
+         </properties>
+        </variant>
+       </node>
+      </node>
+      <node identifier="3f0f1419-28a8-c1b7-4728-d1419d37393a" nodeName="column1">
+       <variant sortingIndex="200" workspace="live" nodeType="MyVendor.AwesomeNeosProject:ContentCollection.Column" version="2" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:52:01+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastPublicationDateTime>
+        <properties/>
+       </variant>
+       <node identifier="9c053da8-7834-4836-b147-71f2bd1e1c28" nodeName="node-371d560csjhyx">
+        <variant sortingIndex="150" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Button" version="4" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:53:52+00:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastPublicationDateTime>
+         <properties>
+          <text __type="string">Check out on gitlab</text>
+          <type __type="string">primary</type>
+         </properties>
+        </variant>
+       </node>
+       <node identifier="d65383b4-73cd-4be3-9287-3b6f1fa96aa4" nodeName="node-74oks87jwjtkp">
+        <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Text" version="20" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:52:29+00:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastPublicationDateTime>
+         <properties>
+          <text __type="string">&lt;h3&gt;&lt;i&gt;Packages we recommend for certain use-cases&lt;/i&gt;&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;`sitegeist/monocle` for prototyping components&lt;/li&gt;&lt;li&gt;`yoast/yoast-seo-for-neos` for a real good SEO experience&amp;nbsp;&lt;/li&gt;&lt;li&gt;`flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -&amp;gt; helps with the editor experience&lt;/li&gt;&lt;li&gt;`neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful static form node-types&lt;/li&gt;&lt;li&gt;`flowpack/listable` to get pagination for lists of node-types (blog posts for example)&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
+         </properties>
+        </variant>
+       </node>
+      </node>
+     </node>
+     <node identifier="755a7294-3bce-4b36-b9b7-767ef49b03c2" nodeName="node-1fgthdr5oas6u">
+      <variant sortingIndex="200" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Text" version="7" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:47+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T11:00:53+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T11:00:53+00:00</lastPublicationDateTime>
+       <properties>
+        <text __type="string">&lt;p&gt;&lt;a href=&quot;https://github.com/sandstorm/Sandstorm.CookiePunch&quot;&gt;https://github.com/sandstorm/Sandstorm.CookiePunch&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The following Video will not play if cookies are not accepted. Open Settings &lt;a href=&quot;#open_cookie_punch_modal&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</text>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="dc9df038-0202-410d-b6e7-095b129753ae" nodeName="node-81yelovt6beoa">
+      <variant sortingIndex="204" workspace="live" nodeType="Neos.NodeTypes.Html:Html" version="7" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-27T11:17:17+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T11:18:32+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T11:18:31+00:00</lastPublicationDateTime>
+       <properties>
+        <source __type="string">            &lt;iframe height=&quot;600px&quot; width=&quot;100%&quot; src=&quot;https://www.youtube.com/embed/1q1Ck0oBgfc&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</source>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="580321a6-8428-46c3-b243-10ff3986124d" nodeName="node-822c8tbg0a9j8">
+      <variant sortingIndex="350" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.AuthorInfo" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:56:15+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastPublicationDateTime>
+       <properties>
+        <authors __type="string">LocalDev Admin</authors>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="391148d0-77a7-4d10-b161-128c2791d3e9" nodeName="node-jzboc6do0d986">
+      <variant sortingIndex="550" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Text" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:56:43+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastPublicationDateTime>
+       <properties>
+        <text __type="string">&lt;p&gt;We decided to use https://stimulus.hotwired.dev/ to write Js code as it provides a great way to structure and develop js components. The following component is progressively enhanced using Js and will appear on scrolling down.&lt;/p&gt;</text>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="e257eb7f-702f-4701-8b3e-ebb952a5a4b8" nodeName="node-kpmh5jksz6sq4">
+      <variant sortingIndex="150" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Headline" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:36+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastPublicationDateTime>
+       <properties>
+        <title __type="string">&lt;h2&gt;Blocked content via Sandstorm.CookiePunch package&lt;/h2&gt;</title>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="1ed7058f-03e7-493a-a42c-8c4638b729a6" nodeName="node-neg7ps6qoq0jc">
+      <variant sortingIndex="600" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Button" version="5" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:56:51+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:59:59+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:59:59+00:00</lastPublicationDateTime>
+       <properties>
+        <text __type="string">I will show up on entering the viewport</text>
+        <type __type="string">primary</type>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="aca3ae95-69ba-4e4f-8417-85efd553bfaf" nodeName="node-ptw2aty07eg5y">
+      <variant sortingIndex="300" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Headline" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:56:04+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastPublicationDateTime>
+       <properties>
+        <title __type="string">&lt;h2&gt;Custom Data Datasource for the inspector&lt;/h2&gt;</title>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="0720d41d-11ae-45c7-b01b-039fd42a068d" nodeName="node-r0jmakag7lcl2">
+      <variant sortingIndex="500" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Headline" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:56:37+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastPublicationDateTime>
+       <properties>
+        <title __type="string">&lt;h2&gt;Content Component with Js developed using Stimulus&lt;/h2&gt;</title>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="c7e39d18-c13a-4e8f-97a2-5d0dcf65d1c7" nodeName="node-sg8l8o95xkfat">
+      <variant sortingIndex="450" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.TruncatedText" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:56:32+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastPublicationDateTime>
+       <properties>
+        <text __type="string">The following text will be shortened to the selected amount of characters in the inspector</text>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="962ab1f5-8c3d-4914-93d5-de1c9b6473b1" nodeName="node-wh90966v610bi">
+      <variant sortingIndex="400" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Headline" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:56:23+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastPublicationDateTime>
+       <properties>
+        <title __type="string">&lt;h2&gt;Custom Eel-Helper&lt;/h2&gt;</title>
+       </properties>
+      </variant>
+     </node>
+    </node>
+    <node identifier="b9d32958-9bc0-4502-bdd2-274b54f1777e" nodeName="node-rtb07ma9vt60f">
+     <variant sortingIndex="250" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Document.Page" version="4" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:49+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:59:50+00:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:59:50+00:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">privacy-statement</uriPathSegment>
+       <title __type="string">Privacy Statement</title>
+       <teaserTitle __type="string">Privacy Statement</teaserTitle>
+      </properties>
+     </variant>
+     <node identifier="25c1094a-559d-f3d5-70a8-7b8298af7c1d" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:ContentCollection.Default" version="2" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:49+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:59:50+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:59:50+00:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+      <node identifier="2893e2b9-2aff-4627-834a-f74b4593c39d" nodeName="node-wqbjz1zdk3pn4">
+       <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Text" version="19" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:59:02+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:59:50+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:59:50+00:00</lastPublicationDateTime>
+        <properties>
+         <text __type="string">&lt;p&gt;Some random text on privacy. You can open the privacy settings modal &lt;a href=&quot;#open_cookie_punch_modal&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</text>
+        </properties>
+       </variant>
+      </node>
+     </node>
+    </node>
+    <node identifier="db88728f-91d2-4221-8977-d81211225b60" nodeName="node-vpgakrbo2nvt1">
+     <variant sortingIndex="200" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Document.ErrorPage" version="2" removed="" hidden="" hiddenInIndex="">
+      <dimensions/>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:35+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:31+00:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:31+00:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">404-page</uriPathSegment>
+       <title __type="string">404 Page</title>
+      </properties>
+     </variant>
+     <node identifier="7827dbdd-ed8e-d0c5-ec9e-e43768ff45bb" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:ContentCollection.Default" version="2" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:35+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:31+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:31+00:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+      <node identifier="c170ab0b-195a-4fa3-882f-af3e6784206b" nodeName="node-acadk6nagb3sw">
+       <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Headline" version="9" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:40+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:31+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:31+00:00</lastPublicationDateTime>
+        <properties>
+         <title __type="string">&lt;h2&gt;Ups, page not found ...&lt;/h2&gt;</title>
+        </properties>
+       </variant>
+      </node>
+      <node identifier="ad5844c5-7987-4403-99ca-0b10809ab984" nodeName="node-vb5w8gy5t9zh8">
+       <variant sortingIndex="150" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Image" version="4" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:06+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:31+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:31+00:00</lastPublicationDateTime>
+        <properties>
+         <textWrap __type="string"></textWrap>
+         <width __type="string"></width>
+         <image __type="object" __identifier="9eed7f81-4daa-4719-9f4c-96fdecf7dc9b" __classname="Neos\Media\Domain\Model\ImageVariant" __encoding="json">{&quot;__identity&quot;:&quot;9eed7f81-4daa-4719-9f4c-96fdecf7dc9b&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\ImageVariant&quot;,&quot;originalAsset&quot;:{&quot;__identity&quot;:&quot;3ce88489-cb5a-46bf-8e9d-2c2691935aa2&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Image&quot;,&quot;title&quot;:&quot;Photo 1585664811087 47f65abbad64&quot;,&quot;copyrightNotice&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;photo-1585664811087-47f65abbad64.jpeg&quot;,&quot;collectionName&quot;:&quot;persistent&quot;,&quot;relativePublicationPath&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;image\/jpeg&quot;,&quot;sha1&quot;:&quot;123964ed2d93eeecde327291350c9b6ed1984f68&quot;,&quot;hash&quot;:&quot;123964ed2d93eeecde327291350c9b6ed1984f68&quot;,&quot;__identity&quot;:&quot;5c983e3c-69a0-4c7e-9855-7198cf4f9ed8&quot;},&quot;tags&quot;:[],&quot;assetCollections&quot;:[]},&quot;adjustments&quot;:[{&quot;aspectRatio&quot;:null,&quot;height&quot;:521,&quot;position&quot;:10,&quot;width&quot;:870,&quot;x&quot;:0,&quot;y&quot;:411,&quot;__identity&quot;:&quot;07686ecc-6f24-4d41-bcd0-88c5c8b96183&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Adjustment\\CropImageAdjustment&quot;}]}</image>
+        </properties>
+       </variant>
+      </node>
+     </node>
+    </node>
+   </node>
+  </nodes>
+ </site>
+</root>
