@@ -38,6 +38,9 @@ ps:
 open-site:
 	@open http://127.0.0.1:8081
 
+open-neos:
+	@open http://127.0.0.1:8081/neos
+
 open-site-e2e:
 	@open http://127.0.0.1:9090
 
