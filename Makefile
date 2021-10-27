@@ -13,6 +13,7 @@ start:
 
 build:
 	@docker compose build
+
 stop:
 	@docker compose stop
 

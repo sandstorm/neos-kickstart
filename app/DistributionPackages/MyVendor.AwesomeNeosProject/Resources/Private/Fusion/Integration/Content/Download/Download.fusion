@@ -1,5 +1,5 @@
 prototype(MyVendor.AwesomeNeosProject:Content.Download) < prototype(Neos.Neos:ContentComponent) {
-    renderer = MyVendor.AwesomeNeosProject:Composite.Download {
+    renderer = MyVendor.AwesomeNeosProject:Component.Download {
         text = Neos.Neos:Editable {
             property = 'text'
         }

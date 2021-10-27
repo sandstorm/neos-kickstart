@@ -27,24 +27,14 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 
 
 ## Roadmap
+Things we want to add or document for an easier kickstart.
 
-### Mit Micha besprechen
-
-* Struktur -> Components
-* HTML NodeType
-* Monocle
-
-
-### Prio 1
-
-* Monocle ausbauen
-* Bilder
-  * Bildvarianten Beispiel -> src-set, picture, fusion context
-  * Vips Bildoptimierung anschauen -> Beispielkonfig tunen -> https://gitlab.sandstorm.de/sebastian/revoband/-/tree/master/app/DistributionPackages/Sandstorm.DynamicImage
+* image variants and responsive images (src-set, ...)
+* improve image optimization with Vips -> see https://gitlab.sandstorm.de/sebastian/revoband/-/tree/master/app/DistributionPackages/Sandstorm.DynamicImage
 
 ### Backlog
 
-* Neues Distribution Package -> Beispiele für Rechte in Neos    
+* Examples for rights in Neos -> separate Distribution Package
 * Custom Backend Module Beispiel in extra Distribution Package
 * Frontendlogin in extra Distribution Package
 * DataPrivacy -> maybe change config of Neos
