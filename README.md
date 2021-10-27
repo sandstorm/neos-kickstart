@@ -28,9 +28,15 @@ Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstar
 
 ## Roadmap
 
+### Mit Micha besprechen
+
+* Struktur -> Components
+* HTML NodeType
+* Monocle
+
+
 ### Prio 1
 
-* Das Ding von Sebastian einbauen
 * Monocle ausbauen
 * Bilder
   * Bildvarianten Beispiel -> src-set, picture, fusion context
