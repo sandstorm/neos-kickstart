@@ -51,7 +51,7 @@ This should only be needed when runing the project for the first time.
 
 - run `composer install` in `/app` for autocompletion
 - run `make setup` only the first time to setup folders and build
-- run `cd ./e2e-testrunner && nvm use && npm install` as we do not want to use a docker container to be able
+- run `cd ./e2e-testrunner && nvm install && nvm use && npm install` as we do not want to use a docker container to be able
   to debug Playwright test more easily. TODO: maybe run in `make tests` but nvm is currently giving us a headache here.
 
 ## Local Development
@@ -60,12 +60,16 @@ This should only be needed when runing the project for the first time.
 - run `make watch-assets` to see the logs of scss being compiled to css and ts being compiled to js
   - alternatively you can install node dependencies and run the watcher locally
   - `cd app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/`
-  - `yarn && yarn run watch`
+  - `nvm install && nvm use && yarn && yarn run watch`
   - see `package.json` for more scripts
 - run `make help` to see all available commands
 
-## running tests
+## Running Tests
 
-- `make e2e-tests` to run behavioural tests
-- `unit-tests` to run unit tests 
-- `functional-tests` to run functional tests
+Make sure the application is up and running `make start`
+
+- for E2E Test
+  - in a new console run `cd ./e2e-testrunner && nvm use && node index.js` to start the e2e-testrunner
+  - in a new console run `make e2e-tests` to run the actual tests
+- for Unit Tests run `unit-tests` 
+- for Functional Tests run `functional-tests` 
