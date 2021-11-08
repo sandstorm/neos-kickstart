@@ -153,5 +153,5 @@ if [ "$initNewGitRepo" = "yes" ]
     yellow_echo "NO git repository was initialized."
 fi
 echo
-green_echo "DONE"
+green_echo "DONE - Check README.md again to start developing your Neos project."
 

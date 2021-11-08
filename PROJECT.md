@@ -47,9 +47,9 @@ Table of contents:
 
 ## Local Development Setup (only required once)
 
-This should only be needed when runing the project for the first time.
+This should only be needed when running the project for the first time.
 
-- run `composer install` in `/app` for autocompletion
+- run `composer install` on your local machine in `/app` for autocompletion in your IDE
 - run `make setup` only the first time to setup folders and build
 - run `cd ./e2e-testrunner && nvm install && nvm use && npm install` as we do not want to use a docker container to be able
   to debug Playwright test more easily. TODO: maybe run in `make tests` but nvm is currently giving us a headache here.
