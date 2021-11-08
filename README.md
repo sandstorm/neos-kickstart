@@ -5,11 +5,18 @@ we provided examples and configuration that helps us to quickly provide a kickst
 
 ## requirements
 
-- docker for mac
+- docker and docker-compose
 
 ## Running Kickstart
 
 Run `./kickstart.sh` an follow the instructions.
+
+## Start project
+
+```bash
+make setup
+make start
+```
 
 ## Packages we recommend for certain use-cases
 
