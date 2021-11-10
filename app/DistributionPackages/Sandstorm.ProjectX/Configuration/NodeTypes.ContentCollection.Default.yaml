@@ -1,5 +1,0 @@
-'Sandstorm.ProjectX:ContentCollection.Default':
-  superTypes:
-    'Neos.Neos:ContentCollection': true
-    'Sandstorm.ProjectX:Constraints.Base': true
-    'Sandstorm.ProjectX:Constraints.Columns': true

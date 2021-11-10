@@ -1,0 +1,5 @@
+prototype(MyVendor.AwesomeNeosProject:Content.AuthorInfo) < prototype(Neos.Neos:ContentComponent) {
+    renderer = MyVendor.AwesomeNeosProject:Component.AuthorInfo {
+        label = ${q(node).property('authors')}
+    }
+}

@@ -1,80 +1,50 @@
 # Sandstorm Neos on Docker Kickstart
 
-Table of contents:
-- [requirements](#requirements)
-- [rename the project after copying this folder!](#rename-the-project-after-copying-this-folder-)
-- [local development setup](#local-development-setup)
-- [running tests](#running-tests)
-- [packages we recommend for certain use-cases](#packages-we-recommend-for-certain-use-cases)
+This packages helps you to quickly set up a Neos Project. Besides a basic Neos setup
+we provided examples and configuration that helps us to quickly provide a kickstart.
 
 ## requirements
-- docker for mac
 
+- docker and docker-compose
 
-## rename the project after copying this folder!
-Current project-name is "Sandstorm/ProjectX". Search and replace ProjectX with own project-name, by running the script lines below:
+## Running Kickstart
 
-```
-# Adjust to your desired package name and composer package name here
+Run `./kickstart.sh` an follow the instructions.
 
-export NEOS_PACKAGE_NAME="Company.Site"
-export COMPOSER_PACKAGE_NAME="company\/site"
+## Start project
 
-cd app
-# rename site package folder
-mv DistributionPackages/Sandstorm.ProjectX DistributionPackages/${NEOS_PACKAGE_NAME}
-
-# rename Flow Package Key
-find ./DistributionPackages/${NEOS_PACKAGE_NAME} -type f -not -path "*/node_modules/*" -exec grep -Iq . {} \; -print | xargs sed -i '' "s/Sandstorm\.ProjectX/${NEOS_PACKAGE_NAME}/g"
-
-# rename PHP classes
-find ./DistributionPackages/${NEOS_PACKAGE_NAME} -type f -not -path "*/node_modules/*" -exec grep -Iq . {} \; -print | xargs sed -i '' "s/Sandstorm\\\\ProjectX/${NEOS_PACKAGE_NAME//./\\\\}/g"
-
-# rename PHP classes in composer.json files
-find ./DistributionPackages/${NEOS_PACKAGE_NAME} -type f -not -path "*/node_modules/*" -exec grep -Iq . {} \; -print | xargs sed -i '' "s/Sandstorm\\\\\\\\ProjectX/${NEOS_PACKAGE_NAME//./\\\\\\\\}/g"
-
-# rename composer key
-find ./DistributionPackages/${NEOS_PACKAGE_NAME} -type f -not -path "*/node_modules/*" -exec grep -Iq . {} \; -print | xargs sed -i '' "s/sandstorm\/ProjectX/${COMPOSER_PACKAGE_NAME}/g"
-find ./composer.json -type f -not -path "*/node_modules/*" -exec grep -Iq . {} \; -print | xargs sed -i '' "s/sandstorm\/ProjectX/${COMPOSER_PACKAGE_NAME}/g"
-
-# update composer.lock
-composer update
-
-# update Gitlab-CI and docker-compose.yml
-cd ..
-find .gitlab-ci.yml docker-compose.yml | xargs sed -i '' "s/Sandstorm\.ProjectX/${NEOS_PACKAGE_NAME}/g"
-find .gitlab-ci.yml | xargs sed -i '' "s/sandstorm\.projectx__composer/${NEOS_PACKAGE_NAME}__composer/g"
+```bash
+make setup
+make start
 ```
 
-**Finally, do a case insensitive search for "ProjectX"; you should be only left with a few places in Sites.xml, the deployment manifests, and the README. Adjust these places manually!**
-
-NOTE: The find is quite sophisticated:
-- skips node-modules (`-not -path "*/node_modules/*"`) [Explanation here](https://stackoverflow.com/a/15736463/4921449)
-- skips binary files (`-exec grep -Iq . {} \; -print`) [Explanation here](https://stackoverflow.com/a/13659891/4921449)
-
-
-## local development setup
-
-- run `docker-compose build`
-- run `docker-compose up -d`
-- run `docker-compose logs -f`
-- run `docker-compose stop`
-- run `docker-compose down` (cleanup)
-- run `composer install` in `/app` for autocompletion
-
-
-## running tests
-Docker environment for tests currently missing, run tests local (run `composer install` in `/app`)
-
-```
-./bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Unit
-./bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Functional
-```
-
-## packages we recommend for certain use-cases
+## Packages we recommend for certain use-cases
 
 1. `sitegeist/monocle` for prototyping components
-2. `yoast/yoast-seo-for-neos` for a real good SEO experience 
+2. `yoast/yoast-seo-for-neos` for a real good SEO experience
 3. `flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -> helps with the editor experience
 4. `neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful static form node-types
 5. `flowpack/listable` to get pagination for lists of node-types (blog posts for example)
+
+## Development
+
+As the script can be used to change the git remote and remove files development becomes hard ;)
+Run `./kickstart.sh --dev` to not remove certain files e.g. `./kickstart.sh`. 
+Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstart.sh`
+
+
+## Roadmap
+Things we want to add or document for an easier kickstart.
+
+* image variants and responsive images (src-set, ...)
+* improve image optimization with Vips -> see https://gitlab.sandstorm.de/sebastian/revoband/-/tree/master/app/DistributionPackages/Sandstorm.DynamicImage
+
+### Backlog
+
+* Examples for rights in Neos -> separate Distribution Package
+* Custom Backend Module Beispiel in extra Distribution Package
+* Frontendlogin in extra Distribution Package
+* DataPrivacy -> maybe change config of Neos
+* check caching config -> nginx e.g. images
+* Distribution Package with search
+* Check examples for accessibility issues

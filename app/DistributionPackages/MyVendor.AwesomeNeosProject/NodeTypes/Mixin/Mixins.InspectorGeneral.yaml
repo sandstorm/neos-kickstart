@@ -1,0 +1,14 @@
+'MyVendor.AwesomeNeosProject:Mixin.InspectorGeneral':
+  abstract: true
+  ui:
+    inspector:
+      groups:
+        general:
+          label: i18n
+        properties:
+          label: 'Eigenschaften'
+          tab: default
+        image:
+          label: 'Image'
+          icon: 'icon-image'
+          tab: default

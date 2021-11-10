@@ -2,11 +2,13 @@ Neos:
   Flow:
     persistence:
       backendOptions:
-        host: '%env:DB_HOST%'
-        dbname: '%env:DB_NAME%'
-        user: '%env:DB_USER%'
-        password: '%env:DB_PASSWORD%'
-
+        driver: 'pdo_mysql'
+        charset: 'utf8'
+        host: '%env:DB_NEOS_HOST%'
+        port: '%env:DB_NEOS_PORT%'
+        password: '%env:DB_NEOS_PASSWORD%'
+        user: '%env:DB_NEOS_USER%'
+        dbname: '%env:DB_NEOS_DATABASE%'
   Imagine:
     driver: 'Vips'
     enabledDrivers:

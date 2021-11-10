@@ -1,0 +1,46 @@
+'MyVendor.AwesomeNeosProject:Content.Image':
+  superTypes:
+    'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
+    'MyVendor.AwesomeNeosProject:Mixin.Image': true
+  ui:
+    label: 'Bild'
+    icon: icon-picture
+    position: 300
+  properties:
+    textWrap:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Textumfluss'
+        reloadIfChanged: true
+        inspector:
+          group: properties
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+                label: 'kein'
+              right:
+                label: 'rechts'
+              left:
+                label: 'links'
+    width:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Breite'
+        reloadIfChanged: true
+        inspector:
+          group: properties
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+                label: '100%'
+              '50':
+                label: '50%'
+              '33':
+                label: '33%'
+              'icon':
+                label: 'Icon'
+

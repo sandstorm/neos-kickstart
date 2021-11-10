@@ -1,3 +1,0 @@
-prototype(Sandstorm.ProjectX:Document.ErrorPage) < prototype(Sandstorm.ProjectX:Document.AbstractPage) {
-
-}

@@ -1,0 +1,21 @@
+'MyVendor.AwesomeNeosProject:Mixin.Link':
+  abstract: true
+  properties:
+    link:
+      type: string
+      ui:
+        label: 'Link'
+        reloadIfChanged: true
+        inspector:
+          group: 'properties'
+          editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
+          editorOptions:
+            nodeTypes:
+              - 'Neos.Neos:Document'
+    isExternalLink:
+      type: boolean
+      ui:
+        reloadIfChanged: true
+        label: 'Link in neuem Tab öffnen?'
+        inspector:
+          group: 'properties'

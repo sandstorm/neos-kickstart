@@ -1,4 +1,6 @@
 .idea/*
+.git_back
 !.idea/runConfigurations
 *.iml
 /tmp
+.DS_Store

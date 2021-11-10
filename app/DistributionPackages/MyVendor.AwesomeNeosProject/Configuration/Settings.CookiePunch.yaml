@@ -1,0 +1,21 @@
+Sandstorm:
+  CookiePunch:
+    consent:
+      purposes:
+        mediaembeds:
+          title: Media Embeds
+          description: Some Description
+      services:
+        youtube:
+          title: Youtube
+          description: Video Player
+          purposes:
+            - mediaembeds
+    blocking:
+      tagPatterns:
+        script:
+          "Packages/Neos.Neos":
+            block: false
+        iframe:
+          "https://www.youtube.com":
+            service: youtube

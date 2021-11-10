@@ -1,0 +1,7 @@
+apiVersion: k8s.sandstorm.de/v1alpha1
+kind: Database
+metadata:
+  name: db
+  namespace: myvendor-awesomeneosproject-staging
+spec:
+  databaseServer: mariadb1

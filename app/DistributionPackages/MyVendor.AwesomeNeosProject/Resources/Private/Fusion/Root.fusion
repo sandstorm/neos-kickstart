@@ -1,0 +1,4 @@
+/**
+ * Root Fusion for the AwesomeNeosProject site
+ */
+include: **/*.fusion

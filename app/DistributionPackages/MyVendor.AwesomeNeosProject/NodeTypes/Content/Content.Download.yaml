@@ -1,0 +1,25 @@
+'MyVendor.AwesomeNeosProject:Content.Download':
+  superTypes:
+    'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
+  ui:
+    label: Download
+    icon: icon-download
+    position: 200
+    inlineEditable: true
+  properties:
+    file:
+      type: Neos\Media\Domain\Model\Asset
+      editor: Neos.Neos/Inspector/Editor/AssetEditor
+      ui:
+        label: 'Datei'
+        reloadIfChanged: false
+        inspector:
+          group: properties
+    text:
+      type: string
+      ui:
+        reloadIfChanged: true
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Download Beschreibung'

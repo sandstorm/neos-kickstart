@@ -1,0 +1,18 @@
+prototype(MyVendor.AwesomeNeosProject:Component.Columns) < prototype(Neos.Fusion:Component) {
+    columns = null
+
+    @propTypes {
+        # validation rules for props
+        columns = ${PropTypes.arrayOf( PropTypes.any )}
+    }
+
+    renderer = afx`
+        <div class="columns">
+            <Neos.Fusion:Collection collection={props.columns} @children="itemRenderer">
+                <div class={'columns__cell columns__cell--' + item.sizeClass }>
+                    {item.content}
+                </div>
+            </Neos.Fusion:Collection>
+        </div>
+    `
+}

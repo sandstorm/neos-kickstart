@@ -1,0 +1,26 @@
+Neos:
+  Fusion:
+    defaultContext:
+      "MyVendor.AwesomeNeosProject.Example": 'MyVendor\AwesomeNeosProject\Eel\Helper\TruncateHelper'
+  Flow:
+    mvc:
+      routes:
+        'Neos.Neos':
+          variables:
+            # We prefer URLs without the ".html" suffix
+            defaultUriSuffix: ''
+  Neos:
+    eventLog:
+      enabled: true
+    navigateComponent:
+      nodeTree:
+        loadingDepth: 1
+      structureTree:
+        loadingDepth: 2
+    fusion:
+      autoInclude:
+        MyVendor.AwesomeNeosProject: true
+    Ui:
+      frontendConfiguration:
+        defaultInlineEditor: 'ckeditor5'
+        hotkeys: ~

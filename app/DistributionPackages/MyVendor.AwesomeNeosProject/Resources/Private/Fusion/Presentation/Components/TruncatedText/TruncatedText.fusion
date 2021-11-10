@@ -1,0 +1,14 @@
+prototype(MyVendor.AwesomeNeosProject:Component.TruncatedText) < prototype(Neos.Fusion:Component) {
+
+    text = ''
+    size = ''
+    truncatedText = ${MyVendor.AwesomeNeosProject.Example.customTruncate(q(node).property('text'), q(node).property('size'))}
+
+    renderer = afx`
+    <div class="TruncatedText">
+        <div>{props.text}</div>
+        <div class="ResultText">Truncated Text: {props.truncatedText} ...</div>
+    </div>
+    `
+
+}

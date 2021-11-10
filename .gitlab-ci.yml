@@ -1,29 +1,8 @@
 stages:
-  - test
   - compile_resources
-  - package
+  - build
+  - test
   - deploy
-
-run_tests:
-  stage: test
-  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.4-v1
-  services:
-    - mariadb
-  script:
-    - cd app
-    - COMPOSER_CACHE_DIR=.composer-cache composer install --ignore-platform-reqs
-    - ./bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Unit
-    - bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/Sandstorm.ProjectX/Tests/Functional
-  variables:
-    FLOW_CONTEXT: 'Testing/GitLabCI'
-    MYSQL_ROOT_PASSWORD: neos
-    MYSQL_DATABASE: neos
-    MYSQL_USER: neos
-    MYSQL_PASSWORD: neos
-  cache:
-    key: sandstorm.projectx__composer
-    paths:
-      - app/.composer-cache
 
 build_sass:
   stage: compile_resources
@@ -32,52 +11,142 @@ build_sass:
     - docker
     - privileged
   script:
-    - cd app/DistributionPackages/Sandstorm.ProjectX/Resources/Private
+    - cd app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private
     - yarn
     - yarn build
   cache:
     paths:
-      - app/DistributionPackages/Sandstorm.ProjectX/Resources/Private/node_modules/
+      - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/node_modules/
   artifacts:
     expire_in: 4 weeks
     paths:
-      - app/DistributionPackages/Sandstorm.ProjectX/Resources/Public/bundle.css
-      - app/DistributionPackages/Sandstorm.ProjectX/Resources/Public/bundle.js
+      - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Public/bundle.css
+      - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Public/bundle.js
 
 package_app:
-  stage: package
-  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.4-v1
-  only:
-    - master
+  stage: build
+  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.4-v2
+  interruptible: true
   tags:
     - docker
     - privileged
   cache:
-    key: sandstorm.projectx__composer
+    key: myvendor.awesomeneosproject__composer
     paths:
       - app/.composer-cache
   script:
     - cd app
-    - COMPOSER_CACHE_DIR=.composer-cache composer install --no-dev --ignore-platform-reqs
+    # composer install
+    # NOTE: for E2E tests we HAVE also to install DEV dependencies; otherwise we won't be able to run behavioral tests then.
+    - COMPOSER_CACHE_DIR=.composer-cache composer install --dev --ignore-platform-reqs
     - cd ..
+
+    # set up Behat
+    - mkdir -p app/Build && cp -R app/Packages/Application/Neos.Behat/Resources/Private/Build/Behat app/Build/Behat
+    - cd app/Build/Behat && COMPOSER_CACHE_DIR=../../.composer-cache composer install && cd ../../../
+
+    # build image
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG -f deployment/production/Dockerfile .
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG -f deployment/staging/Dockerfile .
     - docker push $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG
 
-deploy_production:
+build_e2e_testrunner:
+  stage: build
+  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.4-v2
+  interruptible: true
+  script:
+    - cd e2e-testrunner
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG-e2e-testrunner .
+    - docker push $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG-e2e-testrunner
+    - cd ..
+  tags:
+    - docker
+    - privileged
+
+functional_and_unit_tests:
+  stage: test
+  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.4-v2
+  services:
+    - mariadb
+  script:
+    - cd app
+    - COMPOSER_CACHE_DIR=.composer-cache composer install --ignore-platform-reqs
+    - ./bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Unit
+    - bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Functional
+  variables:
+    FLOW_CONTEXT: 'Testing/GitLabCI'
+    MYSQL_ROOT_PASSWORD: neos
+    MYSQL_DATABASE: neos
+    MYSQL_USER: neos
+    MYSQL_PASSWORD: neos
+  cache:
+    key: myvendor.awesomeneosproject__composer
+    paths:
+      - app/.composer-cache
+
+e2e_test:
+  stage: test
+  interruptible: true
+  # we're running this job inside the production image we've just built previously
+  image:
+    name: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG
+    # see `scripts` below
+    entrypoint: [ "" ]
+  dependencies: [ ] # we do not need any artifacts from prior steps
+  variables:
+    # service mariadb
+    MYSQL_USER: 'ci_user'
+    MYSQL_PASSWORD: 'ci_db_password'
+    MYSQL_DATABASE: 'ci_test'
+    # otherwise service will not start
+    MARIADB_RANDOM_ROOT_PASSWORD: 'yes'
+
+    # System under Test
+    FLOW_CONTEXT: 'Production/Kubernetes'
+    DB_NEOS_HOST: 'mariadb'
+    DB_NEOS_PORT: '3306'
+    DB_NEOS_USER: '${MYSQL_USER}'
+    DB_NEOS_PASSWORD: '${MYSQL_PASSWORD}'
+    DB_NEOS_DATABASE: '${MYSQL_DATABASE}'
+    DB_NEOS_DATABASE_E2ETEST: '${MYSQL_DATABASE}'
+    REDIS_HOST: redis
+    REDIS_PORT: 6379
+  services:
+    - name: mariadb:10.5
+    - name: redis:6.2.2
+    # here, we make the e2e-testrunner available
+    - name: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG-e2e-testrunner
+      alias: e2e-testrunner
+  script:
+    # as we need a `script` section to have a valid .gitlab-ci.yml we disabled the
+    # entrypoint and run the script here
+    - /entrypoint-e2e.sh
+  after_script:
+    - cp -R /app/e2e-results $CI_PROJECT_DIR/e2e-results
+    - cp -R /app/Web/styleguide $CI_PROJECT_DIR/styleguide
+  artifacts:
+    expire_in: 4 weeks
+    when: always
+    paths:
+      - e2e-results
+      - styleguide
+    reports:
+      junit: e2e-results/behat.xml
+
+deploy_staging:
   stage: deploy
   image:
     name: bitnami/kubectl:1.15.0
     entrypoint: [""]
   only:
-    - master
-    - kubernetes
+    - main
   environment:
-    name: production
+    name: staging
   script:
-    - export KUBECONFIG=$KUBECONFIG_2019
-    - kubectl get namespace projectx
-    - kubectl apply -f deployment/production/database.yaml
-    - kubectl apply -f deployment/production/app.yaml
+    - export KUBECONFIG=$KUBECONFIG_K3S2021
+    - kubectl get namespace myvendor-awesomeneosproject-staging
+    - kubectl apply -f deployment/staging/database.yaml
+    - kubectl apply -f deployment/staging/app.yaml
     # enforce a redeploy by changing the release identifier
-    - 'kubectl -n projectx patch --type merge OneContainerOnePort app -p "{\"spec\":{\"releaseIdentifier\": \"$CI_JOB_ID\"}}"'
+    - 'kubectl -n myvendor-awesomeneosproject-staging patch --type merge OneContainerOnePort app -p "{\"spec\":{\"releaseIdentifier\": \"$CI_JOB_ID\"}}"'

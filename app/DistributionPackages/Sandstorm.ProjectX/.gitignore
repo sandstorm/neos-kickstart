@@ -1,5 +1,0 @@
-Resources/Private/node_modules
-Resources/Private/*.log
-# this file is compiled
-Resources/Public/bundle.js
-Resources/Public/bundle.css

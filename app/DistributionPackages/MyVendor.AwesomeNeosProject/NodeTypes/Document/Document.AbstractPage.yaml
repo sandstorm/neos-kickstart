@@ -1,0 +1,11 @@
+'MyVendor.AwesomeNeosProject:Document.AbstractPage':
+  abstract: true
+  superTypes:
+    'Neos.Neos:Document': true
+    'MyVendor.AwesomeNeosProject:Mixin.InspectorGeneral': true
+  childNodes:
+    main:
+      type: 'MyVendor.AwesomeNeosProject:ContentCollection.Default'
+  constraints:
+    nodeTypes:
+      '*': ~

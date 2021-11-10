@@ -1,0 +1,8 @@
+prototype(Sandstorm.CookiePunch:Config) {
+    consent = Neos.Fusion:DataStructure {
+        privacyPolicyUrl = Neos.Neos:NodeUri {
+            node = ${q(site).property('privacyPage')}
+            absolute = FALSE
+        }
+    }
+}

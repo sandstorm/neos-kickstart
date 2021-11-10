@@ -1,0 +1,49 @@
+apiVersion: k8s.sandstorm.de/v1alpha1
+kind: OneContainerOnePort
+metadata:
+  namespace: myvendor-awesomeneosproject-staging
+  name: app
+spec:
+  appName: myvendor-awesomeneosproject-staging
+  description: 'Sample Neos Deployment in the Rancher Cluster.'
+
+  hostNames:
+    myvendor-awesomeneosproject-staging.cloud.sandstorm.de: []
+
+  node: worker1
+  image: docker-hub.sandstorm.de/infrastructure/neos-on-docker-kickstart:main
+
+  port: 8081
+  # Set to false when a real DNS entry for staging/staging exists
+  stagingCertificates: false
+
+  env:
+    FLOW_CONTEXT: 'Production/Kubernetes'
+    SITE_IMPORT_PACKAGE_KEY: 'MyVendor.AwesomeNeosProject'
+    SHELL_ENV_DISPLAY: 'staging-myvendor-awesomeneosproject'
+  extraPodEnvInK8sFormat:
+    -   name: DB_NEOS_HOST
+        value: "$(DB_HOST)"
+    -   name: DB_NEOS_PORT
+        value: "3306"
+    -   name: DB_NEOS_USER
+        value: "$(DB_USER)"
+    -   name: DB_NEOS_PASSWORD
+        value: "$(DB_PASSWORD)"
+    -   name: DB_NEOS_DATABASE
+        value: "$(DB_NAME)"
+  envFromConfigMaps:
+    - db
+  envFromSecrets:
+    - db
+
+  redis: transient
+
+  volumes:
+    - name: persistent
+      mountPath: /app/Data/Persistent
+
+  sso:
+    enabled: false
+
+  stopped: false

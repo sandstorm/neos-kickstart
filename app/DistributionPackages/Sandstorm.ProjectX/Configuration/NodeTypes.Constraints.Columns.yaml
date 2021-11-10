@@ -1,8 +1,0 @@
-'Sandstorm.ProjectX:Constraints.Columns':
-  abstract: true
-  constraints:
-    nodeTypes:
-      '*': ~
-      'Sandstorm.ProjectX:Content.TwoColumn': true
-      'Sandstorm.ProjectX:Content.ThreeColumn': true
-      'Sandstorm.ProjectX:Content.FourColumn': true

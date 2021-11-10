@@ -1,0 +1,19 @@
+'MyVendor.AwesomeNeosProject:Mixin.Image':
+  abstract: true
+  properties:
+    image:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'Bild'
+        reloadIfChanged: true
+        inspector:
+          group: 'image'
+          position: 50
+    alternativeText:
+      type: string
+      ui:
+        label: 'Alternativer Text'
+        reloadIfChanged: false
+        inspector:
+          group: 'image'
+          position: 100

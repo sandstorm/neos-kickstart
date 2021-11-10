@@ -1,0 +1,10 @@
+'MyVendor.AwesomeNeosProject:Document.ErrorPage':
+  superTypes:
+    'MyVendor.AwesomeNeosProject:Document.AbstractPage': true
+  ui:
+    icon: 'icon-bomb'
+    label: '404 Page'
+  options:
+    template:
+      properties:
+        _hiddenInIndex: true
