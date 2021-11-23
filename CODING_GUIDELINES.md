@@ -24,9 +24,14 @@ This is a more opinionated and more detailed version on what we think is importa
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
+## Guide
+
+[[_TOC_]]
+
 ### Configuration
 
-* TODO
+* Settings.XYZ.yaml for Packages Outside the Neos namespace
+* wann in der Distribution wann im Package -> unsicher
 
 ### NodeTypes
 
@@ -122,6 +127,8 @@ For constraining content collections you may create reusable constraint configur
 
 * The Neos.Neos.NodeTypes package SHOULD NOT be used directly. We RECOMMEND to create NodeTypes in the project namespace. You MAY use the Mixins from Neos.Neos.NodeTypes.BaseMixins instead.
 * The Neos.HTML node type MUST not be used
+
+### Fusion
 
 ### Editor Happiness
 
