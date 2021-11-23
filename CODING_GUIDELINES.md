@@ -28,6 +28,19 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Guide
 
+### Managing Dependencies / Loading Order
+
+* You MUST use the pattern suggested [here](https://docs.neos.io/cms/manual/dependency-management). Otherwise you will run into loading order issues.
+* In the composer.json of your distribution package you MUST require all dependencies of your root composer.json that you want to override in one or the other way.
+  Otherwise you will run into loading order issues.
+  ```
+   "require": {
+        "neos/neos": "*",
+        "jonnitto/prettyembedvideo": "*",
+        "jonnitto/prettyembedyoutube": "*",
+    }
+  ```
+
 ### Configuration
 
 * Settings.XYZ.yaml for Packages Outside the Neos namespace
@@ -92,7 +105,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 #### Constraints
 
-Constraints SHOULD be configured to NOT allow any `childNodes` for `Neos.Neos:Document` and `Neos.Neos:ContentCollection` as a default. This makes it easier to correctly configure constraints for the editor. For this you SHOULD create on override for `Neos.Neos:Document`.
+Constraints SHOULD be configured to NOT allow any `childNodes` for `Neos.Neos:Document` and `Neos.Neos:ContentCollection` as a default. This makes it easier to correctly configure constraints for the editor. For this you SHOULD create an override for `Neos.Neos:Document` and `Neos.Neos:ContentCollection`.
 
 ```yaml
 # Override.Document.yaml
@@ -102,9 +115,20 @@ Constraints SHOULD be configured to NOT allow any `childNodes` for `Neos.Neos:Do
       '*': ~
       'Neos.Neos:Document': ~
 ```
-TODO: double check `'*': ~` is needed as this allows the `'Neos.Neos:Document': ~` to work. There is a difference between `~` and `false`. TODO explain
 
-For constraining content collections you may create reusable constraint configuration like so:
+```yaml
+# Override.ContentCollection.yaml
+'Neos.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'Neos.Neos:Document': false
+      # This might break when using abstract NodeTypes -> see https://github.com/neos/neos-development-collection/issues/3212
+      '*': ~
+```
+
+TODO: explanation on why we use null instead of false
+
+* For constraining content collections we RECOMMEND creating reusable constraint configuration like so:
 
 ```yaml
 # Constraint.Base.yaml
@@ -112,7 +136,7 @@ For constraining content collections you may create reusable constraint configur
   abstract: true
   constraints:
     nodeTypes:
-      '*': ~ # TODO: explain, maybe check if overriding Neos.Neos:ContentCollection works and is more consistent
+      # '*': ~ Is not needed as we already set it for all of `Neos.Neos:ContentCollection`
       'MyVendor.AwesomeNeosProject:Content.Text': true
       'MyVendor.AwesomeNeosProject:Content.Headline': true
       'MyVendor.AwesomeNeosProject:Content.Button': true
