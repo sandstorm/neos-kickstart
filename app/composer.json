@@ -19,15 +19,14 @@
             "ext-vips": "1.0.8"
         }
     },
-    "repositories": [
-        {
+    "repositories": {
+        "distribution": {
             "type": "path",
             "url": "./DistributionPackages/*"
         }
-    ],
+    },
     "require": {
         "neos/neos": "~7.2.0",
-
         "neos/neos-ui": "~7.2.0",
         "neos/seo": "~3.2.1",
         "neos/redirecthandler-neosadapter": "~4.3.0",

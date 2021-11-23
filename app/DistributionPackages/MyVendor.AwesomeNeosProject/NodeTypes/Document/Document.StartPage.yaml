@@ -10,7 +10,6 @@
     nodeTypes:
       'MyVendor.AwesomeNeosProject:Document.Page': true
       'MyVendor.AwesomeNeosProject:Document.ErrorPage': true
-      'MyVendor.AwesomeNeosProject:Document.DataPrivacyPage': true
   properties:
     privacyPage:
       type: reference

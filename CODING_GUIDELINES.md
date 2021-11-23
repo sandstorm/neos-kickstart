@@ -6,6 +6,8 @@ These guidelines are based on the official Neos Best Practises found [here](http
 
 This is a more opinionated and more detailed version on what we think is important when doing Neos projects at Sandstorm. These guidelines refer to the current Neos version.
 
+[[_TOC_]]
+
 ## What this guide is intended for
 
 * make it easier to share knowlege
@@ -25,8 +27,6 @@ This is a more opinionated and more detailed version on what we think is importa
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 ## Guide
-
-[[_TOC_]]
 
 ### Configuration
 
@@ -92,7 +92,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 #### Constraints
 
-Constraints SHOULD be configured to NOT allow any `childNodes` of `Neos.Neos:Document` or `Neos.Neos:ContentCollection` as a default. This makes it easier to correctly configure constraints for the editor. For this you SHOULD create on override for `Neos.Neos:Document`.
+Constraints SHOULD be configured to NOT allow any `childNodes` for `Neos.Neos:Document` and `Neos.Neos:ContentCollection` as a default. This makes it easier to correctly configure constraints for the editor. For this you SHOULD create on override for `Neos.Neos:Document`.
 
 ```yaml
 # Override.Document.yaml
