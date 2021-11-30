@@ -1,5 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 set -ex
+
+# Hotfix for M1
+source /etc/bash.vips-arm64-hotfix.sh
 
 composer install
 
