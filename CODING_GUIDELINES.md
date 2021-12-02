@@ -107,6 +107,8 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 Constraints SHOULD be configured to NOT allow any `childNodes` for `Neos.Neos:Document` and `Neos.Neos:ContentCollection` as a default. This makes it easier to correctly configure constraints for the editor. For this you SHOULD create an override for `Neos.Neos:Document` and `Neos.Neos:ContentCollection`.
 
+TODO DISCUSS: Override vs. Abstract NodeType
+
 ```yaml
 # Override.Document.yaml
 'Neos.Neos:Document':
@@ -136,7 +138,6 @@ TODO: explanation on why we use null instead of false
   abstract: true
   constraints:
     nodeTypes:
-      # '*': ~ Is not needed as we already set it for all of `Neos.Neos:ContentCollection`
       'MyVendor.AwesomeNeosProject:Content.Text': true
       'MyVendor.AwesomeNeosProject:Content.Headline': true
       'MyVendor.AwesomeNeosProject:Content.Button': true
@@ -153,6 +154,136 @@ TODO: explanation on why we use null instead of false
 * The Neos.HTML node type MUST not be used
 
 ### Fusion
+
+* The Root.Fusion in a project MUST not contain anything but includes.
+* All fusion files MUST be placed in `Resources/Private/Fusion` otherwise changes will not be picked up, although they 
+  might have been included in the `Root.fusion`
+* The minimal folder structure for fusion files MUST look like this
+  * `/Integration`
+    * `/Document`
+    * `/Content`
+  * `/Presentation`
+    * `/Components`
+
+* Integrational Fusion prototypes (also called integrational components) are used to query and preprocess data of nodes. The processed
+  data is then passed on to presentational Fusion prototypes (also called presentational components).
+
+#### Integration
+
+* We RECOMMEND using an "abstract" Fusion prototypes to be reused for rendering different neos pages.
+  ```neosfusion
+  prototype(MyVendor.AwesomeNeosProject:Document.AbstractPage) < prototype(Neos.Neos:Page) {
+    // ...
+  }
+  ```
+* Each non abstract `Neos.Neos:Document` NodeType MUST have a corresponding Fusion prototype in `/Integration/Document`
+  * The Fusion prototype SHOULD extend `MyVendor.AwesomeNeosProject:Document.AbstractPage`
+  * The filename MUST start with `Document.`. This way we can easily find the Fusion prototype 
+    for the corresponding NodeType and vice versa
+    * `Document.Homepage.yaml`
+    * `Document.Homepage.fusion`
+    * `MyVendor.AwesomeNeosProject:Document.Homepage`
+* Each non abstract `Neos.Neos:Content` NodeType with MUST have a corresponding Fusion prototype in `/Integration/Content`
+  * The Fusion prototype SHOULD extend `Neos.Neos:ContentComponent`
+  * The filename MUST start with `Content.`. This way we can easily find the Fusion prototype 
+    for the corresponding NodeType and vice versa
+    * `Content.Text.yaml`
+    * `Content.Text.fusion`
+    * `MyVendor.AwesomeNeosProject:Content.Text`
+* ONLY fusion files ARE ALLOWED be placed inside `/Integration`. E.g. css and html are only relevant for presentational
+  components that can be found in a different part of the folder structure.
+* Your MUST NEVER extend from `Neos.Neos:ContentComponent` except for integrational components
+* You MUST NEVER extend from `Neos.Neos:Document` except for integrational components
+
+#### Presentation
+
+##### Components
+
+* You SHOULD structure the rendering of you markup in reusable components
+* We recommend extending from `Neos.Fusion:Component`.
+* Inside `Presentation/Components` each component should be place in a separate folder
+  * all files needed to render this component should also be place here
+  * `/Button` 
+    * `Button.fusion`
+    * `Button.scss`
+    * `Button.ts`
+* You MUST declare all props at the beginning of your component, by providing a default value
+  ```neosfusion
+  prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:Component) {
+      text = ''
+      href = ''
+      renderer = afx`<a href={props.href}>{props.text}</a>`
+  }
+  ```
+* You MUST type all of your props using `@propTypes`
+  ```neosfusion
+  prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:Component) {
+      text = ''
+      href = ''
+        
+      @propTypes {
+          @strict = true
+          text = ${PropTypes.string}
+          href = ${PropTypes.string}
+      }
+  
+      renderer = afx`<a href={props.href}>{props.text}</a>`
+  }
+  ```
+* You SHOULD use `@stric = true` to have more control over what is passed into your components.
+* You SHOULD not repurpose props as internal are computed "variables" as will not be able to use @strict = true
+  without also typing your computed variable
+  ```neosfusion
+  prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:Component) {
+      text = ''
+      href = ''
+  
+      @propTypes {
+          @strict = true
+          text = ${PropTypes.string}
+          href = ${PropTypes.string}
+          // BAD
+          _computedText = ${PropTypes.string}
+      }
+  
+      _computedText = ${'[' + props.text + ']'}
+  
+      renderer = afx`<a href={props.href}>{props._computedText}</a>`
+  }
+  ```
+* You SHOULD start with the following structure for each new components, as this makes it easier to
+  implement internal and computed "variables" also reducing the need to implement patterns like 
+  `this.someVar ...` or `@contex.someVar ...`
+  ```neosfusion
+  prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:Component) {
+      text = ''
+      href = ''
+       
+      @propTypes {
+          @strict = true
+          text = ${PropTypes.string}
+          href = ${PropTypes.string}
+      }
+  
+      renderer = Neos.Fusion:Component {
+         @apply.props = props
+         _computedText = ${PropTypes.string}
+  
+         renderer = afx`<a href={props.href}>{props._computedText}</a>`
+      }
+  }
+  ```
+* You SHOULD prefix variables inside the render with an `_` -> `_computedText` so we can differentiate them
+  from actual props. `props.text` vs. `props._computedText`
+* You SHOULD not load data from a node inside a presentational component. This makes it harder to reuse and test components.
+
+##### Layouts and Others
+
+##### AFX vs. Fluid
+
+#### Connecting Integration with Presentation
+
+* We RECOMMEND to process nodes before passing them to a presentational component
 
 ### Editor Happiness
 
