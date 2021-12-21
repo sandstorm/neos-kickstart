@@ -1,28 +1,15 @@
 prototype(MyVendor.AwesomeNeosProject:Content.FourColumn) < prototype(Neos.Neos:ContentComponent) {
     renderer = MyVendor.AwesomeNeosProject:Component.Columns {
-        columns = Neos.Fusion:RawArray {
-            one = Neos.Fusion:RawArray {
-                sizeClass = ${q(node).property('sizeColumn1')}
+        content = Neos.Fusion:Loop {
+            // The editor cannot chose a layout for 4 columns
+            // as this would lead to some columns being toooo small.
+            // We still keep the same rendering logic.
+            items = ${['25', '25', '25', '25']}
+            itemRenderer = MyVendor.AwesomeNeosProject:Component.Columns.Column {
+                size = ${item}
                 content = Neos.Neos:ContentCollection {
-                    nodePath = 'column0'
-                }
-            }
-            two = Neos.Fusion:RawArray {
-                sizeClass = ${q(node).property('sizeColumn2')}
-                content = Neos.Neos:ContentCollection {
-                    nodePath = 'column1'
-                }
-            }
-            three = Neos.Fusion:RawArray {
-                sizeClass = ${q(node).property('sizeColumn3')}
-                content = Neos.Neos:ContentCollection {
-                    nodePath = 'column2'
-                }
-            }
-            four = Neos.Fusion:RawArray {
-                sizeClass = ${q(node).property('sizeColumn4')}
-                content = Neos.Neos:ContentCollection {
-                    nodePath = 'column3'
+                    // itemKey will be index of array
+                    nodePath = ${'column' + itemKey}
                 }
             }
         }

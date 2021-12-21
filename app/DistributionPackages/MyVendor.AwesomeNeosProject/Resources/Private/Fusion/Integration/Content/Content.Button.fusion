@@ -1,33 +1,13 @@
 prototype(MyVendor.AwesomeNeosProject:Content.Button) < prototype(Neos.Neos:ContentComponent) {
-    renderer = Neos.Fusion:Case {
-        primary {
-            condition = ${q(node).property('type') == 'primary'}
-            renderer = MyVendor.AwesomeNeosProject:Component.Button {
-                text = Neos.Neos:Editable {
-                    property = 'text'
-                    block = false
-                }
-
-                link = ${q(node).property('link')}
-                isBlockButton = ${q(node).property('isBlockButton')}
-                isExternalLink = ${q(node).property('isExternalLink')}
-            }
+    renderer = MyVendor.AwesomeNeosProject:Component.Button {
+        text = Neos.Neos:Editable {
+            property = 'text'
+            block = false
         }
-
-        default {
-            condition = ${true}
-            renderer = MyVendor.AwesomeNeosProject:Component.Button {
-                text = Neos.Neos:Editable {
-                    property = 'text'
-                    block = false
-                }
-
-                link = ${q(node).property('link')}
-                isBlockButton = ${q(node).property('isBlockButton')}
-                isExternalLink = ${q(node).property('isExternalLink')}
-                styleClasses = 'button--secondary'
-            }
-        }
+        href = ${q(node).property('link')}
+        href.@process.convert = Neos.Neos:ConvertUris
+        type = ${q(node).property('type')}
+        isExternalLink = ${q(node).property('isExternalLink')}
     }
 }
 

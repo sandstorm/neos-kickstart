@@ -25,78 +25,6 @@
       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:51:31+00:00</lastModificationDateTime>
       <properties/>
      </variant>
-     <node identifier="341c896a-9d05-4619-952c-c007e5d3f4aa" nodeName="node-007v1y6flf6m7">
-      <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.TwoColumn" version="3" removed="" hidden="" hiddenInIndex="">
-       <dimensions/>
-       <accessRoles __type="array"/>
-       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:52:00+00:00</creationDateTime>
-       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastModificationDateTime>
-       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastPublicationDateTime>
-       <properties>
-        <sizeColumn1 __type="string">size-33</sizeColumn1>
-        <sizeColumn2 __type="string">size-66</sizeColumn2>
-       </properties>
-      </variant>
-      <node identifier="e8945df1-e347-4077-ea70-265b62316c93" nodeName="column0">
-       <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:ContentCollection.Column" version="2" removed="" hidden="" hiddenInIndex="">
-        <dimensions/>
-        <accessRoles __type="array"/>
-        <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:52:01+00:00</creationDateTime>
-        <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastModificationDateTime>
-        <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastPublicationDateTime>
-        <properties/>
-       </variant>
-       <node identifier="eca1d5ce-7714-48f9-885c-d29a047723b3" nodeName="node-u41izoyel821h">
-        <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Image" version="3" removed="" hidden="" hiddenInIndex="">
-         <dimensions/>
-         <accessRoles __type="array"/>
-         <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:52:14+00:00</creationDateTime>
-         <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastModificationDateTime>
-         <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastPublicationDateTime>
-         <properties>
-          <textWrap __type="string"></textWrap>
-          <width __type="string"></width>
-          <image __type="object" __identifier="476b757e-4e69-4d58-9a07-a4a8f642eec2" __classname="Neos\Media\Domain\Model\Image" __encoding="json">{&quot;__identity&quot;:&quot;476b757e-4e69-4d58-9a07-a4a8f642eec2&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Image&quot;,&quot;title&quot;:&quot;Photo 1514888286974 6c03e2ca1dba&quot;,&quot;copyrightNotice&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;photo-1514888286974-6c03e2ca1dba.jpeg&quot;,&quot;collectionName&quot;:&quot;persistent&quot;,&quot;relativePublicationPath&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;image\/jpeg&quot;,&quot;sha1&quot;:&quot;38a92dfaad5546816102d0d013e0dc2485e8725f&quot;,&quot;hash&quot;:&quot;38a92dfaad5546816102d0d013e0dc2485e8725f&quot;,&quot;__identity&quot;:&quot;a753fadd-bd3f-402d-a491-91b03c023983&quot;},&quot;tags&quot;:[],&quot;assetCollections&quot;:[]}</image>
-         </properties>
-        </variant>
-       </node>
-      </node>
-      <node identifier="3f0f1419-28a8-c1b7-4728-d1419d37393a" nodeName="column1">
-       <variant sortingIndex="200" workspace="live" nodeType="MyVendor.AwesomeNeosProject:ContentCollection.Column" version="2" removed="" hidden="" hiddenInIndex="">
-        <dimensions/>
-        <accessRoles __type="array"/>
-        <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:52:01+00:00</creationDateTime>
-        <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastModificationDateTime>
-        <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastPublicationDateTime>
-        <properties/>
-       </variant>
-       <node identifier="9c053da8-7834-4836-b147-71f2bd1e1c28" nodeName="node-371d560csjhyx">
-        <variant sortingIndex="150" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Button" version="4" removed="" hidden="" hiddenInIndex="">
-         <dimensions/>
-         <accessRoles __type="array"/>
-         <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:53:52+00:00</creationDateTime>
-         <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastModificationDateTime>
-         <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:54:22+00:00</lastPublicationDateTime>
-         <properties>
-          <text __type="string">Check out on gitlab</text>
-          <type __type="string">primary</type>
-         </properties>
-        </variant>
-       </node>
-       <node identifier="d65383b4-73cd-4be3-9287-3b6f1fa96aa4" nodeName="node-74oks87jwjtkp">
-        <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Text" version="20" removed="" hidden="" hiddenInIndex="">
-         <dimensions/>
-         <accessRoles __type="array"/>
-         <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:52:29+00:00</creationDateTime>
-         <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastModificationDateTime>
-         <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastPublicationDateTime>
-         <properties>
-          <text __type="string">&lt;h3&gt;&lt;i&gt;Packages we recommend for certain use-cases&lt;/i&gt;&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;`sitegeist/monocle` for prototyping components&lt;/li&gt;&lt;li&gt;`yoast/yoast-seo-for-neos` for a real good SEO experience&amp;nbsp;&lt;/li&gt;&lt;li&gt;`flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -&amp;gt; helps with the editor experience&lt;/li&gt;&lt;li&gt;`neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful static form node-types&lt;/li&gt;&lt;li&gt;`flowpack/listable` to get pagination for lists of node-types (blog posts for example)&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;</text>
-         </properties>
-        </variant>
-       </node>
-      </node>
-     </node>
      <node identifier="755a7294-3bce-4b36-b9b7-767ef49b03c2" nodeName="node-1fgthdr5oas6u">
       <variant sortingIndex="200" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Text" version="7" removed="" hidden="" hiddenInIndex="">
        <dimensions/>
@@ -123,14 +51,28 @@
       </variant>
      </node>
      <node identifier="580321a6-8428-46c3-b243-10ff3986124d" nodeName="node-822c8tbg0a9j8">
-      <variant sortingIndex="350" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.AuthorInfo" version="4" removed="" hidden="" hiddenInIndex="">
+      <variant sortingIndex="350" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.AuthorInfo" version="6" removed="" hidden="" hiddenInIndex="">
        <dimensions/>
        <accessRoles __type="array"/>
        <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:56:15+00:00</creationDateTime>
-       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastModificationDateTime>
-       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastPublicationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-12-21T19:45:38+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-12-21T19:45:38+00:00</lastPublicationDateTime>
        <properties>
         <authors __type="string">LocalDev Admin</authors>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="c7e08aa5-1bf6-4056-b157-6d6883e9ce9d" nodeName="node-go66qrqiw2hkq">
+      <variant sortingIndex="94" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Button" version="6" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-12-21T21:25:40+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-12-21T21:27:26+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-12-21T21:27:26+00:00</lastPublicationDateTime>
+       <properties>
+        <text __type="string">Check out on github</text>
+        <type __type="string">primary</type>
+        <link __type="string">https://github.com/sandstorm/neos-kickstart</link>
        </properties>
       </variant>
      </node>
@@ -183,6 +125,64 @@
        </properties>
       </variant>
      </node>
+     <node identifier="3ae1748b-ad99-4458-af64-d7018c839a60" nodeName="node-q2bzy7q7owoyu">
+      <variant sortingIndex="63" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.TwoColumn" version="7" removed="" hidden="" hiddenInIndex="">
+       <dimensions/>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2021-12-21T21:22:31+00:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2021-12-21T21:27:53+00:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2021-12-21T21:27:53+00:00</lastPublicationDateTime>
+       <properties>
+        <layout __type="string">50-50</layout>
+       </properties>
+      </variant>
+      <node identifier="533b42f7-2eb0-5606-d844-5526bc31d067" nodeName="column0">
+       <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:ContentCollection.Column" version="2" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2021-12-21T21:22:31+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2021-12-21T21:23:31+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2021-12-21T21:23:31+00:00</lastPublicationDateTime>
+        <properties/>
+       </variant>
+       <node identifier="ab610fe8-c99c-4eb1-bb40-a417e9db3dd4" nodeName="node-adf67ebzugq49">
+        <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Image" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2021-12-21T21:25:27+00:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2021-12-21T21:26:51+00:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2021-12-21T21:26:50+00:00</lastPublicationDateTime>
+         <properties>
+          <textWrap __type="string"></textWrap>
+          <width __type="string"></width>
+          <image __type="object" __identifier="476b757e-4e69-4d58-9a07-a4a8f642eec2" __classname="Neos\Media\Domain\Model\Image" __encoding="json">{&quot;__identity&quot;:&quot;476b757e-4e69-4d58-9a07-a4a8f642eec2&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Image&quot;,&quot;title&quot;:&quot;Photo 1514888286974 6c03e2ca1dba&quot;,&quot;copyrightNotice&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;photo-1514888286974-6c03e2ca1dba.jpeg&quot;,&quot;collectionName&quot;:&quot;persistent&quot;,&quot;relativePublicationPath&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;image\/jpeg&quot;,&quot;sha1&quot;:&quot;38a92dfaad5546816102d0d013e0dc2485e8725f&quot;,&quot;hash&quot;:&quot;38a92dfaad5546816102d0d013e0dc2485e8725f&quot;,&quot;__identity&quot;:&quot;a753fadd-bd3f-402d-a491-91b03c023983&quot;},&quot;tags&quot;:[],&quot;assetCollections&quot;:[]}</image>
+         </properties>
+        </variant>
+       </node>
+      </node>
+      <node identifier="e68955d3-27a1-1f63-a945-0e661514b813" nodeName="column1">
+       <variant sortingIndex="200" workspace="live" nodeType="MyVendor.AwesomeNeosProject:ContentCollection.Column" version="2" removed="" hidden="" hiddenInIndex="">
+        <dimensions/>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2021-12-21T21:22:31+00:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2021-12-21T21:23:31+00:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2021-12-21T21:23:31+00:00</lastPublicationDateTime>
+        <properties/>
+       </variant>
+       <node identifier="1295d997-46cb-47e4-b2d1-fff4f355e4a9" nodeName="node-qw0w3yiunrupu">
+        <variant sortingIndex="100" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Text" version="3" removed="" hidden="" hiddenInIndex="">
+         <dimensions/>
+         <accessRoles __type="array"/>
+         <creationDateTime __type="object" __classname="DateTime">2021-12-21T21:25:06+00:00</creationDateTime>
+         <lastModificationDateTime __type="object" __classname="DateTime">2021-12-21T21:26:51+00:00</lastModificationDateTime>
+         <lastPublicationDateTime __type="object" __classname="DateTime">2021-12-21T21:26:50+00:00</lastPublicationDateTime>
+         <properties>
+          <text __type="string">&lt;h3&gt;&lt;i&gt;Packages we recommend for certain use-cases&lt;/i&gt;&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;`sitegeist/monocle` for prototyping components&lt;/li&gt;&lt;li&gt;`yoast/yoast-seo-for-neos` for a real good SEO experience&lt;/li&gt;&lt;li&gt;`flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -&amp;gt; helps with the editor experience&lt;/li&gt;&lt;li&gt;`neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful static form node-types&lt;/li&gt;&lt;li&gt;`flowpack/listable` to get pagination for lists of node-types (blog posts for example)&lt;/li&gt;&lt;/ol&gt;</text>
+         </properties>
+        </variant>
+       </node>
+      </node>
+     </node>
      <node identifier="0720d41d-11ae-45c7-b01b-039fd42a068d" nodeName="node-r0jmakag7lcl2">
       <variant sortingIndex="500" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Headline" version="4" removed="" hidden="" hiddenInIndex="">
        <dimensions/>
@@ -192,30 +192,6 @@
        <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastPublicationDateTime>
        <properties>
         <title __type="string">&lt;h2&gt;Content Component with Js developed using Stimulus&lt;/h2&gt;</title>
-       </properties>
-      </variant>
-     </node>
-     <node identifier="c7e39d18-c13a-4e8f-97a2-5d0dcf65d1c7" nodeName="node-sg8l8o95xkfat">
-      <variant sortingIndex="450" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.TruncatedText" version="3" removed="" hidden="" hiddenInIndex="">
-       <dimensions/>
-       <accessRoles __type="array"/>
-       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:56:32+00:00</creationDateTime>
-       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastModificationDateTime>
-       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastPublicationDateTime>
-       <properties>
-        <text __type="string">The following text will be shortened to the selected amount of characters in the inspector</text>
-       </properties>
-      </variant>
-     </node>
-     <node identifier="962ab1f5-8c3d-4914-93d5-de1c9b6473b1" nodeName="node-wh90966v610bi">
-      <variant sortingIndex="400" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Headline" version="4" removed="" hidden="" hiddenInIndex="">
-       <dimensions/>
-       <accessRoles __type="array"/>
-       <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:56:23+00:00</creationDateTime>
-       <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastModificationDateTime>
-       <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:57:05+00:00</lastPublicationDateTime>
-       <properties>
-        <title __type="string">&lt;h2&gt;Custom Eel-Helper&lt;/h2&gt;</title>
        </properties>
       </variant>
      </node>
@@ -290,16 +266,16 @@
        </variant>
       </node>
       <node identifier="ad5844c5-7987-4403-99ca-0b10809ab984" nodeName="node-vb5w8gy5t9zh8">
-       <variant sortingIndex="150" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Image" version="4" removed="" hidden="" hiddenInIndex="">
+       <variant sortingIndex="150" workspace="live" nodeType="MyVendor.AwesomeNeosProject:Content.Image" version="5" removed="" hidden="" hiddenInIndex="">
         <dimensions/>
         <accessRoles __type="array"/>
         <creationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:06+00:00</creationDateTime>
-        <lastModificationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:31+00:00</lastModificationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2021-12-21T21:22:16+00:00</lastModificationDateTime>
         <lastPublicationDateTime __type="object" __classname="DateTime">2021-10-27T10:58:31+00:00</lastPublicationDateTime>
         <properties>
+         <image __type="object" __identifier="9eed7f81-4daa-4719-9f4c-96fdecf7dc9b" __classname="Neos\Media\Domain\Model\ImageVariant" __encoding="json">{&quot;__identity&quot;:&quot;9eed7f81-4daa-4719-9f4c-96fdecf7dc9b&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\ImageVariant&quot;,&quot;originalAsset&quot;:{&quot;__identity&quot;:&quot;3ce88489-cb5a-46bf-8e9d-2c2691935aa2&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Image&quot;,&quot;title&quot;:&quot;Photo 1585664811087 47f65abbad64&quot;,&quot;copyrightNotice&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;photo-1585664811087-47f65abbad64.jpeg&quot;,&quot;collectionName&quot;:&quot;persistent&quot;,&quot;relativePublicationPath&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;image\/jpeg&quot;,&quot;sha1&quot;:&quot;123964ed2d93eeecde327291350c9b6ed1984f68&quot;,&quot;hash&quot;:&quot;123964ed2d93eeecde327291350c9b6ed1984f68&quot;,&quot;__identity&quot;:&quot;5c983e3c-69a0-4c7e-9855-7198cf4f9ed8&quot;},&quot;tags&quot;:[],&quot;assetCollections&quot;:[]},&quot;adjustments&quot;:[{&quot;aspectRatio&quot;:null,&quot;height&quot;:521,&quot;position&quot;:10,&quot;width&quot;:870,&quot;x&quot;:0,&quot;y&quot;:411,&quot;__identity&quot;:&quot;6a8731ec-7ad4-4717-826b-2b8fbdb29331&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Adjustment\\CropImageAdjustment&quot;}]}</image>
          <textWrap __type="string"></textWrap>
          <width __type="string"></width>
-         <image __type="object" __identifier="9eed7f81-4daa-4719-9f4c-96fdecf7dc9b" __classname="Neos\Media\Domain\Model\ImageVariant" __encoding="json">{&quot;__identity&quot;:&quot;9eed7f81-4daa-4719-9f4c-96fdecf7dc9b&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\ImageVariant&quot;,&quot;originalAsset&quot;:{&quot;__identity&quot;:&quot;3ce88489-cb5a-46bf-8e9d-2c2691935aa2&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Image&quot;,&quot;title&quot;:&quot;Photo 1585664811087 47f65abbad64&quot;,&quot;copyrightNotice&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;photo-1585664811087-47f65abbad64.jpeg&quot;,&quot;collectionName&quot;:&quot;persistent&quot;,&quot;relativePublicationPath&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;image\/jpeg&quot;,&quot;sha1&quot;:&quot;123964ed2d93eeecde327291350c9b6ed1984f68&quot;,&quot;hash&quot;:&quot;123964ed2d93eeecde327291350c9b6ed1984f68&quot;,&quot;__identity&quot;:&quot;5c983e3c-69a0-4c7e-9855-7198cf4f9ed8&quot;},&quot;tags&quot;:[],&quot;assetCollections&quot;:[]},&quot;adjustments&quot;:[{&quot;aspectRatio&quot;:null,&quot;height&quot;:521,&quot;position&quot;:10,&quot;width&quot;:870,&quot;x&quot;:0,&quot;y&quot;:411,&quot;__identity&quot;:&quot;07686ecc-6f24-4d41-bcd0-88c5c8b96183&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Adjustment\\CropImageAdjustment&quot;}]}</image>
         </properties>
        </variant>
       </node>

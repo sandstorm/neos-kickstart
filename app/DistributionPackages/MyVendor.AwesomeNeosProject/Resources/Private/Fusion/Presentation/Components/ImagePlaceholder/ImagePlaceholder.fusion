@@ -1,0 +1,24 @@
+prototype(Hivemind.Site:Component.ImagePlaceholder) < prototype(Neos.Fusion:Component) {
+    aspectRatio = ${3/2}
+    showPlaceholderText = true
+
+    @propTypes {
+        @strict = true
+        aspectRatio = ${PropTypes.float.isRequired}
+        showPlaceholderText = ${PropTypes.boolean}
+    }
+
+    renderer = Neos.Fusion:Component {
+        // aspect ratio CSS trick
+        _inlineStyle = ${'padding-top:' + 1/props.aspectRatio*100 + '%'}
+        @apply.props = ${props}
+        renderer = afx`
+            <div class="image-placeholder" style={props._inlineStyle}>
+                <div class="image-placeholder__inner">
+                    <i @if.showText={props.showPlaceholderText} class="fas fa-image"></i>
+                    <small @if.showText={props.showPlaceholderText}>Please choose an image in the Inspector</small>
+                </div>
+            </div>
+        `
+    }
+}

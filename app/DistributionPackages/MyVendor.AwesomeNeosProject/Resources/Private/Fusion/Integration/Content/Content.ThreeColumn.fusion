@@ -1,22 +1,13 @@
 prototype(MyVendor.AwesomeNeosProject:Content.ThreeColumn) < prototype(Neos.Neos:ContentComponent) {
     renderer = MyVendor.AwesomeNeosProject:Component.Columns {
-        columns = Neos.Fusion:RawArray {
-            one = Neos.Fusion:RawArray {
-                sizeClass = ${q(node).property('sizeColumn1')}
+        content = Neos.Fusion:Loop {
+            // e.g. ['33', '33', '33'] as result of the split
+            items = ${String.split(q(node).property('layout'), '-')}
+            itemRenderer = MyVendor.AwesomeNeosProject:Component.Columns.Column {
+                size = ${item}
                 content = Neos.Neos:ContentCollection {
-                    nodePath = 'column0'
-                }
-            }
-            two = Neos.Fusion:RawArray {
-                sizeClass = ${q(node).property('sizeColumn2')}
-                content = Neos.Neos:ContentCollection {
-                    nodePath = 'column1'
-                }
-            }
-            three = Neos.Fusion:RawArray {
-                sizeClass = ${q(node).property('sizeColumn3')}
-                content = Neos.Neos:ContentCollection {
-                    nodePath = 'column2'
+                    // itemKey will be index of array
+                    nodePath = ${'column' + itemKey}
                 }
             }
         }
