@@ -247,6 +247,7 @@ prototypes (also called presentational components).
   folder structure.
 * Your MUST only extend from `Neos.Neos:ContentComponent` for integrational components
 * You MUST only extend from `Neos.Neos:Document` for integrational components
+* If you need to configure caching you SHOULD do so in an integrational component. Caching config will be required depending on how a node is extracted from the tree. It will not be depending on how markup is rendered.
 
 #### Presentation
 
@@ -260,6 +261,7 @@ prototypes (also called presentational components).
         * `Button.fusion`
         * `Button.scss`
         * `Button.ts`
+* You SHOULD NOT use Fluid for rendering. You SHOULD use AFX instead. There might be some rare exceptions, e.g. working with packages that still use fluid. For `Neos.Neos:Menu` you still might need Fluid to provide different rendering for a menu entry.
 * You MUST declare all props at the beginning of your component, by providing a default value
   ```neosfusion
   prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:Component) {
@@ -328,14 +330,21 @@ prototypes (also called presentational components).
 * You SHOULD prefix variables inside the render with an `_` -> `_computedText` so we can differentiate them from actual props. `props.text` vs. `props._computedText`
 * You SHOULD not load data from a node inside a presentational component. This makes it harder to reuse and test components.
 
-##### Layouts and Others
-
-##### AFX vs. Fluid
-
 #### Connecting Integration with Presentation
 
 * We RECOMMEND to process nodes before passing them to a presentational component
 
 ### Editor Happiness
+
+* An uppercase text style MUST NOT be applied by typing uppercase characters. When typing uppercase all semantics of the actual text are lost!
+* An uppercase text style MUST only be applied CSS styling.
+* An uppercase CSS styling MUST be reset to normal while the ckeditor is active for an inline editable property. This way the editor can type semantically correct text. This is important ...
+  * for search results e.g. displayed by Google
+  * for updating the design (e.g. to no uppercase headlines) without the editor having to check and retype all headlines
+  ```css
+  .ck-focused * { text-transform: initial;}
+  ```
+* We RECOMMEND to use dummy images, e.g. as a presentational component, that renders a div with a text telling the editor to upload an image in the inspector.
+* We RECOMMEND to use node templates to pre-populate empty ContentCollections. This way the editor knows what to do and where the collection is. Often a headline is used as a first element anyways, so why not start with one.
 
 
