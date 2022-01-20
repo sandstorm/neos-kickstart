@@ -1,12 +1,15 @@
 prototype(MyVendor.AwesomeNeosProject:Component.Headline) < prototype(Neos.Fusion:Component) {
-    title = ""
+    title = ''
 
     @propTypes {
-        # validation rules for props
+        @strict = true
         title = ${PropTypes.string}
     }
 
-    renderer = afx`
-        <div class="headline">{props.title}</div>
-    `
+    renderer = Neos.Fusion:Component {
+        @apply.props = ${props}
+        renderer = afx`
+            <div class="headline">{props.title}</div>
+        `
+    }
 }

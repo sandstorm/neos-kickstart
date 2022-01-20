@@ -15,14 +15,6 @@
         reloadIfChanged: true
         inspector:
           group: properties
-    isBlockButton:
-      type: boolean
-      ui:
-        reloadIfChanged: true
-        label: '100% width?'
-        inspector:
-          group: properties
-          position: 60
     type:
       type: string
       defaultValue: 'primary'

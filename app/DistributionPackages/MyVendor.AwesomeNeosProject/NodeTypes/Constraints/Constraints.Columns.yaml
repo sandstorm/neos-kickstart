@@ -2,7 +2,6 @@
   abstract: true
   constraints:
     nodeTypes:
-      '*': ~
       'MyVendor.AwesomeNeosProject:Content.TwoColumn': true
       'MyVendor.AwesomeNeosProject:Content.ThreeColumn': true
       'MyVendor.AwesomeNeosProject:Content.FourColumn': true

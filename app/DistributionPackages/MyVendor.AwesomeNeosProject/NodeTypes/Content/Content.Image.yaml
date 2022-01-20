@@ -31,6 +31,8 @@
         label: 'Breite'
         reloadIfChanged: true
         inspector:
+          # setting an image width only makes sense if text wrapping is enabled
+          hidden: 'ClientEval:node.properties.textWrap ? false : true'
           group: properties
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
@@ -41,6 +43,4 @@
                 label: '50%'
               '33':
                 label: '33%'
-              'icon':
-                label: 'Icon'
 

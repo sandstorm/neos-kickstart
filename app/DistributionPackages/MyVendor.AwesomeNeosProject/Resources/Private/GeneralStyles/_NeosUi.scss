@@ -1,0 +1,5 @@
+// IMPORTANT: we want to prevent the editor from making mistakes while
+// typing uppercase
+.ck-focused * {
+  text-transform: initial;
+}

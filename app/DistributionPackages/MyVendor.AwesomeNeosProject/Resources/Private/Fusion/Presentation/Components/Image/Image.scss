@@ -1,15 +1,20 @@
-.image, img {
-    max-width: 100%;
+.image {
+    position: relative;
+    width: 100%;
+}
+
+.image > img {
+    width: 100%;
     height: auto;
 }
 
+// TODO: document why this is needed @micha
 .image:before {
     content: '' !important;
 }
 
 .image--text-wrap-right {
     float: left;
-    width: auto;
     margin-right: 20px;
     margin-bottom: 20px;
 }
@@ -30,13 +35,4 @@
 
 .image--50-sized {
     width: 50%;
-}
-
-.image__placeholder {
-    height: 200px;
-
-    border: 1px dashed $theme__color__black;
-
-    line-height: 200px;
-    vertical-align: middle;
 }

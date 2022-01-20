@@ -2,10 +2,8 @@
   abstract: true
   constraints:
     nodeTypes:
-      '*': ~
       'Neos.NodeTypes.Html:Html': true
       'MyVendor.AwesomeNeosProject:Content.Text': true
-      'MyVendor.AwesomeNeosProject:Content.TruncatedText': true
       'MyVendor.AwesomeNeosProject:Content.AuthorInfo': true
       'MyVendor.AwesomeNeosProject:Content.Headline': true
       'MyVendor.AwesomeNeosProject:Content.Image': true

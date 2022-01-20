@@ -1,7 +1,16 @@
-prototype(MyVendor.AwesomeNeosProject:Component.AuthorInfo) < prototype(Neos.Neos:ContentComponent) {
+prototype(MyVendor.AwesomeNeosProject:Component.AuthorInfo) < prototype(Neos.Fusion:Component) {
     label = ''
-    renderer = afx`
-        <div @if.is={!props.label}>Please choose a user in the inspector</div>
-        <div @if.is={props.label}>You chose: {props.label}</div>
+
+    @propTypes {
+        @strict = true
+        label = ${PropTypes.string}
+    }
+
+    renderer = Neos.Fusion:Component {
+        @apply.props = ${props}
+        renderer = afx`
+            <div @if.is={!props.label}>Please choose a author in the inspector</div>
+            <div @if.is={props.label}>You chose: {props.label}</div>
         `
+    }
 }

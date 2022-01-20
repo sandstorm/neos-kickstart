@@ -3,17 +3,11 @@ prototype(MyVendor.AwesomeNeosProject:Content.Image) < prototype(Neos.Neos:Conte
         alternativeText = MyVendor.AwesomeNeosProject:Helper.ImageAltText {
             image = ${q(node).property('image')}
         }
-        src = Neos.Neos:ImageUri {
-            asset = ${q(node).property('image')}
-            maximumWidth = 1600
-            quality = 80
-        }
-
         imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
             asset = ${q(node).property('image')}
         }
 
-        width =  ${q(node).property('width')}
         textWrap = ${q(node).property('textWrap')}
+        width =  ${q(node).property('width')}
     }
 }

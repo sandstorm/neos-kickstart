@@ -1,6 +1,7 @@
 @import "GeneralStyles/Variables";
 @import "GeneralStyles/Functions";
 @import "GeneralStyles/Mixins";
+@import "GeneralStyles/NeosUi";
 @import "GeneralStyles/Layout";
 @import "GeneralStyles/Typography";
 @import "GeneralStyles/FontAwesome/fontawesome";
@@ -12,8 +13,8 @@
 @import "./Fusion/Presentation/Components/Columns/Columns";
 @import "./Fusion/Presentation/Components/Container/Container";
 @import "./Fusion/Presentation/Components/Image/Image";
+@import "./Fusion/Presentation/Components/ImagePlaceholder/ImagePlaceholder";
 @import "./Fusion/Presentation/Components/Button/Button";
-@import "./Fusion/Presentation/Components/TruncatedText/TruncatedText";
 @import "./Fusion/Presentation/Components/ScrollTransition/ScrollTransition";
 @import "./Fusion/Presentation/Components/Download/Download";
 @import "./Fusion/Presentation/Components/CookiePunch/CookiePunch";

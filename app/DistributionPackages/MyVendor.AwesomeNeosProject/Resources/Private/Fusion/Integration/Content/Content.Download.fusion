@@ -1,3 +1,4 @@
+
 prototype(MyVendor.AwesomeNeosProject:Content.Download) < prototype(Neos.Neos:ContentComponent) {
     renderer = MyVendor.AwesomeNeosProject:Component.Download {
         text = Neos.Neos:Editable {
@@ -7,6 +8,7 @@ prototype(MyVendor.AwesomeNeosProject:Content.Download) < prototype(Neos.Neos:Co
             resource = ${q(node).property('file').resource}
         }
         imgSrc = Neos.Neos:ImageUri {
+            // this will provide an icon for the filetype
             asset = ${q(node).property('file')}
         }
     }

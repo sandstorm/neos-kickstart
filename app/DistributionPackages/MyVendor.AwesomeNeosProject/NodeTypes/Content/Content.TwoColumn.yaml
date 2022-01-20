@@ -12,61 +12,21 @@
     column1:
       type: 'MyVendor.AwesomeNeosProject:ContentCollection.Column'
   properties:
-    sizeColumn1:
+    layout:
       type: string
-      defaultValue: size-50
+      defaultValue: 50-50
       ui:
-        label: 'Größe der ersten Spalte'
+        label: 'Verteilung der Spalten'
         reloadIfChanged: true
         inspector:
           group: 'properties'
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
-              size-20:
-                label: '20%'
-              size-25:
-                label: '25%'
-              size-33:
-                label: '33%'
-              size-40:
-                label: '40%'
-              size-50:
-                label: '50%'
-              size-60:
-                label: '60%'
-              size-66:
-                label: '66%'
-              size-75:
-                label: '75%'
-              size-80:
-                label: '80%'
-    sizeColumn2:
-      type: string
-      defaultValue: size-50
-      ui:
-        label: 'Größe der zweiten Spalte'
-        reloadIfChanged: true
-        inspector:
-          group: 'properties'
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            values:
-              size-20:
-                label: '20%'
-              size-25:
-                label: '25%'
-              size-33:
-                label: '33%'
-              size-40:
-                label: '40%'
-              size-50:
-                label: '50%'
-              size-60:
-                label: '60%'
-              size-66:
-                label: '66%'
-              size-75:
-                label: '75%'
-              size-80:
-                label: '80%'
+              50-50:
+                label: '50-50'
+              25-75:
+                label: '25-75'
+              75-25:
+                label: '75-25'
+

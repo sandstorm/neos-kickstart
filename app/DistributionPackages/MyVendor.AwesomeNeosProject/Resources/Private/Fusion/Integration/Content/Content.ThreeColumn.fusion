@@ -1,0 +1,15 @@
+prototype(MyVendor.AwesomeNeosProject:Content.ThreeColumn) < prototype(Neos.Neos:ContentComponent) {
+    renderer = MyVendor.AwesomeNeosProject:Component.Columns {
+        content = Neos.Fusion:Loop {
+            // e.g. ['33', '33', '33'] as result of the split
+            items = ${String.split(q(node).property('layout'), '-')}
+            itemRenderer = MyVendor.AwesomeNeosProject:Component.Columns.Column {
+                size = ${item}
+                content = Neos.Neos:ContentCollection {
+                    // itemKey will be index of array
+                    nodePath = ${'column' + itemKey}
+                }
+            }
+        }
+    }
+}

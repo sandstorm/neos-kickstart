@@ -2,23 +2,25 @@ prototype(MyVendor.AwesomeNeosProject:Component.Download) < prototype(Neos.Fusio
     fileUrl = ""
     text = ""
     imgSrc = ""
-
     inBackend = ${node.context.inBackend}
 
     @propTypes {
-        # validation rules for props
+        @strict = true
         fileUrl = ${PropTypes.string}
         text = ${PropTypes.string}
         imgSrc = ${PropTypes.string}
     }
 
-    renderer = Neos.Fusion:Tag {
-        tagName = ${props.inBackend ? 'div' : 'a'}
-        attributes.class = 'download'
-        attributes.target = '_blank'
-        attributes.href = ${props.fileUrl}
-        content = afx`
-            <img alt="icon" class="download__icon" src={props.imgSrc}/>{props.text}
-        `
+    renderer = Neos.Fusion:Component {
+        @apply.props = ${props}
+        renderer = Neos.Fusion:Tag {
+            tagName = ${props.inBackend ? 'div' : 'a'}
+            attributes.class = 'download'
+            attributes.target = '_blank'
+            attributes.href = ${props.fileUrl}
+            content = afx`
+                <img alt="icon" class="download__icon" src={props.imgSrc}/>{props.text}
+            `
+        }
     }
 }

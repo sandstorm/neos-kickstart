@@ -51,6 +51,13 @@ open-local-db:
 open-styleguide:
 	@open http://127.0.0.1:8081/styleguide
 
+site-export:
+	@docker compose exec neos bash -c "./flow site:export --package-key MyVendor.AwesomeNeosProject"
+
+site-import:
+	@docker compose exec neos bash -c "./flow site:prune awesomeneosproject || true"
+	@docker compose exec neos bash -c "./flow site:import --package-key MyVendor.AwesomeNeosProject"
+
 e2e-tests:
 	@docker compose exec maria-db "/createTestingDB.sh"
 	@docker compose exec neos bash -c "FLOW_CONTEXT=Development/Docker/Behat ./flow doctrine:migrate"
