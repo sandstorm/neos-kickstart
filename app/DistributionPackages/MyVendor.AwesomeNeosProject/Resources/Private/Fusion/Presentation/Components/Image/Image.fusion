@@ -41,7 +41,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
 
         renderer = afx`
             <div class={AtomicFusion.classNames('image' , props._widthClassName, props._textWrapClassName)}>
-                <Hivemind.Site:Component.ImagePlaceholder @if.showPlaceholder={props._showPlaceholder}/>
+                <MyVendor.AwesomeNeosProject:Component.ImagePlaceholder @if.showPlaceholder={props._showPlaceholder}/>
                 <Sitegeist.Kaleidoscope:Picture
                     class="image"
                     alt={props.alternativeText}

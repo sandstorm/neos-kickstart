@@ -1,4 +1,4 @@
-prototype(Hivemind.Site:Component.ImagePlaceholder) < prototype(Neos.Fusion:Component) {
+prototype(MyVendor.AwesomeNeosProject:Component.ImagePlaceholder) < prototype(Neos.Fusion:Component) {
     aspectRatio = ${3/2}
     showPlaceholderText = true
 
