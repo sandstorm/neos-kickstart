@@ -25,6 +25,7 @@ Table of contents:
   - Behavioural Tests
     - Playwright Integration
   - Playwright Testrunner
+- Swiftmailer + Mailhog
 
 ## Setting up IntelliJ
 - recommended plugins:
@@ -63,6 +64,11 @@ This should only be needed when running the project for the first time.
   - `nvm install && nvm use && yarn && yarn run watch`
   - see `package.json` for more scripts
 - run `make help` to see all available commands
+
+### Debugging Emails
+
+Swiftmailer is installed and configured to use Mailhog (local SMTP server) in development mode. You can visit the
+Mailhog Web-UI at [http://localhost:8025/](http://localhost:8025/).
 
 ## Running Tests
 

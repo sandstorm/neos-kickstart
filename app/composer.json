@@ -17,6 +17,10 @@
         "platform": {
             "php": "8.0.6",
             "ext-vips": "1.0.8"
+        },
+        "allow-plugins": {
+            "neos/composer-plugin": true,
+            "composer/package-versions-deprecated": true
         }
     },
     "repositories": {
@@ -43,7 +47,8 @@
         "jonnitto/prettyembedyoutube": "dev-master",
         "jonnitto/prettyembedhelper": "dev-master",
         "sandstorm/e2etesttools": "@dev",
-        "packagefactory/atomicfusion-classnames": "^1.0"
+        "packagefactory/atomicfusion-classnames": "^1.0",
+        "neos/swiftmailer": "^7.2"
     },
     "require-dev": {
         "neos/buildessentials": "~7.2.0",
