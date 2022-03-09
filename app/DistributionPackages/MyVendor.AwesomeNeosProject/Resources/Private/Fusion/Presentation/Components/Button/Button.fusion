@@ -3,6 +3,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:
     href = ''
     isExternalLink = false
     inBackend = ${node.context.inBackend}
+    type = ''
 
     @propTypes {
         @strict = true
