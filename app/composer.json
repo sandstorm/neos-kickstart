@@ -42,7 +42,7 @@
         "packagefactory/atomicfusion-proptypes": "~2.0.1",
         "sitegeist/kaleidoscope": "~6.0.3",
         "sandstorm/optimizedrediscachebackend": "^1.1.3",
-        "sandstorm/cookiepunch": "^3.0.1",
+        "sandstorm/cookiepunch": "^4.0.1",
         "jonnitto/prettyembedvideo": "dev-master",
         "jonnitto/prettyembedyoutube": "dev-master",
         "jonnitto/prettyembedhelper": "dev-master",
