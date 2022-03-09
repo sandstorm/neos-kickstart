@@ -28,6 +28,6 @@ prototype(MyVendor.AwesomeNeosProject:Resources.HeaderAssets) < prototype(Neos.F
         attributes.src = Neos.Fusion:ResourceUri {
             path = 'resource://MyVendor.AwesomeNeosProject/Public/bundle.js'
         }
-        @process.neverBlock = ${CookiePunch.neverBlockScripts(value)}
+        @process.neverBlock = ${CookiePunch.neverBlockTags(["script"], value)}
     }
 }
