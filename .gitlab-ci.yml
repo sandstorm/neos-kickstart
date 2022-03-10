@@ -6,10 +6,10 @@ stages:
 
 build_sass:
   stage: compile_resources
-  image: docker-hub.sandstorm.de/docker-infrastructure/node-sass:latest
+  # keep in sync with .nvmrc
+  image: node:16.14-slim
   tags:
     - docker
-    - privileged
   script:
     - cd app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private
     - yarn
@@ -25,11 +25,10 @@ build_sass:
 
 package_app:
   stage: build
-  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.4-v2
+  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:php8.1-v2-build
   interruptible: true
   tags:
     - docker
-    - privileged
   cache:
     key: myvendor.awesomeneosproject__composer
     paths:
