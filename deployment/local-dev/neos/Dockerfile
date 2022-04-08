@@ -10,7 +10,7 @@ FROM php:8.0-fpm-buster
 
 # install git and unzip for Composer
 RUN apt-get update -y && \
-    apt-get install --no-install-recommends -y unzip git && \
+    apt-get install --no-install-recommends -y unzip git default-mysql-client && \
     rm -rf /var/lib/apt/lists/*
 
 # HOTFIX for ARM64 Architectures and VIPS (see https://github.com/opencv/opencv/issues/14884#issuecomment-706725583 for details)

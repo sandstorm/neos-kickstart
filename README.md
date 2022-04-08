@@ -16,6 +16,7 @@ Run `./kickstart.sh` an follow the instructions.
 ```bash
 make setup
 make start
+make site-import
 ```
 
 ## Packages we recommend for certain use-cases
@@ -31,6 +32,24 @@ make start
 As the script can be used to change the git remote and remove files development becomes hard ;)
 Run `./kickstart.sh --dev` to not remove certain files e.g. `./kickstart.sh`. 
 Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstart.sh`
+
+## IMPORT/EXPORT
+
+The default flow command to import and export the site content is not stable.
+So we (Flo) developed an easy-to-use shell script for this case and made it part of the make file:
+
+### EXPORT
+The script places two archives in `app/ContentDump` for DB Content and the Ressources.
+(Maybe init git lfs for the repo if you plan to use this script)
+
+```bash
+make site-export
+```
+
+### IMPORT
+```bash
+make site-import
+```
 
 
 ## Roadmap

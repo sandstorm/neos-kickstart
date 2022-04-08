@@ -17,6 +17,9 @@ build:
 stop:
 	@docker compose stop
 
+down:
+	@docker compose down -v --remove-orphans
+
 enter-neos:
 	@docker compose exec neos /bin/bash
 
@@ -52,11 +55,10 @@ open-styleguide:
 	@open http://127.0.0.1:8081/styleguide
 
 site-export:
-	@docker compose exec neos bash -c "./flow site:export --package-key MyVendor.AwesomeNeosProject"
+	@docker compose exec neos /app/ContentDump/exportSite.sh
 
 site-import:
-	@docker compose exec neos bash -c "./flow site:prune awesomeneosproject || true"
-	@docker compose exec neos bash -c "./flow site:import --package-key MyVendor.AwesomeNeosProject"
+	@docker compose exec neos /app/ContentDump/importSite.sh
 
 e2e-tests:
 	@docker compose exec maria-db "/createTestingDB.sh"

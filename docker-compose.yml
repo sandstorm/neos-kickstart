@@ -36,6 +36,7 @@ services:
       - ./app/composer.lock:/app/composer.lock:cached
       - ./app/DistributionPackages/:/app/DistributionPackages/:cached
       - ./app/Build/Behat/:/app/Build/Behat/:cached
+      - ./app/ContentDump/:/app/ContentDump/:cached
       # Content is writable to enable content dumps from inside the container
       - ./app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/Content:/app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/Content/:cached
       - ./app/DistributionPackages/MyVendor.AwesomeNeosProject/Migrations/:/app/DistributionPackages/MyVendor.AwesomeNeosProject/Migrations/:cached
