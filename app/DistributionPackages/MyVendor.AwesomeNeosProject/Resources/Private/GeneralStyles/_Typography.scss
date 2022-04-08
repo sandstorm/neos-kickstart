@@ -1,45 +1,51 @@
 html, body {
     font-size: $base__fontSize;
-    font-family: $theme__default__fontStack;
-    font-weight: $theme__default__fontWeight;
-    line-height: $base__lineHeight;
-    color: $theme__color__black;
+    font-family: $typo__text__fontFamily;
+    font-weight: $typo__text__fontWeight;
+    line-height: $typo__text__lineHeight;
+    color: $color__black;
 }
 
 h1 {
-    font-size: $h1__fontSize;
-    font-weight: 400;
-    line-height: $base__lineHeight;
+    font-family: $typo__heading__fontFamily;
+    font-size: $typo__h1__fontSize;
+    font-weight: $typo__heading__fontWeight;
+    line-height: $typo__heading__lineHeight;
 }
 
 h2 {
-    font-size: $h2__fontSize;
-    font-weight: 400;
-    line-height: $base__lineHeight;
+    font-family: $typo__heading__fontFamily;
+    font-size: $typo__h2__fontSize;
+    font-weight: $typo__heading__fontWeight;
+    line-height: $typo__heading__lineHeight;
 }
 
 h3 {
-    font-size: $h3__fontSize;
-    font-weight: 400;
-    line-height: $base__lineHeight;
+    font-family: $typo__heading__fontFamily;
+    font-size: $typo__h3__fontSize;
+    font-weight: $typo__heading__fontWeight;
+    line-height: $typo__heading__lineHeight;
 }
 
 h4 {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: $base__lineHeight;
+    font-family: $typo__heading__fontFamily;
+    font-size: $typo__h4__fontSize;
+    font-weight: $typo__heading__fontWeight;
+    line-height: $typo__heading__lineHeight;
 }
 
 h5 {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: $base__lineHeight;
+    font-family: $typo__heading__fontFamily;
+    font-size: $typo__h5__fontSize;
+    font-weight: $typo__heading__fontWeight;
+    line-height: $typo__heading__lineHeight;
 }
 
 h6 {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: $base__lineHeight;
+    font-family: $typo__heading__fontFamily;
+    font-size: $typo__h6__fontSize;
+    font-weight: $typo__heading__fontWeight;
+    line-height: $typo__heading__lineHeight;
 }
 
 .text-align--center {

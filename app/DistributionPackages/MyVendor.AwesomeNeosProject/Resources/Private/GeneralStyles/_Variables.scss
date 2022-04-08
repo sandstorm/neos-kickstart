@@ -1,37 +1,60 @@
 
 $relativePublicPath: '/_Resources/Static/Packages/MyVendor.AwesomeNeosProject/';
+$fa-font-path: $relativePublicPath + "Fonts";
 
-$theme__color__white: #fff;
-$theme__color__black: #000;
-// Add more colors here
+// self hosted google fonts via: https://google-webfonts-helper.herokuapp.com/fonts
+@font-face {
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+    url($fa-font-path + '/atkinson-hyperlegible-v7-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url($fa-font-path + '/atkinson-hyperlegible-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
-$theme__content__boxShadow: 0 5px 5px 0 transparentize($theme__color__black, 0.8);
+// https://www.fontsquirrel.com/fonts/sansation
+@font-face {
+    font-family: 'Sansation Regular';
+    font-weight: normal;
+    font-style: normal;
+    src: local(''),
+    url($fa-font-path + '/Sansation-Regular-webfont.woff') format('woff'),
+}
 
-$theme__heading__fontWeight: 300;
-$theme__default__fontWeight: 400;
+// Base
+$base__module: 5px;
+$base__fontSize: 20px;
 
-$theme__font__openSans: 'Open Sans', Arial, Helvetica, sans-serif;
+// Colors
+$color__white: #fff;
+$color__black: #000;
 
-$theme__default__fontStack: $theme__font__openSans;
+// Typography
+$typo__heading__fontFamily: "Sansation Regular", Arial, Helvetica, sans-serif;
+$typo__heading__fontWeight: 400;
 
-$base__fontSize: 16px;
-$base__fontSize--larger: 18px;
-$base__fontSize--smaller: 14px;
-$base__fontSize--tiny: 12px;
-$base__lineHeight: 1.6;
+$typo__heading__lineHeight: 1.2;
+$typo__h1__fontSize: 3.2rem;
+$typo__h2__fontSize: 2.9rem;
+$typo__h3__fontSize: 1.6rem;
+$typo__h4__fontSize: 1.2rem;
+$typo__h5__fontSize: 1.1rem;
+$typo__h6__fontSize: 1.0rem;
 
-$h1__fontSize: 2.2rem;
-$h2__fontSize: 1.8rem;
-$h3__fontSize: 1.5rem;
+$typo__text__fontFamily: "Atkinson Hyperlegible", Arial, Helvetica sans-serif;
+$typo__text__fontWeight: 400;
+$typo__text__lineHeight: 1.4;
+
+// Spacing
+$spacing--sm: $base__module;
+$spacing--md: 2 * $base__module;
+$spacing--lg: 4 * $base__module;
+$spacing--xl: 8 * $base__module;
+$spacing--xxl: 16 * $base__module;
 
 $button__height: 40px;
 $button__height--large: 50px;
 $button__height--larger: 60px;
-
-$header__height: 100px;
-$header__height--small: 80px;
-
-$fa-font-path: $relativePublicPath + "Fonts";
 
 $breakpoints: (
     xxsmall: "(max-width: 374px)",
