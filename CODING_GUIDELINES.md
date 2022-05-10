@@ -261,7 +261,39 @@ prototypes (also called presentational components).
         * `Button.fusion`
         * `Button.scss`
         * `Button.ts`
-* You SHOULD NOT use Fluid for rendering. You SHOULD use AFX instead. There might be some rare exceptions, e.g. working with packages that still use fluid. For `Neos.Neos:Menu` you still might need Fluid to provide different rendering for a menu entry.
+* You SHOULD NOT use Fluid for rendering. You SHOULD use AFX instead. There might be some rare exceptions, e.g. working with packages that still use fluid.
+  * Even Menus can be rendered entirely in Fusion and don't need Fluid anymore. This example is taken from a working project: 
+  ```
+  prototype(MyVendor.AwesomeNeosProject:Component.PageMenu) < prototype(Neos.Fusion:Component) {
+
+    root = ${site}
+    menuItems = Neos.Neos:MenuItems
+
+    renderer = afx`
+        <nav class="page-header__menu">
+            // Mobile Menu is located in a separate Fusion file
+            <MyVendor.AwesomeNeosProject:Component.PageMenu.Mobile/>
+            <div class="page-header__menu-full">
+                <ul class="page-header__menu-toplevel">
+                    <Neos.Fusion:Loop items={props.menuItems}>
+                        <li class={item.state + ' page-header__menu-toplevel-item'}>
+                            <Neos.Neos:NodeLink node={item.node}>
+                                {item.label}
+                            </Neos.Neos:NodeLink>
+                            <ul @if.has={item.subItems}class="page-header__menu-sublevel">
+                                <Neos.Fusion:Loop items={item.subItems} itemName="item">
+                                    <li class={item.state + ' page-header__menu-sublevel-item'}>
+                                        <Neos.Neos:NodeLink node={item.node}>{item.label}</Neos.Neos:NodeLink>
+                                    </li>
+                                </Neos.Fusion:Loop>
+                            </ul>
+                        </li>
+                    </Neos.Fusion:Loop>
+                </ul>
+            </div>
+        </nav>
+    ` }
+  ```
 * You MUST declare all props at the beginning of your component, by providing a default value
   ```neosfusion
   prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:Component) {
