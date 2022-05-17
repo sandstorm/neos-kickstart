@@ -30,8 +30,8 @@
         }
     },
     "require": {
-        "neos/neos": "~7.2.0",
-        "neos/neos-ui": "~7.2.0",
+        "neos/neos": "~7.3.0",
+        "neos/neos-ui": "~7.3.0",
         "neos/seo": "~3.2.1",
         "neos/redirecthandler-neosadapter": "~4.3.0",
         "neos/redirecthandler-databasestorage": "~5.0.0",
@@ -48,10 +48,10 @@
         "jonnitto/prettyembedhelper": "dev-master",
         "sandstorm/e2etesttools": "@dev",
         "packagefactory/atomicfusion-classnames": "^1.0",
-        "neos/swiftmailer": "^7.2"
+        "neos/swiftmailer": "^7.3"
     },
     "require-dev": {
-        "neos/buildessentials": "~7.2.0",
+        "neos/buildessentials": "~7.3.0",
         "mikey179/vfsstream": "^1.6",
         "phpunit/phpunit": "^9.5"
     },
