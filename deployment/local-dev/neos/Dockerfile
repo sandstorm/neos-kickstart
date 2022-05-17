@@ -20,7 +20,7 @@ RUN echo '. /etc/bash.vips-arm64-hotfix.sh' >>  /etc/bash.bashrc
 ####################### END - Dev Container only ########################
 
 # Install intl, bcmath, pdo, pdo_mysql, mysqli, libvips
-# debug tools: vim
+# debug tools: vim, inotify-tools
 RUN apt-get update -y && \
     apt-get install --no-install-recommends -y \
         libicu-dev \
@@ -32,6 +32,7 @@ RUN apt-get update -y && \
         procps \
         libpq-dev \
         vim \
+        inotify-tools \
         && \
     mkdir -p /var/log/supervisor && \
     rm -rf /var/lib/apt/lists/* && \
@@ -79,6 +80,10 @@ RUN mkdir -p /var/lib/nginx /usr/local/var/log/ && \
 RUN mkdir -p /app/Data/Persistent /app/Configuration/Development/Docker /app/Build/Behat /composer_cache && \
     chown -R www-data /app /composer_cache && \
     apt-get clean
+
+# utility scripts
+ADD deployment/utilities/watchAndLogExceptions.sh /app/watchAndLogExceptions.sh
+RUN chmod +x /app/watchAndLogExceptions.sh
 
 WORKDIR /app
 
