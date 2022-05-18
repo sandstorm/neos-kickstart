@@ -74,3 +74,5 @@ unit-tests:
 functional-tests:
 	@docker compose exec neos bash -c "./bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Functional"
 
+log-flow-exceptions:
+	@docker compose exec neos ./watchAndLogExceptions.sh

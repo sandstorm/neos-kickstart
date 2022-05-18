@@ -32,6 +32,7 @@ make site-import
 As the script can be used to change the git remote and remove files development becomes hard ;)
 Run `./kickstart.sh --dev` to not remove certain files e.g. `./kickstart.sh`. 
 Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstart.sh`
+Run `make logs` and `make log-flow-exceptions` to see what's going on in the containers
 
 ## IMPORT/EXPORT
 
