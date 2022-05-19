@@ -4,9 +4,16 @@ echo "Starting Import"
 
 gzip -dk /app/ContentDump/Database.sql.gz
 
-# generating tables tio be dropped before restoring backup
+# generating tables to be dropped before restoring backup
 echo "SET FOREIGN_KEY_CHECKS = 0;" > ./temp.sql
-mysqldump --host=maria-db --user=neos --password=neos --add-drop-table --no-data neos | grep 'DROP TABLE' >> ./temp.sql
+mysqldump \
+    --host=maria-db \
+    --user=neos \
+    --password=neos \
+    --add-drop-table \
+    --no-data \
+    neos \
+     | grep 'DROP TABLE' >> ./temp.sql
 echo "SET FOREIGN_KEY_CHECKS = 1;" >> ./temp.sql
 
 # dropping tables
