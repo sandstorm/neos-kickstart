@@ -51,6 +51,7 @@
         "neos/swiftmailer": "^7.3"
     },
     "require-dev": {
+        "neos/behat": "~7.3.0",
         "neos/buildessentials": "~7.3.0",
         "mikey179/vfsstream": "^1.6",
         "phpunit/phpunit": "^9.5"
