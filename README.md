@@ -5,7 +5,41 @@ we provided examples and configuration that helps us to quickly provide a kickst
 
 ## requirements
 
-- docker and docker-compose
+- docker for mac
+- node -> to run Playwright Tests or for local development (without docker) of your sites JavaScript
+
+## Features
+- Neos 7.3
+- PHP 8.0
+- MariaDB 10.3
+- Vips (instead of ImageMagick)
+- Supercronic
+- Bash-Highlighting (dev, staging, production)
+- Gitlab-CI Pipeline Config
+    - Kubernetes Deployment
+    - E2E Tests
+    - Functional Tests
+    - Unit Tests
+- Testsetup
+    - Functional and Unit
+    - Behavioural Tests
+        - Playwright Integration
+    - Playwright Testrunner
+- Swiftmailer + Mailhog
+
+## Setting up IntelliJ
+- recommended plugins:
+    - Neos Support
+    - Makefile language
+    - PHP
+    - PHP Annotations
+    - PHP Toolbox
+    - Prettier
+        - make sure Prettier is activated for the correct extensions
+    - Docker
+    - Behat Support
+- check, if autocompletion works for .yaml-files
+- check, if it's possible to jump to Fusion Prototypes via cmd + click
 
 ## Running Kickstart
 
@@ -16,7 +50,6 @@ Run `./kickstart.sh` an follow the instructions.
 ```bash
 make setup
 make start
-make site-import
 ```
 
 ## Packages we recommend for certain use-cases
@@ -34,7 +67,7 @@ Run `./kickstart.sh --dev` to not remove certain files e.g. `./kickstart.sh`.
 Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstart.sh`
 Run `make logs` and `make log-flow-exceptions` to see what's going on in the containers
 
-## IMPORT/EXPORT
+## IMPORT/EXPORT Content
 
 The default flow command to import and export the site content is not stable.
 So we (Flo) developed an easy-to-use shell script for this case and made it part of the make file:
