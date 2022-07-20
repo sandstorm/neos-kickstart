@@ -59,6 +59,8 @@ make start
 3. `flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -> helps with the editor experience
 4. `neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful static form node-types
 5. `flowpack/listable` to get pagination for lists of node-types (blog posts for example)
+6. `flowpack/searchplugin` to implement a search
+7. or have a look at the recommandations on neos.io: https://www.neos.io/features/feature-list.html
 
 ## Development
 
