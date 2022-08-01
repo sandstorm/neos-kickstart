@@ -1,5 +1,5 @@
 # NOTE: this file is executed from the ROOT DIRECTORY of the project, i.e. "../"
-FROM php:8.0-fpm-buster
+FROM php:8.1-fpm-bullseye
 
 # Install intl, bcmath, pdo, pdo_mysql, mysqli, libvips
 RUN apt-get update -y && \
@@ -9,17 +9,25 @@ RUN apt-get update -y && \
         nginx-light \
         libvips42 \
         libvips-dev \
+        libffi-dev \
         supervisor \
         procps \
         libpq-dev \
         vim \
+        less \
         && \
     mkdir -p /var/log/supervisor && \
     rm -rf /var/lib/apt/lists/* && \
-    docker-php-ext-install intl bcmath pdo pdo_mysql xsl && \
+    docker-php-ext-install intl bcmath pdo pdo_mysql xsl ffi && \
     pecl install vips && \
     echo "extension=vips.so" > /usr/local/etc/php/conf.d/vips.ini && \
     pecl install redis && docker-php-ext-enable redis
+
+# for PHP 8.1, disable deprecations to temporarily make Neos/Flow work
+RUN echo "error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT" >> /usr/local/etc/php/conf.d/error_reporting.ini
+# FFI needs to be enabled
+RUN echo "ffi.enable = true" >> /usr/local/etc/php/conf.d/ffi.ini
+
 
 # install composer
 RUN curl --silent --show-error https://getcomposer.org/installer | php
