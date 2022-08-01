@@ -45,7 +45,8 @@ package_app:
 
     # build image
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG -f deployment/staging/Dockerfile .
+    - docker pull $CI_REGISTRY_IMAGE:main || true
+    - docker build --cache-from $CI_REGISTRY_IMAGE:main -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG -f deployment/staging/Dockerfile .
     - docker push $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG
 
 build_e2e_testrunner:
@@ -56,12 +57,10 @@ build_e2e_testrunner:
   script:
     - cd e2e-testrunner
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG-e2e-testrunner .
+    - docker pull $CI_REGISTRY_IMAGE:main-e2e-testrunner || true
+    - docker build --cache-from $CI_REGISTRY_IMAGE:main-e2e-testrunner -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG-e2e-testrunner .
     - docker push $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG-e2e-testrunner
     - cd ..
-  tags:
-    - docker
-    - privileged
 
 functional_and_unit_tests:
   stage: test
