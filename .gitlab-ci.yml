@@ -8,8 +8,7 @@ build_sass:
   stage: compile_resources
   # keep in sync with .nvmrc
   image: node:16.14-slim
-  tags:
-    - docker
+  needs: []
   script:
     - cd app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private
     - yarn
@@ -18,7 +17,7 @@ build_sass:
     paths:
       - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/node_modules/
   artifacts:
-    expire_in: 4 weeks
+    expire_in: 3 days
     paths:
       - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Public/bundle.css
       - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Public/bundle.js
@@ -27,8 +26,8 @@ package_app:
   stage: build
   image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:8.1-v2
   interruptible: true
-  tags:
-    - docker
+  needs:
+    - build_sass
   cache:
     key: myvendor.awesomeneosproject__composer
     paths:
@@ -51,7 +50,8 @@ package_app:
 
 build_e2e_testrunner:
   stage: build
-  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.4-v2
+  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:8.1-v2
+  needs: []
   interruptible: true
   script:
     - cd e2e-testrunner
@@ -65,7 +65,8 @@ build_e2e_testrunner:
 
 functional_and_unit_tests:
   stage: test
-  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:7.4-v2
+  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:8.1-v2
+  needs: []
   services:
     - mariadb
   script:
@@ -88,6 +89,8 @@ e2e_test:
   stage: test
   interruptible: true
   # we're running this job inside the production image we've just built previously
+  needs:
+    - build_e2e_testrunner
   image:
     name: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG
     # see `scripts` below
@@ -140,6 +143,8 @@ deploy_staging:
     entrypoint: [""]
   only:
     - main
+  needs:
+    - package_app
   environment:
     name: staging
   script:
