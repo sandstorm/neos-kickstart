@@ -17,7 +17,7 @@ Flow_Mvc_Routing_Resolve:
     defaultLifetime: 0
 
 Neos_Fusion_Content:
-  backend: 'Sandstorm\OptimizedRedisCacheBackend\OptimizedRedisCacheBackend'
+  backend: 'Neos\Cache\Backend\RedisBackend'
   backendOptions:
     hostname: '%env:REDIS_HOST%'
     port: 6379

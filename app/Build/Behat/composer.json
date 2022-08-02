@@ -1,11 +1,11 @@
 {
 	"require": {
-		"behat/behat": "^3.5"
+		"behat/behat": "^3.5",
+		"behat/mink-extension": "^2.3",
+		"behat/mink-goutte-driver": "*",
+		"behat/mink-selenium2-driver": "*"
 	},
 	"config": {
-		"bin-dir": "../../bin/",
-        "platform": {
-            "php": "8.0.6"
-      }
+		"bin-dir": "../../bin/"
 	}
 }
