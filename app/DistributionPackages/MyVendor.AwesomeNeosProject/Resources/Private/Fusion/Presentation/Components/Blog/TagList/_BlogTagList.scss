@@ -1,0 +1,10 @@
+.blog-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing--md;
+
+    margin-top: $spacing--lg;
+    margin-bottom: $spacing--lg;
+
+    text-align: center;
+}

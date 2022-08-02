@@ -38,6 +38,7 @@
         "neos/redirecthandler-ui": "~2.4.1",
         "myvendor/awesomeneosproject": "@dev",
         "flowpack/cachebuster": "~1.2.0",
+        "flowpack/listable": "^3.5",
         "rokka/imagine-vips": "0.*",
         "packagefactory/atomicfusion-proptypes": "~2.0.1",
         "sitegeist/kaleidoscope": "~v6.5.1",

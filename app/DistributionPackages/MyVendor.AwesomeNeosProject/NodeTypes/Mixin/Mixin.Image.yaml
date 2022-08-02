@@ -17,7 +17,7 @@
         inspector:
           group: 'image'
           position: 100
-    description:
+    imageDescription:
       type: string
       ui:
         label: 'Description'

@@ -1,0 +1,32 @@
+prototype(MyVendor.AwesomeNeosProject:Document.Blog.Tag) < prototype(MyVendor.AwesomeNeosProject:Document.AbstractPage) {
+    body.main.content.blogtags = MyVendor.AwesomeNeosProject:Utility.ContentWidth {
+        content = MyVendor.AwesomeNeosProject:Component.BlogTagList {
+            tags = ${q(site).find('[instanceof MyVendor.AwesomeNeosProject:Document.Blog.Tag]')}
+            activeTag = ${node}
+        }
+    }
+    body.main.content.blogtags.@position = "after mainContent"
+
+    body.main.content.blogposts = MyVendor.AwesomeNeosProject:Utility.ContentWidth {
+        content = Flowpack.Listable:PaginatedCollection {
+            _allPosts = ${q(site).find('[instanceof MyVendor.AwesomeNeosProject:Document.Blog.Post][_hiddenInIndex != true]').sort('datePublished', 'DESC').get()}
+            collection = ${Array.filter(this._allPosts, post =>
+                q(post).property('tags') != null &&
+                !Array.isEmpty(
+                    Array.filter(q(post).property('tags'), category =>
+                        category == node
+                    )
+                )
+            )}
+
+            prototype(Flowpack.Listable:Collection) {
+                listClass = 'blog-post-overview'
+                itemClass = 'blog-post-overview__post'
+
+                itemRenderer = MyVendor.AwesomeNeosProject:Content.BlogPostPreview
+            }
+        }
+    }
+
+    body.main.content.blogposts.@position = "after mainContent"
+}

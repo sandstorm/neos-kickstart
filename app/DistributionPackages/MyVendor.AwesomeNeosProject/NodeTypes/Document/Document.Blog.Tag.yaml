@@ -1,0 +1,10 @@
+'MyVendor.AwesomeNeosProject:Document.Blog.Tag':
+  superTypes:
+    'MyVendor.AwesomeNeosProject:Document.AbstractPage': true
+  ui:
+    group: general
+    label: 'Blog Tag'
+    icon: icon-tag
+  constraints:
+    nodeTypes:
+      '*': false

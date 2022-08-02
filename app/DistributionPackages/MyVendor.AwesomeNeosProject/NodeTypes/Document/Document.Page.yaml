@@ -8,3 +8,4 @@
     nodeTypes:
       '*': ~
       'MyVendor.AwesomeNeosProject:Document.Page': true
+      'MyVendor.AwesomeNeosProject:Document.Shortcut': true

@@ -1,0 +1,11 @@
+.blog-post-preview {
+    text-decoration: none;
+    color: $color__black;
+}
+
+.blog-post-preview__teaser {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+}

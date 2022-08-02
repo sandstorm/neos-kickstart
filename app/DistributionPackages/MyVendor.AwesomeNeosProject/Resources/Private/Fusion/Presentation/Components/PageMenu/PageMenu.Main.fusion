@@ -3,7 +3,9 @@ prototype(MyVendor.AwesomeNeosProject:Component.PageMenu.Main) < prototype(Neos.
         maximumLevels = 2
         filter = "
             Neos.Neos:Document,
-            !MyVendor.AwesomeNeosProject:Document.NotFoundPage
+            !MyVendor.AwesomeNeosProject:Document.NotFoundPage,
+            !MyVendor.AwesomeNeosProject:Document.Blog.Tags,
+            !MyVendor.AwesomeNeosProject:Document.Blog.Post
         "
     }
 

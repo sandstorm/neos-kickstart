@@ -11,6 +11,7 @@ prototype(MyVendor.AwesomeNeosProject:Document.AbstractPage) < prototype(Neos.Ne
         header = MyVendor.AwesomeNeosProject:Component.PageHeader {
             menu = MyVendor.AwesomeNeosProject:Component.PageMenu
         }
+        breadcrumb = MyVendor.AwesomeNeosProject:Component.Breadcrumb
         main = MyVendor.AwesomeNeosProject:Layout.Default {
             content = Neos.Fusion:Join {
                 mainContent = Neos.Neos:ContentCollection {

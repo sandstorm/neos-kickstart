@@ -1,0 +1,11 @@
+'MyVendor.AwesomeNeosProject:Mixin.BlogTags':
+  abstract: true
+  properties:
+    tags:
+      type: references
+      ui:
+        label: 'Blog Tags'
+        inspector:
+          group: 'document'
+          editorOptions:
+            nodeTypes: ['MyVendor.AwesomeNeosProject:Document.Blog.Tag']

@@ -18,7 +18,4 @@
         inlineEditable: true
         inline:
           editorOptions:
-            placeholder: 'Please enter a description (optional)'
-
-
-
+            placeholder: 'Please enter a description'

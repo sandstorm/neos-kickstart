@@ -1,0 +1,10 @@
+prototype(MyVendor.AwesomeNeosProject:Component.Breadcrumb) < prototype(Neos.Fusion:Component) {
+
+    breadcrumb = Neos.Neos:BreadcrumbMenu
+
+    renderer = afx`
+        <MyVendor.AwesomeNeosProject:Utility.ContentWidth>
+            {props.breadcrumb}
+        </MyVendor.AwesomeNeosProject:Utility.ContentWidth>
+    `
+}

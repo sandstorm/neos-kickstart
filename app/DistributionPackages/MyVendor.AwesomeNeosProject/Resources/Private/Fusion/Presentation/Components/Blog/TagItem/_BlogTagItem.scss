@@ -1,0 +1,13 @@
+.blog-tag {
+    padding: 2px 7px;
+
+    background-color: $color__blue;
+    border-radius: 2px;
+
+    color: $color__white;
+    text-decoration: none;
+
+    &--is-active, &:hover, &:active, &:focus {
+        background-color: $color__blue--dark;
+    }
+}

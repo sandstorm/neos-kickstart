@@ -1,0 +1,21 @@
+prototype(MyVendor.AwesomeNeosProject:Content.BlogPostPreview) < prototype(Neos.Neos:ContentComponent) {
+    renderer = MyVendor.AwesomeNeosProject:Component.BlogPostPreview {
+        title = ${q(node).property('title')}
+        teaserText = ${q(node).property('teaserText')}
+        tags = MyVendor.AwesomeNeosProject:Component.BlogTagList {
+            tags = ${q(node).property("tags")}
+            renderAsLink = false
+        }
+        href = Neos.Neos:NodeUri {
+            node = ${node}
+        }
+        image = MyVendor.AwesomeNeosProject:Component.Image {
+            alternativeText = MyVendor.AwesomeNeosProject:Helper.ImageAltText {
+                image = ${q(node).property('image')}
+            }
+            imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
+                asset = ${q(node).property('image')}
+            }
+        }
+    }
+}

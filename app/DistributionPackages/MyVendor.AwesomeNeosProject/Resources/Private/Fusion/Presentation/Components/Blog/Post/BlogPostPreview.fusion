@@ -1,0 +1,43 @@
+prototype(MyVendor.AwesomeNeosProject:Component.BlogPostPreview) < prototype(Neos.Fusion:Component) {
+    title = ''
+    teaserText = ''
+    href = ''
+    isExternalLink = false
+    tags = ''
+    image = ''
+
+
+    @propTypes {
+        @strict = true
+        title = ${PropTypes.string}
+        teaserText = ${PropTypes.string}
+        href = ${PropTypes.string}
+        isExternalLink = ${PropTypes.boolean}
+        tags = ${PropTypes.string}
+        image = ${PropTypes.string}
+    }
+
+
+    renderer = Neos.Fusion:Component {
+        @apply.props = ${props}
+        renderer = afx`
+            <Neos.Fusion:Tag
+                tagName={node.context.inBackend ? "div" : "a"}
+                attributes.href={node.context.inBackend ? null : props.href}
+                attributes.class={"blog-post-preview"}>
+
+                <div class="blog-post-preview__content">
+                    {props.image}
+                    <h3 class="blog-post-preview__title">{props.title}</h3>
+                    <div @if.hasTeaserText={props.teaserText} class="blog-post-preview__teaser">
+                        {props.teaserText}
+                    </div>
+                    <div class="blog-post-preview__tags">
+                        {props.tags}
+                    </div>
+                    <button class="button button--primary button--small">Mehr erfahren!</button>
+                </div>
+            </Neos.Fusion:Tag>
+        `
+    }
+}

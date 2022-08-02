@@ -2,6 +2,7 @@
 namespace MyVendor\AwesomeNeosProject\DataSources;
 
 use Neos\Flow\Annotations as Flow;
+use Neos\Neos\Domain\Model\User;
 use Neos\Neos\Domain\Service\UserService;
 use Neos\Neos\Service\DataSource\AbstractDataSource;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
@@ -27,6 +28,7 @@ class CustomDataSource extends AbstractDataSource
     public function getData(NodeInterface $node = null, array $arguments = [])
     {
         $options = [];
+        /** @var User $user */
         foreach ($this->userService->getUsers() as $user) {
             $options[$user->getLabel()] = $user;
         }

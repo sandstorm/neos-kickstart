@@ -1,0 +1,32 @@
+.blog-post-overview {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    list-style: none;
+}
+
+.blog-post-overview__post {
+    width: 25%;
+
+    @include mq(large) {
+        width: 33%;
+    }
+
+    @include mq(medium) {
+        width: 50%;
+    }
+
+    @include mq(small) {
+        width: 100%;
+    }
+
+    &--large {
+        width: 50%;
+
+        @include mq(medium) {
+            width: 50%;
+        }
+    }
+}

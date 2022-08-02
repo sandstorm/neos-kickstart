@@ -6,7 +6,7 @@ prototype(MyVendor.AwesomeNeosProject:Content.Image) < prototype(Neos.Neos:Conte
             alternativeText = MyVendor.AwesomeNeosProject:Helper.ImageAltText {
                 image = ${q(node).property('image')}
             }
-            description = ${q(node).property('description')}
+            imageDescription = ${q(node).property('imageDescription')}
             imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
                 asset = ${q(node).property('image')}
             }

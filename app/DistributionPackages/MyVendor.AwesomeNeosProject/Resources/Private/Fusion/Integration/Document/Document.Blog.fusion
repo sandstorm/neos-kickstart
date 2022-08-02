@@ -1,0 +1,22 @@
+prototype(MyVendor.AwesomeNeosProject:Document.Blog) < prototype(MyVendor.AwesomeNeosProject:Document.AbstractPage) {
+    body.main.content.blogtags = MyVendor.AwesomeNeosProject:Utility.ContentWidth {
+        content = MyVendor.AwesomeNeosProject:Component.BlogTagList {
+            tags = ${q(site).find('[instanceof MyVendor.AwesomeNeosProject:Document.Blog.Tag]')}
+        }
+    }
+    body.main.content.blogtags.@position = "after mainContent"
+
+    body.main.content.blogposts = MyVendor.AwesomeNeosProject:Utility.ContentWidth {
+        content = Flowpack.Listable:PaginatedCollection {
+            collection = ${q(site).find('[instanceof MyVendor.AwesomeNeosProject:Document.Blog.Post][_hiddenInIndex != true]').sort('datePublished', 'DESC').get()}
+
+            prototype(Flowpack.Listable:Collection) {
+                listClass = 'blog-post-overview'
+                itemClass = 'blog-post-overview__post'
+
+                itemRenderer = MyVendor.AwesomeNeosProject:Content.BlogPostPreview
+            }
+        }
+    }
+    body.main.content.blogposts.@position = "after mainContent"
+}

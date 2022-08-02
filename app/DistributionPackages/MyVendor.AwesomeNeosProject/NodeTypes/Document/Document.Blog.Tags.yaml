@@ -1,0 +1,12 @@
+'MyVendor.AwesomeNeosProject:Document.Blog.Tags':
+  superTypes:
+    'Neos.Neos:Shortcut': true
+  ui:
+    group: general
+    label: 'Blog Tags'
+    icon: icon-tags
+  constraints:
+    nodeTypes:
+      '*': false
+      'MyVendor.AwesomeNeosProject:Document.Blog.Tag': true
+

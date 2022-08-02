@@ -1,0 +1,26 @@
+prototype(MyVendor.AwesomeNeosProject:Component.BlogTagItem) < prototype(Neos.Fusion:Component) {
+    tag = null
+    activeTag = null
+    renderAsLink = true
+
+    @propTypes {
+        tag = ${PropTypes.any}
+        activeTag = ${PropTypes.any}
+        renderAsLink = ${PropTypes.boolean}
+    }
+
+    @context.node = ${this.tag}
+    tagPage = Neos.Neos:NodeUri {
+        node = ${node}
+    }
+
+    renderer = Neos.Fusion:Tag {
+        tagName = ${props.renderAsLink ? 'a' : 'span'}
+        attributes.class = ${AtomicFusion.classNames('blog-tag', props.activeTag == props.tag ? 'blog-tag--is-active' : '')}
+        attributes.href = ${props.renderAsLink ? props.tagPage : null}
+
+        content = afx`
+            {props.tag.properties.title}
+        `
+    }
+}

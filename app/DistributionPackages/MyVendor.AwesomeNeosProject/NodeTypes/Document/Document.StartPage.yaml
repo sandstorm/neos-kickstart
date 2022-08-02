@@ -8,6 +8,8 @@
     nodeTypes:
       '*': ~
       'MyVendor.AwesomeNeosProject:Document.Page': true
+      'MyVendor.AwesomeNeosProject:Document.Blog': true
+      'MyVendor.AwesomeNeosProject:Document.Shortcut': true
   childNodes:
     footerContent:
       type: 'MyVendor.AwesomeNeosProject:ContentCollection.Default'

@@ -1,6 +1,6 @@
 prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:Component) {
     alternativeText = ''
-    description = ''
+    imageDescription = ''
     imageSource = null
     href = ''
     isExternalLink = false
@@ -24,9 +24,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
         @strict = true
         imageSource = ${PropTypes.any}
         alternativeText = ${PropTypes.string}
-        description = ${PropTypes.string}
-        contentWidth = ${PropTypes.string}
-        textAlign = ${PropTypes.string}
+        imageDescription = ${PropTypes.string}
         href = ${PropTypes.string}
         isExternalLink = ${PropTypes.boolean}
 
@@ -57,7 +55,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
                     renderDimensionAttributes={false}
                     @if.showImage={props.imageSource}
                 />
-                <span @if.description={props.description} class="image__description">{props.description}</span>
+                <span @if.imageDescription={props.imageDescription} class="image__description">{props.imageDescription}</span>
             `
         }
     }
