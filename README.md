@@ -41,9 +41,36 @@ we provided examples and configuration that helps us to quickly provide a kickst
 - check, if autocompletion works for .yaml-files
 - check, if it's possible to jump to Fusion Prototypes via cmd + click
 
-## Running Kickstart
+## Running Kickstart 
 
+!!!If you want to clone this package for another project:!!!
 Run `./kickstart.sh` an follow the instructions.
+
+## Local Development Setup (only required once)
+
+This should only be needed when running the project for the first time.
+
+- run `git lfs install` and `git lfs pull` to get large files like the content dump
+- run `make setup` only the first time to setup docker images and tmp folders
+- run `make setup-idea` on your local machine for autocompletion in your IDE
+- run `cd ./e2e-testrunner && nvm install && nvm use && npm install` as we do not want to use a docker container to be able
+  to debug Playwright test more easily. TODO: maybe run in `make tests` but nvm is currently giving us a headache here.
+- for font awesome pro support in local dev
+    - open: `app/DistributionPackages/Sandstorm.Website/Resources/Private/.npmrc.sample`
+    - and do what the file tells you ;)
+
+## Local Development
+
+- run `make start` to start all needed container of the project (see `docker-compose.yml` for details)
+- run `make logs` and `make log-flow-exceptions` to see what's going on in the containers
+- run `make logs-assets` to see the logs of scss being compiled to css and ts being compiled to js
+    - alternatively you can install node dependencies and run the watcher locally
+    - `cd app/DistributionPackages/Sandstorm.Website/Resources/Private/`
+    - `nvm install && nvm use && yarn && yarn run watch`
+    - see `package.json` for more scripts
+- run `make help` to see all available commands
+- setup local PHP code for IntelliJ auto-completion: `make setup-idea`
+- you can login to the [neos backend](http://localhost:8081/neos) with the credentials `admin` and `password`
 
 ## Start project
 
@@ -83,6 +110,7 @@ make site-export
 ```
 
 ### IMPORT
+
 ```bash
 make site-import
 ```

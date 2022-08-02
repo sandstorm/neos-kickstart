@@ -8,6 +8,10 @@ setup:
 	@mkdir -p ./tmp/.yarn-cache
 	@make build
 
+setup-idea:
+	@cd app && composer install --ignore-platform-reqs
+	@cd app/Build/Behat && composer install --ignore-platform-reqs
+
 start:
 	@docker compose up -d
 
@@ -60,19 +64,22 @@ site-export:
 site-import:
 	@docker compose exec neos /app/ContentDump/importSite.sh
 
-e2e-tests:
+setup-e2e-tests:
 	@docker compose exec maria-db "/createTestingDB.sh"
-	@docker compose exec neos bash -c "FLOW_CONTEXT=Development/Docker/Behat ./flow doctrine:migrate"
-	@docker compose exec neos bin/behat -c Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Behavior/behat.yml.dist -vvv
+	@docker compose exec neos bash -c ". /etc/bash.vips-arm64-hotfix.sh; FLOW_CONTEXT=Development/Docker/Behat ./flow doctrine:migrate"
+	@docker compose exec neos bash -c ". /etc/bash.vips-arm64-hotfix.sh; FLOW_CONTEXT=Development/Docker/Behat ./flow user:create --roles Administrator admin password LocalDev Admin"
+
+e2e-tests:
+	@docker compose exec neos bin/behat -c Packages/Sites/Sandstorm.Website/Tests/Behavior/behat.yml.dist -vvv
 	@echo
 	@echo "   The STYLEGUIDE can ACTUALLY be found at http://127.0.0.1:9090/styleguide/"
 	@echo
 
 unit-tests:
-	@docker compose exec neos bash -c "./bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Unit"
+	@docker compose exec neos bash -c "./bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml Packages/Sites/Sandstorm.Website/Tests/Unit"
 
 functional-tests:
-	@docker compose exec neos bash -c "./bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Functional"
+	@docker compose exec neos bash -c "./bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/Sandstorm.Website/Tests/Functional"
 
 log-flow-exceptions:
 	@docker compose exec neos ./watchAndLogExceptions.sh
