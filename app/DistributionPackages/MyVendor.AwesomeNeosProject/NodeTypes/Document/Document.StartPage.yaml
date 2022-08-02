@@ -1,15 +1,18 @@
 'MyVendor.AwesomeNeosProject:Document.StartPage':
   superTypes:
     'MyVendor.AwesomeNeosProject:Document.AbstractPage': true
-    'MyVendor.AwesomeNeosProject:Mixin.Teaser.Title': true
-    'MyVendor.AwesomeNeosProject:Mixin.Teaser.Text': true
   ui:
     icon: 'icon-home'
     label: 'Start Page'
   constraints:
     nodeTypes:
+      '*': ~
       'MyVendor.AwesomeNeosProject:Document.Page': true
-      'MyVendor.AwesomeNeosProject:Document.ErrorPage': true
+  childNodes:
+    footerContent:
+      type: 'MyVendor.AwesomeNeosProject:ContentCollection.Default'
+    notFoundPage:
+      type: 'MyVendor.AwesomeNeosProject:Document.NotFoundPage'
   properties:
     privacyPage:
       type: reference
@@ -18,4 +21,4 @@
         inspector:
           group: 'document'
           editorOptions:
-            nodeTypes: [ 'MyVendor.AwesomeNeosProject:Document.Page']
+            nodeTypes: [ 'MyVendor.AwesomeNeosProject:Document.Page' ]

@@ -1,0 +1,91 @@
+.button__outer {
+    width: 100%;
+}
+
+.button, input.button {
+    display: inline-block;
+    height: $button__height;
+    padding: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+    margin-bottom: 40px;
+
+    color: $color__white;
+    font-size: $base__fontSize;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    line-height: $button__height;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+
+    border: 1px solid $color__black;
+    border-radius: 0;
+    -webkit-appearance: none;
+    background: none;
+    background-color: $color__black;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    @include transition(all .3s);
+
+    &:hover, &:active, &:focus {
+        background-color: $color__white;
+        color: $color__black;
+    }
+
+    &--primary {
+        background-color: $color__blue;
+        border-color: $color__blue;
+
+
+        color: $color__white;
+
+        &:hover, &:active, &:focus {
+            background-color: $color__white;
+            border-color: $color__white;
+            color: $color__blue;
+        }
+    }
+
+    &--secondary {
+        background-color: $color__white;
+        border-color: $color__white;
+
+
+        color: $color__blue;
+
+        &:hover, &:active, &:focus {
+            color: $color__blue--dark;
+        }
+    }
+
+    &--square {
+        width: $button__height;
+        padding: 0;
+        text-align: center;
+    }
+
+    &--text {
+        background-color: transparent;
+        border: none;
+        color: $color__white;
+
+        &:hover {
+            background-color: transparent;
+            color: $color__white;
+        }
+    }
+
+    &--block {
+        width: 100%;
+    }
+
+    &--large {
+        height: $button__height * 1.2;
+        line-height: $button__height * 1.2;
+    }
+}

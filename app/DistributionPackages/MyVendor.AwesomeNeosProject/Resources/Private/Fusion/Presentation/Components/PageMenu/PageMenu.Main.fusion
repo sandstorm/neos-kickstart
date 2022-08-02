@@ -1,0 +1,40 @@
+prototype(MyVendor.AwesomeNeosProject:Component.PageMenu.Main) < prototype(Neos.Fusion:Component) {
+    menuItems = Neos.Neos:MenuItems {
+        maximumLevels = 2
+        filter = "
+            Neos.Neos:Document,
+            !MyVendor.AwesomeNeosProject:Document.NotFoundPage
+        "
+    }
+
+    renderer = afx`
+        <div class="page-menu__main">
+            <ul class="page-menu__toplevel">
+                <Neos.Fusion:Loop items={props.menuItems}>
+                    <li
+                        class={item.state + ' page-menu__toplevel-item'}
+                    >
+                        <Neos.Neos:NodeLink node={item.node}>
+                            {item.label}
+                        </Neos.Neos:NodeLink>
+
+                        <div class="page-menu__sublevel-wrapper">
+                            <MyVendor.AwesomeNeosProject:Utility.ContentWidth size="small">
+                                <ul
+                                    @if.has={item.subItems}
+                                    class="page-menu__sublevel"
+                                >
+                                    <Neos.Fusion:Loop items={item.subItems} itemName="item">
+                                        <li class={item.state + ' page-menu__sublevel-item'}>
+                                            <Neos.Neos:NodeLink node={item.node}>{item.label}</Neos.Neos:NodeLink>
+                                        </li>
+                                    </Neos.Fusion:Loop>
+                                </ul>
+                            </MyVendor.AwesomeNeosProject:Utility.ContentWidth>
+                        </div>
+                    </li>
+                </Neos.Fusion:Loop>
+            </ul>
+        </div>
+    `
+}

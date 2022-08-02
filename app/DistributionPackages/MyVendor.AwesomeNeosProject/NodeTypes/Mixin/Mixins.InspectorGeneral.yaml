@@ -6,7 +6,7 @@
         general:
           label: i18n
         properties:
-          label: 'Eigenschaften'
+          label: 'Properties'
           tab: default
         image:
           label: 'Image'

@@ -4,7 +4,7 @@
     image:
       type: Neos\Media\Domain\Model\ImageInterface
       ui:
-        label: 'Bild'
+        label: 'Image'
         reloadIfChanged: true
         inspector:
           group: 'image'
@@ -12,7 +12,7 @@
     alternativeText:
       type: string
       ui:
-        label: 'Alternativer Text'
+        label: 'Alternate text'
         reloadIfChanged: false
         inspector:
           group: 'image'

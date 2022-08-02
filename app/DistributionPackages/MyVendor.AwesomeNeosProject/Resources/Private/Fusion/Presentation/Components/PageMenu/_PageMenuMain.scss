@@ -1,0 +1,103 @@
+.page-menu__main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    @include mq(medium) {
+        display: none;
+    }
+}
+
+.page-menu__toplevel,
+.page-menu__sublevel {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.page-menu__toplevel-item {
+    display: inline-block;
+    padding: 0 20px;
+    height: $header__height;
+
+    > a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color__grey;
+        line-height: $header__height;
+        font-size: 1.2rem;
+
+        &:hover, &:focus, &:active {
+            color: $color__blue !important;
+        }
+    }
+
+    &:hover {
+        // transparent bar for better menu hovering
+        &:after {
+            content: " ";
+            position: absolute;
+            left: 0;
+            top: $header__height - 30px;
+            height: 30px;
+            width: 100%;
+
+            background-color: transparent;
+
+            z-index: 999;
+        }
+
+        .page-menu__sublevel-wrapper {
+            display: block;
+        }
+    }
+
+    &.current > a {
+        color: $color__blue !important;
+    }
+}
+
+.page-menu__sublevel-wrapper {
+    display: none;
+    position: absolute;
+    top: $header__height;
+    left: 0;
+    width: 100%;
+    max-height: 80vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    background-color: $color__grey;
+
+    z-index: 999;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    box-shadow: 5px 5px 10px transparentize($color__black, 0.5);
+
+
+    > .content-width {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        height: 100%;
+    }
+}
+
+.page-menu__sublevel-item {
+    line-height: 2rem;
+
+    a {
+        text-decoration: none;
+        color: $color__white;
+
+        &:hover, &:focus, &:active {
+            color: $color__blue !important;
+        }
+    }
+
+    &.current > a {
+        color: $color__blue !important;
+    }
+}

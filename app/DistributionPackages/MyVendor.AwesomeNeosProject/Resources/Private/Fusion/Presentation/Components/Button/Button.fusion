@@ -16,19 +16,33 @@ prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:
 
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}
-        _target = ${this.isExternalLink ? '_blank' : ''}
-        _typeClassName = ${'button--' + props.type}
-
-        renderer = Neos.Fusion:Tag {
-            tagName = ${(props.href && !props.inBackend) ? 'a' : 'div'}
-            attributes.class = ${AtomicFusion.classNames('button' , props._typeClassName)}
-            attributes.href = ${props.href ? props.href : ''}
-            attributes.target = ${props.target}
-            attributes.data-controller = 'ScrollTransition'
-
-            content = afx`
-                {props.text}
-            `
+        _target = ${props.isExternalLink ? '_blank' : null}
+        _buttonClassNames = Neos.Fusion:Case {
+            primary {
+                condition = ${props.type == 'primary'}
+                renderer = 'button--primary'
+            }
+            secondary {
+                condition = ${props.type == 'secondary'}
+                renderer = 'button--seondary'
+            }
+            default {
+                condition = ${true}
+                renderer = ''
+            }
         }
+        renderer =  afx`
+            <MyVendor.AwesomeNeosProject:Utility.ContentWidth class="button__outer">
+                <Neos.Fusion:Tag
+                    tagName={(props.href && !props.inBackend) ? 'a' : 'div'}
+                    attributes.class={AtomicFusion.classNames('button' , props._buttonClassNames)}
+                    attributes.href={props.href ? props.href : null}
+                    attributes.target={props.isExternalLink ? props._target : null}
+                    attributes.data-controller={'ScrollTransition'}
+                >
+                    {props.text}
+                </Neos.Fusion:Tag>
+            </MyVendor.AwesomeNeosProject:Utility.ContentWidth>
+        `
     }
 }

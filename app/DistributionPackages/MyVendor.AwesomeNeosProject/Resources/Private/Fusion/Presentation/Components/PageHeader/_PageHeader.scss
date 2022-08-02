@@ -1,0 +1,15 @@
+.page-header {
+    border-bottom: 1px solid #ccc;
+    
+    > .content-width {
+        position: unset;
+    }
+}
+
+.page-header__logo {
+    height: $headerLogo__height;
+
+    img {
+        height: 100%;
+    }
+}

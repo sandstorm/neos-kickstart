@@ -1,0 +1,21 @@
+'MyVendor.AwesomeNeosProject:Mixin.ContentWidth':
+  abstract: true
+  properties:
+    contentWidth:
+      type: string
+      ui:
+        label: 'Content Width'
+        reloadIfChanged: true
+        inspector:
+          group: 'properties'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+                label: 'default (max-width: 1400px)'
+              small:
+                label: 'small (max-width: 800px)'
+              large:
+                label: 'large (max-width: 1800px)'
+              full:
+                label: 'full (max-width: 100%)'

@@ -7,7 +7,7 @@
         inlineEditable: true
         inline:
           editorOptions:
-            placeholder: 'Bitte einen Text eingeben'
+            placeholder: 'Type something'
             autoparagraph: true
             linking:
               anchor: true

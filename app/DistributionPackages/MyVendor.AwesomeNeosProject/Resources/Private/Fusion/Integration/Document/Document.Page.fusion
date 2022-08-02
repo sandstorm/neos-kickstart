@@ -1,11 +1,5 @@
 prototype(MyVendor.AwesomeNeosProject:Document.Page) < prototype(MyVendor.AwesomeNeosProject:Document.AbstractPage) {
-    body = MyVendor.AwesomeNeosProject:Layout.Default {
-        teaserTitle = MyVendor.AwesomeNeosProject:Helper.DocumentEditableProperty {
-            property = 'teaserTitle'
-        }
+    body.main {
 
-        teaserText = MyVendor.AwesomeNeosProject:Helper.DocumentEditableProperty {
-            property = 'teaserText'
-        }
     }
 }

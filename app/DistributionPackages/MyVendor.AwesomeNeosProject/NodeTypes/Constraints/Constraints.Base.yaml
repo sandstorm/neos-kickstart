@@ -2,7 +2,6 @@
   abstract: true
   constraints:
     nodeTypes:
-      'Neos.NodeTypes.Html:Html': true
       'MyVendor.AwesomeNeosProject:Content.Text': true
       'MyVendor.AwesomeNeosProject:Content.AuthorInfo': true
       'MyVendor.AwesomeNeosProject:Content.Headline': true
@@ -10,6 +9,5 @@
       'MyVendor.AwesomeNeosProject:Content.Button': true
       'MyVendor.AwesomeNeosProject:Content.Anchor': true
       'MyVendor.AwesomeNeosProject:Content.Download': true
-      'Jonnitto.PrettyEmbedVideo:Content.Video': true
-      'Jonnitto.PrettyEmbedYoutube:Content.Youtube': true
+      #'Jonnitto.PrettyEmbedYoutube:Content.Youtube': true
 

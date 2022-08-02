@@ -9,9 +9,9 @@ prototype(MyVendor.AwesomeNeosProject:Component.Columns) < prototype(Neos.Fusion
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}
         renderer = afx`
-            <div class="columns">
+            <MyVendor.AwesomeNeosProject:Utility.ContentWidth class="columns">
                 {props.content}
-            </div>
+            </MyVendor.AwesomeNeosProject:Utility.ContentWidth>
         `
     }
 }

@@ -16,6 +16,6 @@
       type: boolean
       ui:
         reloadIfChanged: true
-        label: 'Link in neuem Tab öffnen?'
+        label: 'Open link in new tab?'
         inspector:
           group: 'properties'

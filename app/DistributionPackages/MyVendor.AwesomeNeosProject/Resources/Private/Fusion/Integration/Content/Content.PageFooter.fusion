@@ -1,0 +1,10 @@
+prototype(MyVendor.AwesomeNeosProject:Content.PageFooter) < prototype(Neos.Fusion:Component) {
+    renderer = MyVendor.AwesomeNeosProject:Component.PageFooter {
+        // content is alway rendered from a ContentCollection from the StartPage document node
+        // see auto-created child node in Document.StartPage.yaml
+        @context.node = ${site}
+        content = Neos.Neos:ContentCollection {
+            nodePath = 'footerContent'
+        }
+    }
+}

@@ -9,8 +9,10 @@ prototype(MyVendor.AwesomeNeosProject:Component.AuthorInfo) < prototype(Neos.Fus
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}
         renderer = afx`
-            <div @if.is={!props.label}>Please choose a author in the inspector</div>
-            <div @if.is={props.label}>You chose: {props.label}</div>
+            <MyVendor.AwesomeNeosProject:Utility.ContentWidth>
+                <div @if.is={!props.label}>Please choose a author in the inspector</div>
+                <div @if.is={props.label}>You chose: {props.label}</div>
+            </MyVendor.AwesomeNeosProject:Utility.ContentWidth>
         `
     }
 }

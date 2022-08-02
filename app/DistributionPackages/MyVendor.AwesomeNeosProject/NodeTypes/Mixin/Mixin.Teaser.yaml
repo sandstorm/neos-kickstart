@@ -7,7 +7,7 @@
         inlineEditable: true
         inline:
           editorOptions:
-            placeholder: 'Bitte eine Hauptüberschrift eingeben'
+            placeholder: 'Please enter a heading'
 'MyVendor.AwesomeNeosProject:Mixin.Teaser.Text':
   abstract: true
   properties:
@@ -18,7 +18,7 @@
         inlineEditable: true
         inline:
           editorOptions:
-            placeholder: 'Bitte eine Beschreibung eingeben (optional)'
+            placeholder: 'Please enter a description (optional)'
 
 
 

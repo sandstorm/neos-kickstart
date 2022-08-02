@@ -42,9 +42,6 @@
         "packagefactory/atomicfusion-proptypes": "~2.0.1",
         "sitegeist/kaleidoscope": "~v6.5.1",
         "sandstorm/cookiepunch": "^4.3.0",
-        "jonnitto/prettyembedvideo": "dev-master",
-        "jonnitto/prettyembedyoutube": "dev-master",
-        "jonnitto/prettyembedhelper": "dev-master",
         "sandstorm/e2etesttools": "@dev",
         "packagefactory/atomicfusion-classnames": "^1.0",
         "neos/swiftmailer": "^7.3.0"

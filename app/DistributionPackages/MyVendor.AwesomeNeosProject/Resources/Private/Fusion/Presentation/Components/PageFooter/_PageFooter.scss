@@ -1,0 +1,19 @@
+.page-footer {
+    margin-top: $spacing--xxl;
+    background-color: $color__grey;
+    color: $color__grey--lighter;
+
+    a {
+        color: $color__blue;
+
+        &:hover, &:focus, &:active {
+            color: $color__blue--dark;
+        }
+    }
+}
+
+
+.page-footer__content {
+    padding-top: $spacing--xl;
+    padding-bottom: $spacing--xl;
+}

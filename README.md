@@ -41,7 +41,7 @@ we provided examples and configuration that helps us to quickly provide a kickst
 - check, if autocompletion works for .yaml-files
 - check, if it's possible to jump to Fusion Prototypes via cmd + click
 
-## Running Kickstart 
+## Running Kickstart when cloning this repo
 
 !!!If you want to clone this package for another project:!!!
 Run `./kickstart.sh` an follow the instructions.
@@ -72,13 +72,6 @@ This should only be needed when running the project for the first time.
 - setup local PHP code for IntelliJ auto-completion: `make setup-idea`
 - you can login to the [neos backend](http://localhost:8081/neos) with the credentials `admin` and `password`
 
-## Start project
-
-```bash
-make setup
-make start
-```
-
 ## Packages we recommend for certain use-cases
 
 1. `sitegeist/monocle` for prototyping components
@@ -99,7 +92,7 @@ Run `make logs` and `make log-flow-exceptions` to see what's going on in the con
 ## IMPORT/EXPORT Content
 
 The default flow command to import and export the site content is not stable.
-So we (Flo) developed an easy-to-use shell script for this case and made it part of the make file:
+So we developed an easy-to-use shell script for this case and made it part of the make file:
 
 ### EXPORT
 The script places two archives in `app/ContentDump` for DB Content and the Ressources.

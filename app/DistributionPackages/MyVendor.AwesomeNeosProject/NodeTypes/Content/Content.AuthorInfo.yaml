@@ -4,7 +4,7 @@
     'MyVendor.AwesomeNeosProject:Mixin.Text': true
   ui:
     label: 'Author Info'
-    icon: icon-file-text
+    icon: icon-user
     position: 210
     inlineEditable: true
   properties:
@@ -14,7 +14,7 @@
         label: 'Author(s)'
         reloadIfChanged: true
         inspector:
-          group: 'general'
+          group: 'properties'
           position: '200'
           editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:

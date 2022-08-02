@@ -1,0 +1,24 @@
+prototype(MyVendor.AwesomeNeosProject:Component.PageMenu) < prototype(Neos.Fusion:Component) {
+    @propTypes {
+        @strict = true
+    }
+    renderer = afx`
+        <nav class="page-menu">
+            <a href="/" class="page-menu__logo">
+                <MyVendor.AwesomeNeosProject:Component.PageHeader.Logo/>
+            </a>
+
+            <MyVendor.AwesomeNeosProject:Component.PageMenu.Main />
+
+            <div class="page-menu__actions">
+                <div class="page-menu__hamburger" role="button"
+                     aria-label="Menü öffnen">
+                    <div class="page-menu__hamburger-line"></div>
+                    <div class="page-menu__hamburger-line"></div>
+                    <div class="page-menu__hamburger-line"></div>
+                </div>
+            </div>
+
+        </nav>
+    `
+}

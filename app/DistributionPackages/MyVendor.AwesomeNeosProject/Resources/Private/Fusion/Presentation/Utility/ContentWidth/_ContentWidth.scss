@@ -1,0 +1,56 @@
+.content-width {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1400px;
+    padding-left: $spacing--lg;
+    padding-right: $spacing--lg;
+}
+
+.content-width--small {
+    max-width: 800px;
+}
+
+.content-width--large {
+    max-width: 1800px;
+    padding-left: $spacing--xxl;
+    padding-right: $spacing--xxl;
+}
+
+.content-width--full {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.content-width-context--blogpost {
+    .content-width {
+        max-width: 1000px;
+        padding-left: $spacing--lg;
+        padding-right: $spacing--lg;
+    }
+
+    .content-width--small {
+        max-width: 800px;
+    }
+
+    .content-width--large {
+        max-width: 1200px;
+        padding-left: $spacing--xxl;
+        padding-right: $spacing--xxl;
+    }
+
+    .content-width--full {
+        max-width: 1400px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+// resetting widths, all elements are styled with equal width
+.content-width-context--column {
+    .content-width {
+        max-width: unset;
+    }
+}

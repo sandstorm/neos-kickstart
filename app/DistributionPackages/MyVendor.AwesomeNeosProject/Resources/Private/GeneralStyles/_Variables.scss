@@ -29,7 +29,14 @@ $base__fontSize: 20px;
 
 // Colors
 $color__white: #fff;
-$color__black: #000;
+$color__white: #fffcf5;
+$color__blue: #00aeef;
+$color__blue--dark: darken($color__blue, 10%);
+$color__black: #222222;
+$color__grey: #434343;
+$color__grey--dark: #282828;
+$color__grey--light: #868686;
+$color__grey--lighter: #dadada;
 
 // Typography
 $typo__heading__fontFamily: "Sansation Regular", Arial, Helvetica, sans-serif;
@@ -57,6 +64,10 @@ $spacing--xxl: 16 * $base__module;
 $button__height: 40px;
 $button__height--large: 50px;
 $button__height--larger: 60px;
+
+$header__height: 85px;
+$headerLogo__height: 64px;
+$breadCrumb__height: 40px;
 
 $breakpoints: (
     xxsmall: "(max-width: 374px)",

@@ -5,7 +5,10 @@
 # found here: https://github.com/neos/neos-development-collection/pull/2374
 #
 error {
-    @context.notfoundDocument = ${q(site).children('[instanceof MyVendor.AwesomeNeosProject:Document.ErrorPage]').filter('[uriPathSegment="404"]').get(0)}
+    // see app/DistributionPackages/Sandstorm.Website/NodeTypes/Document/Document.StartPage.yaml
+    // the notFoundPage is a auto-created child node. we use the node path to access the 404 page document node,
+    // since it is most stable and unique.
+    @context.notfoundDocument = ${q(site).find('notfoundpage').get(0)}
     4xx {
         @position = 'start'
         condition = ${statusCode >= 400 && statusCode < 500 && notfoundDocument}

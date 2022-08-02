@@ -3,18 +3,19 @@
   properties:
     title:
       type: string
-      defaultValue: '<h2>Bitte eine Überschrift eingeben</h2>'
+      defaultValue: '<h2>Please enter a heading</h2>'
       ui:
         inlineEditable: true
         inline:
           editorOptions:
-            placeholder: 'Bitte eine Überschrift eingeben'
+            placeholder: 'Please enter a heading'
             linking:
               anchor: true
               title: true
               relNofollow: true
               targetBlank: true
             formatting:
+              h1: true
               h2: true
               h3: true
               h4: true

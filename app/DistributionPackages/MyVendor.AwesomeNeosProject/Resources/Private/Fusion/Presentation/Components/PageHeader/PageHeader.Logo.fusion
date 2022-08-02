@@ -1,0 +1,14 @@
+prototype(MyVendor.AwesomeNeosProject:Component.PageHeader.Logo) < prototype(Neos.Fusion:Component) {
+    renderer = Neos.Fusion:Component {
+        //there will be a proper logo to implement here
+        _logoResourceUri = Neos.Fusion:ResourceUri {
+            path = 'resource://MyVendor.AwesomeNeosProject/Public/Images/logo.svg'
+        }
+        renderer = afx`
+        <div class="page-header__logo">
+            <img src={props._logoResourceUri} alt="Logo" />
+        </div>
+        `
+    }
+
+}

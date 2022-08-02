@@ -3,9 +3,22 @@ prototype(MyVendor.AwesomeNeosProject:Document.AbstractPage) < prototype(Neos.Ne
         javascripts.site = MyVendor.AwesomeNeosProject:Resources.HeaderAssets
     }
 
-    body = MyVendor.AwesomeNeosProject:Layout.Default {
-        content = Neos.Neos:ContentCollection {
-            nodePath = 'main'
+    htmlTag.attributes.lang = 'en'
+
+    body >
+    body = Neos.Fusion:Join {
+        @position = 'after bodyTag'
+        header = MyVendor.AwesomeNeosProject:Component.PageHeader {
+            menu = MyVendor.AwesomeNeosProject:Component.PageMenu
         }
+        main = MyVendor.AwesomeNeosProject:Layout.Default {
+            content = Neos.Fusion:Join {
+                mainContent = Neos.Neos:ContentCollection {
+                    nodePath = 'main'
+                }
+            }
+        }
+        footer = MyVendor.AwesomeNeosProject:Content.PageFooter
     }
+
 }

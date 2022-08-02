@@ -1,14 +1,20 @@
 Sandstorm:
   CookiePunch:
     consent:
+      elementID: cookie-punch
+      storageMethod: cookie
+      cookieName: cookie_punch
+      cookieExpiresAfterDays: 120
+      mustConsent: true
+      acceptAll: true
+      hideDeclineAll: false
+      default: true
       purposes:
         mediaembeds:
-          title: Media Embeds
-          description: Some Description
+          title: MyVendor.AwesomeNeosProject:CookiePunch:purpose.mediaembeds.title
       services:
-        youtube:
-          title: Youtube
-          description: Video Player
+        youtube: # blocked using patterns
+          title: YouTube
           purposes:
             - mediaembeds
     blocking:
@@ -16,6 +22,8 @@ Sandstorm:
         script:
           "Packages/Neos.Neos":
             block: false
+#          "Packages/Jonnitto.PrettyEmbedHelper":
+#            service: youtube
         iframe:
           "https://www.youtube.com":
             service: youtube

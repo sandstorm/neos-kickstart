@@ -1,0 +1,22 @@
+// with the id `#cookie-punch` we can be more specific and therefore override the styling
+// see Settings.CookiePunch.yaml
+#cookie-punch .klaro {
+    font-size: 1rem;
+
+    .cookie-modal {
+        z-index: 3000;
+
+        .cm-btn {
+            @extend .button;
+            margin-bottom: 0;
+        }
+
+        .cm-btn-accept-all {
+            @extend .button--primary;
+        }
+    }
+
+    .cm-list-input:checked + .cm-list-label .slider {
+        background-color: $color__blue;
+    }
+}

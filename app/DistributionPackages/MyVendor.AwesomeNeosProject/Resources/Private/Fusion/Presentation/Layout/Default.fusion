@@ -1,22 +1,14 @@
 prototype(MyVendor.AwesomeNeosProject:Layout.Default) < prototype(Neos.Fusion:Component) {
     content = ''
-    teaserTitle = ''
-    teaserText = ''
 
     @propTypes {
         # validation rules for props
         content = ${PropTypes.any}
-        teaserTitle = ${PropTypes.string}
-        teaserText = ${PropTypes.string}
     }
 
     renderer = afx`
     <main>
-        <div class="container">
-            <h1>{props.teaserTitle}</h1>
-            <p>{props.teaserText}</p>
-            {props.content}
-        </div>
+        {props.content}
     </main>
     `
 }

@@ -6,3 +6,6 @@
   childNodes:
     main:
       type: 'MyVendor.AwesomeNeosProject:ContentCollection.Default'
+  constraints:
+    nodeTypes:
+      '*': ~
