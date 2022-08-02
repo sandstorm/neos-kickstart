@@ -11,5 +11,6 @@ prototype(MyVendor.AwesomeNeosProject:Content.Download) < prototype(Neos.Neos:Co
             // this will provide an icon for the filetype
             asset = ${q(node).property('file')}
         }
+        textAlign = ${q(node).property('textAlign')}
     }
 }

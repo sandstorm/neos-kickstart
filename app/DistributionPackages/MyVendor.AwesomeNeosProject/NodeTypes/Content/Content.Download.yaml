@@ -1,6 +1,7 @@
 'MyVendor.AwesomeNeosProject:Content.Download':
   superTypes:
     'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
+    'MyVendor.AwesomeNeosProject:Mixin.Align': true
   ui:
     label: Download
     icon: icon-download
@@ -11,7 +12,7 @@
       type: Neos\Media\Domain\Model\Asset
       editor: Neos.Neos/Inspector/Editor/AssetEditor
       ui:
-        label: 'Datei'
+        label: 'File'
         reloadIfChanged: false
         inspector:
           group: properties
@@ -22,4 +23,4 @@
         inlineEditable: true
         inline:
           editorOptions:
-            placeholder: 'Download Beschreibung'
+            placeholder: 'Download description'

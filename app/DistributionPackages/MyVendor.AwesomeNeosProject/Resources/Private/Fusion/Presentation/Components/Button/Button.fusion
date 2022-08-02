@@ -4,6 +4,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:
     isExternalLink = false
     inBackend = ${node.context.inBackend}
     type = ''
+    textAlign = ''
 
     @propTypes {
         @strict = true
@@ -12,6 +13,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:
         type = ${PropTypes.oneOf(['primary', 'secondary'])}
         isExternalLink = ${PropTypes.boolean}
         inBackend = ${PropTypes.boolean}
+        textAlign = ${PropTypes.string}
     }
 
     renderer = Neos.Fusion:Component {
@@ -32,7 +34,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:
             }
         }
         renderer =  afx`
-            <MyVendor.AwesomeNeosProject:Utility.ContentWidth class="button__outer">
+            <MyVendor.AwesomeNeosProject:Utility.ContentWidth class={AtomicFusion.classNames('button-outer' , props.textAlign)}>
                 <Neos.Fusion:Tag
                     tagName={(props.href && !props.inBackend) ? 'a' : 'div'}
                     attributes.class={AtomicFusion.classNames('button' , props._buttonClassNames)}
