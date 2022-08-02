@@ -8,7 +8,6 @@
         inline:
           editorOptions:
             placeholder: 'Type something'
-            autoparagraph: true
             linking:
               anchor: true
               title: true
@@ -25,3 +24,8 @@
               ol: true
               ul: true
               a: true
+              left: true
+              right: true
+              center: true
+              justify: true
+              table: true

@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Application } from "@hotwired/stimulus";
 
 // We decided to use https://stimulus.hotwired.dev/ to write js code
@@ -13,6 +14,7 @@ declare global {
 const Stimulus = Application.start();
 // we decided to add controllers manually as we want to use our own folder structure
 // for ts/js
+// @ts-ignore
 Stimulus.handleError = (error, message, detail) => {
     console.warn(message, detail);
     window.ErrorTrackingSystem.captureException(error);

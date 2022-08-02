@@ -9,5 +9,5 @@
       'MyVendor.AwesomeNeosProject:Content.Button': true
       'MyVendor.AwesomeNeosProject:Content.Anchor': true
       'MyVendor.AwesomeNeosProject:Content.Download': true
-      #'Jonnitto.PrettyEmbedYoutube:Content.Youtube': true
+      'Jonnitto.PrettyEmbedVideoPlatforms:Content.Video': true
 

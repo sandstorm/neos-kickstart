@@ -20,3 +20,10 @@
         background-color: $color__blue;
     }
 }
+
+.klaro {
+    .context-notice {
+        @extend .content-width;
+        min-height: 300px;
+    }
+}

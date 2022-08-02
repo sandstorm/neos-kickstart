@@ -2813,10 +2813,10 @@
             "dist": {
                 "type": "path",
                 "url": "./DistributionPackages/MyVendor.AwesomeNeosProject",
-                "reference": "237c5da53ab0088b2722c5def4a0810f182564c7"
+                "reference": "7c24f283b56ab3b408865a8047c18d639af9195d"
             },
             "require": {
-                "jonnitto/prettyembedvideoplatforms": "*",
+                "jonnitto/prettyembedvideoplatforms": "^2.0",
                 "neos/neos": "*"
             },
             "suggest": {

@@ -4,6 +4,6 @@ prototype(Neos.Neos:Page) {
     @process.blockTags = ${CookiePunch.blockTags(["iframe", "script"],value, !node.context.inBackend)}
 }
 
-//prototype(Jonnitto.PrettyEmbedYoutube:Component.Youtube) {
-//    @process.addContextualConsent = ${CookiePunch.addContextualConsent("youtube", value, !node.context.inBackend)}
-//}
+prototype(Jonnitto.PrettyEmbedVideoPlatforms:Component.Video) {
+    @process.addContextualConsent = ${CookiePunch.addContextualConsent("youtube", value, !node.context.inBackend)}
+}

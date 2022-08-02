@@ -3,7 +3,7 @@
     "type": "neos-site",
     "require": {
         "neos/neos": "*",
-        "jonnitto/prettyembedvideoplatforms": "*"
+        "jonnitto/prettyembedvideoplatforms": "^2.0"
     },
     "suggest": {
         "neos/seo": "*"

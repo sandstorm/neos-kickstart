@@ -41,12 +41,11 @@
         background-color: $color__blue;
         border-color: $color__blue;
 
-
         color: $color__white;
 
         &:hover, &:active, &:focus {
             background-color: $color__white;
-            border-color: $color__white;
+            border-color: $color__blue;
             color: $color__blue;
         }
     }

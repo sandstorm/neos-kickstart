@@ -1,0 +1,14 @@
+Jonnitto:
+  PrettyEmbedHelper:
+    # If you want to use your own assets, set this to false (Backend.js and Backend.css will be always be included in the backend)
+    includeAssets:
+      css: true
+      js: true
+
+    # This is the maximum width of a custom preview image
+    maximumWidth: 1920
+
+    # If this is set to a string, the element gets wrapped with a div and the class with the giving string.
+    # If set to true, the element gets wrapped with a div without any class.
+    # If set to false, the element get not wrapped at all
+    wrapper: 'content-width'

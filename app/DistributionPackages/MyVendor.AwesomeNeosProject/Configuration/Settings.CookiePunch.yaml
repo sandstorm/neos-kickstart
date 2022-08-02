@@ -22,8 +22,10 @@ Sandstorm:
         script:
           "Packages/Neos.Neos":
             block: false
-#          "Packages/Jonnitto.PrettyEmbedHelper":
-#            service: youtube
+          "Packages/Jonnitto.PrettyEmbedHelper":
+            service: youtube
+          "Packages/Jonnitto.PrettyEmbedVideoPlatforms":
+            service: youtube
         iframe:
           "https://www.youtube.com":
             service: youtube
