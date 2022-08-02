@@ -56,7 +56,7 @@ This should only be needed when running the project for the first time.
 - run `cd ./e2e-testrunner && nvm install && nvm use && npm install` as we do not want to use a docker container to be able
   to debug Playwright test more easily. TODO: maybe run in `make tests` but nvm is currently giving us a headache here.
 - for font awesome pro support in local dev
-    - open: `app/DistributionPackages/Sandstorm.Website/Resources/Private/.npmrc.sample`
+    - open: `app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/.npmrc.sample`
     - and do what the file tells you ;)
 
 ## Local Development
@@ -65,7 +65,7 @@ This should only be needed when running the project for the first time.
 - run `make logs` and `make log-flow-exceptions` to see what's going on in the containers
 - run `make logs-assets` to see the logs of scss being compiled to css and ts being compiled to js
     - alternatively you can install node dependencies and run the watcher locally
-    - `cd app/DistributionPackages/Sandstorm.Website/Resources/Private/`
+    - `cd app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/`
     - `nvm install && nvm use && yarn && yarn run watch`
     - see `package.json` for more scripts
 - run `make help` to see all available commands
