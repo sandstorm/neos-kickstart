@@ -36,3 +36,4 @@ tar -xf /app/ContentDump/Resources.tar.gz -C /app/Data/Persistent/Resources
 ./flow resource:publish
 
 echo "ALL DONE, HAVE FUN ;)"
+echo "(you have to re-create the neos users)"

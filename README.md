@@ -87,6 +87,9 @@ make site-export
 make site-import
 ```
 
+You have to re-create the local admin user again after the import is finished.
+
+`./flow user:create --roles Administrator admin password LocalDev Admin || true`
 
 ## Roadmap
 Things we want to add or document for an easier kickstart.
