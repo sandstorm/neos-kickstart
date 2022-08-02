@@ -9,8 +9,5 @@
     inlineEditable: true
   properties:
     text:
-      ui:
-        aloha:
-          placeholder: '<p>Enter text here...</p>'
       options:
         silhouette: 'text.free'
