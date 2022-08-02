@@ -1,0 +1,8 @@
+a {
+    word-break: break-word;
+    color: $color__blue;
+
+    &:hover, &:focus, &:active {
+        color: $color__blue--dark;
+    }
+}

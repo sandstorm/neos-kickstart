@@ -11,6 +11,7 @@ h1 {
     font-size: $typo__h1__fontSize;
     font-weight: $typo__heading__fontWeight;
     line-height: $typo__heading__lineHeight;
+    word-break: break-word;
 }
 
 h2 {
@@ -18,6 +19,7 @@ h2 {
     font-size: $typo__h2__fontSize;
     font-weight: $typo__heading__fontWeight;
     line-height: $typo__heading__lineHeight;
+    word-break: break-word;
 }
 
 h3 {
@@ -25,6 +27,7 @@ h3 {
     font-size: $typo__h3__fontSize;
     font-weight: $typo__heading__fontWeight;
     line-height: $typo__heading__lineHeight;
+    word-break: break-word;
 }
 
 h4 {
@@ -32,6 +35,7 @@ h4 {
     font-size: $typo__h4__fontSize;
     font-weight: $typo__heading__fontWeight;
     line-height: $typo__heading__lineHeight;
+    word-break: break-word;
 }
 
 h5 {
@@ -39,6 +43,7 @@ h5 {
     font-size: $typo__h5__fontSize;
     font-weight: $typo__heading__fontWeight;
     line-height: $typo__heading__lineHeight;
+    word-break: break-word;
 }
 
 h6 {
@@ -46,6 +51,7 @@ h6 {
     font-size: $typo__h6__fontSize;
     font-weight: $typo__heading__fontWeight;
     line-height: $typo__heading__lineHeight;
+    word-break: break-word;
 }
 
 .text-align--center {
