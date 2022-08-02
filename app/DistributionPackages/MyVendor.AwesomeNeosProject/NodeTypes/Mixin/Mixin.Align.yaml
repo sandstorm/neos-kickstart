@@ -1,0 +1,20 @@
+'MyVendor.AwesomeNeosProject:Mixin.Align':
+  abstract: true
+  properties:
+    textAlign:
+      type: string
+      defaultValue: 'text-align--left'
+      ui:
+        label: 'Text align'
+        reloadIfChanged: true
+        inspector:
+          group: 'properties'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'text-align--left':
+                label: 'Left'
+              'text-align--center':
+                label: 'Center'
+              'text-align--right':
+                label: 'Right'

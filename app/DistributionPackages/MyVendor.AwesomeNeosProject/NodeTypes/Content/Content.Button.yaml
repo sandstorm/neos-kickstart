@@ -5,7 +5,7 @@
   ui:
     label: 'Button'
     icon: icon-box
-    position: 500
+    position: 30
   properties:
     text:
       type: string

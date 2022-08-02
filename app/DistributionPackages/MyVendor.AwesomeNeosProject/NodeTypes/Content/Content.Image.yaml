@@ -2,45 +2,10 @@
   superTypes:
     'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
     'MyVendor.AwesomeNeosProject:Mixin.Image': true
+    'MyVendor.AwesomeNeosProject:Mixin.Link': true
+    'MyVendor.AwesomeNeosProject:Mixin.ContentWidth': true
+    'MyVendor.AwesomeNeosProject:Mixin.Align': true
   ui:
-    label: 'Bild'
+    label: 'Image'
     icon: icon-picture
-    position: 300
-  properties:
-    textWrap:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Textumfluss'
-        reloadIfChanged: true
-        inspector:
-          group: properties
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            values:
-              '':
-                label: 'kein'
-              right:
-                label: 'rechts'
-              left:
-                label: 'links'
-    width:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Breite'
-        reloadIfChanged: true
-        inspector:
-          # setting an image width only makes sense if text wrapping is enabled
-          hidden: 'ClientEval:node.properties.textWrap ? false : true'
-          group: properties
-          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            values:
-              '':
-                label: '100%'
-              '50':
-                label: '50%'
-              '33':
-                label: '33%'
-
+    position: 40

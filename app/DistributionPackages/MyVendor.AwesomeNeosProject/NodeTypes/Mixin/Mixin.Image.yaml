@@ -12,8 +12,16 @@
     alternativeText:
       type: string
       ui:
-        label: 'Alternate text'
+        label: 'Alternate Text'
         reloadIfChanged: false
         inspector:
           group: 'image'
           position: 100
+    description:
+      type: string
+      ui:
+        label: 'Description'
+        reloadIfChanged: true
+        inspector:
+          group: 'image'
+          position: 102

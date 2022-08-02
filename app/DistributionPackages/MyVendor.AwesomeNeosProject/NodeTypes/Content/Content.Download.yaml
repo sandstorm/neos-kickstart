@@ -4,7 +4,7 @@
   ui:
     label: Download
     icon: icon-download
-    position: 200
+    position: 35
     inlineEditable: true
   properties:
     file:

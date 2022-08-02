@@ -1,13 +1,19 @@
 prototype(MyVendor.AwesomeNeosProject:Content.Image) < prototype(Neos.Neos:ContentComponent) {
-    renderer = MyVendor.AwesomeNeosProject:Component.Image {
-        alternativeText = MyVendor.AwesomeNeosProject:Helper.ImageAltText {
-            image = ${q(node).property('image')}
-        }
-        imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
-            asset = ${q(node).property('image')}
-        }
+    renderer = MyVendor.AwesomeNeosProject:Utility.ContentWidth {
+        class = ${AtomicFusion.classNames(q(node).property('textAlign'), 'image__wrapper')}
+        size = ${q(node).property('contentWidth')}
+        content = MyVendor.AwesomeNeosProject:Component.Image {
+            alternativeText = MyVendor.AwesomeNeosProject:Helper.ImageAltText {
+                image = ${q(node).property('image')}
+            }
+            description = ${q(node).property('description')}
+            imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
+                asset = ${q(node).property('image')}
+            }
 
-        textWrap = ${q(node).property('textWrap')}
-        width =  ${q(node).property('width')}
+            href = ${q(node).property('link')}
+            href.@process.convert = Neos.Neos:ConvertUris
+            isExternalLink = ${q(node).property('isExternalLink')}
+        }
     }
 }

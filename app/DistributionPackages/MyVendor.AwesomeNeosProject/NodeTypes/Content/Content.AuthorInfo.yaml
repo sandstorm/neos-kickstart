@@ -5,7 +5,7 @@
   ui:
     label: 'Author Info'
     icon: icon-user
-    position: 210
+    position: 100
     inlineEditable: true
   properties:
     authors:
