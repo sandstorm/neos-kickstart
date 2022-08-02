@@ -38,7 +38,6 @@ prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:
                     attributes.class={AtomicFusion.classNames('button' , props._buttonClassNames)}
                     attributes.href={props.href ? props.href : null}
                     attributes.target={props.isExternalLink ? props._target : null}
-                    attributes.data-controller={'ScrollTransition'}
                 >
                     {props.text}
                 </Neos.Fusion:Tag>

@@ -1,9 +1,0 @@
-*[data-controller="ScrollTransition"] {
-  opacity: 1;
-  transition-property: opacity, transform;
-  transition-duration: 2000ms;
-}
-
-.ScrollTransition--hide {
-  opacity: 0;
-}
