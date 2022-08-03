@@ -32,6 +32,7 @@ $color__white: #fff;
 $color__white: #fffcf5;
 $color__blue: #00aeef;
 $color__blue--dark: darken($color__blue, 10%);
+$color__red: #d71a06;
 $color__black: #222222;
 $color__grey: #434343;
 $color__grey--dark: #282828;
@@ -64,6 +65,8 @@ $spacing--xxl: 16 * $base__module;
 $button__height: 40px;
 $button__height--large: 50px;
 $button__height--larger: 60px;
+
+$input__height: 40px;
 
 $header__height: 85px;
 $headerLogo__height: 64px;

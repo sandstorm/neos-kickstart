@@ -1,0 +1,49 @@
+.contact-form {
+    // TODO: Neos.Fusion.Form renders its own submit button.
+    // At the time committing this, I didn't know how to disable
+    // this button: This is how this hacky CSS code came here ...
+    button[type=submit]:not(#submitContactForm) {
+        display: none;
+    }
+}
+
+.contact-form__hints {
+    margin-bottom: $spacing__lg;
+
+    label {
+        margin: $base__module;
+        display: block;
+
+        font-size: .9rem;
+    }
+}
+
+.contact-form__success {
+    display: flex;
+    padding: $spacing__lg;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+    background-color: $color__blue;
+
+    color: $color__white;
+
+    h4 {
+        margin-top: 0;
+    }
+}
+
+.contact-form__action {
+    margin: $base__module;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    .button:disabled {
+        opacity: 0.5;
+    }
+}
+
+
+

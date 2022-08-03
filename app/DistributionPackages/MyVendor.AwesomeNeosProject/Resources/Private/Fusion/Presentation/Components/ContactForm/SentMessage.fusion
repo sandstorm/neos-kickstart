@@ -1,0 +1,8 @@
+prototype(MyVendor.AwesomeNeosProject:Component.SentMessage) < prototype(Neos.Fusion:Component) {
+    renderer = afx`
+        <div class="contact-form__success">
+            <h4>Form send!</h4>
+            <span>Thanks for your message.</span>
+        </div>
+    `
+}

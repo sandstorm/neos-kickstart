@@ -8,5 +8,6 @@
       'MyVendor.AwesomeNeosProject:Content.Button': true
       'MyVendor.AwesomeNeosProject:Content.Anchor': true
       'MyVendor.AwesomeNeosProject:Content.Download': true
+      'MyVendor.AwesomeNeosProject:Content.ContactForm': true
       'Jonnitto.PrettyEmbedVideoPlatforms:Content.Video': true
 

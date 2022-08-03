@@ -1,0 +1,47 @@
+prototype(MyVendor.AwesomeNeosProject:Component.ContactForm) < prototype(Neos.Fusion:Component) {
+    renderer = afx`
+        <Neos.Fusion.Form:FieldContainer class="form-group" field.name="name" label="Your name *">
+            <Neos.Fusion.Form:Input field.name="name"/>
+        </Neos.Fusion.Form:FieldContainer>
+
+        <Neos.Fusion.Form:FieldContainer class="form-group" field.name="email" label="Email address *">
+            <Neos.Fusion.Form:Input attributes.type="email" field.name="email"/>
+        </Neos.Fusion.Form:FieldContainer>
+
+        <Neos.Fusion.Form:FieldContainer class="form-group" field.name="message" label="Your message to us">
+            <Neos.Fusion.Form:Textarea field.name="message"/>
+        </Neos.Fusion.Form:FieldContainer>
+
+        <Neos.Fusion.Form:FieldContainer class="form-group" field.name="selection"
+                                         label="Do you like this form?">
+            <div class="select">
+                <Neos.Fusion.Form:Select field.name="selection">
+                    <Neos.Fusion.Form:Select.Option option.value="yes">yes</Neos.Fusion.Form:Select.Option>
+                    <Neos.Fusion.Form:Select.Option option.value="yes, but...">yes, but...</Neos.Fusion.Form:Select.Option>
+                    <Neos.Fusion.Form:Select.Option option.value="no">no</Neos.Fusion.Form:Select.Option>
+                </Neos.Fusion.Form:Select>
+            </div>
+        </Neos.Fusion.Form:FieldContainer>
+
+        <Neos.Fusion.Form:FieldContainer class="form-group form-file-upload" field.name="attachment1">
+            <Neos.Fusion.Form:Input
+                attributes.type="file"
+                attributes.accept=".pdf"
+                field.name="attachment1"
+            />
+            <label for="contactform[attachment1]">
+                Select a pdf file
+            </label>
+        </Neos.Fusion.Form:FieldContainer>
+
+        <div class="contact-form__hints">
+            <label>
+                * Required fields
+            </label>
+        </div>
+
+        <div class="contact-form__action">
+            <Neos.Fusion.Form:Button attributes.id="submitContactForm" attributes.class="button button--large button--primary" attributes.disabled={false}>Send</Neos.Fusion.Form:Button>
+        </div>
+    `
+}

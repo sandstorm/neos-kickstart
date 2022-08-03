@@ -1,0 +1,127 @@
+.form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+
+    &--smallWidth {
+        width: 300px;
+    }
+}
+
+.form .form-group {
+    margin-bottom: $spacing__lg;
+}
+
+.form label {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: $spacing__sm;
+}
+
+.form input:not([type=file]), .form select, .form textarea {
+    width: 100%;
+    height: $input__height;
+    margin: 0;
+    padding-left: $spacing--md;
+    padding-right: $spacing--md;
+
+    border: 1px solid $color__grey;
+
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+
+    transition: .25s border-color ease;
+
+    &:hover, &:focus {
+        border-color: $color__blue;
+    }
+}
+
+.form textarea {
+    min-height: 150px;
+    padding: $spacing__md;
+}
+
+.form .select {
+    position: relative;
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    &::after {
+        content: '\25BC';
+        position: absolute;
+        margin: 12px;
+        top: -5px;
+        right: -5px;
+
+        color: $color__black;
+
+        pointer-events: none;
+        cursor: pointer;
+        transition: .25s all ease;
+    }
+
+    &:hover::after {
+        color: $color__blue;
+    }
+
+    select {
+        padding: 0 .5em;
+        flex: 1;
+
+        outline: 0;
+        box-shadow: none;
+        border-radius: unset;
+        background-image: none;
+
+        cursor: pointer;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+}
+
+.form .form-file-upload {
+    input {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+
+        &:focus + label {
+            background-color: $color__white;
+            border-color: $color__blue;
+            color: $color__blue;
+        }
+    }
+
+    label {
+        @extend .button;
+        @extend .button--primary;
+        margin-bottom: 0;
+    }
+}
+
+
+.form .error {
+    font-size: .9rem;
+
+    .errors {
+        padding: 0;
+        margin: 0;
+
+        color: $color__red;
+        list-style: none;
+    }
+
+    input {
+        border-color: $color__red;
+    }
+}

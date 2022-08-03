@@ -1,0 +1,15 @@
+'MyVendor.AwesomeNeosProject:Content.ContactForm':
+  superTypes:
+    'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
+  ui:
+    label: 'Contact Form'
+    icon: icon-envelope
+    position: 120
+  properties:
+    mailTo:
+      type: string
+      defaultValue: contact@sandstorm.de
+      ui:
+        label: 'Recipient address'
+        inspector:
+          group: 'properties'
