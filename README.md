@@ -6,6 +6,8 @@ we provided examples and configuration that helps us to quickly provide a kickst
 ## requirements
 
 - docker for mac
+  - enable VirtioFS in docker host settings (experimental features)
+  - alternatively, comment out the volume mount in the docker-compose.yml if you encounter bad local performance 
 - node -> to run Playwright Tests or for local development (without docker) of your sites JavaScript
 
 ## Features
