@@ -71,6 +71,7 @@ e2e_test:
   # we're running this job inside the production image we've just built previously
   needs:
     - build_e2e_testrunner
+    - package_app
   image:
     name: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG
     # we need to override the entrypoint here
