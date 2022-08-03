@@ -7,20 +7,20 @@ gzip -dk /app/ContentDump/Database.sql.gz
 # generating tables to be dropped before restoring backup
 echo "SET FOREIGN_KEY_CHECKS = 0;" > ./temp.sql
 mysqldump \
-    --host=maria-db \
-    --user=neos \
-    --password=neos \
+    --host=$DB_NEOS_HOST \
+    --user=$DB_NEOS_USER \
+    --password=$DB_NEOS_PASSWORD \
     --add-drop-table \
     --no-data \
-    neos \
+    $DB_NEOS_DATABASE \
      | grep 'DROP TABLE' >> ./temp.sql
 echo "SET FOREIGN_KEY_CHECKS = 1;" >> ./temp.sql
 
 # dropping tables
-mysql --host=maria-db --user=neos --password=neos neos < ./temp.sql
+mysql --host=$DB_NEOS_HOST --user=$DB_NEOS_USER --password=$DB_NEOS_PASSWORD $DB_NEOS_DATABASE < ./temp.sql
 
 # importing dumps
-mysql --host=maria-db --user=neos --password=neos neos < /app/ContentDump/Database.sql
+mysql --host=$DB_NEOS_HOST --user=$DB_NEOS_USER --password=$DB_NEOS_PASSWORD $DB_NEOS_DATABASE < /app/ContentDump/Database.sql
 
 # cleaning up
 rm ./temp.sql
