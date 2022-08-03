@@ -10,7 +10,13 @@ FROM php:8.1-fpm-bullseye
 
 # install git and unzip for Composer
 RUN apt-get update -y && \
-    apt-get install --no-install-recommends -y unzip git default-mysql-client && \
+    apt-get install --no-install-recommends -y  \
+    unzip \
+    git \
+    default-mysql-client \
+    inotify-tools \
+    vim \
+    && \
     rm -rf /var/lib/apt/lists/*
 
 # HOTFIX for ARM64 Architectures and VIPS (see https://github.com/opencv/opencv/issues/14884#issuecomment-706725583 for details)
@@ -34,7 +40,6 @@ RUN apt-get update -y && \
         libpq-dev \
         vim \
         less \
-        inotify-tools \
         && \
     mkdir -p /var/log/supervisor && \
     rm -rf /var/lib/apt/lists/* && \
