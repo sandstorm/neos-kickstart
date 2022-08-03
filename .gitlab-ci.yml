@@ -29,6 +29,8 @@ build_sass:
 package_app:
   stage: build
   image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:8.1-v2
+  needs:
+    - build_sass
   tags:
     - docker
     - privileged

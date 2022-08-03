@@ -36,7 +36,7 @@ green_echo "####### Waiting for Neos (System under testing) to start"
 # forever.
 counter=0
 until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:9090); do
-    if [ "$counter" -gt 4 ]; then
+    if [ "$counter" -gt 10 ]; then
         red_echo "FAILED: Waiting for Neos to start took too long!!!"
         exit 1
     fi
