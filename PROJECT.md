@@ -86,3 +86,39 @@ Make sure the application is up and running `make start`
   - in a new console run `make e2e-tests` to run the actual tests
 - for Unit Tests run `make unit-tests` 
 - for Functional Tests run `make functional-tests` 
+
+### debug failing tests
+
+1. see screenshots in `./e2e-testrunner`
+2. reports can be viewed by installing playwright once globally (`npm install -g playwright`) and run the traces via
+```
+npx playwright show-trace e2e-testrunner/report_YOUR_FAILING_STEP.zip
+```
+
+#### run single BDD feature files / scenarios
+
+The `make e2e-tests` command runs **all tests** what is handy before you push your commits.
+Often, in TDD it is more practical to run single feature files or scenarios. That has to be done via
+command line, since the IntelliJ integration "play button" does not work for our docker setup (afaik).
+
+How to run single feature files (see also README of Sandstorm.E2ETestTools):
+```
+docker compose exec neos bin/behat -c Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Behavior/behat.yml.dist -vvv Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Behavior/Features/Frontend/404-page.feature
+```
+
+#### Generating content (node) fixtures workflow:
+
+1. set up your test content that you want to export in the Neos backend (using the default local dev port `8080`)
+2. write new commands for exporting specific pages in `\MyVendor\AwesomeNeosProject\Command\StepGeneratorCommandController` to export only specific nodes for your fixtures
+3. Run and copy to clipboard with:
+```
+docker compose exec -T neos ./flow stepgenerator:homepage | pbcopy
+docker compose exec -T neos ./flow stepgenerator:notfoundpage | pbcopy
+```
+4. paste into your feature files and run tests
+
+### setup tests in IntelliJ
+
+for auto-completion and IDEA support of your BDD Tests do the following steps:
+
+1. make sure, you installed "Behat Support" Plugin

@@ -14,6 +14,8 @@
 #        _hiddenInIndex: true
   properties:
     uriPathSegment:
+      # the not found page is SINGLETON per default - meaning only one node per dimension/workspace should exist at a time!
+      # -> that's why we can hard-code the uri path for that document.
       defaultValue: '404'
     title:
       defaultValue: '404 - Not Found'

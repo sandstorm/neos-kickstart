@@ -71,7 +71,6 @@ This should only be needed when running the project for the first time.
     - `nvm install && nvm use && yarn && yarn run watch`
     - see `package.json` for more scripts
 - run `make help` to see all available commands
-- setup local PHP code for IntelliJ auto-completion: `make setup-idea`
 - you can login to the [neos backend](http://localhost:8081/neos) with the credentials `admin` and `password`
 
 ## Packages we recommend for certain use-cases
