@@ -3,9 +3,12 @@ set -ex
 
 ./flow doctrine:migrate
 
-./flow site:import --package-key $SITE_IMPORT_PACKAGE_KEY
-
-./flow resource:publish
+# only run site import when nothing was imported before
+importedSites=`./flow site:list`
+if [ "$importedSites" = "No sites available" ]; then
+    echo "Importing content from ./ContentDump"
+    ./ContentDump/importSite.sh
+fi
 
 ./flow flow:cache:flush
 ./flow cache:warmup
