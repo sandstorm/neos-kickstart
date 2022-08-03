@@ -6,6 +6,8 @@ we provided examples and configuration that helps us to quickly provide a kickst
 ## requirements
 
 - docker for mac
+  - enable VirtioFS in docker host settings (experimental features)
+  - alternatively, comment out the volume mount in the docker-compose.yml if you encounter bad local performance 
 - node -> to run Playwright Tests or for local development (without docker) of your sites JavaScript
 
 ## Features
@@ -69,7 +71,6 @@ This should only be needed when running the project for the first time.
     - `nvm install && nvm use && yarn && yarn run watch`
     - see `package.json` for more scripts
 - run `make help` to see all available commands
-- setup local PHP code for IntelliJ auto-completion: `make setup-idea`
 - you can login to the [neos backend](http://localhost:8081/neos) with the credentials `admin` and `password`
 
 ## Packages we recommend for certain use-cases

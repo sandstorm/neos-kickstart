@@ -8,10 +8,6 @@ setup:
 	@mkdir -p ./tmp/.yarn-cache
 	@make build
 
-setup-idea:
-	@cd app && composer install --ignore-platform-reqs
-	@cd app/Build/Behat && composer install --ignore-platform-reqs
-
 start:
 	@docker compose up -d
 

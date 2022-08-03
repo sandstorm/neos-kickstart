@@ -14,6 +14,8 @@ services:
     build:
       context: .
       dockerfile: ./deployment/local-dev/neos/Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
       FLOW_CONTEXT: 'Development/Docker'
       COMPOSER_CACHE_DIR: '/composer_cache'
@@ -40,6 +42,8 @@ services:
       # Content is writable to enable content dumps from inside the container
       - ./app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/Content:/app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/Content/:cached
       - ./app/DistributionPackages/MyVendor.AwesomeNeosProject/Migrations/:/app/DistributionPackages/MyVendor.AwesomeNeosProject/Migrations/:cached
+      # mount all packages - enable VirtioFS in your docker host settings or comment out this line
+      - ./app/Packages/:/app/Packages/:cached
       - ./app/Configuration/:/app/Configuration/:cached
       # Explcitly set up Composer cache for faster fetching of packages
       - ./tmp/composer_cache:/composer_cache:cached

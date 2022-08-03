@@ -8,16 +8,20 @@ build_sass:
   stage: compile_resources
   # keep in sync with .nvmrc
   image: node:16.14-slim
-  needs: []
+  tags:
+    - docker
   script:
     - cd app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private
+    # example for including font-awesome
+    #- npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+    #- npm config set "//npm.fontawesome.com/:_authToken" $FONTAWESOME_NPM_AUTH_TOKEN
     - yarn
     - yarn build
   cache:
     paths:
       - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/node_modules/
   artifacts:
-    expire_in: 3 days
+    expire_in: 4 weeks
     paths:
       - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Public/bundle.css
       - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Public/bundle.js
@@ -25,17 +29,19 @@ build_sass:
 package_app:
   stage: build
   image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:8.1-v2
-  interruptible: true
   needs:
     - build_sass
+  tags:
+    - docker
+    - privileged
   cache:
-    key: myvendor.awesomeneosproject__composer
+    key: MyVendor.AwesomeNeosProject__composer
     paths:
       - app/.composer-cache
   script:
     - cd app
-    # composer install
     # NOTE: for E2E tests we HAVE also to install DEV dependencies; otherwise we won't be able to run behavioral tests then.
+    # FIXME: what about prod? additional package job?
     - COMPOSER_CACHE_DIR=.composer-cache composer install --dev --ignore-platform-reqs
     - cd ..
 
@@ -43,46 +49,23 @@ package_app:
     - mkdir -p app/Build && cp -R app/Packages/Application/Neos.Behat/Resources/Private/Build/Behat app/Build/Behat
     - cd app/Build/Behat && COMPOSER_CACHE_DIR=../../.composer-cache composer install && cd ../../../
 
-    # build image
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker pull $CI_REGISTRY_IMAGE:main || true
-    - docker build --cache-from $CI_REGISTRY_IMAGE:main -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG -f deployment/staging/Dockerfile .
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG -f deployment/staging/Dockerfile .
     - docker push $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG
 
 build_e2e_testrunner:
   stage: build
   image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:8.1-v2
-  needs: []
   interruptible: true
   script:
     - cd e2e-testrunner
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker pull $CI_REGISTRY_IMAGE:main-e2e-testrunner || true
-    - docker build --cache-from $CI_REGISTRY_IMAGE:main-e2e-testrunner -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG-e2e-testrunner .
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG-e2e-testrunner .
     - docker push $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG-e2e-testrunner
     - cd ..
-
-functional_and_unit_tests:
-  stage: test
-  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:8.1-v2
-  needs: []
-  services:
-    - mariadb
-  script:
-    - cd app
-    - COMPOSER_CACHE_DIR=.composer-cache composer install --ignore-platform-reqs
-    - ./bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Unit
-    - bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Functional
-  variables:
-    FLOW_CONTEXT: 'Testing/GitLabCI'
-    MYSQL_ROOT_PASSWORD: neos
-    MYSQL_DATABASE: neos
-    MYSQL_USER: neos
-    MYSQL_PASSWORD: neos
-  cache:
-    key: myvendor.awesomeneosproject__composer
-    paths:
-      - app/.composer-cache
+  tags:
+    - docker
+    - privileged
 
 e2e_test:
   stage: test
@@ -90,11 +73,13 @@ e2e_test:
   # we're running this job inside the production image we've just built previously
   needs:
     - build_e2e_testrunner
+    - package_app
   image:
     name: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG
-    # see `scripts` below
-    entrypoint: [ "" ]
-  dependencies: [ ] # we do not need any artifacts from prior steps
+    # we need to override the entrypoint here
+    # TODO comment why!!!!
+    entrypoint: [""]
+  dependencies: [] # we do not need any artifacts from prior steps
   variables:
     # service mariadb
     MYSQL_USER: 'ci_user'
@@ -104,13 +89,19 @@ e2e_test:
     MARIADB_RANDOM_ROOT_PASSWORD: 'yes'
 
     # System under Test
-    FLOW_CONTEXT: 'Production/Kubernetes'
-    DB_NEOS_HOST: 'mariadb'
-    DB_NEOS_PORT: '3306'
-    DB_NEOS_USER: '${MYSQL_USER}'
-    DB_NEOS_PASSWORD: '${MYSQL_PASSWORD}'
-    DB_NEOS_DATABASE: '${MYSQL_DATABASE}'
-    DB_NEOS_DATABASE_E2ETEST: '${MYSQL_DATABASE}'
+    FLOW_CONTEXT: Production/Kubernetes
+    DB_NEOS_HOST: mariadb
+    DB_NEOS_PORT: 3306
+    DB_NEOS_USER: ${MYSQL_USER}
+    DB_NEOS_PASSWORD: ${MYSQL_PASSWORD}
+    # this is used by the Production/Kubernetes context in two places:
+    #  1. the test container sets this context via environment variable for flow commands -> see FLOW_CONTEXT above
+    #  2. the nginx config sets this for SuT HTTP requests -> see: deployment/config-files/nginx-e2etest-server-prod.conf
+    DB_NEOS_DATABASE: ${MYSQL_DATABASE}
+    # this is used by the bin/behat command (test runner) in the Testing/Behat context
+    DB_NEOS_DATABASE_E2ETEST: ${MYSQL_DATABASE}
+    # used for flushing caches before scenarios
+    E2E_FLOW_CONTEXT: Production/Kubernetes
     REDIS_HOST: redis
     REDIS_PORT: 6379
   services:
@@ -120,9 +111,8 @@ e2e_test:
     - name: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG-e2e-testrunner
       alias: e2e-testrunner
   script:
-    # as we need a `script` section to have a valid .gitlab-ci.yml we disabled the
-    # entrypoint and run the script here
     - /entrypoint-e2e.sh
+    - echo "CI tests finished"
   after_script:
     - cp -R /app/e2e-results $CI_PROJECT_DIR/e2e-results
     - cp -R /app/Web/styleguide $CI_PROJECT_DIR/styleguide
@@ -142,8 +132,6 @@ deploy_staging:
     entrypoint: [""]
   only:
     - main
-  needs:
-    - package_app
   environment:
     name: staging
   script:
