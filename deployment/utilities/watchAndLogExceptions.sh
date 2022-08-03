@@ -20,4 +20,4 @@ inotifywait -m /app/Data/Logs/Exceptions -e create -e moved_to |
         red_echo "### end exception"
         red_echo "################################################################################################"
     done & \
-    tail -f -n 5 /app/Data/Logs/System_Development.log
+    tail -f -n 5 /app/Data/Logs/*.log

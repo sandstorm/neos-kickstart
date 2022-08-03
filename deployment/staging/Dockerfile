@@ -1,6 +1,8 @@
 # NOTE: this file is executed from the ROOT DIRECTORY of the project, i.e. "../"
 FROM php:8.1-fpm-bullseye
 
+# ----------------
+# Productive dependencies (should be equal on local-dev, staging and production):
 # Install intl, bcmath, pdo, pdo_mysql, mysqli, libvips
 RUN apt-get update -y && \
     apt-get install --no-install-recommends -y \
@@ -13,7 +15,6 @@ RUN apt-get update -y && \
         supervisor \
         procps \
         libpq-dev \
-        vim \
         less \
         && \
     mkdir -p /var/log/supervisor && \
@@ -22,6 +23,19 @@ RUN apt-get update -y && \
     pecl install vips && \
     echo "extension=vips.so" > /usr/local/etc/php/conf.d/vips.ini && \
     pecl install redis && docker-php-ext-enable redis
+
+# ----------------
+# Development dependencies (should be equal on local-dev, staging and production):
+# install git and unzip for Composer
+RUN apt-get update -y && \
+    apt-get install --no-install-recommends -y  \
+    unzip \
+    git \
+    default-mysql-client \
+    inotify-tools \
+    vim \
+    && \
+    rm -rf /var/lib/apt/lists/*
 
 # for PHP 8.1, disable deprecations to temporarily make Neos/Flow work
 RUN echo "error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT" >> /usr/local/etc/php/conf.d/error_reporting.ini
@@ -79,6 +93,10 @@ ADD --chown=www-data:www-data /app/. /app/
 ########################################################################
 
 ADD /deployment/staging/entrypoint-e2e.sh /
+
+# utility scripts
+ADD deployment/utilities/watchAndLogExceptions.sh /app/watchAndLogExceptions.sh
+RUN chmod +x /app/watchAndLogExceptions.sh
 
 ##################### END - Staging Container only #####################
 
