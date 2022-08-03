@@ -11,7 +11,8 @@ red_echo() {
 
 cd /app
 
-green_echo "####### Running Flow Commands"
+green_echo "####### Running Flow Commands with context '$FLOW_CONTEXT'"
+green_echo "DB - host: $DB_NEOS_HOST, port: $DB_NEOS_PORT, user: $DB_NEOS_USER, database: $DB_NEOS_DATABASE"
 ./flow doctrine:migrate
 ./flow resource:publish
 ./flow flow:cache:flush
@@ -35,8 +36,9 @@ green_echo "####### Waiting for Neos (System under testing) to start"
 # We use a counter here so that we can stop the pipeline and not have it run
 # forever.
 counter=0
-until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:9090); do
-    if [ "$counter" -gt 10 ]; then
+# we call the Neos login page, because calling the frontend starting page without a site would respond a 500
+until $(curl --output /dev/null --silent --fail http://127.0.0.1:9090/neos/login); do
+    if [ "$counter" -gt 4 ]; then
         red_echo "FAILED: Waiting for Neos to start took too long!!!"
         exit 1
     fi
@@ -53,6 +55,6 @@ cd /app && rm -Rf e2e-results && mkdir e2e-results && bin/behat --format junit -
 green_echo "------> SUCCESS finished running tests"
 
 cp -R /app/e2e-results $CI_PROJECT_DIR/e2e-results
-cp -R /app/Web/styleguide $CI_PROJECT_DIR/styleguide
+cp -R /app/Web/styleguide $CI_PROJECT_DIR/styleguide || true
 
 green_echo "ALL DONE"
