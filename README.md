@@ -78,7 +78,7 @@ This should only be needed when running the project for the first time.
 2. `yoast/yoast-seo-for-neos` for a real good SEO experience
 3. `flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -> helps with the editor experience
 4. `neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful static form node-types
-5. `flowpack/searchplugin` to implement a search
+5. `sandstorm/lightweightelasticsearch` (more customizable) or `flowpack/searchplugin` (simple out of the box) to implement a search
 6. or have a look at the recommandations on neos.io: https://www.neos.io/features/feature-list.html
 
 ## Development
