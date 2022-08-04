@@ -24,6 +24,7 @@ prototype(MyVendor.AwesomeNeosProject:Resources.HeaderAssets) < prototype(Neos.F
 
     bundleJS = Neos.Fusion:Tag {
         tagName = 'script'
+        attributes.defer = true
         attributes.type = 'text/javascript'
         attributes.src = Neos.Fusion:ResourceUri {
             path = 'resource://MyVendor.AwesomeNeosProject/Public/bundle.js'

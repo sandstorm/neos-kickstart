@@ -23,16 +23,21 @@ prototype(MyVendor.AwesomeNeosProject:Component.ContactForm) < prototype(Neos.Fu
             </div>
         </Neos.Fusion.Form:FieldContainer>
 
-        <Neos.Fusion.Form:FieldContainer class="form-group form-file-upload" field.name="attachment1">
-            <Neos.Fusion.Form:Input
-                attributes.type="file"
-                attributes.accept=".pdf"
-                field.name="attachment1"
-            />
-            <label for="contactform[attachment1]">
-                Select a pdf file
-            </label>
-        </Neos.Fusion.Form:FieldContainer>
+
+
+        <div x-data="{ fileName: '' }">
+            <Neos.Fusion.Form:FieldContainer class="form-group form-file-upload" field.name="attachment1" >
+                <Neos.Fusion.Form:Input
+                    attributes.accept=".pdf"
+                    attributes.type="file"
+                    attributes.x-on:change="fileName = $event.target.files[0].name"
+                    field.name="attachment1"
+                />
+
+                <label for="contactform[attachment1]" x-text="fileName === '' ? 'Select a pdf file' : fileName">
+                </label>
+            </Neos.Fusion.Form:FieldContainer>
+        </div>
 
         <div class="contact-form__hints">
             <label>
