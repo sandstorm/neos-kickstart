@@ -11,10 +11,12 @@ if [ "$importedSites" = "No sites available" ]; then
 fi
 
 # create user
-./flow user:create --roles Administrator $NEOS_BACKEND_ADMIN_USERNAME $NEOS_BACKEND_ADMIN_PASSWORD LocalDev Admin || true
+./flow user:create --roles Administrator admin password LocalDev Admin || true
 
+./flow resource:publish
 ./flow flow:cache:flush
 ./flow cache:warmup
+
 
 # start nginx
 nginx &

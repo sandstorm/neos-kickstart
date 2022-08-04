@@ -88,6 +88,11 @@ Run `./kickstart.sh --dev` to not remove certain files e.g. `./kickstart.sh`.
 Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstart.sh`
 Run `make logs` and `make log-flow-exceptions` to see what's going on in the containers
 
+## Staging
+
+Staging URL is: https://myvendor-awesomeneosproject-staging.cloud.sandstorm.de/
+Htaccess credantials are in bitwarden.
+
 ## IMPORT/EXPORT Content
 
 The default flow command to import and export the site content is not stable.

@@ -31,17 +31,11 @@ spec:
         value: "$(DB_PASSWORD)"
     -   name: DB_NEOS_DATABASE
         value: "$(DB_NAME)"
-    -   name: NEOS_BACKEND_ADMIN_USERNAME
-        value: "$(NEOS_BACKEND_ADMIN_USERNAME)"
-    -   name: NEOS_BACKEND_ADMIN_PASSWORD
-        value: "$(NEOS_BACKEND_ADMIN_PASSWORD)"
 
   envFromConfigMaps:
     - db
-    - neos-backend-user
   envFromSecrets:
     - db
-    - neos-backend-user
 
   httpBasicPasswordProtection:
     enabled: true
