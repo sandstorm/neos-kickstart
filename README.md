@@ -54,8 +54,7 @@ This should only be needed when running the project for the first time.
 
 - run `git lfs install` and `git lfs pull` to get large files like the content dump
 - run `make setup` only the first time to setup docker images and tmp folders
-- run `make setup-idea` on your local machine for autocompletion in your IDE
-- run `cd ./e2e-testrunner && nvm install && nvm use && npm install` as we do not want to use a docker container to be able
+- run `make build-e2e-testrunner` as we do not want to use a docker container to be able
   to debug Playwright test more easily. TODO: maybe run in `make tests` but nvm is currently giving us a headache here.
 - for font awesome pro support in local dev
     - open: `app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/.npmrc.sample`
