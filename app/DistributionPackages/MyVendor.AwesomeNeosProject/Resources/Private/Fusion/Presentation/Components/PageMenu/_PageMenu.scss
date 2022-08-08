@@ -10,7 +10,7 @@
     display: inline-block;
     flex: 1;
 
-    transition: left 200ms;
+    @include transition(left .2s);
 
     @include mq(xsmall) {
         position: absolute;

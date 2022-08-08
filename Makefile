@@ -65,16 +65,10 @@ setup-e2e-tests:
 	@docker compose exec neos bash -c ". /etc/bash.vips-arm64-hotfix.sh; FLOW_CONTEXT=Development/Docker/Behat ./flow doctrine:migrate"
 	@docker compose exec neos bash -c ". /etc/bash.vips-arm64-hotfix.sh; FLOW_CONTEXT=Development/Docker/Behat ./flow user:create --roles Administrator admin password LocalDev Admin"
 
-build-e2e-testrunner:
-	@cd ./e2e-testrunner && nvm use && npm install && cd ..
-
-start-e2e-testrunner:
-	@cd ./e2e-testrunner node index.js
-
 e2e-tests:
 	@echo
 	@echo "Make sure you started the e2e-testrunner:"
-	@echo "make start-e2e-testrunner"
+	@echo "cd ./e2e-testrunner node index.js"
 	@echo
 	@docker compose exec neos bin/behat -c Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Behavior/behat.yml.dist -vvv
 	@echo
