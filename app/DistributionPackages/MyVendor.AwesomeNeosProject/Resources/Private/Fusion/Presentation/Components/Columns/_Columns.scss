@@ -1,9 +1,10 @@
 .columns {
     position: relative;
     display: flex;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin-bottom: $spacing--xl;
+    margin-top: $spacing--xl;
     width: 100%;
+    gap: $spacing--lg $spacing--lg;
 
     @include mq(small) {
         flex-wrap: wrap;
@@ -11,8 +12,6 @@
 }
 
 .columns__cell {
-    margin-right: 20px;
-
     @include mq(small) {
         width: 100% !important;
     }
@@ -21,10 +20,6 @@
         padding-left: 0;
         padding-right: 0;
     }
-}
-
-.columns__cell:last-of-type {
-    margin-right: 0;
 }
 
 .columns__cell--33 {
