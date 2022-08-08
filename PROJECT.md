@@ -52,7 +52,7 @@ This should only be needed when running the project for the first time.
 
 - run `git lfs install` and `git lfs pull` to get large files like the content dump (you need to install git-lfs on your machine)
 - run `make setup` only the first time to setup docker images and tmp folders
-- run `make build-e2e-testrunner` as we do not want to use a docker container to be able
+- run `cd ./e2e-testrunner && nvm use && npm install` as we do not want to use a docker container to be able
   to debug Playwright test more easily. TODO: maybe run in `make tests` but nvm is currently giving us a headache here.
 - for font awesome pro support in local dev
     - open: `app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/.npmrc.sample`
@@ -70,6 +70,15 @@ This should only be needed when running the project for the first time.
 - run `make help` to see all available commands
 - you can login to the [neos backend](http://localhost:8081/neos) with the credentials `admin` and `password`
 
+## Packages we recommend for certain use-cases
+
+1. `sitegeist/monocle` for prototyping components
+2. `yoast/yoast-seo-for-neos` for a real good SEO experience
+3. `flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -> helps with the editor experience
+4. `neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful static form node-types
+5. `sandstorm/lightweightelasticsearch` (more customizable) or `flowpack/searchplugin` (simple out of the box) to implement a search
+6. or have a look at the recommandations on neos.io: https://www.neos.io/features/feature-list.html
+
 ## Staging
 
 TODO!
@@ -82,10 +91,10 @@ Mailhog Web-UI at [http://localhost:8025/](http://localhost:8025/).
 ## Running Tests
 
 Make sure the application is up and running `make start`.
-Make sure you build the testrunner with `make build-e2e-testrunner`
+Make sure you build the testrunner with `cd ./e2e-testrunner && nvm use && npm install`
 
 - for E2E Test
-  - in a new console run `make start-e2e-testrunner` to start the e2e-testrunner
+  - in a new console run `cd ./e2e-testrunner node index.js` to start the e2e-testrunner
   - in a new console run `make e2e-tests` to run the actual tests
 - for Unit Tests run `make unit-tests` 
 - for Functional Tests run `make functional-tests` 

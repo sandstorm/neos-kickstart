@@ -4,9 +4,9 @@ prototype(MyVendor.AwesomeNeosProject:Component.PageMenu) < prototype(Neos.Fusio
     }
     renderer = afx`
         <nav class="page-menu">
-            <a href="/" class="page-menu__logo">
+            <div class="page-menu__logo">
                 <MyVendor.AwesomeNeosProject:Component.PageHeader.Logo/>
-            </a>
+            </div>
 
             <MyVendor.AwesomeNeosProject:Component.PageMenu.Main />
 

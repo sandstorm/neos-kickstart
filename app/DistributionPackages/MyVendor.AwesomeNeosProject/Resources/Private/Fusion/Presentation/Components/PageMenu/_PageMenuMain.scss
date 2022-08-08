@@ -76,6 +76,10 @@
 
     box-shadow: 5px 5px 10px transparentize($color__black, 0.5);
 
+    &--is-visible {
+        display: block;
+    }
+
 
     > .content-width {
         display: flex;

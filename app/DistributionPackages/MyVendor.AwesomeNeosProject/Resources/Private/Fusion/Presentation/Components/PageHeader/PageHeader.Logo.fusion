@@ -5,9 +5,9 @@ prototype(MyVendor.AwesomeNeosProject:Component.PageHeader.Logo) < prototype(Neo
             path = 'resource://MyVendor.AwesomeNeosProject/Public/Images/logo.svg'
         }
         renderer = afx`
-        <div class="page-header__logo">
+        <a href="/" class="page-header__logo">
             <img src={props._logoResourceUri} alt="Logo" />
-        </div>
+        </a>
         `
     }
 

@@ -32,7 +32,7 @@
     font-size: inherit;
     font-weight: inherit;
 
-    transition: .25s border-color ease;
+    @include transition(border-color .25s ease);
 
     &:hover, &:focus {
         border-color: $color__blue;
@@ -62,7 +62,7 @@
 
         pointer-events: none;
         cursor: pointer;
-        transition: .25s all ease;
+        @include transition(color .25s ease);
     }
 
     &:hover::after {
