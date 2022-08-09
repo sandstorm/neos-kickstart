@@ -1,0 +1,5 @@
+prototype(Sitegeist.Monocle:Preview.Page) {
+    head {
+        javascripts.site = MyVendor.AwesomeNeosProject:Resources.HeaderAssets
+    }
+}
