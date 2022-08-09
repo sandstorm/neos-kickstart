@@ -33,28 +33,30 @@
         }
     }
 
-    &:hover {
-        // transparent bar for better menu hovering
-        &:after {
-            content: " ";
-            position: absolute;
-            left: 0;
-            top: $header__height - 30px;
-            height: 30px;
-            width: 100%;
-
-            background-color: transparent;
-
-            z-index: 999;
-        }
-
-        .page-menu__sublevel-wrapper {
-            display: block;
-        }
-    }
-
     &.current > a {
         color: $color__blue !important;
+    }
+
+    &--has-items {
+        &:hover, &:focus-within {
+            // transparent bar for better menu hovering
+            &:after {
+                content: " ";
+                position: absolute;
+                left: 0;
+                top: $header__height - 30px;
+                height: 30px;
+                width: 100%;
+
+                background-color: transparent;
+
+                z-index: 999;
+            }
+
+            .page-menu__sublevel-wrapper {
+                display: block;
+            }
+        }
     }
 }
 

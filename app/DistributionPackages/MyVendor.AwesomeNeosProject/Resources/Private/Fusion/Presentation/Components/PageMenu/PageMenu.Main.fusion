@@ -11,18 +11,17 @@ prototype(MyVendor.AwesomeNeosProject:Component.PageMenu.Main) < prototype(Neos.
 
     renderer = afx`
         <div class="page-menu__main">
-            <ul class="page-menu__toplevel" x-data="{ openListItem: '' }">
+            <ul class="page-menu__toplevel">
                 <Neos.Fusion:Loop items={props.menuItems}>
                     <li
-                        class={AtomicFusion.classNames(item.state, item.subItems ? 'page-menu__toplevel-item--has-items' : '' , 'page-menu__toplevel-item')}
-                        x-id="['menu-list-item']"
+                        class={AtomicFusion.classNames(item.state, 'page-menu__toplevel-item', item.subItems ? 'page-menu__toplevel-item--has-items' : '')}
                     >
-                        <Neos.Neos:NodeLink node={item.node} attributes.:list-id="$id('menu-list-item')" attributes.x-on:focus="openListItem = $event.target.getAttribute('list-id')">
+                        <Neos.Neos:NodeLink node={item.node}>
                             {item.label}
                         </Neos.Neos:NodeLink>
 
-                        <div @if.hasItems={item.subItems} :list-id="$id('menu-list-item')" class="page-menu__sublevel-wrapper" :class="openListItem == $id('menu-list-item') ? 'page-menu__sublevel-wrapper--is-visible' : ''">
-                            <MyVendor.AwesomeNeosProject:Utility.ContentWidth>
+                        <div @if.hasItems={item.subItems} class="page-menu__sublevel-wrapper">
+                            <MyVendor.AwesomeNeosProject:Utility.ContentWidth size="small">
                                 <ul
                                     @if.has={item.subItems}
                                     class="page-menu__sublevel"
