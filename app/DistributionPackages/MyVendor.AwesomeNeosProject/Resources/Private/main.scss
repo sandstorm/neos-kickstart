@@ -1,3 +1,5 @@
+// HINT: if you import sass files from node-modules, write the path down without the 'node_modules/' or the build will fail
+
 @import "GeneralStyles/Variables";
 @import "GeneralStyles/Functions";
 @import "GeneralStyles/Mixins";

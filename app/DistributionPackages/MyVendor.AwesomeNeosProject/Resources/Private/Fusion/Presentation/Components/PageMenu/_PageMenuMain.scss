@@ -3,8 +3,22 @@
     justify-content: center;
     flex-wrap: nowrap;
 
-    @include mq(medium) {
+    background-color: $color__white;
+
+    @include mq(small) {
         display: none;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: $header__height;
+
+        border-bottom: 1px solid $color__grey--lighter;
+
+        z-index: 999;
+    }
+
+    &--is-visible {
+        display: block;
     }
 }
 
@@ -18,8 +32,15 @@
 
 .page-menu__toplevel-item {
     display: inline-block;
-    padding: 0 20px;
+    padding: 0 $spacing--lg;
     height: $header__height;
+
+    @include mq(small) {
+        width: 100%;
+        height: unset;
+        padding-top: $spacing--md;
+        padding-bottom: $spacing--md;
+    }
 
     > a {
         text-decoration: none;
@@ -27,6 +48,10 @@
         color: $color__grey;
         line-height: $header__height;
         font-size: 1.2rem;
+
+        @include mq(small) {
+            line-height: unset;
+        }
 
         &:hover, &:focus, &:active {
             color: $color__blue !important;
@@ -67,16 +92,26 @@
     left: 0;
     width: 100%;
     max-height: 80vh;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: $spacing--xl;
+    padding-bottom: $spacing--xl;
 
-    background-color: $color__grey;
+    background-color: $color__white;
 
     z-index: 999;
     overflow: hidden;
     overflow-y: scroll;
 
     box-shadow: 5px 5px 10px transparentize($color__black, 0.5);
+
+    @include mq(small) {
+        position: relative;
+        top: unset;
+        max-height: unset;
+        padding-top: $spacing--md;
+        padding-bottom: $spacing--md;
+
+        box-shadow: unset;
+    }
 
     &--is-visible {
         display: block;
@@ -88,6 +123,7 @@
         flex-wrap: nowrap;
         justify-content: space-between;
         height: 100%;
+        padding: 0;
     }
 }
 
@@ -96,7 +132,7 @@
 
     a {
         text-decoration: none;
-        color: $color__white;
+        color: $color__black;
 
         &:hover, &:focus, &:active {
             color: $color__blue !important;
