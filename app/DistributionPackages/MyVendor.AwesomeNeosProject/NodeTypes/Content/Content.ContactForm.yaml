@@ -8,6 +8,8 @@
   properties:
     mailTo:
       type: string
+      validation:
+        'Neos.Neos/Validation/EmailAddressValidator': [ ]
       defaultValue: contact@sandstorm.de
       ui:
         label: 'Recipient address'

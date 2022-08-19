@@ -12,11 +12,12 @@ Neos:
   Neos:
     eventLog:
       enabled: true
-    navigateComponent:
-      nodeTree:
-        loadingDepth: 1
-      structureTree:
-        loadingDepth: 2
+    userInterface:
+      navigateComponent:
+        nodeTree:
+          loadingDepth: 1
+        structureTree:
+          loadingDepth: 4
     fusion:
       autoInclude:
         MyVendor.AwesomeNeosProject: true
