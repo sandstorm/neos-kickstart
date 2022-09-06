@@ -3,15 +3,10 @@ set -ex
 
 ./flow doctrine:migrate
 
-# only run site import when nothing was imported before
-importedSites=`./flow site:list`
-if [ "$importedSites" = "No sites available" ]; then
-    echo "Importing content from ./ContentDump"
-    ./ContentDump/importSite.sh
-fi
+# NOTE: for Staging and PROD, we do not import the content dump here, as usually you want to do it
+# in a more controlled way.
 
-# create user
-./flow user:create --roles Administrator admin password LocalDev Admin || true
+# NOTE: for Staging and PROD, we do not create users here, as we want secure users and passwords.
 
 ./flow resource:publish
 ./flow flow:cache:flush
