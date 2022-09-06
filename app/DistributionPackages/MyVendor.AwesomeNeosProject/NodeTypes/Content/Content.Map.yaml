@@ -17,7 +17,7 @@
         inspector:
           group: properties
 
-    lon:
+    lng:
       type: string
       defaultValue: '13.7769583'
       ui:

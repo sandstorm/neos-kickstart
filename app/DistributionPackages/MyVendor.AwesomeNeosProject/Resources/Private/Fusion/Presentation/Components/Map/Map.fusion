@@ -1,8 +1,8 @@
 prototype(MyVendor.AwesomeNeosProject:Component.Map) < prototype(Neos.Fusion:Component) {
     lat = 0
     lat.@process.toFloat = ${String.toFloat(value)}
-    lon = 0
-    lon.@process.toFloat = ${String.toFloat(value)}
+    lng = 0
+    lng.@process.toFloat = ${String.toFloat(value)}
     zoom = 14
     zoom.@process.toFloat = ${String.toFloat(value)}
 
@@ -11,7 +11,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Map) < prototype(Neos.Fusion:Com
     @propTypes {
         @strict = true
         lat = ${PropTypes.float.isRequired}
-        lon = ${PropTypes.float.isRequired}
+        lng = ${PropTypes.float.isRequired}
         zoom = ${PropTypes.float.isRequired}
         popupText = ${PropTypes.string}
     }
@@ -19,7 +19,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Map) < prototype(Neos.Fusion:Com
     renderer = Neos.Fusion:Component {
         mapInitializer = Neos.Fusion:DataStructure {
             lat = ${props.lat}
-            lon = ${props.lon}
+            lng = ${props.lng}
             zoom = ${props.zoom}
             popupText = ${props.popupText}
         }
