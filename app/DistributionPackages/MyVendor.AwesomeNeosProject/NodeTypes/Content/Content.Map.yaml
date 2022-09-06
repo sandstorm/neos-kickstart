@@ -1,0 +1,45 @@
+'MyVendor.AwesomeNeosProject:Content.Map':
+  superTypes:
+    'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
+  ui:
+    label: 'Karte'
+    icon: icon-map
+    position: 50
+
+  properties:
+
+    lat:
+      type: string
+      defaultValue: '51.0567032'
+      ui:
+        label: 'Latitude'
+        reloadIfChanged: true
+        inspector:
+          group: properties
+
+    lng:
+      type: string
+      defaultValue: '13.7769583'
+      ui:
+        label: 'Longitude'
+        reloadIfChanged: true
+        inspector:
+          group: properties
+
+    zoom:
+      type: string
+      defaultValue: '14'
+      ui:
+        label: 'Standard-Zoomstufe'
+        reloadIfChanged: true
+        inspector:
+          group: properties
+
+    popupText:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Popup-Text'
+        reloadIfChanged: true
+        inspector:
+          group: properties

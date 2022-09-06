@@ -1,5 +1,6 @@
 {
     "dependencies": {
+        "@alpinejs/intersect": "^3.10.3",
         "alpinejs": "^3.10.3"
     },
     "scripts": {
@@ -11,6 +12,7 @@
         "watch:typecheck": "nodemon -e ts -x \"yarn run typecheck || echo '!!!!!!!!!!!!!!!!!!!!!! TypeScript Errors, Please fix !!!!!!!!!!!!!!!!!!!!!!'\""
     },
     "devDependencies": {
+        "@types/alpinejs": "^3.7.0",
         "concurrently": "^6.3.0",
         "esbuild": "^0.14.53",
         "esbuild-sass-plugin": "^2.3.1",
