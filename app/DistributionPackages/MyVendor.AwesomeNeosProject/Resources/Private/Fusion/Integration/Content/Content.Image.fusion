@@ -18,7 +18,7 @@ prototype(MyVendor.AwesomeNeosProject:Content.Image) < prototype(Neos.Neos:Conte
                     class = ${AtomicFusion.classNames(q(node).property('textAlign'), 'image__wrapper')}
                     size = ${q(node).property('contentWidth')}
                     content = afx`
-                        <img src={props.uri} alt={props.alternativeText} />
+                        <img src={props.uri} alt={props.alternativeText} lazy="lazy" />
                     `
                 }
             }
