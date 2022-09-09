@@ -29,6 +29,7 @@ prototype(MyVendor.AwesomeNeosProject:Resources.HeaderAssets) < prototype(Neos.F
         attributes.src = Neos.Fusion:ResourceUri {
             path = 'resource://MyVendor.AwesomeNeosProject/Public/bundle.js'
         }
+        attributes.defer = "defer"
         @process.neverBlock = ${CookiePunch.neverBlockTags(["script"], value)}
     }
 }
