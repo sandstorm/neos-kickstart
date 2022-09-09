@@ -42,6 +42,13 @@ spec:
     enabled: true
     secretName: basic-auth
 
+  healthChecks:
+    readinessProbe:
+      enabled: false
+
+    livenessProbe:
+      enabled: false
+
   redis: transient
 
   volumes:
