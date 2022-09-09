@@ -9,6 +9,9 @@ $fa-font-path: $relativePublicPath + "Fonts";
     font-family: 'Atkinson Hyperlegible';
     font-style: normal;
     font-weight: 400;
+
+    // dramatically reduces time for the first paint, as all fonts first rendered by a system font
+    font-display: swap;
     src: local(''),
     url($fa-font-path + '/atkinson-hyperlegible-v7-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url($fa-font-path + '/atkinson-hyperlegible-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
@@ -19,6 +22,9 @@ $fa-font-path: $relativePublicPath + "Fonts";
     font-family: 'Sansation Regular';
     font-weight: normal;
     font-style: normal;
+
+    // dramatically reduces time for the first paint, as all fonts first rendered by a system font
+    font-display: swap;
     src: local(''),
     url($fa-font-path + '/Sansation-Regular-webfont.woff') format('woff'),
 }
