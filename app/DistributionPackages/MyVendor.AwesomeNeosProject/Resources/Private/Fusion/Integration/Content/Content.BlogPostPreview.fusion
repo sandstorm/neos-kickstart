@@ -16,6 +16,20 @@ prototype(MyVendor.AwesomeNeosProject:Content.BlogPostPreview) < prototype(Neos.
             imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
                 asset = ${q(node).property('image')}
             }
+
+            // We want to deliver the smallest possible image.
+            // - for big screens, we have 4 columns,
+            // - for medium 3 or 2
+            // - on mobile just one column.
+            //
+            // The min-width numbers are basically "referencing" the breakpoints (see _Variables.scss - $breakpoints).
+            // The calculation encodes the different resulting column counts from _BlogPostOverview.scss.
+            sizes = ${[
+                '(min-width: 1400px) calc(100vw / 4)',
+                '(min-width: 996px) calc(100vw / 3)',
+                '(min-width: 768px) calc(100vw / 2)',
+                '100vw'
+            ]}
         }
     }
 }

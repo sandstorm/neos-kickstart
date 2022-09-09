@@ -7,8 +7,11 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
 
     inBackend = ${node.context.inBackend}
 
+    // these should match Settings.Media.yaml
     srcSet = ${['320w', '600w', '800w', '1200w']}
 
+    // This is only for full-width images!!
+    // For images displayed at smaller sizes, you MUST OVERRIDE THIS!!
     sizes = ${[
     '(min-width: 1400px) 1200px',
     '(min-width: 996px) 996px',
@@ -18,7 +21,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
     '100vw'
     ]}
 
-    formats = ${['webp', 'png']}
+    formats = ${['webp', 'jpg']}
 
     @propTypes {
         @strict = true

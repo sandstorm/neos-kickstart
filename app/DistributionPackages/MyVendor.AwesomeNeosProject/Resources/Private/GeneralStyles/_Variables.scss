@@ -78,6 +78,9 @@ $header__height: 85px;
 $headerLogo__height: 64px;
 $breadCrumb__height: 40px;
 
+// !! Those breakpoints are coupled to the image breakpoints (sizes attribute) inside:
+// - Content.BlogPostPreview.fusion.
+// !! If changing the breakpoints here, also adjust the sizes on the locations above.
 $breakpoints: (
     xxsmall: "(max-width: 374px)",
     xsmall: "(max-width: 500px)",
