@@ -6,12 +6,14 @@ Neos:
       # https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html
       backendOptions:
         driver: 'pdo_mysql'
-        charset: 'utf8'
+        charset: 'utf8mb4'
         host: '%env:DB_NEOS_HOST%'
         port: '%env:DB_NEOS_PORT%'
         password: '%env:DB_NEOS_PASSWORD%'
         user: '%env:DB_NEOS_USER%'
         dbname: '%env:DB_NEOS_DATABASE%'
+    cache:
+      applicationIdentifier: 'app'
 
   Imagine:
     driver: 'Vips'
