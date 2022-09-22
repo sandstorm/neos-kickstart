@@ -33,19 +33,22 @@ services:
       ADMIN_PASSWORD: 'password'
       PLAYWRIGHT_API_URL: 'http://host.docker.internal:3000'
       SYSTEM_UNDER_TEST_URL_FOR_PLAYWRIGHT: 'http://127.0.0.1:9090'
+      # used for flushing caches before scenarios
+      E2E_FLOW_CONTEXT: 'Development/Docker/Behat'
+      REDIS_HOST: 'redis-cache'
+      REDIS_PORT: 6379
     volumes:
       - ./app/composer.json:/app/composer.json:cached
       - ./app/composer.lock:/app/composer.lock:cached
       - ./app/DistributionPackages/:/app/DistributionPackages/:cached
-      - ./app/Build/Behat/:/app/Build/Behat/:cached
       - ./app/ContentDump/:/app/ContentDump/:cached
+      - ./app/Build/Behat/:/app/Build/Behat/:cached
       # Content is writable to enable content dumps from inside the container
-      - ./app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/Content:/app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/Content/:cached
       - ./app/DistributionPackages/MyVendor.AwesomeNeosProject/Migrations/:/app/DistributionPackages/MyVendor.AwesomeNeosProject/Migrations/:cached
-      # mount all packages - enable VirtioFS in your docker host settings or comment out this line
-      - ./app/Packages/:/app/Packages/:cached
       - ./app/Configuration/:/app/Configuration/:cached
-      # Explcitly set up Composer cache for faster fetching of packages
+      - ./app/Packages/:/app/Packages/:cached
+      - ./app/Data/Persistent/:/app/Data/Persistent/:cached
+      # Explicitly set up Composer cache for faster fetching of packages
       - ./tmp/composer_cache:/composer_cache:cached
     networks:
       - awesomeneosproject
@@ -54,6 +57,7 @@ services:
       - 9090:9090
     depends_on:
       - maria-db
+      - redis-cache
 
   #####
   # assets build (watcher)
@@ -71,6 +75,8 @@ services:
       - neos-assets-node-modules:/app/src/Private/node_modules
       # Explicitly set up Yarn cache for faster fetching of packages
       - ./tmp/.yarn-cache/:/app/.yarn-cache/:cached
+    networks:
+      - awesomeneosproject
 
   #####
   # Maria DB
@@ -98,6 +104,13 @@ services:
     hostname: mailhog
     ports:
       - '8025:8025'
+    networks:
+      - awesomeneosproject
+
+  redis-cache:
+    image: redis:6.2.2
+    ports:
+      - 16379:6379
     networks:
       - awesomeneosproject
 
