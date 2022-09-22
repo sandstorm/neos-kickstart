@@ -1,0 +1,47 @@
+package_app_staging:
+  stage: build
+  except:
+    - tags
+  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:8.1-v2
+  needs:
+    - build_assets
+  cache:
+    key: MyVendor.AwesomeNeosProject__composer
+    paths:
+      - app/.composer-cache
+  script:
+    - cd app
+    # NOTE: for E2E tests we HAVE also to install DEV dependencies; otherwise we won't be able to run behavioral tests then.
+    - COMPOSER_CACHE_DIR=.composer-cache composer install --dev --ignore-platform-reqs
+    - cd ..
+
+    # set up Behat
+    - mkdir -p app/Build && cp -R app/Packages/Application/Neos.Behat/Resources/Private/Build/Behat app/Build/Behat
+    - cd app/Build/Behat && COMPOSER_CACHE_DIR=../../.composer-cache composer install && cd ../../../
+
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker pull $CI_REGISTRY_IMAGE/neos:main || true
+    - docker build --cache-from $CI_REGISTRY_IMAGE/neos:main -t $CI_REGISTRY_IMAGE/neos:$CI_COMMIT_REF_SLUG -f deployment/staging/Dockerfile .
+    - docker push $CI_REGISTRY_IMAGE/neos:$CI_COMMIT_REF_SLUG
+
+deploy_staging:
+  stage: deploy
+  only:
+    - main
+  except:
+    - tags
+  image:
+    name: bitnami/kubectl:1.15.0
+    entrypoint: [""]
+  needs:
+    - package_app_staging
+    - e2e_test
+  environment:
+    name: staging
+  script:
+    - export KUBECONFIG=$KUBECONFIG_K3S2021
+    - kubectl get namespace myvendor-awesomeneosproject-relaunch
+    - kubectl apply -f deployment/staging/database.yaml
+    - kubectl apply -f deployment/staging/app.yaml
+    # enforce a redeploy by changing the release identifier
+    - 'kubectl -n myvendor-awesomeneosproject-relaunch patch --type merge OneContainerOnePort app -p "{\"spec\":{\"releaseIdentifier\": \"$CI_JOB_ID\"}}"'

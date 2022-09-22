@@ -1,0 +1,20 @@
+build_assets:
+  stage: compile_resources
+  # keep in sync with .nvmrc
+  image: node:16.14-slim
+  needs: []
+  script:
+    - cd app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private
+    # example for including font-awesome
+    #- npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+    #- npm config set "//npm.fontawesome.com/:_authToken" $FONTAWESOME_NPM_AUTH_TOKEN
+    - yarn
+    - yarn build
+  cache:
+    paths:
+      - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/node_modules/
+  artifacts:
+    expire_in: 7 days
+    paths:
+      - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Public/bundle.css
+      - app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Public/bundle.js
