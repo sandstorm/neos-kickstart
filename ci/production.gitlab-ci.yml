@@ -1,0 +1,42 @@
+package_app_production:
+  stage: build
+  only:
+    - tags
+  image: docker-hub.sandstorm.de/docker-infrastructure/php-app/build:8.1-v2
+  needs:
+    - build_assets
+  cache:
+    key: MyVendor.AwesomeNeosProject__composer
+    paths:
+      - app/.composer-cache
+  script:
+    - cd app
+    - COMPOSER_CACHE_DIR=.composer-cache composer install --no-dev --ignore-platform-reqs
+    - cd ..
+
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker pull $CI_REGISTRY_IMAGE/neos:main || true
+    - docker build --cache-from $CI_REGISTRY_IMAGE/neos:main -t $CI_REGISTRY_IMAGE/production:$CI_COMMIT_REF_NAME -f deployment/production/Dockerfile .
+    - docker tag $CI_REGISTRY_IMAGE/production:$CI_COMMIT_REF_NAME $CI_REGISTRY_IMAGE/production:latest
+    - docker push $CI_REGISTRY_IMAGE/production:$CI_COMMIT_REF_NAME
+    - docker push $CI_REGISTRY_IMAGE/production:latest
+
+deploy_production:
+  stage: deploy
+  only:
+    - tags
+  image:
+    name: bitnami/kubectl:1.15.0
+    entrypoint: [""]
+  needs:
+   - package_app_production
+  environment:
+    name: production
+  script:
+    - export KUBECONFIG=$KUBECONFIG_K3S2021
+    - kubectl get namespace myvendor-awesomeneosproject-production
+    - kubectl apply -f deployment/production/database.yaml
+    - cat deployment/production/app.yaml | sed "s/CI_COMMIT_REF_NAME/$CI_COMMIT_REF_NAME/g" > deployment/production/app_modified.yaml
+    - kubectl apply -f deployment/production/app_modified.yaml
+    # enforce a redeploy by changing the release identifier
+    - 'kubectl -n myvendor-awesomeneosproject-production patch --type merge OneContainerOnePort app -p "{\"spec\":{\"releaseIdentifier\": \"$CI_JOB_ID\"}}"'
