@@ -1,48 +1,24 @@
 prototype(MyVendor.AwesomeNeosProject:Content.Image) < prototype(Neos.Neos:ContentComponent) {
-    renderer = Neos.Fusion:Case {
-        gif {
-            // WORKAROUND for crashing animted gifs
-            // it seems that if you throw a big animted gif to vips it needs a lot of resources and blocks
-            // the php process for a very long time with high cpu utilization.
-            // Thats why we do not touch gifs and just output them without any processing
-            condition = ${q(node).property('image').resource.fileExtension == 'gif'}
-            renderer = Neos.Fusion:Component {
-                alternativeText = MyVendor.AwesomeNeosProject:Helper.ImageAltText {
-                    image = ${q(node).property('image')}
-                }
-                uri = Neos.Fusion:ResourceUri {
-                    resource = ${q(node).property('image').resource}
-                }
-
-                renderer = MyVendor.AwesomeNeosProject:Utility.ContentWidth {
-                    class = ${AtomicFusion.classNames(q(node).property('textAlign'), 'image__wrapper')}
-                    size = ${q(node).property('contentWidth')}
-                    content = afx`
-                        <img src={props.uri} alt={props.alternativeText} lazy="lazy" />
-                    `
-                }
+    renderer = MyVendor.AwesomeNeosProject:Utility.ContentWidth {
+        class = ${AtomicFusion.classNames(q(node).property('textAlign'), 'image__wrapper')}
+        size = ${q(node).property('contentWidth')}
+        content = MyVendor.AwesomeNeosProject:Component.Image {
+            imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
+                asset = ${q(node).property('image')}
             }
-        }
-
-        default {
-            condition = true
-            renderer = MyVendor.AwesomeNeosProject:Utility.ContentWidth {
-                class = ${AtomicFusion.classNames(q(node).property('textAlign'), 'image__wrapper')}
-                size = ${q(node).property('contentWidth')}
-                content = MyVendor.AwesomeNeosProject:Component.Image {
-                    alternativeText = MyVendor.AwesomeNeosProject:Helper.ImageAltText {
-                        image = ${q(node).property('image')}
-                    }
-                    imageDescription = ${q(node).property('imageDescription')}
-                    imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
-                        asset = ${q(node).property('image')}
-                    }
-
-                    href = ${q(node).property('link')}
-                    href.@process.convert = Neos.Neos:ConvertUris
-                    isExternalLink = ${q(node).property('isExternalLink')}
-                }
+            imageUri = Neos.Fusion:ResourceUri {
+                resource = ${q(node).property('image').resource}
             }
+            fileExtension = ${q(node).property('image').resource.fileExtension}
+            alternativeText = MyVendor.AwesomeNeosProject:Helper.ImageAltText {
+                image = ${q(node).property('image')}
+            }
+            imageDescription = ${q(node).property('imageDescription')}
+
+            href = ${q(node).property('link')}
+            href.@process.convert = Neos.Neos:ConvertUris
+            isExternalLink = ${q(node).property('isExternalLink')}
+            contentWidth = ${q(node).property('contentWidth')}
         }
-        }
+    }
 }
