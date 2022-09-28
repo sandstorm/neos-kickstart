@@ -13,6 +13,7 @@ Neos:
         user: '%env:DB_NEOS_USER%'
         dbname: '%env:DB_NEOS_DATABASE_E2ETEST%'
     cache:
+      # necessary that all flow contexts share the same cache. Useful in testing to check the cache of the rendered page
       applicationIdentifier: 'app'
 
   Imagine:

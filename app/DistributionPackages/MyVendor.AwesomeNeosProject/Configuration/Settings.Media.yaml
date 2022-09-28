@@ -3,10 +3,10 @@ Neos:
     thumbnailPresets:
       # These should match prototype(MyVendor.AwesomeNeosProject:Component.Image).srcSet
       'MyVendor.AwesomeNeosProject:Thumbnails.Mobile.jpg':
-        width: 320px
+        width: 370px
         format: jpg
       'MyVendor.AwesomeNeosProject:Thumbnails.Mobile.webp':
-        width: 320px
+        width: 370px
         format: webp
       'MyVendor.AwesomeNeosProject:Thumbnails.Small.jpg':
         width: 600px
@@ -25,4 +25,10 @@ Neos:
         format: jpg
       'MyVendor.AwesomeNeosProject:Thumbnails.Large.webp':
         width: 1200px
+        format: webp
+      'MyVendor.AwesomeNeosProject:Thumbnails.XLarge.jpg':
+        width: 1600px
+        format: jpg
+      'MyVendor.AwesomeNeosProject:Thumbnails.XLarge.webp':
+        width: 1600px
         format: webp
