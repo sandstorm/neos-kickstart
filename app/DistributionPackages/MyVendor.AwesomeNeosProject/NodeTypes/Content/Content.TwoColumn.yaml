@@ -3,7 +3,7 @@
     'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
     'MyVendor.AwesomeNeosProject:Mixin.Column': true
   ui:
-    label: 'Zweispalter'
+    label: 'Two columns'
     icon: icon-columns
     position: 202
   childNodes:
@@ -16,7 +16,7 @@
       type: string
       defaultValue: 50-50
       ui:
-        label: 'Verteilung der Spalten'
+        label: 'Layout'
         reloadIfChanged: true
         inspector:
           group: 'properties'

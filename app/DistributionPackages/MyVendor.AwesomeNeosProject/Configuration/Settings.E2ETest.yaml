@@ -1,0 +1,4 @@
+MyVendor:
+  AwesomeNeosProject:
+    E2ETest:
+      e2eFlowContext: '%env:E2E_FLOW_CONTEXT%'

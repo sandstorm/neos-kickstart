@@ -3,7 +3,7 @@
     'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
     'MyVendor.AwesomeNeosProject:Mixin.Align': true
   ui:
-    label: Download
+    label: 'Download'
     icon: icon-download
     position: 35
     inlineEditable: true

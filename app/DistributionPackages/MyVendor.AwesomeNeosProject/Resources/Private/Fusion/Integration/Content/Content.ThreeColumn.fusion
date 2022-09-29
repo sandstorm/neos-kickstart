@@ -3,11 +3,13 @@ prototype(MyVendor.AwesomeNeosProject:Content.ThreeColumn) < prototype(Neos.Neos
         content = Neos.Fusion:Loop {
             // e.g. ['33', '33', '33'] as result of the split
             items = ${String.split(q(node).property('layout'), '-')}
+            itemName = 'size'
             itemRenderer = MyVendor.AwesomeNeosProject:Component.Columns.Column {
-                size = ${item}
+                @context.node = ${q(node).find('column' + itemKey).get(0)}
+                size = ${size}
                 content = Neos.Neos:ContentCollection {
-                    // itemKey will be index of array
-                    nodePath = ${'column' + itemKey}
+                    // column node is also a collection
+                    @context.node = ${node}
                 }
             }
         }

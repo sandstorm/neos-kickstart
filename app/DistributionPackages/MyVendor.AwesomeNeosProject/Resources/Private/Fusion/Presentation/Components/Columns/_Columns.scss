@@ -22,19 +22,23 @@
     }
 }
 
-.columns__cell--33 {
+.columns__cell--size-33 {
     width: 33%;
 }
 
-.columns__cell--25 {
+.columns__cell--size-25 {
     width: 25%;
 }
 
-.columns__cell--50 {
+.columns__cell--size-50 {
     width: 50%;
 }
 
-.columns__cell--75 {
+.columns__cell--size-66 {
+    width: 66%;
+}
+
+.columns__cell--size-75 {
     width: 75%;
 }
 

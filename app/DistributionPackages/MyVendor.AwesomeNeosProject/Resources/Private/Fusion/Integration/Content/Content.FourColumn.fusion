@@ -5,11 +5,13 @@ prototype(MyVendor.AwesomeNeosProject:Content.FourColumn) < prototype(Neos.Neos:
             // as this would lead to some columns being toooo small.
             // We still keep the same rendering logic.
             items = ${['25', '25', '25', '25']}
+            itemName = 'size'
             itemRenderer = MyVendor.AwesomeNeosProject:Component.Columns.Column {
-                size = ${item}
+                @context.node = ${q(node).find('column' + itemKey).get(0)}
+                size = ${size}
                 content = Neos.Neos:ContentCollection {
-                    // itemKey will be index of array
-                    nodePath = ${'column' + itemKey}
+                    // column node is also a collection
+                    @context.node = ${node}
                 }
             }
         }

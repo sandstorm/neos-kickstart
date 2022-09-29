@@ -3,8 +3,6 @@ prototype(MyVendor.AwesomeNeosProject:Document.AbstractPage) < prototype(Neos.Ne
         javascripts.site = MyVendor.AwesomeNeosProject:Resources.HeaderAssets
     }
 
-    htmlTag.attributes.lang = 'en'
-
     body >
     body = Neos.Fusion:Join {
         @position = 'after bodyTag'

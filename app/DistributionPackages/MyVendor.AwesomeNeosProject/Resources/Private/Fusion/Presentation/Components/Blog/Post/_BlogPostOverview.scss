@@ -1,32 +1,22 @@
 .blog-post-overview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing--xl;
     margin: 0;
+    margin-bottom: $spacing--xl;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
 
     list-style: none;
-}
-
-.blog-post-overview__post {
-    width: 25%;
-
-    @include mq(large) {
-        width: 33%;
-    }
 
     @include mq(medium) {
-        width: 50%;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     @include mq(small) {
-        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
     }
+}
 
-    &--large {
-        width: 50%;
+.blog-post-overview__post {
 
-        @include mq(medium) {
-            width: 50%;
-        }
-    }
 }

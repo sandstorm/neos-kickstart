@@ -2,7 +2,7 @@
   superTypes:
     'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
   ui:
-    label: 'Karte'
+    label: 'Map'
     icon: icon-map
     position: 50
 
@@ -30,7 +30,7 @@
       type: string
       defaultValue: '14'
       ui:
-        label: 'Standard-Zoomstufe'
+        label: 'Default zoom level'
         reloadIfChanged: true
         inspector:
           group: properties
