@@ -18,7 +18,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.BlogTagItem) < prototype(Neos.Fu
         tagName = ${props.renderAsLink ? 'a' : 'span'}
         attributes.class = ${AtomicFusion.classNames('blog-tag', props.activeTag == props.tag ? 'blog-tag--is-active' : '')}
         attributes.href = ${props.renderAsLink ? props.tagPage : null}
-        attributes.title = ${props.renderAsLink ? I18n.translate('HolyPoly.Website:Base:linkTo') + ' Tag: ' + props.tag.properties.title : null}
+        attributes.title = ${props.renderAsLink ? I18n.translate('MyVendor.AwesomeNeosProject:Base:linkTo') + ' Tag: ' + props.tag.properties.title : null}
 
         content = afx`
             {props.tag.properties.title}

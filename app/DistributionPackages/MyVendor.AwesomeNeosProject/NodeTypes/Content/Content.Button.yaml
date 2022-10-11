@@ -12,22 +12,44 @@
       type: string
       defaultValue: 'Button'
       ui:
-        label: 'Button Title'
+        label: 'Button title'
         reloadIfChanged: true
         inspector:
           group: properties
-    type:
+    size:
       type: string
-      defaultValue: 'primary'
+      defaultValue: 'standard'
       ui:
-        label: 'Typ'
+        label: 'Button size'
         reloadIfChanged: true
         inspector:
           group: properties
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
-              primary:
-                label: 'Primary'
-              secondary:
-                label: 'Secondary'
+              standard:
+                label: 'Standard'
+              large:
+                label: 'Large'
+              small:
+                label: 'Small'
+    type:
+      type: string
+      defaultValue: 'solid'
+      ui:
+        label: 'Button type'
+        reloadIfChanged: true
+        inspector:
+          group: properties
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              solid:
+                label: 'Solid'
+              outline:
+                label: 'Outline'
+              outline-transparent:
+                label: 'Outline (transparent)'
+              link:
+                label: 'Link'
+

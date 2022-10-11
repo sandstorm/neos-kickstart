@@ -22,12 +22,13 @@ Feature: Testcase for Button Component
               text = "External Link"
               href = "https://spiegel.de"
               isExternalLink = true
-              type = "primary"
+              type = "solid"
+              size = "large"
             }
             """
         Then in the fusion output, the inner HTML of CSS selector "a" matches "External Link"
         Then in the fusion output, the attributes of CSS selector "a" are:
-            | Key   | Value                  |
-            | class | button button--primary |
-            | href  | https://spiegel.de     |
+            | Key   | Value                                   |
+            | class | button button--solid button--size-large |
+            | href  | https://spiegel.de                      |
         Then I store the Fusion output in the styleguide as "Button_Component_Basic"
