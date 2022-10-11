@@ -6,6 +6,7 @@
 @import "GeneralStyles/NeosUi";
 @import "GeneralStyles/Layout";
 @import "GeneralStyles/Typography";
+@import "GeneralStyles/Glide";
 
 // Components
 @import "./Fusion/Presentation/Components/Columns/Columns";
@@ -27,6 +28,7 @@
 @import "./Fusion/Presentation/Components/Blog/Post/BlogPostPreview";
 @import "./Fusion/Presentation/Components/Form/Form";
 @import "./Fusion/Presentation/Components/ContactForm/ContactForm";
+@import "./Fusion/Presentation/Components/Slider/Slider";
 
 // Utility
 @import "./Fusion/Presentation/Utility/ContentWidth/ContentWidth";

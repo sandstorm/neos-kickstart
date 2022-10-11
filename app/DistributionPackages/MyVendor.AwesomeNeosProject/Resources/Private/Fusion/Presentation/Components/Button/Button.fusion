@@ -4,13 +4,15 @@ prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:
     isExternalLink = false
     inBackend = ${node.context.inBackend}
     type = ''
+    size = ''
     textAlign = ''
 
     @propTypes {
         @strict = true
         text = ${PropTypes.string}
         href = ${PropTypes.string}
-        type = ${PropTypes.oneOf(['primary', 'secondary'])}
+        type = ${PropTypes.oneOf(['solid', 'outline', 'outline-transparent', 'link'])}
+        size = ${PropTypes.oneOf(['standard', 'large', 'small'])}
         isExternalLink = ${PropTypes.boolean}
         inBackend = ${PropTypes.boolean}
         textAlign = ${PropTypes.string}
@@ -19,25 +21,17 @@ prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}
         _target = ${props.isExternalLink ? '_blank' : null}
-        _buttonClassNames = Neos.Fusion:Case {
-            primary {
-                condition = ${props.type == 'primary'}
-                renderer = 'button--primary'
-            }
-            secondary {
-                condition = ${props.type == 'secondary'}
-                renderer = 'button--seondary'
-            }
-            default {
-                condition = ${true}
-                renderer = ''
-            }
-        }
+        _buttonHasNoTextClassName = ${props.text ? '' : 'button--square'}
+        _buttonTypeClassName = ${'button--' + props.type}
+        _buttonSizeClassName = ${'button--size-' + props.size}
+
+        // We use alpine.js to handle click events:
+        // In case the target of this button is an anchor we smoothscroll to the target.
         renderer =  afx`
             <MyVendor.AwesomeNeosProject:Utility.ContentWidth class={AtomicFusion.classNames('button-outer' , props.textAlign)}>
                 <Neos.Fusion:Tag
                     tagName={(props.href && !props.inBackend) ? 'a' : 'div'}
-                    attributes.class={AtomicFusion.classNames('button' , props._buttonClassNames)}
+                    attributes.class={AtomicFusion.classNames('button', props._buttonTypeClassName, props._buttonSizeClassName, props._buttonHasNoTextClassName)}
                     attributes.href={props.href ? props.href : null}
                     attributes.target={props.isExternalLink ? props._target : null}
                 >

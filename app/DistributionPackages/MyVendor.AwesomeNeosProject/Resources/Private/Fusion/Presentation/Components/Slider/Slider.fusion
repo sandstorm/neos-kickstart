@@ -1,0 +1,41 @@
+prototype(MyVendor.AwesomeNeosProject:Component.Slider) < prototype(Neos.Fusion:Component) {
+    slides = ''
+    inBackend = ${node.context.inBackend}
+
+    @propTypes {
+        @strict = true
+        slides = ${PropTypes.string}
+        inBackend = ${PropTypes.boolean}
+    }
+
+    // This slider uses glide.js and is wrapped by alpine.js.
+    // Look at the doku on how to use glide: https://glidejs.com/docs/
+    // The css classes for the slider are prescribed by glide.js.
+    // All the data-attributes are needed by glide.js.
+    // With x-data="slider" we set the component-name we want to use.
+    // With x-ref="glide" we allow alpine.js to get an easy access to the referenced dom node.
+    // In the main.ts the 'slider' component is registered, this way we can access its properties and functionality.
+    renderer = afx`
+        <MyVendor.AwesomeNeosProject:Utility.ContentWidth class="glide__wrapper">
+            <div x-data={"slider(" + props.inBackend + ")"}>
+                <div class={AtomicFusion.classNames('glide', props.inBackend ? "glide--in-backend" : "")} x-ref="glide">
+                    <div class="glide__track" data-glide-el="track">
+                        {props.slides}
+                    </div>
+
+                    <div class="glide__arrows" data-glide-el="controls">
+                        <button x-on:click={"slideLeft"} class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                            <span aria-hidden="true">&lt;</span>
+                            <span class="sr-only">Skip to previous slide page</span>
+                        </button>
+
+                        <button x-on:click={"slideRight"} class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                            <span aria-hidden="true">&gt;</span>
+                            <span class="sr-only">Skip to next slide page</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </MyVendor.AwesomeNeosProject:Utility.ContentWidth>
+    `
+}

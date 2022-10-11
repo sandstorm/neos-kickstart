@@ -46,7 +46,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.ContactForm) < prototype(Neos.Fu
         </div>
 
         <div class="contact-form__action">
-            <Neos.Fusion.Form:Button attributes.id="submitContactForm" attributes.class="button button--large button--primary" attributes.disabled={false}>Send</Neos.Fusion.Form:Button>
+            <Neos.Fusion.Form:Button attributes.id="submitContactForm" attributes.class="button button--size-large button--solid" attributes.disabled={false}>Send</Neos.Fusion.Form:Button>
         </div>
     `
 }

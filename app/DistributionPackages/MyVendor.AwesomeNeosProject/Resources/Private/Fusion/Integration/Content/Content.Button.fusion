@@ -1,14 +1,12 @@
 prototype(MyVendor.AwesomeNeosProject:Content.Button) < prototype(Neos.Neos:ContentComponent) {
     renderer = MyVendor.AwesomeNeosProject:Component.Button {
-        text = Neos.Neos:Editable {
-            property = 'text'
-            block = false
-        }
+        text = ${q(node).property('text')}
         href = ${q(node).property('link')}
         href.@process.convert = Neos.Neos:ConvertUris
         type = ${q(node).property('type')}
         isExternalLink = ${q(node).property('isExternalLink')}
         textAlign = ${q(node).property('textAlign')}
+        size = ${q(node).property('size')}
     }
 }
 

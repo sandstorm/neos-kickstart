@@ -31,7 +31,6 @@ $fa-font-path: $relativePublicPath + "Fonts";
 
 // Base
 $base__module: 5px;
-$base__fontSize: 20px;
 
 // Colors
 $color__white: #fff;
@@ -46,6 +45,11 @@ $color__grey--light: #868686;
 $color__grey--lighter: #dadada;
 
 // Typography
+$base__fontSize: 20px;
+$base__fontSize--small: .8rem;
+$base__fontSize--smaller: .7rem;
+$base__fontSize--smallest: .6rem;
+
 $typo__heading__fontFamily: "Sansation Regular", Arial, Helvetica, sans-serif;
 $typo__heading__fontWeight: 400;
 

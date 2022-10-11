@@ -1,0 +1,96 @@
+.glide {
+    min-height: 250px;
+
+    &--in-backend {
+        .glide__slides {
+            overflow-x: scroll;
+        }
+    }
+}
+
+.glide__slides {
+    align-items: center;
+}
+
+.glide__slide {
+    > .content-width {
+        max-width: 80% !important;
+
+        @include mq(small) {
+            max-width: 100% !important;
+        }
+    }
+
+    &--active {
+        // fix for flickering when sliding
+        position: relative;
+        z-index: 10;
+    }
+}
+
+.glide__arrows {
+    @include mq(small) {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        transform: translate(0, -70px);
+    }
+}
+
+.glide__arrow {
+    @extend .button;
+    @extend .button--link;
+
+    position: absolute;
+    top: 0;
+    height: 100%;
+    overflow: visible;
+
+    color: $color__blue;
+    font-size: 3rem;
+
+    i {
+        display: inline-block;
+
+        color: $color__blue;
+
+        @include mq(small) {
+            transform: unset !important;
+        }
+    }
+
+    &:hover, &:focus {
+        color: $color__blue--dark;
+
+        i {
+            color: $color__blue--dark;
+        }
+    }
+
+    @include mq(small) {
+        position: relative;
+
+        font-size: 2rem;
+    }
+
+    &--left {
+        left: 0;
+
+        @include mq(small) {
+            margin-right: $spacing--lg;
+        }
+
+        &:hover i {
+            transform: translate(-20px, 0);
+        }
+    }
+
+    &--right {
+        right: 0;
+
+        &:hover i {
+            transform: translate(20px, 0);
+        }
+    }
+}
