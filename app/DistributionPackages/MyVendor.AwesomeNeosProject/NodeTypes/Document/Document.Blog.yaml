@@ -5,8 +5,9 @@
     group: general
     label: Blog
     icon: icon-file-text
+  childNodes:
+    tags:
+      type: 'MyVendor.AwesomeNeosProject:Document.Blog.Tags'
   constraints:
     nodeTypes:
       'MyVendor.AwesomeNeosProject:Document.Blog.Post': true
-      'MyVendor.AwesomeNeosProject:Document.Blog.Tags': true
-      'MyVendor.AwesomeNeosProject:Document.Shortcut': true

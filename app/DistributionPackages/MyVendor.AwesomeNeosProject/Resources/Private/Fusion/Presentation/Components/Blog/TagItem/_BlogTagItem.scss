@@ -9,5 +9,7 @@
 
     &--is-active, &:hover, &:active, &:focus {
         background-color: $color__blue--dark;
+
+        color: $color__white;
     }
 }

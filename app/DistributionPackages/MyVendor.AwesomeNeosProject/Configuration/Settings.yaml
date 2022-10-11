@@ -19,9 +19,29 @@ Neos:
         structureTree:
           loadingDepth: 4
     fusion:
+      # uncomment this line for cache debugging
+      #contentCacheDebugMode: true
       autoInclude:
         MyVendor.AwesomeNeosProject: true
     Ui:
       frontendConfiguration:
         defaultInlineEditor: 'ckeditor5'
         hotkeys: ~
+  ContentRepository:
+    contentDimensions:
+      language:
+        label: 'Language'
+        icon: 'icon-language'
+        default: de
+        defaultPreset: de
+        presets:
+          de:
+            label: 'Deutsch'
+            values:
+              - de
+            uriSegment: 'de'
+#          en:
+#            label: 'English'
+#            values:
+#              - en
+#            uriSegment: 'en'

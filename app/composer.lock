@@ -6981,12 +6981,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sandstorm/Sandstorm.E2ETestTools.git",
-                "reference": "0076f745d761c78c0b87d0a1b5d269223c498aab"
+                "reference": "342f7ac3f29cad852fa1413962525b97e2318651"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sandstorm/Sandstorm.E2ETestTools/zipball/0076f745d761c78c0b87d0a1b5d269223c498aab",
-                "reference": "0076f745d761c78c0b87d0a1b5d269223c498aab",
+                "url": "https://api.github.com/repos/sandstorm/Sandstorm.E2ETestTools/zipball/342f7ac3f29cad852fa1413962525b97e2318651",
+                "reference": "342f7ac3f29cad852fa1413962525b97e2318651",
                 "shasum": ""
             },
             "require": {
@@ -7020,7 +7020,7 @@
                 "issues": "https://github.com/sandstorm/Sandstorm.E2ETestTools/issues",
                 "source": "https://github.com/sandstorm/Sandstorm.E2ETestTools/tree/main"
             },
-            "time": "2022-06-27T07:13:13+00:00"
+            "time": "2022-09-21T15:08:58+00:00"
         },
         {
             "name": "seld/jsonlint",
