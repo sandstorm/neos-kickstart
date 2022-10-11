@@ -11,10 +11,11 @@ Sandstorm:
       default: true
       purposes:
         mediaembeds:
-          title: MyVendor.AwesomeNeosProject:CookiePunch:purpose.mediaembeds.title
+          title: MyVendor.AwesomeNeosProject:CookiePunch:purposes.mediaembeds
       services:
         youtube: # blocked using patterns
-          title: YouTube
+          title: MyVendor.AwesomeNeosProject:CookiePunch:groups.media.title
+          description: MyVendor.AwesomeNeosProject:CookiePunch:groups.media.description
           purposes:
             - mediaembeds
     blocking:

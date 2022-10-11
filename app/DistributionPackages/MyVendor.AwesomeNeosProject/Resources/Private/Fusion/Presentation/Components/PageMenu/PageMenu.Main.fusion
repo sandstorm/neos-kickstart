@@ -18,7 +18,10 @@ prototype(MyVendor.AwesomeNeosProject:Component.PageMenu.Main) < prototype(Neos.
                     <li
                         class={AtomicFusion.classNames(item.state, 'page-menu__toplevel-item', item.subItems ? 'page-menu__toplevel-item--has-items' : '')}
                     >
-                        <Neos.Neos:NodeLink node={item.node}>
+                        <Neos.Neos:NodeLink
+                            node={item.node}
+                            attributes.title={I18n.translate('MyVendor.AwesomeNeosProject:Base:linkToPage') + item.label}
+                        >
                             {item.label}
                         </Neos.Neos:NodeLink>
 
@@ -30,7 +33,10 @@ prototype(MyVendor.AwesomeNeosProject:Component.PageMenu.Main) < prototype(Neos.
                                 >
                                     <Neos.Fusion:Loop items={item.subItems} itemName="item">
                                         <li class={AtomicFusion.classNames(item.state, 'page-menu__sublevel-item')}>
-                                            <Neos.Neos:NodeLink node={item.node}>
+                                            <Neos.Neos:NodeLink
+                                                node={item.node}
+                                                attributes.title={I18n.translate('MyVendor.AwesomeNeosProject:Base:linkToPage') + item.label}
+                                            >
                                                 {item.label}
                                             </Neos.Neos:NodeLink>
                                         </li>

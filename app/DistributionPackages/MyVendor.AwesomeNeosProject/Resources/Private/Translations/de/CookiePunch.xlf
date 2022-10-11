@@ -11,12 +11,6 @@
             <trans-unit id="groups.media.description">
                 <source>Von YouTube genutzte Cookies</source>
             </trans-unit>
-            <trans-unit id="groups.default.title">
-                <source>Website</source>
-            </trans-unit>
-            <trans-unit id="groups.default.description">
-                <source>Notwendige Cookies für die Funktionalität der Website</source>
-            </trans-unit>
         </body>
     </file>
 </xliff>

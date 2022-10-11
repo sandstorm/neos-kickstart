@@ -24,7 +24,9 @@ prototype(MyVendor.AwesomeNeosProject:Component.BlogPostPreview) < prototype(Neo
             <Neos.Fusion:Tag
                 tagName={node.context.inBackend ? "div" : "a"}
                 attributes.href={node.context.inBackend ? null : props.href}
-                attributes.class={"blog-post-preview"}>
+                attributes.class={"blog-post-preview"}
+                attributes.title={I18n.translate('MyVendor.AwesomeNeosProject:Base:linkTo') + ' Blog Post: ' + props.title}
+            >
 
                 <div class="blog-post-preview__content">
                     {props.image}

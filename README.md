@@ -79,7 +79,8 @@ This should only be needed when running the project for the first time.
 3. `flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -> helps with the editor experience
 4. `neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful static form node-types
 5. `sandstorm/lightweightelasticsearch` (more customizable) or `flowpack/searchplugin` (simple out of the box) to implement a search
-6. or have a look at the recommandations on neos.io: https://www.neos.io/features/feature-list.html
+6. `sitegeist/LostInTranslation` to get AI translated content on the fly via Deepl
+7. or have a look at the recommendations on neos.io: https://www.neos.io/features/feature-list.html
 
 ## Development
 

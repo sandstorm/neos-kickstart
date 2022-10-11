@@ -6,52 +6,36 @@ html, body {
     color: $color__black;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: $typo__heading__fontFamily;
-    font-size: $typo__h1__fontSize;
     font-weight: $typo__heading__fontWeight;
     line-height: $typo__heading__lineHeight;
     word-break: break-word;
+    hyphens: auto;
+}
+
+h1 {
+    font-size: $typo__h1__fontSize;
 }
 
 h2 {
-    font-family: $typo__heading__fontFamily;
     font-size: $typo__h2__fontSize;
-    font-weight: $typo__heading__fontWeight;
-    line-height: $typo__heading__lineHeight;
-    word-break: break-word;
 }
 
 h3 {
-    font-family: $typo__heading__fontFamily;
     font-size: $typo__h3__fontSize;
-    font-weight: $typo__heading__fontWeight;
-    line-height: $typo__heading__lineHeight;
-    word-break: break-word;
 }
 
 h4 {
-    font-family: $typo__heading__fontFamily;
     font-size: $typo__h4__fontSize;
-    font-weight: $typo__heading__fontWeight;
-    line-height: $typo__heading__lineHeight;
-    word-break: break-word;
 }
 
 h5 {
-    font-family: $typo__heading__fontFamily;
     font-size: $typo__h5__fontSize;
-    font-weight: $typo__heading__fontWeight;
-    line-height: $typo__heading__lineHeight;
-    word-break: break-word;
 }
 
 h6 {
-    font-family: $typo__heading__fontFamily;
     font-size: $typo__h6__fontSize;
-    font-weight: $typo__heading__fontWeight;
-    line-height: $typo__heading__lineHeight;
-    word-break: break-word;
 }
 
 .text-align--center {
