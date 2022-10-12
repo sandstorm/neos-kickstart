@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 
-echo "Starting Import"
+IMPORT_FILE=/app/ContentDump/Database.sql.gz
 
-gzip -dk /app/ContentDump/Database.sql.gz
+if [ -f "$IMPORT_FILE" ];
+    then
+        echo "Starting Import"
+    else
+        echo "No import file found: Exiting"
+        exit 0
+fi
+
+gzip -dk ${IMPORT_FILE}
+
+echo "Importing content"
 
 # generating tables to be dropped before restoring backup
 echo "SET FOREIGN_KEY_CHECKS = 0;" > ./temp.sql
@@ -30,10 +40,18 @@ rm /app/ContentDump/Database.sql
 rm -rf /app/Data/Persistent/Resources/*
 
 # Unzipping into Resources
-tar -xf /app/ContentDump/Resources.tar.gz -C /app/Data/Persistent/Resources
+RESOURCES_FILE=/app/ContentDump/Resources.tar.gz
 
-# publishing resources and warming up
-./flow resource:publish
+if [ -f "$RESOURCES_FILE" ];
+    then
+        echo "Importing resouces"
+        tar -xf ${RESOURCES_FILE} -C /app/Data/Persistent/Resources
+
+        # publishing resources and warming up
+        ./flow resource:publish
+    else
+        echo "No resources file found: skipping"
+fi
 
 echo "ALL DONE, HAVE FUN ;)"
 echo "(you have to re-create the neos users)"

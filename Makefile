@@ -54,6 +54,9 @@ open-local-db:
 open-styleguide:
 	@open http://127.0.0.1:9090/styleguide
 
+site-create:
+	@docker compose exec neos ./flow site:create --name AwesomeNeosProject --package-key MyVendor.AwesomeNeosProject --node-type MyVendor.AwesomeNeosProject:Document.StartPage
+
 site-export:
 	@docker compose exec neos /app/ContentDump/exportSite.sh
 

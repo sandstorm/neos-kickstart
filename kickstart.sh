@@ -77,6 +77,10 @@ echo
 yellow_echo "Hit RETURN to start replacing, or CTRL+C to exit"
 read -p ""
 
+# remove old content dump -> we create a new blank page
+rm ./app/ContentDump/Database.sql.gz
+rm ./app/ContentDump/Resources.tar.gz
+
 # rename distribution package
 mv ./app/DistributionPackages/${defaultVendorName}.${defaultPackageName} ./app/DistributionPackages/${vendorName}.${packageName} 2> /dev/null
 
