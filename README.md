@@ -11,8 +11,8 @@ we provided examples and configuration that helps us to quickly provide a kickst
 - node -> to run Playwright Tests or for local development (without docker) of your sites JavaScript
 
 ## Features
-- Neos 7.3
-- PHP 8.0
+- Neos 8.2
+- PHP 8.1
 - MariaDB 10.3
 - Vips (instead of ImageMagick)
 - Supercronic
