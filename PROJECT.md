@@ -61,6 +61,7 @@ This should only be needed when running the project for the first time.
 ## Local Development
 
 - run `make start` to start all needed container of the project (see `docker-compose.yml` for details)
+- run `make site-create` once to create your new site package or import one
 - run `make logs` and `make log-flow-exceptions` to see what's going on in the containers
 - run `make logs-assets` to see the logs of scss being compiled to css and ts being compiled to js
     - alternatively you can install node dependencies and run the watcher locally
@@ -77,7 +78,8 @@ This should only be needed when running the project for the first time.
 3. `flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -> helps with the editor experience
 4. `neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful static form node-types
 5. `sandstorm/lightweightelasticsearch` (more customizable) or `flowpack/searchplugin` (simple out of the box) to implement a search
-6. or have a look at the recommandations on neos.io: https://www.neos.io/features/feature-list.html
+6. `sitegeist/LostInTranslation` to get AI translated content on the fly via Deepl
+7. or have a look at the recommendations on neos.io: https://www.neos.io/features/feature-list.html
 
 ## Staging
 
