@@ -1,3 +1,6 @@
+@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Mixins";
+
 .blog-post-overview {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -8,15 +11,11 @@
 
     list-style: none;
 
-    @include mq(medium) {
+    @include Mixins.mq(medium) {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    @include mq(small) {
+    @include Mixins.mq(small) {
         grid-template-columns: repeat(1, 1fr);
     }
-}
-
-.blog-post-overview__post {
-
 }

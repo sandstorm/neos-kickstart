@@ -20,7 +20,9 @@ esbuild.build({
     // postCssPlugin.default({
     //    plugins: [autoprefixer, tailwindcss]
     // })
-    plugins: [sassPlugin()],
+    plugins: [sassPlugin({
+        loadPaths: ['./', './node_modules'],
+    })],
 
 
     // Specific options for "npm run build"

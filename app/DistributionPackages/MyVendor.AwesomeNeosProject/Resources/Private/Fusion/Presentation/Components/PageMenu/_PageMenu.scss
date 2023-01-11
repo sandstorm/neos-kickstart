@@ -1,3 +1,6 @@
+@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Mixins";
+
 .page-menu {
     display: flex;
     justify-content: space-between;
@@ -26,7 +29,7 @@
 
     width: $button__height;
 
-    @include mq(small) {
+    @include Mixins.mq(small) {
         display: flex;
     }
 }

@@ -1,3 +1,7 @@
+@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Mixins";
+@use "Fusion/Presentation/Components/Button/Button";
+
 .form form {
     width: 100%;
     display: flex;
@@ -32,7 +36,7 @@
     font-size: inherit;
     font-weight: inherit;
 
-    @include transition(border-color .25s ease);
+    @include Mixins.transition(border-color .25s ease);
 
     &:hover, &:focus {
         border-color: $color__blue;
@@ -62,7 +66,7 @@
 
         pointer-events: none;
         cursor: pointer;
-        @include transition(color .25s ease);
+        @include Mixins.transition(color .25s ease);
     }
 
     &:hover::after {

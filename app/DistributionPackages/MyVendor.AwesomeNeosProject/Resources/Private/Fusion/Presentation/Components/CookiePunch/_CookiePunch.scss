@@ -1,3 +1,7 @@
+@use "AbstractStyles/Variables" as *;
+@use "Fusion/Presentation/Components/Button/Button";
+@use "Fusion/Presentation/Utility/ContentWidth/ContentWidth";
+
 // with the id `#cookie-punch` we can be more specific and therefore override the styling
 // see Settings.CookiePunch.yaml
 #cookie-punch .klaro {

@@ -1,3 +1,6 @@
+@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Mixins";
+
 .page-menu__main {
     display: flex;
     justify-content: center;
@@ -5,7 +8,7 @@
 
     background-color: $color__white;
 
-    @include mq(small) {
+    @include Mixins.mq(small) {
         display: none;
         position: absolute;
         width: 100%;
@@ -35,7 +38,7 @@
     padding: 0 $spacing--lg;
     height: $header__height;
 
-    @include mq(small) {
+    @include Mixins.mq(small) {
         width: 100%;
         height: unset;
         padding-top: $spacing--md;
@@ -49,7 +52,7 @@
         line-height: $header__height;
         font-size: 1.2rem;
 
-        @include mq(small) {
+        @include Mixins.mq(small) {
             line-height: unset;
         }
 
@@ -103,7 +106,7 @@
 
     box-shadow: 5px 5px 10px transparentize($color__black, 0.5);
 
-    @include mq(small) {
+    @include Mixins.mq(small) {
         position: relative;
         top: unset;
         max-height: unset;

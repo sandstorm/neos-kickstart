@@ -1,3 +1,6 @@
+@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Mixins";
+
 .button__outer {
     width: 100%;
 }
@@ -28,10 +31,10 @@
     cursor: pointer;
     overflow: hidden;
 
-    @include transition(background-color .25s, color .25s, border .25s);
+    @include Mixins.transition(background-color .25s, color .25s, border .25s);
 
     i {
-        @include transition(transform .25s);
+        @include Mixins.transition(transform .25s);
     }
 
     &--solid {

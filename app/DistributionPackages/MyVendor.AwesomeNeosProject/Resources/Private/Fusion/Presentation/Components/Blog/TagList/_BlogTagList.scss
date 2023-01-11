@@ -1,3 +1,5 @@
+@use "AbstractStyles/Variables" as *;
+
 .blog-tag-list {
     display: flex;
     flex-wrap: wrap;

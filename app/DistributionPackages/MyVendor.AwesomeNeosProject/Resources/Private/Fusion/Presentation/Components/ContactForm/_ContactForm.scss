@@ -1,3 +1,5 @@
+@use "AbstractStyles/Variables" as *;
+
 .contact-form {
     // TODO: Neos.Fusion.Form renders its own submit button.
     // At the time committing this, I didn't know how to disable

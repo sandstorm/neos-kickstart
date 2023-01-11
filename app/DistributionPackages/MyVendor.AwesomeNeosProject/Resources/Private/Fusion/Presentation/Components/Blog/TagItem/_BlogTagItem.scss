@@ -1,3 +1,6 @@
+@use "AbstractStyles/Variables" as *;
+@use "Fusion/Presentation/Components/Button/Button";
+
 // tag rendered as text
 span.blog-tag {
     text-transform: lowercase;

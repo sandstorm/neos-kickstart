@@ -1,3 +1,5 @@
+@use "AbstractStyles/Variables" as *;
+
 html, body {
     font-size: $base__fontSize;
     font-family: $typo__text__fontFamily;

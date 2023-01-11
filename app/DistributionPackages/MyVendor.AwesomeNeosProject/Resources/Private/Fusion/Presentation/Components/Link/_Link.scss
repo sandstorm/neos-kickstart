@@ -1,3 +1,5 @@
+@use "AbstractStyles/Variables" as *;
+
 a {
     word-break: break-word;
     color: $color__blue;

@@ -1,3 +1,5 @@
+@use "AbstractStyles/Variables" as *;
+
 .blog-post-header {
     margin-top: $base__module * 10;
     margin-bottom: $base__module * 10;

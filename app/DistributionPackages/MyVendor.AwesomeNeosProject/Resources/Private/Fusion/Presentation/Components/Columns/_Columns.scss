@@ -1,3 +1,6 @@
+@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Mixins";
+
 .columns {
     position: relative;
     display: flex;
@@ -6,13 +9,13 @@
     width: 100%;
     gap: $spacing--lg $spacing--lg;
 
-    @include mq(small) {
+    @include Mixins.mq(small) {
         flex-wrap: wrap;
     }
 }
 
 .columns__cell {
-    @include mq(small) {
+    @include Mixins.mq(small) {
         width: 100% !important;
     }
 

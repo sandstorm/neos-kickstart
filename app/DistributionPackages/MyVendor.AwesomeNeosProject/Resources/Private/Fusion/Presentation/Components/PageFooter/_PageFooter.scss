@@ -1,3 +1,5 @@
+@use "AbstractStyles/Variables" as *;
+
 .page-footer {
     margin-top: $spacing--xxl;
     background-color: $color__grey;

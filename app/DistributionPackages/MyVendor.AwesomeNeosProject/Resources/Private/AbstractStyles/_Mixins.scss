@@ -1,3 +1,6 @@
+@use "AbstractStyles/Functions" as *;
+@use "AbstractStyles/Variables" as *;
+
 @mixin mq($key) {
     @if breakpoint($key) {
         @media #{breakpoint($key)} { @content; }
