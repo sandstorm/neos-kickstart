@@ -1,4 +1,4 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Colors";
 @use "Fusion/Presentation/Components/Button/Button";
 @use "Fusion/Presentation/Utility/ContentWidth/ContentWidth";
 
@@ -21,7 +21,7 @@
     }
 
     .cm-list-input:checked + .cm-list-label .slider {
-        background-color: $color__blue;
+        background-color: Colors.$blue;
     }
 }
 

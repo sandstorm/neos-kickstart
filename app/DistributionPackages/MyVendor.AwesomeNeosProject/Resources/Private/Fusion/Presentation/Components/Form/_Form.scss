@@ -1,6 +1,9 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Colors";
+@use "AbstractStyles/Variables/Spacing";
 @use "AbstractStyles/Mixins";
 @use "Fusion/Presentation/Components/Button/Button";
+
+$input__height: 40px;
 
 .form form {
     width: 100%;
@@ -14,23 +17,23 @@
 }
 
 .form .form-group {
-    margin-bottom: $spacing__lg;
+    margin-bottom: Spacing.$lg;
 }
 
 .form label {
     display: inline-block;
     width: 100%;
-    margin-bottom: $spacing__sm;
+    margin-bottom: Spacing.$sm;
 }
 
 .form input:not([type=file]), .form select, .form textarea {
     width: 100%;
     height: $input__height;
     margin: 0;
-    padding-left: $spacing--md;
-    padding-right: $spacing--md;
+    padding-left: Spacing.$md;
+    padding-right: Spacing.$md;
 
-    border: 1px solid $color__grey;
+    border: 1px solid Colors.$grey;
 
     font-family: inherit;
     font-size: inherit;
@@ -39,13 +42,13 @@
     @include Mixins.transition(border-color .25s ease);
 
     &:hover, &:focus {
-        border-color: $color__blue;
+        border-color: Colors.$blue;
     }
 }
 
 .form textarea {
     min-height: 150px;
-    padding: $spacing__md;
+    padding: Spacing.$md;
 }
 
 .form .select {
@@ -62,7 +65,7 @@
         top: -5px;
         right: -5px;
 
-        color: $color__black;
+        color: Colors.$black;
 
         pointer-events: none;
         cursor: pointer;
@@ -70,7 +73,7 @@
     }
 
     &:hover::after {
-        color: $color__blue;
+        color: Colors.$blue;
     }
 
     select {
@@ -100,9 +103,9 @@
         z-index: -1;
 
         &:focus + label {
-            background-color: $color__white;
-            border-color: $color__blue;
-            color: $color__blue;
+            background-color: Colors.$white;
+            border-color: Colors.$blue;
+            color: Colors.$blue;
         }
     }
 
@@ -121,11 +124,11 @@
         padding: 0;
         margin: 0;
 
-        color: $color__red;
+        color: Colors.$red;
         list-style: none;
     }
 
     input {
-        border-color: $color__red;
+        border-color: Colors.$red;
     }
 }

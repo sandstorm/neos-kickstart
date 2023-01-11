@@ -1,21 +1,23 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Colors";
+@use "AbstractStyles/Variables/Spacing";
 @use "AbstractStyles/Mixins";
+@use "Fusion/Presentation/Components/PageHeader/PageHeader";
 
 .page-menu__main {
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
 
-    background-color: $color__white;
+    background-color: Colors.$white;
 
     @include Mixins.mq(small) {
         display: none;
         position: absolute;
         width: 100%;
         left: 0;
-        top: $header__height;
+        top: PageHeader.$header__height;
 
-        border-bottom: 1px solid $color__grey--lighter;
+        border-bottom: 1px solid Colors.$grey--lighter;
 
         z-index: 999;
     }
@@ -35,21 +37,21 @@
 
 .page-menu__toplevel-item {
     display: inline-block;
-    padding: 0 $spacing--lg;
-    height: $header__height;
+    padding: 0 Spacing.$lg;
+    height: PageHeader.$header__height;
 
     @include Mixins.mq(small) {
         width: 100%;
         height: unset;
-        padding-top: $spacing--md;
-        padding-bottom: $spacing--md;
+        padding-top: Spacing.$md;
+        padding-bottom: Spacing.$md;
     }
 
     > a {
         text-decoration: none;
         text-transform: uppercase;
-        color: $color__grey;
-        line-height: $header__height;
+        color: Colors.$grey;
+        line-height: PageHeader.$header__height;
         font-size: 1.2rem;
 
         @include Mixins.mq(small) {
@@ -57,12 +59,12 @@
         }
 
         &:hover, &:focus, &:active {
-            color: $color__blue !important;
+            color: Colors.$blue !important;
         }
     }
 
     &.current > a {
-        color: $color__blue !important;
+        color: Colors.$blue !important;
     }
 
     &--has-items {
@@ -72,7 +74,7 @@
                 content: " ";
                 position: absolute;
                 left: 0;
-                top: $header__height - 30px;
+                top: PageHeader.$header__height - 30px;
                 height: 30px;
                 width: 100%;
 
@@ -91,27 +93,27 @@
 .page-menu__sublevel-wrapper {
     display: none;
     position: absolute;
-    top: $header__height;
+    top: PageHeader.$header__height;
     left: 0;
     width: 100%;
     max-height: 80vh;
-    padding-top: $spacing--xl;
-    padding-bottom: $spacing--xl;
+    padding-top: Spacing.$xl;
+    padding-bottom: Spacing.$xl;
 
-    background-color: $color__white;
+    background-color: Colors.$white;
 
     z-index: 999;
     overflow: hidden;
     overflow-y: scroll;
 
-    box-shadow: 5px 5px 10px transparentize($color__black, 0.5);
+    box-shadow: 5px 5px 10px transparentize(Colors.$black, 0.5);
 
     @include Mixins.mq(small) {
         position: relative;
         top: unset;
         max-height: unset;
-        padding-top: $spacing--md;
-        padding-bottom: $spacing--md;
+        padding-top: Spacing.$md;
+        padding-bottom: Spacing.$md;
 
         box-shadow: unset;
     }
@@ -135,14 +137,14 @@
 
     a {
         text-decoration: none;
-        color: $color__black;
+        color: Colors.$black;
 
         &:hover, &:focus, &:active {
-            color: $color__blue !important;
+            color: Colors.$blue !important;
         }
     }
 
     &.current > a {
-        color: $color__blue !important;
+        color: Colors.$blue !important;
     }
 }

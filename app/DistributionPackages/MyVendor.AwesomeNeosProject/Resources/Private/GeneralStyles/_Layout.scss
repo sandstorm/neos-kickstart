@@ -1,9 +1,9 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Colors";
 
 html, body {
     margin: 0;
     width: 100%;
-    background-color: $color__white;
+    background-color: Colors.$white;
 }
 
 body {

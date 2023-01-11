@@ -1,46 +1,78 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Colors";
+@use "AbstractStyles/Variables/Typo";
+@use "AbstractStyles/Mixins";
+
+$relativePublicPath: '/_Resources/Static/Packages/MyVendor.AwesomeNeosProject/';
+
+// if you want to use font awesome pro, have a look at: https://intern.sandstorm.de/knowledge/tech-tipps/setup-fontawesome-pro
+$fa-font-path: $relativePublicPath + "Fonts";
+
+// self hosted google fonts via: https://google-webfonts-helper.herokuapp.com/fonts
+@font-face {
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 400;
+
+    // dramatically reduces time for the first paint, as all fonts first rendered by a system font
+    font-display: swap;
+    src: local(''),
+    url($fa-font-path + '/atkinson-hyperlegible-v7-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url($fa-font-path + '/atkinson-hyperlegible-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+// https://www.fontsquirrel.com/fonts/sansation
+@font-face {
+    font-family: 'Sansation Regular';
+    font-weight: normal;
+    font-style: normal;
+
+    // dramatically reduces time for the first paint, as all fonts first rendered by a system font
+    font-display: swap;
+    src: local(''),
+    url($fa-font-path + '/Sansation-Regular-webfont.woff') format('woff'),
+}
 
 html, body {
-    font-size: $base__fontSize;
-    font-family: $typo__text__fontFamily;
-    font-weight: $typo__text__fontWeight;
-    line-height: $typo__text__lineHeight;
-    color: $color__black;
+    font-size: Typo.$fontSize;
+    font-family: Typo.$text__fontFamily;
+    font-weight: Typo.$text__fontWeight;
+    line-height: Typo.$text__lineHeight;
+    color: Colors.$black;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $typo__heading__fontFamily;
-    font-weight: $typo__heading__fontWeight;
-    line-height: $typo__heading__lineHeight;
+    font-family: Typo.$heading__fontFamily;
+    font-weight: Typo.$heading__fontWeight;
+    line-height: Typo.$heading__lineHeight;
 
-    @include mq(small) {
+    @include Mixins.mq(small) {
         word-break: break-word;
         hyphens: auto;
     }
 }
 
 h1 {
-    font-size: $typo__h1__fontSize;
+    font-size: Typo.$h1__fontSize;
 }
 
 h2 {
-    font-size: $typo__h2__fontSize;
+    font-size: Typo.$h2__fontSize;
 }
 
 h3 {
-    font-size: $typo__h3__fontSize;
+    font-size: Typo.$h3__fontSize;
 }
 
 h4 {
-    font-size: $typo__h4__fontSize;
+    font-size: Typo.$h4__fontSize;
 }
 
 h5 {
-    font-size: $typo__h5__fontSize;
+    font-size: Typo.$h5__fontSize;
 }
 
 h6 {
-    font-size: $typo__h6__fontSize;
+    font-size: Typo.$h6__fontSize;
 }
 
 .text-align--center {

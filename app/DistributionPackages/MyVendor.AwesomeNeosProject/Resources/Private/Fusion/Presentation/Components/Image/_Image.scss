@@ -1,4 +1,4 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Colors";
 
 img {
     max-width: 100%;
@@ -27,5 +27,5 @@ img {
 
     font-size: 0.8rem;
     text-align: left;
-    color: $color__grey--light;
+    color: Colors.$grey--light;
 }

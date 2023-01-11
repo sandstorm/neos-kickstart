@@ -1,12 +1,12 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Spacing";
 @use "AbstractStyles/Mixins";
 
 .blog-post-overview {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: $spacing--xl;
+    gap: Spacing.$xl;
     margin: 0;
-    margin-bottom: $spacing--xl;
+    margin-bottom: Spacing.$xl;
     padding: 0;
 
     list-style: none;

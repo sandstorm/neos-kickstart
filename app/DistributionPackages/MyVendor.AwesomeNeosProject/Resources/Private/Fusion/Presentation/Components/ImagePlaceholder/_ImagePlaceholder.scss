@@ -1,4 +1,4 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Colors";
 
 .image-placeholder {
     position: relative;
@@ -18,7 +18,7 @@
     text-align: center;
     padding: 20px;
 
-    background: $color__black;
+    background: Colors.$black;
 
-    color: $color__white;
+    color: Colors.$white;
 }

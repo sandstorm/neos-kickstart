@@ -1,10 +1,10 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Colors";
 
 a {
     word-break: break-word;
-    color: $color__blue;
+    color: Colors.$blue;
 
     &:hover, &:focus, &:active {
-        color: $color__blue--dark;
+        color: Colors.$blue--dark;
     }
 }

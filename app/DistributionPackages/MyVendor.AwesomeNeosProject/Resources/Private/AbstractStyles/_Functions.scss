@@ -1,5 +1,5 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Breakpoints";
 
 @function breakpoint($key) {
-    @return map-get($breakpoints, $key);
+    @return map-get(Breakpoints.$breakpoints, $key);
 }

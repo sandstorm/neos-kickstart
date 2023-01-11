@@ -1,21 +1,22 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Colors";
+@use "AbstractStyles/Variables/Spacing";
 
 .page-footer {
-    margin-top: $spacing--xxl;
-    background-color: $color__grey;
-    color: $color__grey--lighter;
+    margin-top: Spacing.$xxl;
+    background-color: Colors.$grey;
+    color: Colors.$grey--lighter;
 
     a {
-        color: $color__blue;
+        color: Colors.$blue;
 
         &:hover, &:focus, &:active {
-            color: $color__blue--dark;
+            color: Colors.$blue--dark;
         }
     }
 }
 
 
 .page-footer__content {
-    padding-top: $spacing--xl;
-    padding-bottom: $spacing--xl;
+    padding-top: Spacing.$xl;
+    padding-bottom: Spacing.$xl;
 }

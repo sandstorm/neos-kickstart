@@ -1,4 +1,5 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Colors";
+@use "AbstractStyles/Variables/Spacing";
 @use "AbstractStyles/Mixins";
 @use "Fusion/Presentation/Components/Button/Button";
 
@@ -51,13 +52,13 @@
     height: 100%;
     overflow: visible;
 
-    color: $color__blue;
+    color: Colors.$blue;
     font-size: 3rem;
 
     i {
         display: inline-block;
 
-        color: $color__blue;
+        color: Colors.$blue;
 
         @include Mixins.mq(small) {
             transform: unset !important;
@@ -65,10 +66,10 @@
     }
 
     &:hover, &:focus {
-        color: $color__blue--dark;
+        color: Colors.$blue--dark;
 
         i {
-            color: $color__blue--dark;
+            color: Colors.$blue--dark;
         }
     }
 
@@ -82,7 +83,7 @@
         left: 0;
 
         @include Mixins.mq(small) {
-            margin-right: $spacing--lg;
+            margin-right: Spacing.$lg;
         }
 
         &:hover i {

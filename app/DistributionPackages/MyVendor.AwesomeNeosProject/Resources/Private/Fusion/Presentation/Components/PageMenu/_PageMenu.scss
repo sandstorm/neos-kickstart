@@ -1,12 +1,15 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Colors";
+@use "AbstractStyles/Variables/Spacing";
 @use "AbstractStyles/Mixins";
+@use "Fusion/Presentation/Components/Button/Button";
+@use "Fusion/Presentation/Components/PageHeader/PageHeader";
 
 .page-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
-    height: $header__height;
+    height: PageHeader.$header__height;
 }
 
 .page-menu__logo {
@@ -23,11 +26,11 @@
     flex-grow: 0;
     flex-shrink: 0;
     flex-direction: column;
-    padding: $base__module;
+    padding: Spacing.$sm;
     margin: 0;
-    gap: $base__module 0;
+    gap: Spacing.$sm 0;
 
-    width: $button__height;
+    width: Button.$button__height;
 
     @include Mixins.mq(small) {
         display: flex;
@@ -35,10 +38,10 @@
 }
 
 .mobile-menu__toggle__hamburger-line {
-    height: $base__module;
+    height: Spacing.$sm;
     width: 100%;
     flex-grow: 0;
     flex-shrink: 0;
 
-    background: $color__grey;
+    background: Colors.$grey;
 }

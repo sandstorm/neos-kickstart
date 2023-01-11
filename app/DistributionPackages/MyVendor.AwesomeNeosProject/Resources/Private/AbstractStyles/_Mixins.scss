@@ -1,5 +1,5 @@
 @use "AbstractStyles/Functions" as *;
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Breakpoints";
 
 @mixin mq($key) {
     @if breakpoint($key) {
@@ -32,7 +32,7 @@
  */
 
 @mixin responsive($properties, $breakpoints) {
-    @each $breakpointKey, $propertyValue in $breakpoints {
+    @each $breakpointKey, $propertyValue in Breakpoints.$breakpoints {
         @if($breakpointKey == default) {
             @each $property in $properties {
                 #{$property}: $propertyValue

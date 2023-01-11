@@ -1,12 +1,12 @@
-@use "AbstractStyles/Variables" as *;
+@use "AbstractStyles/Variables/Spacing";
 
 .blog-tag-list {
     display: flex;
     flex-wrap: wrap;
-    gap: $spacing--md;
+    gap: Spacing.$md;
 
-    margin-top: $spacing--lg;
-    margin-bottom: $spacing--lg;
+    margin-top: Spacing.$lg;
+    margin-bottom: Spacing.$lg;
 
     text-align: center;
 }
