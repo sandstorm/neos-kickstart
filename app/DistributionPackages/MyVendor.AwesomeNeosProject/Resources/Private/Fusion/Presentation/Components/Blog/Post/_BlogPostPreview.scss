@@ -1,6 +1,8 @@
+@use "AbstractStyles/Variables/Colors";
+
 .blog-post-preview {
     text-decoration: none;
-    color: $color__black;
+    color: Colors.$black;
 }
 
 .blog-post-preview__teaser {

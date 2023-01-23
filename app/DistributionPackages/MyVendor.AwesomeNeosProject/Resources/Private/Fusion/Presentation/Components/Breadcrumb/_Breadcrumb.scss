@@ -1,3 +1,5 @@
+@use "AbstractStyles/Variables/Colors";
+
 .breadcrumb {
     margin: 0;
     padding-top: 10px;
@@ -11,7 +13,7 @@
     li {
         display: inline-block;
 
-        color: $color__grey--light;
+        color: Colors.$grey--light;
 
         &.current {
             padding-left: 5px;
@@ -29,11 +31,11 @@
 
         a {
             padding: 5px;
-            color: $color__grey--light;
+            color: Colors.$grey--light;
             text-decoration: none;
 
             &:hover, &:active, &:focus {
-                color: $color__blue;
+                color: Colors.$blue;
             }
         }
     }

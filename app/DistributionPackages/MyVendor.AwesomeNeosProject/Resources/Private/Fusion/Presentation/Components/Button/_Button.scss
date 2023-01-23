@@ -1,3 +1,12 @@
+@use "AbstractStyles/Variables/Colors";
+@use "AbstractStyles/Variables/Typo";
+@use "AbstractStyles/Variables/Spacing";
+@use "AbstractStyles/Mixins";
+
+$button__height: 40px;
+$button__height--large: 50px;
+$button__height--larger: 60px;
+
 .button__outer {
     width: 100%;
 }
@@ -6,17 +15,17 @@
     display: inline-block;
     height: $button__height;
     padding: 0;
-    padding-left: $spacing--lg;
-    padding-right: $spacing--lg;
+    padding-left: Spacing.$lg;
+    padding-right: Spacing.$lg;
     margin: auto;
-    margin-bottom: $spacing--md;
+    margin-bottom: Spacing.$md;
 
     border-width: 1px;
     border-style: solid;
     -webkit-appearance: none;
     background: none;
 
-    font-size: $base__fontSize--small;
+    font-size: Typo.$fontSize--small;
     font-weight: 500;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -28,51 +37,51 @@
     cursor: pointer;
     overflow: hidden;
 
-    @include transition(background-color .25s, color .25s, border .25s);
+    @include Mixins.transition(background-color .25s, color .25s, border .25s);
 
     i {
-        @include transition(transform .25s);
+        @include Mixins.transition(transform .25s);
     }
 
     &--solid {
-        border-color: $color__blue;
-        background-color: $color__blue;
+        border-color: Colors.$blue;
+        background-color: Colors.$blue;
 
-        color: $color__white;
+        color: Colors.$white;
 
         &:hover, &:focus {
-            background-color: $color__blue--dark;
-            border-color: $color__blue--dark;
+            background-color: Colors.$blue--dark;
+            border-color: Colors.$blue--dark;
 
-            color: $color__white;
+            color: Colors.$white;
         }
 
         &:active{
-            background-color: $color__black;
-            border-color: $color__black;
+            background-color: Colors.$black;
+            border-color: Colors.$black;
 
-            color: $color__white;
+            color: Colors.$white;
         }
     }
 
     &--outline {
-        background-color: $color__white;
-        border-color: $color__blue;
+        background-color: Colors.$white;
+        border-color: Colors.$blue;
 
-        color: $color__blue;
+        color: Colors.$blue;
 
         &:hover, &:focus {
-            background-color: $color__white;
-            border-color: $color__blue--dark;
+            background-color: Colors.$white;
+            border-color: Colors.$blue--dark;
 
-            color: $color__blue--dark;
+            color: Colors.$blue--dark;
         }
 
         &:active {
-            background-color: $color__white;
-            border-color: $color__black;
+            background-color: Colors.$white;
+            border-color: Colors.$black;
 
-            color: $color__black;
+            color: Colors.$black;
         }
     }
 
@@ -90,12 +99,12 @@
         background-color: transparent;
         border: none;
 
-        color: $color__blue;
+        color: Colors.$blue;
         line-height: unset;
 
         &:hover, &:active, &:focus {
             background-color: transparent;
-            color: $color__blue--dark;
+            color: Colors.$blue--dark;
         }
     }
 
@@ -107,7 +116,7 @@
         height: $button__height * 0.8;
 
         line-height: $button__height * 0.8;
-        font-size: $base__fontSize--smallest;
+        font-size: Typo.$fontSize--smallest;
     }
 
     &--size-large {

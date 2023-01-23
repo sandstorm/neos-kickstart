@@ -1,3 +1,8 @@
+@use "AbstractStyles/Variables/Colors";
+@use "AbstractStyles/Variables/Spacing";
+@use "AbstractStyles/Mixins";
+@use "Fusion/Presentation/Components/Button/Button";
+
 .glide {
     min-height: 250px;
 
@@ -16,7 +21,7 @@
     > .content-width {
         max-width: 80% !important;
 
-        @include mq(small) {
+        @include Mixins.mq(small) {
             max-width: 100% !important;
         }
     }
@@ -29,7 +34,7 @@
 }
 
 .glide__arrows {
-    @include mq(small) {
+    @include Mixins.mq(small) {
         position: absolute;
         top: 0;
         right: 0;
@@ -47,28 +52,28 @@
     height: 100%;
     overflow: visible;
 
-    color: $color__blue;
+    color: Colors.$blue;
     font-size: 3rem;
 
     i {
         display: inline-block;
 
-        color: $color__blue;
+        color: Colors.$blue;
 
-        @include mq(small) {
+        @include Mixins.mq(small) {
             transform: unset !important;
         }
     }
 
     &:hover, &:focus {
-        color: $color__blue--dark;
+        color: Colors.$blue--dark;
 
         i {
-            color: $color__blue--dark;
+            color: Colors.$blue--dark;
         }
     }
 
-    @include mq(small) {
+    @include Mixins.mq(small) {
         position: relative;
 
         font-size: 2rem;
@@ -77,8 +82,8 @@
     &--left {
         left: 0;
 
-        @include mq(small) {
-            margin-right: $spacing--lg;
+        @include Mixins.mq(small) {
+            margin-right: Spacing.$lg;
         }
 
         &:hover i {

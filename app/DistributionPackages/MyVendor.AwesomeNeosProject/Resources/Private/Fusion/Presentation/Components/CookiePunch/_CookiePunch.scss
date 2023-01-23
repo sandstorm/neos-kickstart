@@ -1,3 +1,7 @@
+@use "AbstractStyles/Variables/Colors";
+@use "Fusion/Presentation/Components/Button/Button";
+@use "Fusion/Presentation/Utility/ContentWidth/ContentWidth";
+
 // with the id `#cookie-punch` we can be more specific and therefore override the styling
 // see Settings.CookiePunch.yaml
 #cookie-punch .klaro {
@@ -17,7 +21,7 @@
     }
 
     .cm-list-input:checked + .cm-list-label .slider {
-        background-color: $color__blue;
+        background-color: Colors.$blue;
     }
 }
 

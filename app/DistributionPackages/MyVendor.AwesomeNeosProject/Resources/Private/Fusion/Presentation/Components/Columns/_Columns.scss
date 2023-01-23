@@ -1,18 +1,21 @@
+@use "AbstractStyles/Variables/Spacing";
+@use "AbstractStyles/Mixins";
+
 .columns {
     position: relative;
     display: flex;
-    margin-bottom: $spacing--xl;
-    margin-top: $spacing--xl;
+    margin-bottom: Spacing.$xl;
+    margin-top: Spacing.$xl;
     width: 100%;
-    gap: $spacing--lg $spacing--lg;
+    gap: Spacing.$lg Spacing.$lg;
 
-    @include mq(small) {
+    @include Mixins.mq(small) {
         flex-wrap: wrap;
     }
 }
 
 .columns__cell {
-    @include mq(small) {
+    @include Mixins.mq(small) {
         width: 100% !important;
     }
 
