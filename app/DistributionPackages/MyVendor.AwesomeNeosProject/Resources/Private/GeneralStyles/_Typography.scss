@@ -10,8 +10,11 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $typo__heading__fontFamily;
     font-weight: $typo__heading__fontWeight;
     line-height: $typo__heading__lineHeight;
-    word-break: break-word;
-    hyphens: auto;
+
+    @include mq(small) {
+        word-break: break-word;
+        hyphens: auto;
+    }
 }
 
 h1 {

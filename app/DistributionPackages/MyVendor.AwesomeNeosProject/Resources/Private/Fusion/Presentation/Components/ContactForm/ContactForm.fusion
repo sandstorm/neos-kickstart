@@ -1,5 +1,14 @@
 prototype(MyVendor.AwesomeNeosProject:Component.ContactForm) < prototype(Neos.Fusion:Component) {
     renderer = afx`
+        <Neos.Fusion.Form:FieldContainer
+            class="form-group form-group--surname"
+            field.name="surname"
+            label="Your surname"
+            attributes.aria-hidden="true"
+        >
+            <Neos.Fusion.Form:Input field.name="surname" attributes.autocomplete="off" attributes.tabindex="-1" />
+        </Neos.Fusion.Form:FieldContainer>
+
         <Neos.Fusion.Form:FieldContainer class="form-group" field.name="name" label="Your name *">
             <Neos.Fusion.Form:Input field.name="name"/>
         </Neos.Fusion.Form:FieldContainer>

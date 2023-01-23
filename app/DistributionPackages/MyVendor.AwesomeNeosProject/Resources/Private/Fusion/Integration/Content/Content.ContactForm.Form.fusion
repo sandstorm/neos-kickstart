@@ -8,6 +8,8 @@ prototype(MyVendor.AwesomeNeosProject:Content.ContactForm.Form) < prototype(Neos
         content = MyVendor.AwesomeNeosProject:Component.ContactForm
 
         schema {
+            # surname = honeypot
+            surname = ${Form.Schema.string()}
             name = ${Form.Schema.string().isRequired()}
             email = ${Form.Schema.string().isRequired().validator('Neos\Flow\Validation\Validator\EmailAddressValidator')}
             message = ${Form.Schema.string()}
@@ -25,6 +27,8 @@ prototype(MyVendor.AwesomeNeosProject:Content.ContactForm.Form) < prototype(Neos
             }
         }
         email {
+            # email is not send when honey pot field is filled out
+            @if.noHoney = ${data.surname ? false : true}
             type = 'Neos.Fusion.Form.Runtime:Email'
             options {
                 senderAddress = "contact@sandstorm.de"
