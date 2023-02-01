@@ -29,7 +29,7 @@ deploy_production:
     name: bitnami/kubectl:1.15.0
     entrypoint: [""]
   needs:
-   - package_app_production
+    - package_app_production
   environment:
     name: production
   script:

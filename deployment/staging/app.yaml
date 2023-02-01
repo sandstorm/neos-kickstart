@@ -12,7 +12,7 @@ spec:
 
   node: worker1
   # TODO change when deploying a kickstarted package to staging
-  image: docker-hub.sandstorm.de/infrastructure/neos-on-docker-kickstart:main
+  image: docker-hub.sandstorm.de/infrastructure/neos-on-docker-kickstart/neos:main
 
   port: 8081
   # Set to false when a real DNS entry for staging/staging exists
