@@ -18,7 +18,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Slider) < prototype(Neos.Fusion:
     renderer = afx`
         <MyVendor.AwesomeNeosProject:Utility.ContentWidth class="glide__wrapper">
             <div x-data={"slider(" + props.inBackend + ")"}>
-                <div class={AtomicFusion.classNames('glide', props.inBackend ? "glide--in-backend" : "")} x-ref="glide">
+                <div class={AtomicFusion.classNames('glide', {'glide--in-backend': props.inBackend})} x-ref="glide">
                     <div class="glide__track" data-glide-el="track">
                         {props.slides}
                     </div>

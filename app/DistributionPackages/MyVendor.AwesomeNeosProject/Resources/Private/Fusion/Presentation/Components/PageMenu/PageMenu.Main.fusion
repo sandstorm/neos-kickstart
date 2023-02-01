@@ -16,7 +16,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.PageMenu.Main) < prototype(Neos.
             <ul class="page-menu__toplevel">
                 <Neos.Fusion:Loop items={props.menuItems}>
                     <li
-                        class={AtomicFusion.classNames(item.state, 'page-menu__toplevel-item', item.subItems ? 'page-menu__toplevel-item--has-items' : '')}
+                        class={AtomicFusion.classNames(item.state, 'page-menu__toplevel-item', {'page-menu__toplevel-item--has-items': item.subItems})}
                     >
                         <Neos.Neos:NodeLink
                             node={item.node}
