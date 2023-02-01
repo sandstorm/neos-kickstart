@@ -1,4 +1,6 @@
+@use "AbstractStyles/Mixins";
 @use "AbstractStyles/Variables/Colors";
+@use "AbstractStyles/Variables/Spacing";
 @use "Fusion/Presentation/Components/Button/Button";
 @use "Fusion/Presentation/Utility/ContentWidth/ContentWidth";
 
@@ -13,10 +15,21 @@
         .cm-btn {
             @extend .button;
             margin-bottom: 0;
+
+            @include Mixins.mq(small) {
+                width: 100%;
+                margin-bottom: Spacing.$md;
+            }
         }
 
         .cm-btn-accept-all {
             @extend .button--solid;
+        }
+
+        .cm-modal .cm-footer-buttons {
+            @include Mixins.mq(small) {
+                flex-direction: column;
+            }
         }
     }
 
