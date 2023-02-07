@@ -29,6 +29,10 @@ function nuke {
 
 # Initial project setup
 function setup {
+  _echo_green "Setting up git lfs"
+  git lfs install || true
+  git lfs pull || true
+
   _echo_green "Installing Dev Script Runner"
   brew install sandstorm/tap/dev-script-runner
   brew upgrade sandstorm/tap/dev-script-runner

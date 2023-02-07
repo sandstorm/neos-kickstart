@@ -53,5 +53,7 @@ if [ -f "$RESOURCES_FILE" ];
         echo "No resources file found: skipping"
 fi
 
+./flow user:create --roles Administrator admin password LocalDev Admin || true
+
 echo "ALL DONE, HAVE FUN ;)"
 echo "(you have to re-create the neos users)"

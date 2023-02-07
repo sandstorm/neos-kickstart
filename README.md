@@ -52,25 +52,20 @@ Run `./kickstart.sh` an follow the instructions.
 
 This should only be needed when running the project for the first time.
 
-- run `git lfs install` and `git lfs pull` to get large files like the content dump
-- run `make setup` only the first time to setup docker images and tmp folders
-- run `cd ./e2e-testrunner && nvm use && npm install` as we do not want to use a docker container to be able
-  to debug Playwright test more easily. TODO: maybe run in `make tests` but nvm is currently giving us a headache here.
+- run `./devs.sh setup`, this will also install the Dev Script Runner. You can now use `dev <some-taks>` from anywhere
+  inside the project.
 - for font awesome pro support in local dev
     - open: `app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/.npmrc.sample`
     - and do what the file tells you ;)
 
 ## Local Development
 
-- run `make start` to start all needed container of the project (see `docker-compose.yml` for details)
-- run `make logs` and `make log-flow-exceptions` to see what's going on in the containers
-- run `make logs-assets` to see the logs of scss being compiled to css and ts being compiled to js
-    - alternatively you can install node dependencies and run the watcher locally
-    - `cd app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/`
-    - `nvm install && nvm use && yarn && yarn run watch`
-    - see `package.json` for more scripts
-- run `make help` to see all available commands
-- you can login to the [neos backend](http://localhost:8081/neos) with the credentials `admin` and `password`
+- run `dev start` to start all needed container of the project (see `docker-compose.yml` for details)
+- run `dev log` and `dev log-flow-exceptions` to see what's going on in the containers
+- run `dev log-assets` to see the logs of scss being compiled to css and ts being compiled to js
+- run `dev` to see all available commands
+- run `dev <sometaks> --help` to get detailed help for a task
+- run `dev open-site` you can login to the [neos backend](http://localhost:8081/neos) with the credentials `admin` and `password`
 
 ## Packages we recommend for certain use-cases
 
@@ -87,7 +82,7 @@ This should only be needed when running the project for the first time.
 As the script can be used to change the git remote and remove files development becomes hard ;)
 Run `./kickstart.sh --dev` to not remove certain files e.g. `./kickstart.sh`. 
 Run `./kickstart.sh --restore-git` after testing changes you made to `./kickstart.sh`
-Run `make logs` and `make log-flow-exceptions` to see what's going on in the containers
+Run `dev log` and `dev log-flow-exceptions` to see what's going on in the containers
 
 ## Staging
 
@@ -104,18 +99,14 @@ The script places two archives in `app/ContentDump` for DB Content and the Resso
 (Maybe init git lfs for the repo if you plan to use this script)
 
 ```bash
-make site-export
+dev site-export
 ```
 
 ### IMPORT
 
 ```bash
-make site-import
+dev site-import
 ```
-
-You have to re-create the local admin user again after the import is finished.
-
-`./flow user:create --roles Administrator admin password LocalDev Admin || true`
 
 ## Roadmap
 Things we want to add or document for an easier kickstart.
