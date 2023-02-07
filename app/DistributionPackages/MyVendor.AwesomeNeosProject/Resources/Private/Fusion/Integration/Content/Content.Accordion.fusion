@@ -1,0 +1,9 @@
+prototype(MyVendor.AwesomeNeosProject:Content.Accordion) < prototype(Neos.Neos:ContentComponent) {
+    renderer = MyVendor.AwesomeNeosProject:Component.Accordion {
+        firstChild = ${q(node).find('[instanceof MyVendor.AwesomeNeosProject:Content.Accordion.Item]').get(0)}
+
+        content = Neos.Neos:ContentCollection {
+            @context.node = ${node}
+        }
+    }
+}

@@ -1,0 +1,20 @@
+prototype(MyVendor.AwesomeNeosProject:Component.Accordion) < prototype(Neos.Fusion:Component) {
+    firstChild = ''
+    content = ''
+
+    @propTypes {
+        @strict = true
+        firstChild = ${PropTypes.any}
+        content = ${PropTypes.string}
+    }
+
+    renderer = Neos.Fusion:Component {
+        @apply.props = ${props}
+
+        renderer =  afx`
+        <div x-data={'{ active: "' + props.firstChild.identifier + '", expanded: false }'} id={'accordion-' + node.identifier} class="accordion content-width">
+            {props.content}
+        </div>
+        `
+    }
+}

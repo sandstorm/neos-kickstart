@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@alpinejs/collapse@^3.11.1":
+  version "3.11.1"
+  resolved "https://registry.yarnpkg.com/@alpinejs/collapse/-/collapse-3.11.1.tgz#391b393f646f1c43787fcc7351d365a7ac0ae538"
+  integrity sha512-H5GQ4rEWN5Z5vKf4U+FtUdcRDdHSa+p4cAesiB+I2njfOxw0EDuobugiP1Pf3DpmyIk8iJx7feLmxeboqxbpRA==
+
 "@alpinejs/intersect@^3.10.3":
   version "3.10.3"
   resolved "https://registry.npmjs.org/@alpinejs/intersect/-/intersect-3.10.3.tgz"

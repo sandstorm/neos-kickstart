@@ -1,0 +1,20 @@
+'MyVendor.AwesomeNeosProject:Content.Accordion.Item':
+  superTypes:
+    'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
+  ui:
+    label: 'Accordion Item'
+    icon: icon-chevron-down
+  childNodes:
+    main:
+      type: 'MyVendor.AwesomeNeosProject:ContentCollection.Default'
+      constraints:
+        nodeTypes:
+          'MyVendor.AwesomeNeosProject:Content.Accordion': false
+  properties:
+    title:
+      type: string
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Title'

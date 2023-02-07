@@ -1,5 +1,6 @@
 {
     "dependencies": {
+        "@alpinejs/collapse": "^3.11.1",
         "@alpinejs/intersect": "^3.10.3",
         "@glidejs/glide": "^3.6.0",
         "alpinejs": "^3.10.3"
