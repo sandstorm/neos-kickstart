@@ -50,24 +50,24 @@ This should only be needed when running the project for the first time.
 
 - run `git lfs install` and `git lfs pull` to get large files like the content dump (you need to install git-lfs on your
   machine)
-- run `make setup` only the first time to setup docker images and tmp folders
+- run `dev setup` only the first time to setup docker images and tmp folders
 - run `cd ./e2e-testrunner && nvm use && npm install` as we do not want to use a docker container to be able to debug
-  Playwright test more easily. TODO: maybe run in `make tests` but nvm is currently giving us a headache here.
+  Playwright test more easily. TODO: maybe run in `dev tests` but nvm is currently giving us a headache here.
 - for font awesome pro support in local dev
     - open: `app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/.npmrc.sample`
     - and do what the file tells you ;)
 
 ## Local Development
 
-- run `make start` to start all needed container of the project (see `docker-compose.yml` for details)
-- run `make site-create` once to create your new site package or import one
-- run `make logs` and `make log-flow-exceptions` to see what's going on in the containers
-- run `make logs-assets` to see the logs of scss being compiled to css and ts being compiled to js
+- run `dev start` to start all needed container of the project (see `docker-compose.yml` for details)
+- run `dev site-create` once to create your new site package or import one
+- run `dev logs` and `dev log-flow-exceptions` to see what's going on in the containers
+- run `dev logs-assets` to see the logs of scss being compiled to css and ts being compiled to js
     - alternatively you can install node dependencies and run the watcher locally
     - `cd app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/`
     - `nvm install && nvm use && yarn && yarn run watch`
     - see `package.json` for more scripts
-- run `make help` to see all available commands
+- run `dev help` to see all available commands
 - you can login to the [neos backend](http://localhost:8081/neos) with the credentials `admin` and `password`
 
 ## Packages we recommend for certain use-cases
@@ -94,14 +94,14 @@ Mailhog Web-UI at [http://localhost:8025/](http://localhost:8025/).
 
 ## Running Tests
 
-Make sure the application is up and running `make start`. Make sure you build the testrunner
+Make sure the application is up and running `dev start`. Make sure you build the testrunner
 with `cd ./e2e-testrunner && nvm use && npm install`
 
 - for E2E Test
     - in a new console run `cd ./e2e-testrunner node index.js` to start the e2e-testrunner
-    - in a new console run `make e2e-tests` to run the actual tests
-- for Unit Tests run `make unit-tests`
-- for Functional Tests run `make functional-tests`
+    - in a new console run `dev e2e-tests` to run the actual tests
+- for Unit Tests run `dev unit-tests`
+- for Functional Tests run `dev functional-tests`
 
 ### debug failing tests
 
@@ -114,7 +114,7 @@ npx playwright show-trace e2e-testrunner/report_YOUR_FAILING_STEP.zip
 
 #### run single BDD feature files / scenarios
 
-The `make e2e-tests` command runs **all tests** what is handy before you push your commits. Often, in TDD it is more
+The `dev e2e-tests` command runs **all tests** what is handy before you push your commits. Often, in TDD it is more
 practical to run single feature files or scenarios. That has to be done via command line, since the IntelliJ
 integration "play button" does not work for our docker setup (afaik).
 
