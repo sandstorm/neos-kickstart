@@ -1,0 +1,16 @@
+@use "AbstractStyles/Variables/Colors";
+@use "AbstractStyles/Variables/Spacing";
+
+.anchor {
+    display: block;
+    position: relative;
+
+    // add for sticky header
+    // top: -$header__height;
+}
+
+.anchor--backend {
+    border: 1px dashed Colors.$grey;
+    margin-top: Spacing.$lg;
+    margin-bottom: Spacing.$lg;
+}
