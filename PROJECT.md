@@ -2,47 +2,45 @@
 
 TODO: improve README
 
-Table of contents:
-- [requirements](#requirements)
-- [local development setup](#local-development-setup)
-- [running tests](#running-tests)
-- [packages we recommend for certain use-cases](#packages-we-recommend-for-certain-use-cases)
+[toc]
 
 ## Features
-- Neos 7.2
-- PHP 8.0
+
+- Neos 8.2
+- PHP 8.1
 - MariaDB 10.3
 - Vips (instead of ImageMagick)
 - Supercronic
 - Bash-Highlighting (dev, staging, production)
 - Gitlab-CI Pipeline Config
-  - Kubernetes Deployment
-  - E2E Tests
-  - Functional Tests
-  - Unit Tests
+    - Kubernetes Deployment
+    - E2E Tests
+    - Functional Tests
+    - Unit Tests
 - Testsetup
-  - Functional and Unit
-  - Behavioural Tests
-    - Playwright Integration
-  - Playwright Testrunner
+    - Functional and Unit
+    - Behavioural Tests
+        - Playwright Integration
+    - Playwright Testrunner
 - Swiftmailer + Mailhog
 
 ## Setting up IntelliJ
+
 - recommended plugins:
-  - Neos Support
-  - Makefile language
-  - PHP
-  - PHP Annotations
-  - PHP Toolbox
-  - Prettier
-    - make sure Prettier is activated for the correct extensions
-  - Docker
-  - Behat Support
+    - Neos Support
+    - Makefile language
+    - PHP
+    - PHP Annotations
+    - PHP Toolbox
+    - Prettier
+        - make sure Prettier is activated for the correct extensions
+    - Docker
+    - Behat Support
 - check, if autocompletion works for .yaml-files
 - check, if it's possible to jump to Fusion Prototypes via cmd + click
 
-
 ## Requirements
+
 - docker for mac
 - node -> to run Playwright Tests or for local development (without docker) of your sites JavaScript
 
@@ -50,10 +48,11 @@ Table of contents:
 
 This should only be needed when running the project for the first time.
 
-- run `git lfs install` and `git lfs pull` to get large files like the content dump (you need to install git-lfs on your machine)
+- run `git lfs install` and `git lfs pull` to get large files like the content dump (you need to install git-lfs on your
+  machine)
 - run `make setup` only the first time to setup docker images and tmp folders
-- run `cd ./e2e-testrunner && nvm use && npm install` as we do not want to use a docker container to be able
-  to debug Playwright test more easily. TODO: maybe run in `make tests` but nvm is currently giving us a headache here.
+- run `cd ./e2e-testrunner && nvm use && npm install` as we do not want to use a docker container to be able to debug
+  Playwright test more easily. TODO: maybe run in `make tests` but nvm is currently giving us a headache here.
 - for font awesome pro support in local dev
     - open: `app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/.npmrc.sample`
     - and do what the file tells you ;)
@@ -75,9 +74,12 @@ This should only be needed when running the project for the first time.
 
 1. `sitegeist/monocle` for prototyping components
 2. `yoast/yoast-seo-for-neos` for a real good SEO experience
-3. `flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -> helps with the editor experience
-4. `neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful static form node-types
-5. `sandstorm/lightweightelasticsearch` (more customizable) or `flowpack/searchplugin` (simple out of the box) to implement a search
+3. `flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -> helps with the editor
+   experience
+4. `neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful
+   static form node-types
+5. `sandstorm/lightweightelasticsearch` (more customizable) or `flowpack/searchplugin` (simple out of the box) to
+   implement a search
 6. `sitegeist/LostInTranslation` to get AI translated content on the fly via Deepl
 7. or have a look at the recommendations on neos.io: https://www.neos.io/features/feature-list.html
 
@@ -92,30 +94,32 @@ Mailhog Web-UI at [http://localhost:8025/](http://localhost:8025/).
 
 ## Running Tests
 
-Make sure the application is up and running `make start`.
-Make sure you build the testrunner with `cd ./e2e-testrunner && nvm use && npm install`
+Make sure the application is up and running `make start`. Make sure you build the testrunner
+with `cd ./e2e-testrunner && nvm use && npm install`
 
 - for E2E Test
-  - in a new console run `cd ./e2e-testrunner node index.js` to start the e2e-testrunner
-  - in a new console run `make e2e-tests` to run the actual tests
-- for Unit Tests run `make unit-tests` 
-- for Functional Tests run `make functional-tests` 
+    - in a new console run `cd ./e2e-testrunner node index.js` to start the e2e-testrunner
+    - in a new console run `make e2e-tests` to run the actual tests
+- for Unit Tests run `make unit-tests`
+- for Functional Tests run `make functional-tests`
 
 ### debug failing tests
 
 1. see screenshots in `./e2e-testrunner`
 2. reports can be viewed by installing playwright once globally (`npm install -g playwright`) and run the traces via
+
 ```
 npx playwright show-trace e2e-testrunner/report_YOUR_FAILING_STEP.zip
 ```
 
 #### run single BDD feature files / scenarios
 
-The `make e2e-tests` command runs **all tests** what is handy before you push your commits.
-Often, in TDD it is more practical to run single feature files or scenarios. That has to be done via
-command line, since the IntelliJ integration "play button" does not work for our docker setup (afaik).
+The `make e2e-tests` command runs **all tests** what is handy before you push your commits. Often, in TDD it is more
+practical to run single feature files or scenarios. That has to be done via command line, since the IntelliJ
+integration "play button" does not work for our docker setup (afaik).
 
 How to run single feature files (see also README of Sandstorm.E2ETestTools):
+
 ```
 docker compose exec neos bin/behat -c Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Behavior/behat.yml.dist -vvv Packages/Sites/MyVendor.AwesomeNeosProject/Tests/Behavior/Features/Frontend/404-page.feature
 ```
@@ -123,12 +127,16 @@ docker compose exec neos bin/behat -c Packages/Sites/MyVendor.AwesomeNeosProject
 #### Generating content (node) fixtures workflow:
 
 1. set up your test content that you want to export in the Neos backend (using the default local dev port `8080`)
-2. write new commands for exporting specific pages in `\MyVendor\AwesomeNeosProject\Command\StepGeneratorCommandController` to export only specific nodes for your fixtures
+2. write new commands for exporting specific pages
+   in `\MyVendor\AwesomeNeosProject\Command\StepGeneratorCommandController` to export only specific nodes for your
+   fixtures
 3. Run and copy to clipboard with:
+
 ```
 docker compose exec -T neos ./flow stepgenerator:homepage | pbcopy
 docker compose exec -T neos ./flow stepgenerator:notfoundpage | pbcopy
 ```
+
 4. paste into your feature files and run tests
 
 ### setup tests in IntelliJ
