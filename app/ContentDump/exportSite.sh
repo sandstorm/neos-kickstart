@@ -30,6 +30,7 @@ mysqldump \
     --ignore-table=neos.neos_party_domain_model_person \
     --ignore-table=neos.neos_party_domain_model_person_electronicaddresses_join \
     --ignore-table=neos.neos_party_domain_model_personname \
+    --ignore-table=neos.neos_neos_eventlog_domain_model_event \
      >> ./temp.sql
 
 mysqldump \
