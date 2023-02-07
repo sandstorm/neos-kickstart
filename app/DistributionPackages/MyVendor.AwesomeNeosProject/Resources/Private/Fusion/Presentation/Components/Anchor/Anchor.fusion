@@ -1,0 +1,14 @@
+prototype(MyVendor.AwesomeNeosProject:Component.Anchor) < prototype(Neos.Fusion:Component) {
+    id = ''
+
+    @propTypes {
+        @strict = true
+        id = ${PropTypes.string}
+    }
+
+    renderer = afx`
+        <div id={props.id} class={AtomicFusion.classNames('anchor', {'anchor--backend': node.context.inBackend})}>
+            <div @if.inBackend={node.context.inBackend}>Anchor: {props.id}</div>
+        </div>
+    `
+}

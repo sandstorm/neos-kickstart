@@ -1,0 +1,11 @@
+'MyVendor.AwesomeNeosProject:Content.Accordion':
+  superTypes:
+    'MyVendor.AwesomeNeosProject:Content.AbstractContent': true
+    'Neos.Neos:ContentCollection': true
+  ui:
+    label: 'Accordion'
+    icon: icon-chevron-down
+  constraints:
+    nodeTypes:
+      '*': false
+      'MyVendor.AwesomeNeosProject:Content.Accordion.Item': true
