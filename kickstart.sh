@@ -77,9 +77,9 @@ echo
 yellow_echo "Hit RETURN to start replacing, or CTRL+C to exit"
 read -p ""
 
-# Unzip site-import file and let this script replace the namespaces with new one
-gzip -dk ./app/ContentDump/Database.sql.gz
-rm ./app/ContentDump/Database.sql.gz
+# TODO: fix later Unzip site-import file and let this script replace the namespaces with new one
+# gzip -dk ./app/ContentDump/Database.sql.gz
+# rm ./app/ContentDump/Database.sql.gz
 
 # rename distribution package
 mv ./app/DistributionPackages/${defaultVendorName}.${defaultPackageName} ./app/DistributionPackages/${vendorName}.${packageName} 2> /dev/null
@@ -99,7 +99,8 @@ mv ./README.md ./KICKSTART.md
 mv ./PROJECT.md ./README.md
 
 # zip site export again for importSite.sh script after replacing namespace
-gzip ./app/ContentDump/Database.sql
+# TODO: fix later Unzip site-import file and let this script replace the namespaces with new one
+# gzip ./app/ContentDump/Database.sql
 
 yellow_echo "Removing Kickstart files ..."
 
