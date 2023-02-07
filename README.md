@@ -67,16 +67,6 @@ This should only be needed when running the project for the first time.
 - run `dev <sometaks> --help` to get detailed help for a task
 - run `dev open-site` you can login to the [neos backend](http://localhost:8081/neos) with the credentials `admin` and `password`
 
-## Packages we recommend for certain use-cases
-
-1. `sitegeist/monocle` for prototyping components
-2. `yoast/yoast-seo-for-neos` for a real good SEO experience
-3. `flowpack/nodetemplates` adds possibility to auto-generate content to newly created nodes -> helps with the editor experience
-4. `neos/form-builder` + `neos/form` + `neos/form-fusionrenderer` to let editors build forms or to create powerful static form node-types
-5. `sandstorm/lightweightelasticsearch` (more customizable) or `flowpack/searchplugin` (simple out of the box) to implement a search
-6. `sitegeist/LostInTranslation` to get AI translated content on the fly via Deepl
-7. or have a look at the recommendations on neos.io: https://www.neos.io/features/feature-list.html
-
 ## Development
 
 As the script can be used to change the git remote and remove files development becomes hard ;)
@@ -107,12 +97,6 @@ dev site-export
 ```bash
 dev site-import
 ```
-
-## Roadmap
-Things we want to add or document for an easier kickstart.
-
-* image variants and responsive images (src-set, ...)
-* improve image optimization with Vips -> see https://gitlab.sandstorm.de/sebastian/revoband/-/tree/master/app/DistributionPackages/Sandstorm.DynamicImage
 
 ### Backlog
 

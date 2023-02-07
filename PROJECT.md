@@ -50,9 +50,7 @@ This should only be needed when running the project for the first time.
 
 - run `git lfs install` and `git lfs pull` to get large files like the content dump (you need to install git-lfs on your
   machine)
-- run `dev setup` only the first time to setup docker images and tmp folders
-- run `cd ./e2e-testrunner && nvm use && npm install` as we do not want to use a docker container to be able to debug
-  Playwright test more easily. TODO: maybe run in `dev tests` but nvm is currently giving us a headache here.
+- run `./devs.sh setup`, this will also install the Dev Script Runner. You can now use `dev <some-taks>` from anywhere inside the project.
 - for font awesome pro support in local dev
     - open: `app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/.npmrc.sample`
     - and do what the file tells you ;)
@@ -67,8 +65,9 @@ This should only be needed when running the project for the first time.
     - `cd app/DistributionPackages/MyVendor.AwesomeNeosProject/Resources/Private/`
     - `nvm install && nvm use && yarn && yarn run watch`
     - see `package.json` for more scripts
-- run `dev help` to see all available commands
-- you can login to the [neos backend](http://localhost:8081/neos) with the credentials `admin` and `password`
+- run `dev` to see all available commands
+- run `dev <sometaks> --help` to get detailed help for a task
+- run `dev open-site` you can login to the [neos backend](http://localhost:8081/neos) with the credentials `admin` and `password`
 
 ## Packages we recommend for certain use-cases
 
