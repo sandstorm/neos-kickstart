@@ -3,52 +3,48 @@
 @use "AbstractStyles/Variables/Spacing";
 @use "AbstractStyles/Variables/Typo";
 
-.accordion {
-    &-item {
-        border-bottom: 1px solid Colors.$grey--light;
+.accordion__item {
+    border-bottom: 1px solid Colors.$grey--light;
+}
+
+.accordion__title {
+    color: Colors.$black;
+}
+
+.accordion__trigger {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: Spacing.$lg Spacing.$lg Spacing.$lg 0;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+    text-align: left;
+    font-family: Typo.$heading__fontFamily;
+    font-weight: Typo.$heading__fontWeight;
+    font-size: Typo.$h4__fontSize;
+
+    @include Mixins.mq(medium) {
+        font-size: Typo.$fontSize;
     }
+}
 
-    &__title-container {
-        & .accordion__title {
-            color: Colors.$black;
-        }
-    }
+.accordion__icon {
+    color: Colors.$black;
+}
 
-    &__trigger {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: Spacing.$lg Spacing.$lg Spacing.$lg 0;
-        border: none;
-        background: transparent;
+.accordion__icon--open {
+    transform: rotate(90deg);
+}
 
-        cursor: pointer;
+.accordion__icon--closed {
+    transform: rotate(-90deg);
+}
 
-        text-align: left;
-        font-family: Typo.$heading__fontFamily;
-        font-weight: Typo.$heading__fontWeight;
-        font-size: Typo.$h4__fontSize;
-
-        @include Mixins.mq(medium) {
-            font-size: Typo.$fontSize;
-        }
-    }
-
-    &__icon {
-        color: Colors.$black;
-
-        &--open {
-            transform: rotate(-90deg);
-        }
-
-        &--closed {
-            transform: rotate(90deg);
-        }
-    }
-
-    &__content {
-        padding-bottom: Spacing.$xl;
-    }
+.accordion__content {
+    padding-bottom: Spacing.$xl;
 }
