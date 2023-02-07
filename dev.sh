@@ -148,6 +148,11 @@ function open-local-db {
 
 ######################### Site Export and Import #########################
 
+# TODO: fix dump, then this should not be needed anymore
+function site-create {
+  docker compose exec neos ./flow site:create --name AwesomeNeosProject --package-key MyVendor.AwesomeNeosProject --node-type MyVendor.AwesomeNeosProject:Document.StartPage
+}
+
 # Export site using an SQL dump and zipping resources
 function site-export {
   _echo_red "IMPORTANT: This dumb cannot be used as a backup. As we removed all user data"
