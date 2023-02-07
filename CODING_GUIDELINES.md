@@ -158,20 +158,20 @@ TODO DISCUSS: Override vs. Abstract NodeType???
 ```yaml
 # Override.Document.yaml
 'Neos.Neos:Document':
-    constraints:
-        nodeTypes:
-            '*': ~
-            'Neos.Neos:Document': ~
+  constraints:
+    nodeTypes:
+      '*': ~
+      'Neos.Neos:Document': ~
 ```
 
 ```yaml
 # Override.ContentCollection.yaml
 'Neos.Neos:ContentCollection':
-    constraints:
-        nodeTypes:
-            'Neos.Neos:Document': false
-            # This might break when using abstract NodeTypes -> see https://github.com/neos/neos-development-collection/issues/3212
-            '*': ~
+  constraints:
+    nodeTypes:
+      'Neos.Neos:Document': false
+      # This might break when using abstract NodeTypes -> see https://github.com/neos/neos-development-collection/issues/3212
+      '*': ~
 ```
 
 * When configuring constraints you SHOULD use `~` instead of `false`, otherwise you will run into problems when trying to override constraints.
@@ -180,12 +180,12 @@ TODO DISCUSS: Override vs. Abstract NodeType???
 ```yaml
 # Constraint.Base.yaml
 'MyVendor.AwesomeNeosProject:Constraints.Base':
-    abstract: true
-    constraints:
-        nodeTypes:
-            'MyVendor.AwesomeNeosProject:Content.Text': true
-            'MyVendor.AwesomeNeosProject:Content.Headline': true
-            'MyVendor.AwesomeNeosProject:Content.Button': true
+  abstract: true
+  constraints:
+    nodeTypes:
+      'MyVendor.AwesomeNeosProject:Content.Text': true
+      'MyVendor.AwesomeNeosProject:Content.Headline': true
+      'MyVendor.AwesomeNeosProject:Content.Button': true
 ```
 
 #### Properties
@@ -247,7 +247,8 @@ prototypes (also called presentational components).
   folder structure.
 * Your MUST only extend from `Neos.Neos:ContentComponent` for integrational components
 * You MUST only extend from `Neos.Neos:Document` for integrational components
-* If you need to configure caching you SHOULD do so in an integrational component. Caching config will be required depending on how a node is extracted from the tree. It will not be depending on how markup is rendered.
+* If you need to configure caching you SHOULD do so in an integrational component. Caching config will be required depending on how a node is extracted from the tree. It will not
+  be depending on how markup is rendered.
 
 #### Presentation
 
@@ -262,7 +263,7 @@ prototypes (also called presentational components).
         * `Button.scss`
         * `Button.ts`
 * You SHOULD NOT use Fluid for rendering. You SHOULD use AFX instead. There might be some rare exceptions, e.g. working with packages that still use fluid.
-  * Even Menus can be rendered entirely in Fusion and don't need Fluid anymore. This example is taken from a working project: 
+    * Even Menus can be rendered entirely in Fusion and don't need Fluid anymore. This example is taken from a working project:
   ```
   prototype(MyVendor.AwesomeNeosProject:Component.PageMenu) < prototype(Neos.Fusion:Component) {
 
@@ -370,13 +371,40 @@ prototypes (also called presentational components).
 
 * An uppercase text style MUST NOT be applied by typing uppercase characters. When typing uppercase all semantics of the actual text are lost!
 * An uppercase text style MUST only be applied CSS styling.
-* An uppercase CSS styling MUST be reset to normal while the ckeditor is active for an inline editable property. This way the editor can type semantically correct text. This is important ...
-  * for search results e.g. displayed by Google
-  * for updating the design (e.g. to no uppercase headlines) without the editor having to check and retype all headlines
+* An uppercase CSS styling MUST be reset to normal while the ckeditor is active for an inline editable property. This way the editor can type semantically correct text. This is
+  important ...
+    * for search results e.g. displayed by Google
+    * for updating the design (e.g. to no uppercase headlines) without the editor having to check and retype all headlines
   ```css
   .ck-focused * { text-transform: initial;}
   ```
 * We RECOMMEND to use dummy images, e.g. as a presentational component, that renders a div with a text telling the editor to upload an image in the inspector.
-* We RECOMMEND to use node templates to pre-populate empty ContentCollections. This way the editor knows what to do and where the collection is. Often a headline is used as a first element anyways, so why not start with one.
+* We RECOMMEND to use node templates to pre-populate empty ContentCollections. This way the editor knows what to do and where the collection is. Often a headline is used as a first
+  element anyways, so why not start with one.
 
+## SCSS Structure (WIP)
 
+* BEM
+    * slider -> Fusion
+    * slider__slide
+    * slider__slide-icon
+    * slider__content
+    * -> wenn nicht außerhlb des Blocks dann __
+    * SCSS: button--active, button--hollow button--large -> HTML: class="button button--hollow button--large"
+
+```scss
+menu--open {
+  .slider
+}
+```
+
+```scss
+.slider__slide {
+  .image {
+    // eher in Fusion als attr.class="slider__slide-image"
+  }
+}
+```
+
+* Utility based
+    * sollte in der Regel eine Fusion Datei haben -> mit Protypes
