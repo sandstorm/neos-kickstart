@@ -5,9 +5,15 @@ prototype(MyVendor.AwesomeNeosProject:Content.Image) < prototype(MyVendor.Awesom
 
 // use basic image when including in other components
 prototype(MyVendor.AwesomeNeosProject:Content.BasicImage) < prototype(Neos.Fusion:Value) {
+
+    @context._textAlignClass = MyVendor.AwesomeNeosProject:Utility.TextAlign {
+        textAlign = ${q(node).property('textAlign')}
+    }
+
     value = MyVendor.AwesomeNeosProject:Utility.ContentWidth {
-        class = ${AtomicFusion.classNames(q(node).property('textAlign'), 'image__wrapper')}
+        class = ${AtomicFusion.classNames(_textAlignClass, 'image__wrapper')}
         size = ${q(node).property('contentWidth')}
+
         content = MyVendor.AwesomeNeosProject:Component.Image {
             imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
                 asset = ${q(node).property('image')}

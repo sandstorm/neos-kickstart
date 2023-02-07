@@ -3,7 +3,7 @@
   properties:
     textAlign:
       type: string
-      defaultValue: 'text-align--left'
+      defaultValue: ''
       ui:
         label: 'Text align'
         reloadIfChanged: true
@@ -11,10 +11,11 @@
           group: 'properties'
           editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
+            allowEmpty: true
             values:
-              'text-align--left':
+              left:
                 label: 'Left'
-              'text-align--center':
+              center:
                 label: 'Center'
-              'text-align--right':
+              right:
                 label: 'Right'

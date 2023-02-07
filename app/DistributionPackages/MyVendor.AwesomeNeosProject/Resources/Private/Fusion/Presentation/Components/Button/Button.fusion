@@ -25,10 +25,14 @@ prototype(MyVendor.AwesomeNeosProject:Component.Button) < prototype(Neos.Fusion:
         _buttonTypeClassName = ${'button--' + props.type}
         _buttonSizeClassName = ${'button--size-' + props.size}
 
+        _textAlignClass = MyVendor.AwesomeNeosProject:Utility.TextAlign {
+            textAlign = ${props.textAlign}
+        }
+
         // We use alpine.js to handle click events:
         // In case the target of this button is an anchor we smoothscroll to the target.
         renderer =  afx`
-            <MyVendor.AwesomeNeosProject:Utility.ContentWidth class={AtomicFusion.classNames('button-outer' , props.textAlign)}>
+            <MyVendor.AwesomeNeosProject:Utility.ContentWidth class={AtomicFusion.classNames('button-outer' , props._textAlignClass)}>
                 <Neos.Fusion:Tag
                     tagName={(props.href && !props.inBackend) ? 'a' : 'div'}
                     attributes.class={AtomicFusion.classNames('button', props._buttonTypeClassName, props._buttonSizeClassName, props._buttonHasNoTextClassName)}

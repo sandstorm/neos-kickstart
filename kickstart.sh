@@ -102,6 +102,10 @@ mv ./PROJECT.md ./README.md
 # TODO: fix later Unzip site-import file and let this script replace the namespaces with new one
 # gzip ./app/ContentDump/Database.sql
 
+# remove old content dump -> we create a new blank page
+rm ./app/ContentDump/Database.sql.gz
+rm ./app/ContentDump/Resources.tar.gz
+
 yellow_echo "Removing Kickstart files ..."
 
 if [ "$1" != "--dev" ]
