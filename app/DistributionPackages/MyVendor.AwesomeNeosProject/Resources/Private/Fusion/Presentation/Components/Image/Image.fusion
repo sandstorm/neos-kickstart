@@ -62,8 +62,6 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
 
     formats = ${['webp', 'jpg']}
 
-    inBackend = ${node.context.inBackend}
-
     @propTypes {
         @strict = true
         imageSource = ${PropTypes.any}
@@ -76,9 +74,6 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
         loadEager = ${PropTypes.boolean}
         showImagePlaceholder = ${PropTypes.boolean}
         contentWidth = ${PropTypes.oneOf([null, '', 'small', 'large', 'full'])}
-
-        inBackend = ${PropTypes.boolean}
-
         srcSet = ${PropTypes.arrayOf(PropTypes.string)}
         sizes = ${PropTypes.arrayOf(PropTypes.string)}
         formats = ${PropTypes.arrayOf(PropTypes.string)}
@@ -86,7 +81,9 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
 
     renderer = Neos.Fusion:Tag {
         @if.showImage = ${props.imageSource || props.showImagePlaceholder}
-        tagName = ${(props.href && !props.inBackend) ? 'a' : 'div'}
+
+        _inBackend = ${node.context.inBackend && node.context.currentRenderingMode.edit}
+        tagName = ${(props.href && !this._inBackend) ? 'a' : 'div'}
         attributes.class = ${AtomicFusion.classNames('image')}
         attributes.href = ${props.href ? props.href : null}
         attributes.target = ${props.isExternalLink ? '_blank' : null}
@@ -100,7 +97,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
                 // Also added svgs cause they need no different sizes.
                 condition = ${props.fileExtension == 'gif' || props.fileExtension == 'svg'}
                 renderer = afx`
-                    <MyVendor.AwesomeNeosProject:Component.ImagePlaceholder @if.showPlaceholder={props.showImagePlaceholder && props.inBackend && !props.imageUri}/>
+                    <MyVendor.AwesomeNeosProject:Component.ImagePlaceholder @if.showPlaceholder={props.showImagePlaceholder && props._inBackend && !props.imageUri}/>
                     <img src={props.imageUri} alt={props.alternativeText} loading={props.loadEager ? 'eager' : 'lazy'} />
                     <MyVendor.AwesomeNeosProject:Component.Image.Description imageDescription={props.imageDescription} />
                 `
@@ -109,7 +106,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
             default {
                 condition = true
                 renderer = afx`
-                    <MyVendor.AwesomeNeosProject:Component.ImagePlaceholder @if.showPlaceholder={props.showImagePlaceholder && props.inBackend && !props.imageSource}/>
+                    <MyVendor.AwesomeNeosProject:Component.ImagePlaceholder @if.showPlaceholder={props.showImagePlaceholder && props._inBackend && !props.imageSource}/>
                     <!-- we load all images lazily by default, as the browser is really good at finding what is
                     needed above the fold -->
                     <Sitegeist.Kaleidoscope:Picture

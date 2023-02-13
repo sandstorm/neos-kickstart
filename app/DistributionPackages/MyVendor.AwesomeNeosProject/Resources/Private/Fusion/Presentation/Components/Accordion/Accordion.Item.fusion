@@ -13,7 +13,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Accordion.Item) < prototype(Neos
             x-data={'{
                     id: "' + node.identifier + '",
                     get expanded() {
-                        return ' + (node.context.inBackend ? 'true' : 'this.active === this.id') +
+                        return ' + (node.context.inBackend && node.context.currentRenderingMode.edit ? 'true' : 'this.active === this.id') +
                     '},
                     set expanded(value) {
                         this.active = value ? this.id : null
