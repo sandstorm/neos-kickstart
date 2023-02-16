@@ -2,8 +2,8 @@
     "dependencies": {
         "@alpinejs/collapse": "^3.11.1",
         "@alpinejs/intersect": "^3.10.3",
-        "@glidejs/glide": "^3.6.0",
-        "alpinejs": "^3.10.3"
+        "alpinejs": "^3.10.3",
+        "swiper": "^9.0.5"
     },
     "scripts": {
         "build": "yarn run typecheck && yarn run build:css-and-js",

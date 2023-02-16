@@ -8,32 +8,35 @@ prototype(MyVendor.AwesomeNeosProject:Component.Slider) < prototype(Neos.Fusion:
         inBackend = ${PropTypes.boolean}
     }
 
-    // This slider uses glide.js and is wrapped by alpine.js.
-    // Look at the doku on how to use glide: https://glidejs.com/docs/
-    // The css classes for the slider are prescribed by glide.js.
-    // All the data-attributes are needed by glide.js.
+    // This slider uses swiper.js and is wrapped by alpine.js.
+    // Look at the doku on how to use swiper: https://swiperjs.com/swiper-api
+    // The "swiper" css classes are prescribed by swiper.js.
     // With x-data="slider" we set the component-name we want to use.
-    // With x-ref="glide" we allow alpine.js to get an easy access to the referenced dom node.
+    // With x-ref="slider" we allow alpine.js to get an easy access to the referenced dom node.
     // In the main.ts the 'slider' component is registered, this way we can access its properties and functionality.
     renderer = afx`
-        <MyVendor.AwesomeNeosProject:Utility.ContentWidth class="glide__wrapper">
+        <MyVendor.AwesomeNeosProject:Utility.ContentWidth>
             <div x-data={"slider(" + props.inBackend + ")"}>
-                <div class={AtomicFusion.classNames('glide', {'glide--in-backend': props.inBackend})} x-ref="glide">
-                    <div class="glide__track" data-glide-el="track">
-                        {props.slides}
-                    </div>
+                <!-- Slider main container -->
+                <div
+                    class={AtomicFusion.classNames('swiper', 'slider', {'slider--in-backend': props.inBackend})}
+                    x-ref="slider"
+                >
+                    <!-- Slides -->
+                    {props.slides}
 
-                    <div class="glide__arrows" data-glide-el="controls">
-                        <button x-on:click={"slideLeft"} class="glide__arrow glide__arrow--left" data-glide-dir="<">
-                            <span aria-hidden="true">&lt;</span>
-                            <span class="sr-only">Skip to previous slide page</span>
-                        </button>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination slider__pagination"></div>
 
-                        <button x-on:click={"slideRight"} class="glide__arrow glide__arrow--right" data-glide-dir=">">
-                            <span aria-hidden="true">&gt;</span>
-                            <span class="sr-only">Skip to next slide page</span>
-                        </button>
-                    </div>
+                    <button x-on:click={"slideLeft"} class="swiper-button-prev slider__arrow">
+                        <i aria-hidden="true" class="fa-sharp fa-solid fa-chevron-left"></i>
+                        <span class="sr-only">Skip to previous slide page</span>
+                    </button>
+
+                    <button x-on:click={"slideRight"} class="swiper-button-next slider__arrow">
+                        <i aria-hidden="true" class="fa-sharp fa-solid fa-chevron-right"></i>
+                        <span class="sr-only">Skip to next slide page</span>
+                    </button>
                 </div>
             </div>
         </MyVendor.AwesomeNeosProject:Utility.ContentWidth>
