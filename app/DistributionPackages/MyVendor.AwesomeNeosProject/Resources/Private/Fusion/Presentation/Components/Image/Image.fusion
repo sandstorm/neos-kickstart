@@ -84,7 +84,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
     renderer = Neos.Fusion:Tag {
         @if.showImage = ${props.imageSource || props.showImagePlaceholder}
 
-        _inBackend = ${node.context.inBackend && node.context.currentRenderingMode.edit}
+        _inBackend = MyVendor.AwesomeNeosProject:Helper.InBackend
         tagName = ${(props.href && !this._inBackend) ? 'a' : 'div'}
         attributes.class = ${AtomicFusion.classNames('image', props.class)}
         attributes.href = ${props.href ? props.href : null}

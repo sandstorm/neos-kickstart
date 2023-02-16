@@ -1,6 +1,6 @@
 prototype(MyVendor.AwesomeNeosProject:Component.Slider) < prototype(Neos.Fusion:Component) {
     slides = ''
-    inBackend = ${node.context.inBackend && node.context.currentRenderingMode.edit}
+    inBackend = MyVendor.AwesomeNeosProject:Helper.InBackend
 
     @propTypes {
         @strict = true

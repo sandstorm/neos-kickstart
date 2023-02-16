@@ -15,7 +15,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Download) < prototype(Neos.Fusio
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}
 
-        _inBackend = ${node.context.inBackend && node.context.currentRenderingMode.edit}
+        _inBackend = MyVendor.AwesomeNeosProject:Helper.InBackend
         _target = ${props.isExternalLink ? '_blank' : null}
         _textAlignClass = MyVendor.AwesomeNeosProject:Utility.TextAlign {
             textAlign = ${props.textAlign}

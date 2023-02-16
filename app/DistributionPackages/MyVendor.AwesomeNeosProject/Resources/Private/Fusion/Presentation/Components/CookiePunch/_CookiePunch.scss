@@ -13,7 +13,6 @@
         z-index: 3000;
 
         .cm-btn {
-            @extend .button;
             margin-bottom: 0;
 
             @include Mixins.mq(small) {
@@ -23,7 +22,12 @@
         }
 
         .cm-btn-accept-all {
-            @extend .button--solid;
+            @extend .button--solid-blue;
+        }
+
+        .cm-btn-accept,
+        .cm-btn-decline {
+            @extend .button--solid-grey;
         }
 
         .cm-modal .cm-footer-buttons {

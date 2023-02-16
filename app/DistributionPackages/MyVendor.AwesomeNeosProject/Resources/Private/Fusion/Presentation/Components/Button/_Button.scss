@@ -7,23 +7,31 @@ $button__height: 40px;
 $button__height--large: 50px;
 $button__height--larger: 60px;
 
-.button__outer {
+.button__wrapper {
+    display: flex;
     width: 100%;
 }
 
-.button, input.button {
+.button__wrapper--left {
+    justify-content: flex-start;
+}
+
+.button__wrapper--center {
+    justify-content: center;
+}
+
+.button__wrapper--right {
+    justify-content: flex-end;
+}
+
+.button {
     display: inline-block;
     height: $button__height;
-    padding: 0;
-    padding-left: Spacing.$lg;
-    padding-right: Spacing.$lg;
-    margin: auto;
-    margin-bottom: Spacing.$md;
+    padding: 0 Spacing.$lg;
 
     border-width: 1px;
     border-style: solid;
     -webkit-appearance: none;
-    background: none;
 
     font-size: Typo.$fontSize--small;
     font-weight: 500;
@@ -38,109 +46,75 @@ $button__height--larger: 60px;
     overflow: hidden;
 
     @include Mixins.transition(background-color .25s, color .25s, border .25s);
+}
 
-    i {
-        @include Mixins.transition(transform .25s);
-    }
+.button--solid-blue {
+    border-color: Colors.$blue;
+    background-color: Colors.$blue;
+    color: Colors.$white;
 
-    &--solid {
-        border-color: Colors.$blue;
-        background-color: Colors.$blue;
-
+    &:hover, &:focus {
+        border-color: Colors.$blue--dark;
+        background-color: Colors.$blue--dark;
         color: Colors.$white;
-
-        &:hover, &:focus {
-            background-color: Colors.$blue--dark;
-            border-color: Colors.$blue--dark;
-
-            color: Colors.$white;
-        }
-
-        &:active{
-            background-color: Colors.$black;
-            border-color: Colors.$black;
-
-            color: Colors.$white;
-        }
     }
 
-    &--outline {
+    &:active {
+        border-color: Colors.$black;
+        background-color: Colors.$black;
+        color: Colors.$white;
+    }
+}
+
+.button--solid-grey {
+    border-color: Colors.$grey;
+    background-color: Colors.$grey;
+    color: Colors.$white;
+
+    &:hover, &:focus {
+        border-color: Colors.$grey--dark;
+        background-color: Colors.$grey--dark;
+        color: Colors.$white;
+    }
+
+    &:active {
+        border-color: Colors.$black;
+        background-color: Colors.$black;
+        color: Colors.$white;
+    }
+}
+
+.button--outline {
+    border-color: Colors.$blue;
+    background-color: Colors.$white;
+    color: Colors.$blue;
+
+    &:hover, &:focus {
+        border-color: Colors.$blue--dark;
         background-color: Colors.$white;
-        border-color: Colors.$blue;
-
-        color: Colors.$blue;
-
-        &:hover, &:focus {
-            background-color: Colors.$white;
-            border-color: Colors.$blue--dark;
-
-            color: Colors.$blue--dark;
-        }
-
-        &:active {
-            background-color: Colors.$white;
-            border-color: Colors.$black;
-
-            color: Colors.$black;
-        }
+        color: Colors.$blue--dark;
     }
 
-    &--outline-transparent {
-        @extend .button--outline;
-
-        background-color: transparent !important;
+    &:active {
+        border-color: Colors.$black;
+        background-color: Colors.$white;
+        color: Colors.$black;
     }
+}
 
-    &--link {
-        margin: unset;
-        padding: unset;
-        height: unset;
+.button--link {
+    margin: unset;
+    padding: unset;
+    height: unset;
 
+    background-color: transparent;
+    border: none;
+
+    color: Colors.$blue;
+    line-height: unset;
+
+    &:hover, &:active, &:focus {
         background-color: transparent;
-        border: none;
-
-        color: Colors.$blue;
-        line-height: unset;
-
-        &:hover, &:active, &:focus {
-            background-color: transparent;
-            color: Colors.$blue--dark;
-        }
-    }
-
-    &--block {
-        width: 100%;
-    }
-
-    &--size-small {
-        height: $button__height * 0.8;
-
-        line-height: $button__height * 0.8;
-        font-size: Typo.$fontSize--smallest;
-    }
-
-    &--size-large {
-        height: $button__height--large;
-
-        line-height: $button__height--large;
-        font-size: 0.9rem;
-    }
-
-    &--square {
-        width: $button__height;
-        justify-content: center;
-        padding: 0;
-
-        &.button--size-large {
-            width: $button__height--large;
-        }
-
-        &.button--size-small {
-            width: $button__height * 0.8;
-        }
-
-        i {
-            margin-right: 0;
-        }
+        color: Colors.$blue--dark;
     }
 }

@@ -9,7 +9,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Anchor) < prototype(Neos.Fusion:
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}
 
-        _inBackend = ${node.context.inBackend && node.context.currentRenderingMode.edit}
+        _inBackend = MyVendor.AwesomeNeosProject:Helper.InBackend
 
         renderer = afx`
             <div id={props.id} class={AtomicFusion.classNames('anchor', {'anchor--backend': props._inBackend})}>

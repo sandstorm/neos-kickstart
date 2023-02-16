@@ -98,9 +98,9 @@ with `cd ./e2e-testrunner && nvm use && npm install`
 
 - for E2E Test
     - in a new console run `cd ./e2e-testrunner node index.js` to start the e2e-testrunner
-    - in a new console run `dev e2e-tests` to run the actual tests
-- for Unit Tests run `dev unit-tests`
-- for Functional Tests run `dev functional-tests`
+    - in a new console run `dev run-e2e-tests` to run the actual tests
+- for Unit Tests run `dev run-unit-tests`
+- for Functional Tests run `dev run-functional-tests`
 
 ### debug failing tests
 
@@ -113,7 +113,7 @@ npx playwright show-trace e2e-testrunner/report_YOUR_FAILING_STEP.zip
 
 #### run single BDD feature files / scenarios
 
-The `dev e2e-tests` command runs **all tests** what is handy before you push your commits. Often, in TDD it is more
+The `dev run-e2e-tests` command runs **all tests** what is handy before you push your commits. Often, in TDD it is more
 practical to run single feature files or scenarios. That has to be done via command line, since the IntelliJ
 integration "play button" does not work for our docker setup (afaik).
 

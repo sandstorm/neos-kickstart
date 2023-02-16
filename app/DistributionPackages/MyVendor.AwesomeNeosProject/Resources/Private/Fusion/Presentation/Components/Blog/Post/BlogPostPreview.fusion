@@ -19,7 +19,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.BlogPostPreview) < prototype(Neo
     renderer = Neos.Fusion:Component {
         @apply.props = ${props}
 
-        _inBackend = ${node.context.inBackend && node.context.currentRenderingMode.edit}
+        _inBackend = MyVendor.AwesomeNeosProject:Helper.InBackend
 
         renderer = afx`
             <Neos.Fusion:Tag
@@ -37,7 +37,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.BlogPostPreview) < prototype(Neo
                     <div class="blog-post-preview__tags">
                         {props.tags}
                     </div>
-                    <button class="button button--solid button--size-small">Mehr erfahren!</button>
+                    <button class="button button--solid-blue">Mehr erfahren!</button>
                 </div>
             </Neos.Fusion:Tag>
         `
