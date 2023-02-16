@@ -22,7 +22,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.BlogPostHeader) < prototype(Neos
         renderer = afx`
             <MyVendor.AwesomeNeosProject:Utility.ContentWidth>
                 <header class="blog-post-header">
-                    <h1>{props.title}</h1>
+                    <h1 class="blog-post-header__title">{props.title}</h1>
                     <div class="blog-post-header__meta_data">
                         <span @if.hasAuthor={props.authors} class="blog-post-header__authors">
                             {props.authors}
@@ -30,9 +30,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.BlogPostHeader) < prototype(Neos
                         <span class="blog-post-header__date">{Date.format(props.date, 'd.m.Y')}</span>
                         {props.tags}
                     </div>
-                    <div class="blog-post-header__image">
-                        {props.image}
-                    </div>
+                    {props.image}
                     <div @if.hasTeaserText={props.teaserText} class="blog-post-header__teaser">{props.teaserText}</div>
                 </header>
             </MyVendor.AwesomeNeosProject:Utility.ContentWidth>

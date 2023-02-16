@@ -21,12 +21,13 @@ prototype(MyVendor.AwesomeNeosProject:Component.PageMenu.Main) < prototype(Neos.
                         <Neos.Neos:NodeLink
                             node={item.node}
                             attributes.title={I18n.translate('MyVendor.AwesomeNeosProject:Base:linkToPage') + item.label}
+                            attributes.class="page-menu__toplevel-link"
                         >
                             {item.label}
                         </Neos.Neos:NodeLink>
 
                         <div @if.hasItems={item.subItems} class="page-menu__sublevel-wrapper">
-                            <MyVendor.AwesomeNeosProject:Utility.ContentWidth size="small">
+                            <MyVendor.AwesomeNeosProject:Utility.ContentWidth size="small" class="page-menu__sublevel-container">
                                 <ul
                                     @if.has={item.subItems}
                                     class="page-menu__sublevel"
@@ -36,6 +37,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.PageMenu.Main) < prototype(Neos.
                                             <Neos.Neos:NodeLink
                                                 node={item.node}
                                                 attributes.title={I18n.translate('MyVendor.AwesomeNeosProject:Base:linkToPage') + item.label}
+                                                attributes.class="page-menu__sublevel-link"
                                             >
                                                 {item.label}
                                             </Neos.Neos:NodeLink>

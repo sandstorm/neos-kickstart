@@ -5,16 +5,7 @@
     margin-top: Spacing.$xxl;
     background-color: Colors.$grey;
     color: Colors.$grey--lighter;
-
-    a {
-        color: Colors.$blue;
-
-        &:hover, &:focus, &:active {
-            color: Colors.$blue--dark;
-        }
-    }
 }
-
 
 .page-footer__content {
     padding-top: Spacing.$xl;

@@ -49,13 +49,13 @@ prototype(MyVendor.AwesomeNeosProject:Component.ContactForm) < prototype(Neos.Fu
         </div>
 
         <div class="contact-form__hints">
-            <label>
+            <label class="contact-form__label">
                 * Required fields
             </label>
         </div>
 
         <div class="contact-form__action">
-            <Neos.Fusion.Form:Button attributes.id="submitContactForm" attributes.class="button button--size-large button--solid" attributes.disabled={false}>Send</Neos.Fusion.Form:Button>
+            <Neos.Fusion.Form:Button attributes.id="submitContactForm" attributes.class="button button--size-large button--solid contact-form__button" attributes.disabled={false}>Send</Neos.Fusion.Form:Button>
         </div>
     `
 }

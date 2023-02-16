@@ -12,6 +12,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
     showImagePlaceholder = true
     contentWidth = null
     @context.contentWidth = ${this.contentWidth}
+    class = ''
 
     // The possible image sizes we are using here are determined empirically, so
     // f.e. for a 4column Blog Overview page, we need a rendering bigger than 350 px (as the breakpoint
@@ -77,6 +78,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
         srcSet = ${PropTypes.arrayOf(PropTypes.string)}
         sizes = ${PropTypes.arrayOf(PropTypes.string)}
         formats = ${PropTypes.arrayOf(PropTypes.string)}
+        class = ${PropTypes.string}
     }
 
     renderer = Neos.Fusion:Tag {
@@ -84,7 +86,7 @@ prototype(MyVendor.AwesomeNeosProject:Component.Image) < prototype(Neos.Fusion:C
 
         _inBackend = ${node.context.inBackend && node.context.currentRenderingMode.edit}
         tagName = ${(props.href && !this._inBackend) ? 'a' : 'div'}
-        attributes.class = ${AtomicFusion.classNames('image')}
+        attributes.class = ${AtomicFusion.classNames('image', props.class)}
         attributes.href = ${props.href ? props.href : null}
         attributes.target = ${props.isExternalLink ? '_blank' : null}
 

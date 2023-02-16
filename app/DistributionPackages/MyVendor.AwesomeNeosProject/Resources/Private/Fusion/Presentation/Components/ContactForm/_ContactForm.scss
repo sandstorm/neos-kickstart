@@ -12,13 +12,13 @@
 
 .contact-form__hints {
     margin-bottom: Spacing.$lg;
+}
 
-    label {
-        margin: Spacing.$sm;
-        display: block;
+.contact-form__label {
+    margin: Spacing.$sm;
+    display: block;
 
-        font-size: .9rem;
-    }
+    font-size: .9rem;
 }
 
 .contact-form__success {
@@ -31,21 +31,21 @@
     background-color: Colors.$blue;
 
     color: Colors.$white;
+}
 
-    h4 {
-        margin-top: 0;
-    }
+.contact-form__headline {
+    margin-top: 0;
 }
 
 .contact-form__action {
     margin: Spacing.$sm;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+}
 
-    .button:disabled {
-        opacity: 0.5;
-    }
+.contact-form__button:disabled {
+    opacity: 0.5;
 }
 
 // honeypot field
