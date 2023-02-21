@@ -7,13 +7,13 @@
 
     text-align: center;
 
-    h1 {
-        margin: 0;
-    }
-
     .blog-tag-list {
         margin: 0;
     }
+}
+
+.blog-post-header__title {
+    margin: 0;
 }
 
 .blog-post-header__meta_data {
@@ -38,14 +38,11 @@
     }
 }
 
-.blog-post-header__image {
+.blog-post-header__image.image {
     margin-bottom: Spacing.$lg;
+    width: 400px;
 
     text-align: center;
-
-    .image {
-        width: 400px;
-    }
 }
 
 .blog-post-header__teaser {

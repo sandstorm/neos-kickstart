@@ -13,8 +13,8 @@ $headerLogo__height: 64px;
 .page-header__logo {
     height: $headerLogo__height;
     display: inline-block;
+}
 
-    img {
-        height: 100%;
-    }
+.page-header__logo-img {
+    height: 100%;
 }

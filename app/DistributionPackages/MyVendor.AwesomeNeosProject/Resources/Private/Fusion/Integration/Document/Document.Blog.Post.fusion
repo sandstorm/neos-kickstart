@@ -1,13 +1,13 @@
 prototype(MyVendor.AwesomeNeosProject:Document.Blog.Post) < prototype(MyVendor.AwesomeNeosProject:Document.AbstractPage) {
-    body.main.class = "content-width-context--blogpost"
+    body.main.class = 'content-width-context--blogpost'
 
     body.main.content.blogpostheader = MyVendor.AwesomeNeosProject:Component.BlogPostHeader {
-        title = ${q(node).property("title")}
+        title = ${q(node).property('title')}
         teaserText = MyVendor.AwesomeNeosProject:Helper.DocumentEditableProperty {
             property = 'teaserText'
         }
-        authors = ${q(node).property("authors")}
-        date = ${q(node).property("datePublished")}
+        authors = ${q(node).property('authors')}
+        date = ${q(node).property('datePublished')}
 
         image = MyVendor.AwesomeNeosProject:Component.Image {
             alternativeText = MyVendor.AwesomeNeosProject:Helper.ImageAltText {
@@ -17,11 +17,12 @@ prototype(MyVendor.AwesomeNeosProject:Document.Blog.Post) < prototype(MyVendor.A
             imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
                 asset = ${q(node).property('image')}
             }
+            class = 'blog-post-header__image'
         }
 
         tags = MyVendor.AwesomeNeosProject:Component.BlogTagList {
-            tags = ${q(node).property("tags")}
+            tags = ${q(node).property('tags')}
         }
     }
-    body.main.content.blogpostheader.@position = "before mainContent"
+    body.main.content.blogpostheader.@position = 'before mainContent'
 }

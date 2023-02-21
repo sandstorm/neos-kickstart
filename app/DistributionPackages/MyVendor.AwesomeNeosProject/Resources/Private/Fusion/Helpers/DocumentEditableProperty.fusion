@@ -5,7 +5,7 @@ prototype(MyVendor.AwesomeNeosProject:Helper.DocumentEditableProperty) < prototy
 
     renderer = Neos.Fusion:Case {
         editable {
-            condition = ${props.node.context.inBackend && props.node.context.currentRenderingMode.edit}
+            condition = MyVendor.AwesomeNeosProject:Helper.InBackend
             renderer = Neos.Fusion:Tag {
                 tagName = ${props.block ? 'div' : 'span'}
                 content = Neos.Neos:Editable {
