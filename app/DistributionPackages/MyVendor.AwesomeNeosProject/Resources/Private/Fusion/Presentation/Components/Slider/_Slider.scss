@@ -3,21 +3,15 @@
 @use "AbstractStyles/Mixins";
 @use "Fusion/Presentation/Components/Button/Button";
 
-.glide {
+.slider {
     min-height: 250px;
-
-    &--in-backend {
-        .glide__slides {
-            overflow-x: scroll;
-        }
-    }
 }
 
-.glide__slides {
+.slider__slides {
     align-items: center;
 }
 
-.glide__slide {
+.slider__slide {
     > .content-width {
         max-width: 80% !important;
 
@@ -25,77 +19,41 @@
             max-width: 100% !important;
         }
     }
-
-    &--active {
-        // fix for flickering when sliding
-        position: relative;
-        z-index: 10;
-    }
 }
 
-.glide__arrows {
-    @include Mixins.mq(small) {
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        transform: translate(0, -70px);
-    }
+.slider__slide--active {
+    // fix for flickering when sliding
+    position: relative;
+    z-index: 10;
 }
 
-.glide__arrow {
-    @extend .button;
-    @extend .button--link;
+.slider__arrow {
+    border: none;
+    background: transparent;
 
-    position: absolute;
-    top: 0;
-    height: 100%;
-    overflow: visible;
-
-    color: Colors.$blue;
-    font-size: 3rem;
-
-    i {
-        display: inline-block;
-
+    &.swiper-button-next,
+    &.swiper-button-prev {
         color: Colors.$blue;
-
-        @include Mixins.mq(small) {
-            transform: unset !important;
-        }
-    }
-
-    &:hover, &:focus {
-        color: Colors.$blue--dark;
-
-        i {
-            color: Colors.$blue--dark;
-        }
     }
 
     @include Mixins.mq(small) {
-        position: relative;
-
-        font-size: 2rem;
-    }
-
-    &--left {
-        left: 0;
-
-        @include Mixins.mq(small) {
-            margin-right: Spacing.$lg;
-        }
-
-        &:hover i {
-            transform: translate(-20px, 0);
+        &.swiper-button-next,
+        &.swiper-button-prev {
+            display: none;
         }
     }
+}
 
-    &--right {
-        right: 0;
+.slider__pagination {
+    &.swiper-pagination-bullets.swiper-pagination-horizontal {
+        bottom: 10px;
+    }
 
-        &:hover i {
-            transform: translate(20px, 0);
-        }
+    .swiper-pagination-bullet {
+        background: Colors.$grey--light;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: Colors.$blue;
     }
 }

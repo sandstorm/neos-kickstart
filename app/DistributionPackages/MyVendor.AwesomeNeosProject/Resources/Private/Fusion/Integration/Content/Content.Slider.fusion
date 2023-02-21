@@ -1,10 +1,9 @@
 prototype(MyVendor.AwesomeNeosProject:Content.Slider) < prototype(Neos.Neos:ContentComponent) {
     renderer = MyVendor.AwesomeNeosProject:Component.Slider {
         slides = Neos.Neos:ContentCollection {
-            tagName = "ul"
+            tagName = "div"
             nodePath = "main"
-            attributes.class = "glide__slides"
-            attributes.data-glide-el = "track"
+            attributes.class = "swiper-wrapper slider__slides"
         }
     }
 }

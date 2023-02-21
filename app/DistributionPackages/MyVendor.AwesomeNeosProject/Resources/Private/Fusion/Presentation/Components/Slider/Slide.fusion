@@ -7,8 +7,8 @@ prototype(MyVendor.AwesomeNeosProject:Component.Slide) < prototype(Neos.Fusion:C
     }
 
     renderer = afx`
-        <li class="glide__slide">
+        <div class="swiper-slide slider__slide">
             {props.content}
-        </li>
+        </div>
     `
 }
